@@ -15,6 +15,9 @@ public class CarRentalSystem {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //Test Test
+        System.out.println("Test");
     }
     
 }
