@@ -17,7 +17,7 @@ public class CarRentalSystem {
         // TODO code application logic here
         
         //Test Test
-        System.out.println("Test");
+        System.out.println("Testing from Ben");
     }
     
 }
