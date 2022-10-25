@@ -154,6 +154,10 @@ public class Admin_login extends javax.swing.JFrame {
 //            System.out.println(credential_staff.get(1));
             if(action == 1){
                 JOptionPane.showMessageDialog(this, "Login Successful", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
+                AdminClass admin_class = new AdminClass();
+                admin_class.setVisible(true);
+                dispose();
+                
             }else{
                 JOptionPane.showMessageDialog(this, "Login Failed", "Car Rental System", JOptionPane.WARNING_MESSAGE);
             }
