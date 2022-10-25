@@ -21,7 +21,8 @@ public class CarRentalSystem {
         System.out.println("tets");
         
 
-        
+        MainClass main_frame = new MainClass();
+        main_frame.setVisible(true);
     }
     
 }
