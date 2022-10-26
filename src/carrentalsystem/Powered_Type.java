@@ -13,9 +13,11 @@ public class Powered_Type extends Vehicle{
     private String fuel_type;
     private int travel_distance;
 
-    public Powered_Type(String brand, String model, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear) {
-        super(brand, model, number_plate, numberOfPassenger, rent_price, manufactureNumber, manufactureYear);
+    public Powered_Type(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear) {
+        super(brand, model, carType, number_plate, numberOfPassenger, rent_price, manufactureNumber, manufactureYear);
     }
+
+    
     
     public String getPowerType(){
         return fuel_type;

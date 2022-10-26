@@ -12,15 +12,17 @@ public class Vehicle {
     
     private String brand;
     private String model;
+    private String carType;
     private String number_plate;
     private int numberOfPassenger;
     private double rent_price;
     private int manufactureNumber;
     private int manufactureYear;
     
-    public Vehicle(String brand, String model, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear){
+    public Vehicle(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear){
         this.brand = brand;
         this.model = model;
+        this.carType = carType;
         this.number_plate = number_plate;
         this.numberOfPassenger = numberOfPassenger;
         this.rent_price = rent_price;
@@ -39,6 +41,13 @@ public class Vehicle {
     }
     public void setModel(String model){
         this.model = model;
+    }
+    
+    public String getCarType(){
+        return carType;
+    }
+    public void setCarType(String type){
+        this.carType = type;
     }
     
     public String getNumberPlate(){
