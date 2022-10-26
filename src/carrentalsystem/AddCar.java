@@ -353,9 +353,9 @@ public class AddCar extends javax.swing.JFrame {
 //        int numPassenger = Integer.parseInt(numPassenger_textfield.getText());
 //        vehicle.setNumberOfPassenger(numPassenger);
 
-        System.out.println(rent_price);
+        convenc.setRentPrice(rent_price);
+        System.out.println(convenc.getRentPrice());
         double a = convenc.doConventionalCarInsurance(rent_price);
-        System.out.println("After: " + a);
     }//GEN-LAST:event_addCar_btnActionPerformed
 
     /**
