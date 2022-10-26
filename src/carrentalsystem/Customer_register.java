@@ -19,9 +19,8 @@ import javax.swing.JOptionPane;
  */
 public class Customer_register extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Customer_register
-     */
+    File f = new File("customer.txt");
+    
     public Customer_register() {
         initComponents();
     }
@@ -98,8 +97,10 @@ public class Customer_register extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(127, 127, 127)
                                 .addComponent(register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel1)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -126,38 +127,7 @@ public class Customer_register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void register_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_buttonActionPerformed
-        String customerUsername = customer_username_reg.getText();
-        String customerPass = customer_password_reg.getText();
-        int action = 0;
-
-        //read from textfile
-        java.util.List<String> credential_customer = new ArrayList<>();
-
-        try{
-            File customer_info = new File("Customer_account.txt");
-            Scanner read_cus = new Scanner(customer_info);
-            while(read_cus.hasNextLine()){
-                String info = read_cus.nextLine();
-                String new_info[] = info.split("\t");
-                credential_customer.add(new_info[0]);
-                credential_customer.add(new_info[1]);
-
-                //Check with username and password with textfile
-                if(credential_customer.get(0).equals(customerUsername) && (credential_customer.get(1).equals(customerPass))){
-                    action = 1;
-                    register_button.setEnabled(false);
-                }
-            }
-            //            System.out.println(credential_staff.get(1));
-            if(action == 1){
-                JOptionPane.showMessageDialog(this, "Login Successful", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
-            }else{
-                JOptionPane.showMessageDialog(this, "Login Failed", "Car Rental System", JOptionPane.WARNING_MESSAGE);
-            }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Admin_login.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
     }//GEN-LAST:event_register_buttonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
