@@ -4,6 +4,12 @@
  */
 package carrentalsystem;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author bende
@@ -326,36 +332,59 @@ public class AddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void addCar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCar_btnActionPerformed
-        vehicle.setBrand(carBrand_textfield.getText());
-        convenc.setModel(carModel_textfield.getText());
-        
-        convenc.setCarType(carType_combobox.getSelectedItem().toString());
-        convenc.setNumberPlate(numPlate_textfield.getText());
-        int cargear = Integer.parseInt(carGear_textfield.getText());
-        convenc.setCarGear(cargear);
-        
-        String fuelType = (carGear_textfield.getText());
-        //if else
-        int traveldistance = Integer.parseInt(travelDistance_textfield.getText());
-        convenc.setTravelDistance(traveldistance);
+        String brand_name = carBrand_textfield.getText();
+//        
+//        vehicle.setBrand(carBrand_textfield.getText());
+//        convenc.setModel(carModel_textfield.getText());
+        String car_model = carModel_textfield.getText();
+//        
+//        convenc.setCarType(carType_combobox.getSelectedItem().toString());
+        String car_type = carType_combobox.getSelectedItem().toString();
+//        convenc.setNumberPlate(numPlate_textfield.getText());
+        String num_plate = numPlate_textfield.getText();
+        int num_occupancy = Integer.parseInt(numPassenger_textfield.getText());
+//        int cargear = Integer.parseInt(carGear_textfield.getText());
+//        convenc.setCarGear(cargear);
+//        
+//        String fuelType = (carGear_textfield.getText());
+//        //if else
+//        int traveldistance = Integer.parseInt(travelDistance_textfield.getText());
+//        convenc.setTravelDistance(traveldistance);
         int manu_year = Integer.parseInt(manufactureYear_textfield.getText());
-        convenc.setManufactureYear(manu_year);
+//        convenc.setManufactureYear(manu_year);
         int manuSerialNumber = Integer.parseInt(serialNum_textfield.getText());
-        convenc.setManufactureNumber(manuSerialNumber);
-        
-        engine.setEngineID(engineID_textfield.getText());
-        engine.setEngineType(engineType_textfield.getText());
-        int CarHP = Integer.parseInt(engineHP_textfield.getText());
-        engine.setEngineHP(CarHP);
-        
+//        convenc.setManufactureNumber(manuSerialNumber);
+//        
+//        engine.setEngineID(engineID_textfield.getText());
+//        engine.setEngineType(engineType_textfield.getText());
+//        int CarHP = Integer.parseInt(engineHP_textfield.getText());
+//        engine.setEngineHP(CarHP);
+//        
         double rent_price = Double.parseDouble(rentPrice_textfield.getText());
-        vehicle.setRentPrice(rent_price);
-        int numPassenger = Integer.parseInt(numPassenger_textfield.getText());
-        vehicle.setNumberOfPassenger(numPassenger);
+//        vehicle.setRentPrice(rent_price);
+//        int numPassenger = Integer.parseInt(numPassenger_textfield.getText());
+//        vehicle.setNumberOfPassenger(numPassenger);
+//
+//        convenc.setRentPrice(rent_price);
 
-        convenc.setRentPrice(rent_price);
-        System.out.println(convenc.getRentPrice());
-        double a = convenc.doConventionalCarInsurance(rent_price);
+        Conventional_Car car = new Conventional_Car(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year);
+        System.out.println(car.getBrand());
+//        try {
+//            //write into textfile
+//            FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
+//            String car_details;
+//            car_details = (convenc.getBrand());
+//            //convert string to bytes
+//            byte[] byte_details = car_details.getBytes(); 
+//            append_car_details.write(byte_details);
+//            
+//            append_car_details.close();
+//                        
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+//        }     
     }//GEN-LAST:event_addCar_btnActionPerformed
 
     /**

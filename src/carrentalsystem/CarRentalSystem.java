@@ -22,7 +22,7 @@ public class CarRentalSystem {
         
 
         MainClass main_frame = new MainClass();
-        main_frame.setVisible(true);
+        main_frame.setVisible(true);   
     }
     
 }
