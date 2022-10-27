@@ -326,32 +326,32 @@ public class AddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void addCar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCar_btnActionPerformed
-//        vehicle.setBrand(carBrand_textfield.getText());
-//        convenc.setModel(carModel_textfield.getText());
+        vehicle.setBrand(carBrand_textfield.getText());
+        convenc.setModel(carModel_textfield.getText());
         
-//        convenc.setCarType(carType_combobox.getSelectedItem().toString());
-//        convenc.setNumberPlate(numPlate_textfield.getText());
-//        int cargear = Integer.parseInt(carGear_textfield.getText());
-//        convenc.setCarGear(cargear);
-//        
-//        String fuelType = (carGear_textfield.getText());
-//        //if else
-//        int traveldistance = Integer.parseInt(travelDistance_textfield.getText());
-//        convenc.setTravelDistance(traveldistance);
-//        int manu_year = Integer.parseInt(manufactureYear_textfield.getText());
-//        convenc.setManufactureYear(manu_year);
-//        int manuSerialNumber = Integer.parseInt(serialNum_textfield.getText());
-//        convenc.setManufactureNumber(manuSerialNumber);
-//        
-//        engine.setEngineID(engineID_textfield.getText());
-//        engine.setEngineType(engineType_textfield.getText());
-//        int CarHP = Integer.parseInt(engineHP_textfield.getText());
-//        engine.setEngineHP(CarHP);
-//        
+        convenc.setCarType(carType_combobox.getSelectedItem().toString());
+        convenc.setNumberPlate(numPlate_textfield.getText());
+        int cargear = Integer.parseInt(carGear_textfield.getText());
+        convenc.setCarGear(cargear);
+        
+        String fuelType = (carGear_textfield.getText());
+        //if else
+        int traveldistance = Integer.parseInt(travelDistance_textfield.getText());
+        convenc.setTravelDistance(traveldistance);
+        int manu_year = Integer.parseInt(manufactureYear_textfield.getText());
+        convenc.setManufactureYear(manu_year);
+        int manuSerialNumber = Integer.parseInt(serialNum_textfield.getText());
+        convenc.setManufactureNumber(manuSerialNumber);
+        
+        engine.setEngineID(engineID_textfield.getText());
+        engine.setEngineType(engineType_textfield.getText());
+        int CarHP = Integer.parseInt(engineHP_textfield.getText());
+        engine.setEngineHP(CarHP);
+        
         double rent_price = Double.parseDouble(rentPrice_textfield.getText());
-//        vehicle.setRentPrice(rent_price);
-//        int numPassenger = Integer.parseInt(numPassenger_textfield.getText());
-//        vehicle.setNumberOfPassenger(numPassenger);
+        vehicle.setRentPrice(rent_price);
+        int numPassenger = Integer.parseInt(numPassenger_textfield.getText());
+        vehicle.setNumberOfPassenger(numPassenger);
 
         convenc.setRentPrice(rent_price);
         System.out.println(convenc.getRentPrice());
