@@ -34,7 +34,7 @@ public class Customer_register extends javax.swing.JFrame {
     
     public Customer_register() {
         initComponents();
-        this.setLocationRelativeTo(null);// center form in the screen
+       // this.setLocationRelativeTo(null);// center form in the screen
     }
 
     void createFolder()
