@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -65,10 +66,11 @@ public class AddCar extends javax.swing.JFrame {
         manufactureYear_textfield = new javax.swing.JTextField();
         serialNum_textfield = new javax.swing.JTextField();
         engineID_textfield = new javax.swing.JTextField();
-        engineType_textfield = new javax.swing.JTextField();
         engineHP_textfield = new javax.swing.JTextField();
         carType_combobox = new javax.swing.JComboBox<>();
         fuelType_combobox = new javax.swing.JComboBox<>();
+        engineType_combo = new javax.swing.JComboBox<>();
+        confirm_vehicle = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,20 +159,50 @@ public class AddCar extends javax.swing.JFrame {
         rentPrice_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         manufactureYear_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        manufactureYear_textfield.setEnabled(false);
 
         serialNum_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        serialNum_textfield.setEnabled(false);
 
         engineID_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        engineType_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        engineID_textfield.setEnabled(false);
 
         engineHP_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        engineHP_textfield.setEnabled(false);
 
         carType_combobox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         carType_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SportCar", "SUV", "Sedan", "HatchBack", "MPV" }));
 
         fuelType_combobox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         fuelType_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Combustion", "Electric" }));
+        fuelType_combobox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fuelType_comboboxMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                fuelType_comboboxMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                fuelType_comboboxMousePressed(evt);
+            }
+        });
+        fuelType_combobox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                fuelType_comboboxKeyPressed(evt);
+            }
+        });
+
+        engineType_combo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        engineType_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hybrid ", "Plug-in_Hybrid", "Petrol", "Diesel", "Fully_Electric", "Hybrid_Electric" }));
+        engineType_combo.setEnabled(false);
+
+        confirm_vehicle.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        confirm_vehicle.setText("Confirm Vehicle");
+        confirm_vehicle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm_vehicleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,9 +244,9 @@ public class AddCar extends javax.swing.JFrame {
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(engineID_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(engineType_textfield)
-                            .addComponent(engineHP_textfield)))
+                            .addComponent(engineID_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                            .addComponent(engineHP_textfield)
+                            .addComponent(engineType_combo, 0, 0, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,10 +256,9 @@ public class AddCar extends javax.swing.JFrame {
                                 .addComponent(jLabel7)
                                 .addGap(52, 52, 52))
                             .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(manufactureYear_textfield)
-                            .addComponent(serialNum_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(serialNum_textfield)
+                            .addComponent(manufactureYear_textfield))))
                 .addGap(15, 15, 15))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -239,10 +270,15 @@ public class AddCar extends javax.swing.JFrame {
                         .addComponent(rentPrice_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(185, 185, 185))
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(144, 144, 144)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(confirm_vehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -305,21 +341,23 @@ public class AddCar extends javax.swing.JFrame {
                             .addComponent(engineID_textfield)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(engineType_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(engineType_combo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(engineHP_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
+                .addComponent(confirm_vehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(rentPrice_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addCar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addContainerGap())
         );
 
         pack();
@@ -333,50 +371,72 @@ public class AddCar extends javax.swing.JFrame {
 
     private void addCar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCar_btnActionPerformed
         String brand_name = carBrand_textfield.getText();
-//        
-//        vehicle.setBrand(carBrand_textfield.getText());
-//        convenc.setModel(carModel_textfield.getText());
         String car_model = carModel_textfield.getText();
-//        
-//        convenc.setCarType(carType_combobox.getSelectedItem().toString());
         String car_type = carType_combobox.getSelectedItem().toString();
-//        convenc.setNumberPlate(numPlate_textfield.getText());
-        String num_plate = numPlate_textfield.getText();
-        int num_occupancy = Integer.parseInt(numPassenger_textfield.getText());
-//        int cargear = Integer.parseInt(carGear_textfield.getText());
-//        convenc.setCarGear(cargear);
-//        
-//        String fuelType = (carGear_textfield.getText());
-//        //if else
-//        int traveldistance = Integer.parseInt(travelDistance_textfield.getText());
-//        convenc.setTravelDistance(traveldistance);
-        int manu_year = Integer.parseInt(manufactureYear_textfield.getText());
-//        convenc.setManufactureYear(manu_year);
-        int manuSerialNumber = Integer.parseInt(serialNum_textfield.getText());
-//        convenc.setManufactureNumber(manuSerialNumber);
-//        
-//        engine.setEngineID(engineID_textfield.getText());
-//        engine.setEngineType(engineType_textfield.getText());
-//        int CarHP = Integer.parseInt(engineHP_textfield.getText());
-//        engine.setEngineHP(CarHP);
-//        
-        double rent_price = Double.parseDouble(rentPrice_textfield.getText());
-//        vehicle.setRentPrice(rent_price);
-//        int numPassenger = Integer.parseInt(numPassenger_textfield.getText());
-//        vehicle.setNumberOfPassenger(numPassenger);
-//
-//        convenc.setRentPrice(rent_price);
+        String num_plate = numPlate_textfield.getText();       
+        String car_fuel_type = fuelType_combobox.getSelectedItem().toString();
+        String engine_type = engineType_combo.getSelectedItem().toString();
+        
+        //Use for check empty data for integer and double only
+        String occupancy = numPassenger_textfield.getText();
+        String year = manufactureYear_textfield.getText();
+        String SeNumber = serialNum_textfield.getText();
+        String pricing = rentPrice_textfield.getText();
+        String gearing = carGear_textfield.getText();
+        String tra_distance = travelDistance_textfield.getText();
+        String engID = engineID_textfield.getText();
+        String carHP = engineHP_textfield.getText();
+        
 
-        Conventional_Car car = new Conventional_Car(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year);
-        System.out.println(car.getBrand());
+        //Check all data are filled
+        if(!((brand_name.isEmpty()) || (car_model.isEmpty()) || (car_type.isEmpty()) || (num_plate.isEmpty()) || (occupancy.isEmpty()) || (year.isEmpty()) || (SeNumber.isEmpty()) || (pricing.isEmpty()) || (gearing.isEmpty()) || (car_fuel_type.isEmpty()) || (tra_distance.isEmpty()) || (engID.isEmpty()) || (engine_type.isEmpty()) || (carHP.isEmpty()))){
+
+            int num_occupancy = Integer.parseInt(numPassenger_textfield.getText());
+            int manu_year = Integer.parseInt(manufactureYear_textfield.getText());
+            int manuSerialNumber = Integer.parseInt(serialNum_textfield.getText());
+            double rent_price = Double.parseDouble(rentPrice_textfield.getText());
+            int car_gear = Integer.parseInt(carGear_textfield.getText()); 
+            int travel_distance = Integer.parseInt(travelDistance_textfield.getText());
+            int engine_id = Integer.parseInt(engineID_textfield.getText());
+            int car_hp = Integer.parseInt(engineHP_textfield.getText());
+        
+            Vehicle car = new Vehicle(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
+            System.out.println(car.getBrand() +" "+ car.getmodel() +" "+ car.getCarType() +" "+ car.getNumberPlate() +" "+ car.getCarGear() +" "+ car.getNumberOfPassenger()+ " " + car.getfuel_type()+" "+ car.getTravel_distance()+" "+ car.getRentPrice()+" "+ car.getManufactureYear()+" "+ car.getManufactureNumber()+" "+ car.getEngine_id() +" "+ car.getEngine_type() +" "+ car.getCar_hp());
+        
+            //Electric car must match with fully electric engine
+            if((car_fuel_type == "Combustion" && (engine_type != "Fully_Electric") || (car_fuel_type == "Electric") && !(engine_type == "Fully_Electric"))){
+            
+            //Execute here
+            //disable everything (not able to change again)
+            
+                System.out.println("OK!!!!!!!!!!!!!!!!!!!!11");
+            
+            
+                }else{
+                    JOptionPane.showMessageDialog(this, "An Error Occur with Fuel Type & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                    confirm_vehicle.setEnabled(true);
+                    manufactureYear_textfield.setEnabled(false);
+                    serialNum_textfield.setEnabled(false);
+                    engineID_textfield.setEnabled(false);
+                    engineType_combo.setEnabled(false);
+                    engineHP_textfield.setEnabled(false);
+
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "Please Fill Out all the Required Field", "Error Message", JOptionPane.ERROR_MESSAGE);
+        }
+        //if select electric car only allow 1 car gear
+
 //        try {
 //            //write into textfile
 //            FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
 //            String car_details;
-//            car_details = (convenc.getBrand());
+//            car_details = ("\n" +  car.getBrand());
 //            //convert string to bytes
 //            byte[] byte_details = car_details.getBytes(); 
 //            append_car_details.write(byte_details);
+//            
+//            JOptionPane.showMessageDialog(this, "Car Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 //            
 //            append_car_details.close();
 //                        
@@ -386,6 +446,53 @@ public class AddCar extends javax.swing.JFrame {
 //            Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
 //        }     
     }//GEN-LAST:event_addCar_btnActionPerformed
+
+    private void fuelType_comboboxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelType_comboboxMouseClicked
+
+    }//GEN-LAST:event_fuelType_comboboxMouseClicked
+
+    private void fuelType_comboboxMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelType_comboboxMouseExited
+
+    }//GEN-LAST:event_fuelType_comboboxMouseExited
+
+    private void fuelType_comboboxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelType_comboboxMousePressed
+
+    }//GEN-LAST:event_fuelType_comboboxMousePressed
+
+    private void fuelType_comboboxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_fuelType_comboboxKeyPressed
+
+    }//GEN-LAST:event_fuelType_comboboxKeyPressed
+
+    private void confirm_vehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_vehicleActionPerformed
+        confirm_vehicle.setEnabled(false);
+        int car_gear = Integer.parseInt(carGear_textfield.getText());
+        String car_fuel_type = fuelType_combobox.getSelectedItem().toString();
+        
+        if(((car_fuel_type == "Electric") && (car_gear != 1))){
+            JOptionPane.showMessageDialog(this, "An Error Occur with Car Gear & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
+            confirm_vehicle.setEnabled(true);
+            manufactureYear_textfield.setEnabled(false);
+            serialNum_textfield.setEnabled(false);
+            engineID_textfield.setEnabled(false);
+            engineType_combo.setEnabled(false);
+            engineHP_textfield.setEnabled(false);
+        
+        }else{
+            manufactureYear_textfield.setEnabled(true);
+            serialNum_textfield.setEnabled(true);
+            engineID_textfield.setEnabled(true);
+            engineType_combo.setEnabled(true);
+            engineHP_textfield.setEnabled(true);
+        }
+        
+        //Check if selected the electric type car
+        if(fuelType_combobox.getSelectedItem().toString().equals("Electric")){
+            engineType_combo.setEnabled(false);
+            engineType_combo.setSelectedItem("Fully_Electric");
+        }
+        
+        
+    }//GEN-LAST:event_confirm_vehicleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,9 +536,10 @@ public class AddCar extends javax.swing.JFrame {
     private javax.swing.JTextField carGear_textfield;
     private javax.swing.JTextField carModel_textfield;
     private javax.swing.JComboBox<String> carType_combobox;
+    private javax.swing.JButton confirm_vehicle;
     private javax.swing.JTextField engineHP_textfield;
     private javax.swing.JTextField engineID_textfield;
-    private javax.swing.JTextField engineType_textfield;
+    private javax.swing.JComboBox<String> engineType_combo;
     private javax.swing.JComboBox<String> fuelType_combobox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

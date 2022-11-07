@@ -9,20 +9,11 @@ package carrentalsystem;
  * @author bende
  */
 public class Conventional_Car extends Powered_Type{
-    //how many gear does the car have
-    private int car_gear;
     //car insurance will cost RM500 for conventional car, RM250 for electric car
     private double car_insurance;
 
-    public Conventional_Car(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear) {
-        super(brand, model, carType, number_plate, numberOfPassenger, rent_price, manufactureNumber, manufactureYear);
-    }
-
-    public int getCarGear(){
-        return car_gear;
-    } 
-    public void setCarGear(int gear){
-        this.car_gear = gear;
+    public Conventional_Car(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear, int car_gear , String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp) {
+        super(brand, model, carType, number_plate, numberOfPassenger, rent_price, manufactureNumber, manufactureYear, car_gear, fuel_type, travel_distance, engine_id, engine_type, car_hp);
     }
     
     public double doConventionalCarInsurance(double price){
