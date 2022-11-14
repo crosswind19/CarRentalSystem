@@ -18,7 +18,7 @@ public class CarEngine {
     
     public CarEngine(){
         powertype.setBrand("null");
-        powertype.setManufactureNumber(0);
+        powertype.setManufactureNumber("null");
         powertype.setManufactureYear(0);
         powertype.setModel("null");
         powertype.setNumberOfPassenger(0);

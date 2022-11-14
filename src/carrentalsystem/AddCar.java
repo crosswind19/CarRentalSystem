@@ -4,9 +4,13 @@
  */
 package carrentalsystem;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -26,6 +30,8 @@ public class AddCar extends javax.swing.JFrame {
     Conventional_Car convenc;
     CarEngine engine;
     Vehicle vehicle;
+    Electric_Car elec;
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,22 +43,22 @@ public class AddCar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        brand = new javax.swing.JLabel();
+        model = new javax.swing.JLabel();
+        number_plate = new javax.swing.JLabel();
+        gear = new javax.swing.JLabel();
+        pasenger = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        Serial_numner = new javax.swing.JLabel();
+        manufacture_Year = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        Engine_id = new javax.swing.JLabel();
+        Engine_type = new javax.swing.JLabel();
+        Engine_hp = new javax.swing.JLabel();
+        type = new javax.swing.JLabel();
+        fuelType = new javax.swing.JLabel();
+        TravelDistance = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         addCar_btn = new javax.swing.JButton();
         back = new javax.swing.JButton();
@@ -71,35 +77,38 @@ public class AddCar extends javax.swing.JFrame {
         fuelType_combobox = new javax.swing.JComboBox<>();
         engineType_combo = new javax.swing.JComboBox<>();
         confirm_vehicle = new javax.swing.JButton();
+        CC = new javax.swing.JLabel();
+        car_cc_textfield = new javax.swing.JTextField();
+        km = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("Admin Add Car");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel2.setText("Brand:");
+        brand.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        brand.setText("Brand:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel3.setText("Model:");
+        model.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        model.setText("Model:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel4.setText("Number Plate:");
+        number_plate.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        number_plate.setText("Number Plate:");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel5.setText("Gear:");
+        gear.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        gear.setText("Gear:");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel6.setText("Passenger Occupancy:");
+        pasenger.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        pasenger.setText("Passenger Occupancy:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel7.setText("Manufacture");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel8.setText("Serial Number: ");
+        Serial_numner.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        Serial_numner.setText("Serial Number: ");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel9.setText("Year:");
+        manufacture_Year.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        manufacture_Year.setText("Year:");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel10.setText("Vehicle");
@@ -107,23 +116,23 @@ public class AddCar extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel11.setText("Engine");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel12.setText("ID:");
+        Engine_id.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        Engine_id.setText("ID:");
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel13.setText("Type:");
+        Engine_type.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        Engine_type.setText("Type:");
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel15.setText("HorsePower:");
+        Engine_hp.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        Engine_hp.setText("HorsePower:");
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel16.setText("Type:");
+        type.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        type.setText("Type:");
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel17.setText("Fuel Type:");
+        fuelType.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        fuelType.setText("Fuel Type:");
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel18.setText("Travel Distance:");
+        TravelDistance.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        TravelDistance.setText("Travel Distance:");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         jLabel19.setText("Rent Price: (RM)");
@@ -204,6 +213,14 @@ public class AddCar extends javax.swing.JFrame {
             }
         });
 
+        CC.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        CC.setText("Car CC:");
+
+        car_cc_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        km.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        km.setText("KM");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,35 +230,40 @@ public class AddCar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(brand, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel10)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(number_plate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(type, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(model, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(gear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pasenger, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fuelType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TravelDistance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(carBrand_textfield)
-                    .addComponent(carModel_textfield)
-                    .addComponent(numPlate_textfield)
-                    .addComponent(carGear_textfield)
-                    .addComponent(numPassenger_textfield)
-                    .addComponent(travelDistance_textfield)
-                    .addComponent(carType_combobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(fuelType_combobox, 0, 147, Short.MAX_VALUE))
-                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(carBrand_textfield)
+                        .addComponent(carModel_textfield)
+                        .addComponent(numPlate_textfield)
+                        .addComponent(carGear_textfield)
+                        .addComponent(numPassenger_textfield)
+                        .addComponent(carType_combobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fuelType_combobox, 0, 147, Short.MAX_VALUE)
+                        .addComponent(car_cc_textfield))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(travelDistance_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(km, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Engine_hp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Engine_type, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Engine_id, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(engineID_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
@@ -250,8 +272,8 @@ public class AddCar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel8))
+                                .addComponent(manufacture_Year, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Serial_numner))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(52, 52, 52))
@@ -277,7 +299,7 @@ public class AddCar extends javax.swing.JFrame {
                         .addGap(144, 144, 144)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
+                        .addGap(126, 126, 126)
                         .addComponent(confirm_vehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -294,64 +316,72 @@ public class AddCar extends javax.swing.JFrame {
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
+                            .addComponent(brand)
                             .addComponent(carBrand_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(carModel_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(model, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
+                            .addComponent(type)
                             .addComponent(carType_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(number_plate)
                             .addComponent(numPlate_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
+                            .addComponent(gear)
                             .addComponent(carGear_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
+                            .addComponent(pasenger)
                             .addComponent(numPassenger_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(fuelType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(fuelType_combobox))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(travelDistance_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(travelDistance_textfield)
+                                .addComponent(km, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(TravelDistance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
+                            .addComponent(manufacture_Year)
                             .addComponent(manufactureYear_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
+                            .addComponent(Serial_numner)
                             .addComponent(serialNum_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(60, 60, 60)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(engineID_textfield)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Engine_id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Engine_type, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(engineType_combo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
+                            .addComponent(Engine_hp)
                             .addComponent(engineHP_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CC, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(car_cc_textfield)
+                        .addGap(3, 3, 3)))
                 .addGap(18, 18, 18)
                 .addComponent(confirm_vehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(rentPrice_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -370,6 +400,10 @@ public class AddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void addCar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCar_btnActionPerformed
+        double new_price = 0;
+        int action = 1;
+        List<String> car_serial_list = new ArrayList<>();
+        
         String brand_name = carBrand_textfield.getText();
         String car_model = carModel_textfield.getText();
         String car_type = carType_combobox.getSelectedItem().toString();
@@ -386,14 +420,14 @@ public class AddCar extends javax.swing.JFrame {
         String tra_distance = travelDistance_textfield.getText();
         String engID = engineID_textfield.getText();
         String carHP = engineHP_textfield.getText();
-        
+        String car_cc = car_cc_textfield.getText();
 
         //Check all data are filled
-        if(!((brand_name.isEmpty()) || (car_model.isEmpty()) || (car_type.isEmpty()) || (num_plate.isEmpty()) || (occupancy.isEmpty()) || (year.isEmpty()) || (SeNumber.isEmpty()) || (pricing.isEmpty()) || (gearing.isEmpty()) || (car_fuel_type.isEmpty()) || (tra_distance.isEmpty()) || (engID.isEmpty()) || (engine_type.isEmpty()) || (carHP.isEmpty()))){
+        if(!((brand_name.isEmpty()) || (car_model.isEmpty()) || (car_type.isEmpty()) || (num_plate.isEmpty()) || (occupancy.isEmpty()) || (year.isEmpty()) || (SeNumber.isEmpty()) || (pricing.isEmpty()) || (gearing.isEmpty()) || (car_fuel_type.isEmpty()) || (tra_distance.isEmpty()) || (engID.isEmpty()) || (engine_type.isEmpty()) || (carHP.isEmpty() || (car_cc.isEmpty())))){
 
             int num_occupancy = Integer.parseInt(numPassenger_textfield.getText());
             int manu_year = Integer.parseInt(manufactureYear_textfield.getText());
-            int manuSerialNumber = Integer.parseInt(serialNum_textfield.getText());
+            String manuSerialNumber = (serialNum_textfield.getText());
             double rent_price = Double.parseDouble(rentPrice_textfield.getText());
             int car_gear = Integer.parseInt(carGear_textfield.getText()); 
             int travel_distance = Integer.parseInt(travelDistance_textfield.getText());
@@ -401,16 +435,71 @@ public class AddCar extends javax.swing.JFrame {
             int car_hp = Integer.parseInt(engineHP_textfield.getText());
         
             Vehicle car = new Vehicle(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
-            System.out.println(car.getBrand() +" "+ car.getmodel() +" "+ car.getCarType() +" "+ car.getNumberPlate() +" "+ car.getCarGear() +" "+ car.getNumberOfPassenger()+ " " + car.getfuel_type()+" "+ car.getTravel_distance()+" "+ car.getRentPrice()+" "+ car.getManufactureYear()+" "+ car.getManufactureNumber()+" "+ car.getEngine_id() +" "+ car.getEngine_type() +" "+ car.getCar_hp());
+            vehicle.setRentPrice(rent_price);
+            System.out.println("Get from vehicle " + vehicle.getRentPrice());
+
+            //System.out.println(car.getBrand() +" "+ car.getmodel() +" "+ car.getCarType() +" "+ car.getNumberPlate() +" "+ car.getCarGear() +" "+ car.getNumberOfPassenger()+ " " + car.getfuel_type()+" "+ car.getTravel_distance()+" "+ car.getRentPrice()+" "+ car.getManufactureYear()+" "+ car.getManufactureNumber()+" "+ car.getEngine_id() +" "+ car.getEngine_type() +" "+ car.getCar_hp());
         
             //Electric car must match with fully electric engine
-            if((car_fuel_type == "Combustion" && (engine_type != "Fully_Electric") || (car_fuel_type == "Electric") && !(engine_type == "Fully_Electric"))){
+            if((car_fuel_type == "Combustion" && (engine_type != "Fully_Electric") || (car_fuel_type == "Electric") && (engine_type == "Fully_Electric"))){
             
-            //Execute here
             //disable everything (not able to change again)
+            //if select electric car only allow 1 car gear
+            //Rent price will + with insurance
+
             
-                System.out.println("OK!!!!!!!!!!!!!!!!!!!!11");
+            ?????????????????????????????
+            if("Electric".equals(car_fuel_type)){
+                new_price =  elec.doElectricCarInsurance(rent_price);
+            }else{
+                new_price = convenc.doConventionalCarInsurance(rent_price);
+            }
+
             
+            
+            //Check if the serial number in the text file
+            File read_car_file = new File("Car.txt");
+                try {
+                    Scanner scan_serial = new Scanner(read_car_file);
+                    ArrayList<String> read_car_serial = new ArrayList<>();
+                    while(scan_serial.hasNextLine()){
+                        //read whole data from textfile
+                        String car_data = scan_serial.nextLine();
+                        String serial_car_split[] = car_data.split("\t");
+       
+                        //Get the Car Manufacture Serial Number Column
+                       if(manuSerialNumber.equals(serial_car_split[10])){
+                           JOptionPane.showMessageDialog(this, "Same Car Serial Number Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                           action = 0;
+                       }
+                        
+                    }
+                    
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+            
+            if(action == 1){
+//                try {
+//                    //write into textfile
+//                    FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
+//                    String car_details;
+//                    car_details = (car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\n");
+//                    //convert string to bytes
+//                    byte[] byte_details = car_details.getBytes(); 
+//                    append_car_details.write(byte_details);
+//
+//                    JOptionPane.showMessageDialog(this, "Car Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+//                    append_car_details.close();
+//                    addCar_btn.setEnabled(false);
+//                } catch (FileNotFoundException ex) {
+//                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+//                } catch (IOException ex) {
+//                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+//                } 
+   
+            }         
             
                 }else{
                     JOptionPane.showMessageDialog(this, "An Error Occur with Fuel Type & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
@@ -425,26 +514,7 @@ public class AddCar extends javax.swing.JFrame {
             }else{
                 JOptionPane.showMessageDialog(this, "Please Fill Out all the Required Field", "Error Message", JOptionPane.ERROR_MESSAGE);
         }
-        //if select electric car only allow 1 car gear
-
-//        try {
-//            //write into textfile
-//            FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
-//            String car_details;
-//            car_details = ("\n" +  car.getBrand());
-//            //convert string to bytes
-//            byte[] byte_details = car_details.getBytes(); 
-//            append_car_details.write(byte_details);
-//            
-//            JOptionPane.showMessageDialog(this, "Car Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-//            
-//            append_car_details.close();
-//                        
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
-//        }     
+    
     }//GEN-LAST:event_addCar_btnActionPerformed
 
     private void fuelType_comboboxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fuelType_comboboxMouseClicked
@@ -530,40 +600,43 @@ public class AddCar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CC;
+    private javax.swing.JLabel Engine_hp;
+    private javax.swing.JLabel Engine_id;
+    private javax.swing.JLabel Engine_type;
+    private javax.swing.JLabel Serial_numner;
+    private javax.swing.JLabel TravelDistance;
     private javax.swing.JButton addCar_btn;
     private javax.swing.JButton back;
+    private javax.swing.JLabel brand;
     private javax.swing.JTextField carBrand_textfield;
     private javax.swing.JTextField carGear_textfield;
     private javax.swing.JTextField carModel_textfield;
     private javax.swing.JComboBox<String> carType_combobox;
+    private javax.swing.JTextField car_cc_textfield;
     private javax.swing.JButton confirm_vehicle;
     private javax.swing.JTextField engineHP_textfield;
     private javax.swing.JTextField engineID_textfield;
     private javax.swing.JComboBox<String> engineType_combo;
+    private javax.swing.JLabel fuelType;
     private javax.swing.JComboBox<String> fuelType_combobox;
+    private javax.swing.JLabel gear;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel km;
     private javax.swing.JTextField manufactureYear_textfield;
+    private javax.swing.JLabel manufacture_Year;
+    private javax.swing.JLabel model;
     private javax.swing.JTextField numPassenger_textfield;
     private javax.swing.JTextField numPlate_textfield;
+    private javax.swing.JLabel number_plate;
+    private javax.swing.JLabel pasenger;
     private javax.swing.JTextField rentPrice_textfield;
     private javax.swing.JTextField serialNum_textfield;
     private javax.swing.JTextField travelDistance_textfield;
+    private javax.swing.JLabel type;
     // End of variables declaration//GEN-END:variables
 }

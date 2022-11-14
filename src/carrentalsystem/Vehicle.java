@@ -16,7 +16,7 @@ public class Vehicle {
     private String number_plate;
     private int numberOfPassenger;
     private double rent_price;
-    private int manufactureNumber;
+    private String manufactureNumber;
     private int manufactureYear;
     private int car_gear;
     private String fuel_type;
@@ -25,7 +25,7 @@ public class Vehicle {
     String engine_type;
     int car_hp;
     
-    public Vehicle(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, int manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp){
+    public Vehicle(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp){
         this.brand = brand;
         this.model = model;
         this.carType = carType;
@@ -83,10 +83,10 @@ public class Vehicle {
         this.rent_price = rent_price;
     }
     
-    public int getManufactureNumber(){
+    public String getManufactureNumber(){
         return manufactureNumber;
     }
-    public void setManufactureNumber(int num){
+    public void setManufactureNumber(String num){
         this.manufactureNumber = num;
     }
     
