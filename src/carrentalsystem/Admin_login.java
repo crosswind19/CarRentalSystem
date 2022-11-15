@@ -126,6 +126,7 @@ public class Admin_login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         admin_username.setText("");
         admin_pass.setText("");
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
