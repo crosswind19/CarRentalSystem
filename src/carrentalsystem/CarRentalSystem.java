@@ -27,9 +27,10 @@ public class CarRentalSystem {
         System.out.println("TEsting from kx");
         System.out.println("tets");
         
-//
-//        MainClass main_frame = new MainClass();
-//        main_frame.setVisible(true);   
+
+        MainClass main_frame = new MainClass();
+        main_frame.setVisible(true);  
+        
     }
     
 }

@@ -448,39 +448,39 @@ public class AddCar extends javax.swing.JFrame {
             //Rent price will + with insurance
 
             
-            ?????????????????????????????
-            if("Electric".equals(car_fuel_type)){
-                new_price =  elec.doElectricCarInsurance(rent_price);
-            }else{
-                new_price = convenc.doConventionalCarInsurance(rent_price);
-            }
+//            ?????????????????????????????
+//            if("Electric".equals(car_fuel_type)){
+//                new_price =  elec.doElectricCarInsurance(rent_price);
+//            }else{
+//                new_price = convenc.doConventionalCarInsurance(rent_price);
+//            }
 
             
             
             //Check if the serial number in the text file
-            File read_car_file = new File("Car.txt");
-                try {
-                    Scanner scan_serial = new Scanner(read_car_file);
-                    ArrayList<String> read_car_serial = new ArrayList<>();
-                    while(scan_serial.hasNextLine()){
-                        //read whole data from textfile
-                        String car_data = scan_serial.nextLine();
-                        String serial_car_split[] = car_data.split("\t");
-       
-                        //Get the Car Manufacture Serial Number Column
-                       if(manuSerialNumber.equals(serial_car_split[10])){
-                           JOptionPane.showMessageDialog(this, "Same Car Serial Number Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
-                           action = 0;
-                       }
-                        
-                    }
-                    
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
-                }
+//            File read_car_file = new File("Car.txt");
+//                try {
+//                    Scanner scan_serial = new Scanner(read_car_file);
+//                    ArrayList<String> read_car_serial = new ArrayList<>();
+//                    while(scan_serial.hasNextLine()){
+//                        //read whole data from textfile
+//                        String car_data = scan_serial.nextLine();
+//                        String serial_car_split[] = car_data.split("\t");
+//       
+//                        //Get the Car Manufacture Serial Number Column
+//                       if(manuSerialNumber.equals(serial_car_split[10])){
+//                           JOptionPane.showMessageDialog(this, "Same Car Serial Number Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+//                           action = 0;
+//                       }
+//                        
+//                    }
+//                    
+//                } catch (FileNotFoundException ex) {
+//                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+//                }
             
             
-            if(action == 1){
+//            if(action == 1){
 //                try {
 //                    //write into textfile
 //                    FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
@@ -499,7 +499,7 @@ public class AddCar extends javax.swing.JFrame {
 //                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
 //                } 
    
-            }         
+//            }         
             
                 }else{
                     JOptionPane.showMessageDialog(this, "An Error Occur with Fuel Type & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
