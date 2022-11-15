@@ -121,6 +121,7 @@ public class AdminClass extends javax.swing.JFrame {
         AddCar add_car = new AddCar();
         add_car.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

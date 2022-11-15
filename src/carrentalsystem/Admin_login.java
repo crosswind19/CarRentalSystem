@@ -134,6 +134,7 @@ public class Admin_login extends javax.swing.JFrame {
         String adminPass = admin_pass.getText();
         int action = 0;
         
+        
         //read from textfile
         java.util.List<String> credential_staff = new ArrayList<>();
         

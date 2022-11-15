@@ -435,8 +435,10 @@ public class AddCar extends javax.swing.JFrame {
             int car_hp = Integer.parseInt(engineHP_textfield.getText());
         
             Vehicle car = new Vehicle(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
-            vehicle.setRentPrice(rent_price);
-            System.out.println("Get from vehicle " + vehicle.getRentPrice());
+            Powered_Type power_type = new Powered_Type(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
+            car.setRentPrice(rent_price);
+            System.out.println("Get from vehicle " + car.getRentPrice());
+            System.out.println("Get from Powered Type" + power_type.getRentPrice());
 
             //System.out.println(car.getBrand() +" "+ car.getmodel() +" "+ car.getCarType() +" "+ car.getNumberPlate() +" "+ car.getCarGear() +" "+ car.getNumberOfPassenger()+ " " + car.getfuel_type()+" "+ car.getTravel_distance()+" "+ car.getRentPrice()+" "+ car.getManufactureYear()+" "+ car.getManufactureNumber()+" "+ car.getEngine_id() +" "+ car.getEngine_type() +" "+ car.getCar_hp());
         
@@ -458,26 +460,26 @@ public class AddCar extends javax.swing.JFrame {
             
             
             //Check if the serial number in the text file
-//            File read_car_file = new File("Car.txt");
-//                try {
-//                    Scanner scan_serial = new Scanner(read_car_file);
-//                    ArrayList<String> read_car_serial = new ArrayList<>();
-//                    while(scan_serial.hasNextLine()){
-//                        //read whole data from textfile
-//                        String car_data = scan_serial.nextLine();
-//                        String serial_car_split[] = car_data.split("\t");
-//       
-//                        //Get the Car Manufacture Serial Number Column
-//                       if(manuSerialNumber.equals(serial_car_split[10])){
-//                           JOptionPane.showMessageDialog(this, "Same Car Serial Number Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
-//                           action = 0;
-//                       }
-//                        
-//                    }
-//                    
-//                } catch (FileNotFoundException ex) {
-//                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
-//                }
+            File read_car_file = new File("Car.txt");
+                try {
+                    Scanner scan_serial = new Scanner(read_car_file);
+                    ArrayList<String> read_car_serial = new ArrayList<>();
+                    while(scan_serial.hasNextLine()){
+                        //read whole data from textfile
+                        String car_data = scan_serial.nextLine();
+                        String serial_car_split[] = car_data.split("\t");
+       
+                        //Get the Car Manufacture Serial Number Column
+                       if(manuSerialNumber.equals(serial_car_split[10])){
+                           JOptionPane.showMessageDialog(this, "Same Car Serial Number Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                           action = 0;
+                       }
+                        
+                    }
+                    
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+                }
             
             
 //            if(action == 1){
@@ -534,6 +536,7 @@ public class AddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_fuelType_comboboxKeyPressed
 
     private void confirm_vehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_vehicleActionPerformed
+
         confirm_vehicle.setEnabled(false);
         int car_gear = Integer.parseInt(carGear_textfield.getText());
         String car_fuel_type = fuelType_combobox.getSelectedItem().toString();

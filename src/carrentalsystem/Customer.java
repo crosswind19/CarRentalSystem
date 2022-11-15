@@ -18,6 +18,8 @@ public class Customer {
     private String address;
     private String gender;
     
+    
+    
     public Customer (int number){
         this.number = number;
     }
