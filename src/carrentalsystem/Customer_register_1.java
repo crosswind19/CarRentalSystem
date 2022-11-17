@@ -376,47 +376,74 @@ public class Customer_register_1 extends javax.swing.JFrame {
 
     private void register_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_buttonActionPerformed
         
-        String regex = "^(.+)@(.+)$";
-        String regex1 = "\\d+";
-        Pattern pattern = Pattern.compile(regex);
-        Pattern digit = Pattern.compile(regex1);
+        int line = 1, action = 1;
+        java.util.List<String> customer_credentials = new ArrayList<>();
+        //check is the staff already registered
+        customer_credentials.add(txt_Username.getText());
+        customer_credentials.add(txt_Password.getText());
         
-        Matcher emailMatcher = pattern.matcher(txt_Email.getText());
-        Matcher PhoneNoMatcher = digit.matcher(txt_PhoneNo.getText());
-        
-        
-        if(txt_Username.getText() == null || txt_Password.getText() == null || txt_Name.getText() == null || txt_Address.getText() == null)
-        {
-            JOptionPane.showMessageDialog(null, "Cannot leave it empty", "Error Message" , JOptionPane.ERROR_MESSAGE);
-        }
-        else if(txt_PhoneNo.getText().length()<10 || txt_PhoneNo.getText().length()>10 )
-        {
-             JOptionPane.showMessageDialog(null, "Contact Number only contain 10 to 11 numberic without ' - ' ", "Error Message" , JOptionPane.ERROR_MESSAGE);
-        }
-        else if(PhoneNoMatcher.matches() == false)
-        {
-            JOptionPane.showMessageDialog(null, "Contact Number only contain numberic", "Error Message" , JOptionPane.ERROR_MESSAGE);
-        }
-        else
-        {
-            String username = txt_Username.getText();
-            String password = txt_Password.getText();
-            String name = txt_Name.getText();
+        File all_customer_information = new File("Customer_Information.txt");
+        try(Scanner customer_info = new Scanner(all_customer_information)){
+            while(customer_info.hasNextLine()){
+                String info = customer_info.nextLine();
+                line = line + 1;
+                String new_information[] = info.split("\t");
+                //System.out.println(new_information[1]);
+                if((customer_credentials.get(0).equals(new_information[1])) && (customer_credentials.get(1).equals(new_information[2]))){
+                    action = 0;
+                    break;
+                }
+                
+            }
             
-            String gender = cbox_gender.getSelectedItem().toString();
-            String PhoneNo = txt_PhoneNo.getText();
-            String address = txt_Address.getText();
-            String email = txt_Email.getText();
+            if(action == 0){
+                JOptionPane.showMessageDialog(this, "StaffUsername & StaffPassword Exist, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
+            }else{
+                String new_customer_username;
+                String new_customer_password;
+                String new_customer_name;
+                String new_gender;
+                String new_email;
+                String new_phoneno;
+                String new_Address;
+                String details;
+                
+                new_customer_username = txt_Username.getText();
+                new_customer_password = txt_Password.getText();
+                new_customer_name = txt_Name.getText();
+                new_email = txt_Email.getText();
+                new_phoneno = txt_PhoneNo.getText();
+                new_Address = txt_Address.getText();
+                new_gender = cbox_gender.getSelectedItem().toString();
+                
+                if((new_customer_username.length()>0) && (new_customer_password.length()>0) && (new_customer_name.length()>0) && (new_gender.length()>0)){
+                    
+                    try{
+                        FileOutputStream fw = new FileOutputStream("Customer_Information.txt", true);
+                        details = ("\n" + line + "\t" + new_customer_username + "\t" + new_customer_password + "\t" + new_customer_name + "\t" + new_gender + "\t" + new_email + "\t" + new_phoneno + "\t" + new_Address);
+                        //convert string to bytes
+                        byte[] byte_details = details.getBytes();
+                        
+                        //Append into textfile
+                        fw.write(byte_details);
+                        register_button.setEnabled(false);
+                        JOptionPane.showMessageDialog(this, "Staff Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                        //fw.close();
+                        
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(this, "An Error Occur! Append File Error Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(this, "Error Occur! Please Enter a Valid Input!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            }
             
-            Customer newcustomer = new Customer(name,gender,PhoneNo,email,address);
-
-  
-    createFolder();
-    readFile();
-    countLines();
-    addData(username,password,name,PhoneNo,email,address);
-    
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(this, "File Not Found, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
         }
+            
             
         
         

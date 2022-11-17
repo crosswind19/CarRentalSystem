@@ -378,52 +378,7 @@ public class Customer_register extends javax.swing.JFrame {
 
     private void register_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_buttonActionPerformed
         
-//        String regex = "^(.+)@(.+)$";
-//        String regex1 = "\\d+";
-//        Pattern pattern = Pattern.compile(regex);
-//        Pattern digit = Pattern.compile(regex1);
-//        
-//        Matcher emailMatcher = pattern.matcher(txt_Email.getText());
-//        Matcher PhoneNoMatcher = digit.matcher(txt_PhoneNo.getText());
-//        
-//        
-//        if(txt_Username.getText() == null || txt_Password.getText() == null || txt_Name.getText() == null || txt_Address.getText() == null)
-//        {
-//            JOptionPane.showMessageDialog(null, "Cannot leave it empty", "Error Message" , JOptionPane.ERROR_MESSAGE);
-//        }
-//        else if(txt_PhoneNo.getText().length()<10 || txt_PhoneNo.getText().length()>10 )
-//        {
-//             JOptionPane.showMessageDialog(null, "Contact Number only contain 10 to 11 numberic without ' - ' ", "Error Message" , JOptionPane.ERROR_MESSAGE);
-//        }
-//        else if(PhoneNoMatcher.matches() == false)
-//        {
-//            JOptionPane.showMessageDialog(null, "Contact Number only contain numberic", "Error Message" , JOptionPane.ERROR_MESSAGE);
-//        }
-//        else
-//        {
-//            String username = txt_Username.getText();
-//            String password = txt_Password.getText();
-//            String name = txt_Name.getText();
-//            
-//            String gender = cbox_gender.getSelectedItem().toString();
-//            String PhoneNo = txt_PhoneNo.getText();
-//            String address = txt_Address.getText();
-//            String email = txt_Email.getText();
-//            
-//            Customer newcustomer = new Customer(name,gender,PhoneNo,email,address);
-
-//  
-//    createFolder();
-//    readFile();
-//    countLines();
-//    //addData(username,password,name,PhoneNo,email,address);
-//    addData(txt_Username.getText(),txt_Password.getText(),txt_Name.getText(),txt_PhoneNo.getText(),txt_Email.getText(),txt_Address.getText());
-//    
-//        
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-    
+   
     int line = 1, action = 1;
         java.util.List<String> customer_credentials = new ArrayList<>();
         //check is the staff already registered
