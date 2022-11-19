@@ -54,6 +54,11 @@ public class AdminClass extends javax.swing.JFrame {
 
         edit_car.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         edit_car.setText("Edit Car Information");
+        edit_car.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_carActionPerformed(evt);
+            }
+        });
 
         delete_car.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         delete_car.setText("Delete Car");
@@ -142,6 +147,12 @@ public class AdminClass extends javax.swing.JFrame {
         view_car.setVisible(true);
         dispose();
     }//GEN-LAST:event_view_carActionPerformed
+
+    private void edit_carActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_carActionPerformed
+        EditCar edit_car = new EditCar();
+        edit_car.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_edit_carActionPerformed
 
     /**
      * @param args the command line arguments

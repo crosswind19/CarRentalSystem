@@ -120,6 +120,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Edit Car Information"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edit_carActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="delete_car">
       <Properties>
