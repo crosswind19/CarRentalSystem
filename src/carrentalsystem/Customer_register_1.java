@@ -25,17 +25,17 @@ import javax.swing.JOptionPane;
  *
  * @author Crosswind Cheah
  */
-public class Customer_register extends javax.swing.JFrame {
+public class Customer_register_1 extends javax.swing.JFrame {
     
     private String username;
     private String password;
     private Customer customer;
     int ln;
 
-    File f = new File("logins.txt");
+    File f = new File("Customer_Information.txt");
     int line;
     
-    public Customer_register() {
+    public Customer_register_1() {
         initComponents();
        // this.setLocationRelativeTo(null);// center form in the screen
     }
@@ -51,7 +51,7 @@ public class Customer_register extends javax.swing.JFrame {
     void readFile() //register
     {
         try {
-            FileReader fr = new FileReader(f+"logins.txt");System.err.println("file exists!");  //f is the txt file 
+            FileReader fr = new FileReader(f+"customer.txt");System.err.println("file exists!");  //f is the txt file 
         } catch (FileNotFoundException ex) {
             try {
                 FileWriter fw = new FileWriter(f+"logins.txt");
@@ -65,7 +65,7 @@ public class Customer_register extends javax.swing.JFrame {
     void addData(String username,String password,String name,String PhoneNo,String email, String address)
     {
         try {
-            RandomAccessFile raf = new RandomAccessFile(f+"\\logins.txt","rw");
+            RandomAccessFile raf = new RandomAccessFile(f+"\\logins.txt","rwd");
             for(int i=0;i<line;i++){
                 raf.readLine();
             }
@@ -73,8 +73,6 @@ public class Customer_register extends javax.swing.JFrame {
             raf.writeBytes("Username: " + username + "\r\n");
             raf.writeBytes("Password: " + password + "\r\n");
             raf.writeBytes("Name :" + name + "\r\n");
-            
-            raf.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Customer_register.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex){
@@ -378,8 +376,7 @@ public class Customer_register extends javax.swing.JFrame {
 
     private void register_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_buttonActionPerformed
         
-   
-    int line = 1, action = 1;
+        int line = 1, action = 1;
         java.util.List<String> customer_credentials = new ArrayList<>();
         //check is the staff already registered
         customer_credentials.add(txt_Username.getText());
@@ -446,6 +443,7 @@ public class Customer_register extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(this, "File Not Found, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
         }
+            
             
         
         

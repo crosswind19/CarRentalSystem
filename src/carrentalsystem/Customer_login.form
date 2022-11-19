@@ -41,19 +41,23 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="login_button" min="-2" pref="104" max="-2" attributes="0"/>
+                              <Component id="login_btn" min="-2" pref="104" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="customer_pass" min="-2" pref="243" max="-2" attributes="0"/>
-                                  <Component id="customer_username" min="-2" pref="243" max="-2" attributes="0"/>
+                                  <Component id="txt_cususername" min="-2" pref="243" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txt_cuspassword" min="-2" pref="243" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="txt_Pass" min="-2" pref="86" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="130" max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -70,7 +74,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="customer_username" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_cususername" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -79,13 +83,17 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="customer_pass" min="-2" pref="33" max="-2" attributes="0"/>
+                      <Component id="txt_cuspassword" min="-2" pref="33" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txt_Pass" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton1" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  <Component id="login_button" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Component id="login_btn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="lbl_Register" min="-2" max="-2" attributes="0"/>
@@ -111,7 +119,7 @@
         <Property name="text" type="java.lang.String" value="Username: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="customer_username">
+    <Component class="javax.swing.JTextField" name="txt_cususername">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -140,7 +148,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="login_button">
+    <Component class="javax.swing.JButton" name="login_btn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="3"/>
@@ -148,7 +156,7 @@
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="login_buttonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="login_btnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Register">
@@ -163,10 +171,12 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_RegisterMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="customer_pass">
+    <Component class="javax.swing.JPasswordField" name="txt_cuspassword">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_Pass">
     </Component>
   </SubComponents>
 </Form>

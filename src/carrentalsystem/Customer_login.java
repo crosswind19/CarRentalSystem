@@ -39,15 +39,15 @@ public class Customer_login extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        customer_username = new javax.swing.JTextField();
+        txt_cususername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        login_button = new javax.swing.JButton();
+        login_btn = new javax.swing.JButton();
         lbl_Register = new javax.swing.JLabel();
-        customer_pass = new javax.swing.JPasswordField();
+        txt_cuspassword = new javax.swing.JPasswordField();
+        txt_Pass = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 370));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("Customer Login Page");
@@ -55,8 +55,8 @@ public class Customer_login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         jLabel2.setText("Username: ");
 
-        customer_username.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        customer_username.setMinimumSize(new java.awt.Dimension(64, 30));
+        txt_cususername.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_cususername.setMinimumSize(new java.awt.Dimension(64, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         jLabel3.setText("Password: ");
@@ -69,11 +69,11 @@ public class Customer_login extends javax.swing.JFrame {
             }
         });
 
-        login_button.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        login_button.setText("Login");
-        login_button.addActionListener(new java.awt.event.ActionListener() {
+        login_btn.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        login_btn.setText("Login");
+        login_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                login_buttonActionPerformed(evt);
+                login_btnActionPerformed(evt);
             }
         });
 
@@ -86,7 +86,7 @@ public class Customer_login extends javax.swing.JFrame {
             }
         });
 
-        customer_pass.setToolTipText("");
+        txt_cuspassword.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,13 +107,16 @@ public class Customer_login extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(74, 74, 74)
-                                .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(customer_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customer_username, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                                    .addComponent(txt_cususername, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txt_cuspassword, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(txt_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lbl_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,18 +130,21 @@ public class Customer_login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(customer_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_cususername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(customer_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_cuspassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(login_button, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(lbl_Register)
                 .addContainerGap(46, Short.MAX_VALUE))
@@ -148,45 +154,57 @@ public class Customer_login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        customer_username.setText("");
-        customer_pass.setText("");
+        txt_cususername.setText("");
+        txt_cuspassword.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
-        String customerUsername = customer_username.getText();
-        String customerPass = customer_pass.getText();
-        int action = 0;
+    private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
+        String fname = "";
+        int flag = 0;
+        java.util.List<String> customer_credentials = new ArrayList<>();
+        java.util.List<String> textfile_credentials = new ArrayList<>();
+        String username_textfield_value = txt_cususername.getText();
+        String password_textfield_value = new String(txt_cuspassword.getPassword());
 
-        //read from textfile
-        java.util.List<String> credential_customer = new ArrayList<>();
-
+        customer_credentials.add(username_textfield_value);
+        customer_credentials.add(password_textfield_value);
+        //System.out.println(staff_credentials);
+        
         try{
-            File customer_info = new File("Customer_account.txt");
-            Scanner read_cus = new Scanner(customer_info);
-            while(read_cus.hasNextLine()){
-                String info = read_cus.nextLine();
-                String new_info[] = info.split("\t");
-                credential_customer.add(new_info[0]);
-                credential_customer.add(new_info[1]);
-
-                //Check with username and password with textfile
-                if(credential_customer.get(0).equals(customerUsername) && (credential_customer.get(1).equals(customerPass))){
-                    action = 1;
-                    login_button.setEnabled(false);
+            File customer_information = new File("Customer_Information.txt");
+            Scanner read_information = new Scanner(customer_information);
+            while(read_information.hasNextLine()){
+                String information = read_information.nextLine();
+                String new_information[] = information.split("\t");
+                
+                textfile_credentials.add(new_information[1]);
+                textfile_credentials.add(new_information[2]);
+                //System.out.println(textfile_credentials);
+                if((username_textfield_value.equals(new_information[1])) && (password_textfield_value.equals(new_information[2]))){
+                    flag = 1;
+                    fname = new_information[3];
+                    login_btn.setEnabled(false);
+                    break;
+                }else{
+                    flag = 0;
                 }
+             
             }
-            //            System.out.println(credential_staff.get(1));
-            if(action == 1){
-                JOptionPane.showMessageDialog(this, "Login Successful", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
+            
+            if(flag == 1){
+                JOptionPane.showMessageDialog(this, "Login Successful! " + fname + "!" + "\nWelcome to Prestige Car Rental", "Rental Booking System", JOptionPane.INFORMATION_MESSAGE);
+                CustomerClass main = new CustomerClass();
+                main.setVisible(true);
+                get_customerid(customer_credentials.get(0));
+                dispose();
             }else{
-                JOptionPane.showMessageDialog(this, "Login Failed", "Car Rental System", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Login Failed! Please Try Again" , "Universal Resort Booking System", JOptionPane.WARNING_MESSAGE);
             }
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Admin_login.class.getName()).log(Level.SEVERE, null, ex);
+            read_information.close();
+        }catch (FileNotFoundException a){
+            JOptionPane.showMessageDialog(this, "An error occur! File not Found", "Error Message", JOptionPane.WARNING_MESSAGE);
         }
-
-    }//GEN-LAST:event_login_buttonActionPerformed
+    }//GEN-LAST:event_login_btnActionPerformed
 
     private void lbl_RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_RegisterMouseClicked
         // TODO add your handling code here:
@@ -241,15 +259,22 @@ public class Customer_login extends javax.swing.JFrame {
         
         
     }
+    
+    static void get_customerid(String name){
+        String cus_id;
+        cus_id=name;
+        Customer_booking.customerid_value = cus_id;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField customer_pass;
-    private javax.swing.JTextField customer_username;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lbl_Register;
-    private javax.swing.JButton login_button;
+    private javax.swing.JButton login_btn;
+    private javax.swing.JTextField txt_Pass;
+    private javax.swing.JPasswordField txt_cuspassword;
+    private javax.swing.JTextField txt_cususername;
     // End of variables declaration//GEN-END:variables
 }
