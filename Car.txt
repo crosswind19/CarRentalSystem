@@ -1,2 +1,4 @@
+Car_Brand	Car_Model	Car_Type	Number_Plate	Car_Gear	Passenger_Occupancy	Fuel_Type	Travel_Distance	Car_cc	Manuafacture_year	Serial_Number	Engine_ID	Engine_Type	Car_HP	Rent_Price
 Ferrari	458	SportCar	FER1	8	2	Combustion	800	4492	2020	FER202001	1	Petrol	562	6500.0
 Mclaren	765LT	SportCar	MCL1	7	2	Combustion	800	3994	2021	MCL202101	7653394	Petrol	765	7500.0
+Toyota	Rush	SUV	TOY1234	6	5	Combustion	600	2356	2016	TOY3038	98489	Hybrid 	230	0.0

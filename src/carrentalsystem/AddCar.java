@@ -482,26 +482,26 @@ public class AddCar extends javax.swing.JFrame {
                 }
             
             
-//            if(action == 1){
-//                try {
-//                    //write into textfile
-//                    FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
-//                    String car_details;
-//                    car_details = (car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\n");
-//                    //convert string to bytes
-//                    byte[] byte_details = car_details.getBytes(); 
-//                    append_car_details.write(byte_details);
-//
-//                    JOptionPane.showMessageDialog(this, "Car Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-//                    append_car_details.close();
-//                    addCar_btn.setEnabled(false);
-//                } catch (FileNotFoundException ex) {
-//                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
-//                } catch (IOException ex) {
-//                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
-//                } 
+            if(action == 1){
+                try {
+                    //write into textfile
+                    FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
+                    String car_details;
+                    car_details = (car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\n");
+                    //convert string to bytes
+                    byte[] byte_details = car_details.getBytes(); 
+                    append_car_details.write(byte_details);
+
+                    JOptionPane.showMessageDialog(this, "Car Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                    append_car_details.close();
+                    addCar_btn.setEnabled(false);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
+                } 
    
-//            }         
+            }         
             
                 }else{
                     JOptionPane.showMessageDialog(this, "An Error Occur with Fuel Type & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
