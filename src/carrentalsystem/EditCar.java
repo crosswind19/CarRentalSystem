@@ -4,6 +4,19 @@
  */
 package carrentalsystem;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author bende
@@ -16,7 +29,7 @@ public class EditCar extends javax.swing.JFrame {
     public EditCar() {
         initComponents();
     }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,31 +40,147 @@ public class EditCar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        search_textfield = new javax.swing.JTextField();
+        update_btn = new javax.swing.JButton();
+        details_selection = new javax.swing.JComboBox<>();
+        changes_textfield = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("Admin Edit Car");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        jLabel2.setText("Car Serial Number: ");
+
+        search_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        update_btn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        update_btn.setText("Update");
+        update_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_btnActionPerformed(evt);
+            }
+        });
+
+        details_selection.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        details_selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price" }));
+
+        changes_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addComponent(jLabel1)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(230, 230, 230)
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(176, 176, 176)
+                            .addComponent(details_selection, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(changes_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(281, 281, 281)
+                            .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel1)
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(details_selection, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(changes_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
+        String search_text = search_textfield.getText();
+        int action = 0, line = 0;
+        try {          
+            File car_file = new File("Car.txt");
+            Scanner scan_data = new Scanner(car_file);
+            ArrayList<String> array_car = new ArrayList<>();
+            ArrayList<String> write_car = new ArrayList<>();
+            
+            while(scan_data.hasNextLine()){
+                String each_line = scan_data.nextLine();
+                 line = line + 1;
+                
+                String[] each_car_details = each_line.split("\n");
+                String[] each_car_det = each_car_details[0].split("\t");
+                
+                //Get the seraial number of each car 
+                String serial = each_car_det[10];
+
+                array_car.add(each_car_details[0]);
+
+                
+                if(search_text.equals(serial)){
+                    line = line + 1;
+                    action = 1; 
+                    //show that changes line
+                    String update_text = changes_textfield.getText();
+                    //get the selection number from combobox
+                    int get_changes_item = details_selection.getSelectedIndex();  
+                    String old_word = each_car_det[get_changes_item];
+                    
+                    String new_car_details = (array_car.get(line).replace(old_word, update_text));
+                    //Crate write car for writing into Car.txt
+                    write_car.add(new_car_details);
+                    //Only use for checking
+                    array_car.set(line, new_car_details);
+                    
+
+
+                }else{
+                    array_car.add(each_car_details[0]);
+                    write_car.add(each_car_details[0]);
+
+                }
+
+                System.out.println(write_car);
+            }
+            if(action == 1){
+                JOptionPane.showMessageDialog(this, "Car Serial Number Record Exists!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                update_btn.setEnabled(true);
+            }else{
+                JOptionPane.showMessageDialog(this, "Car Serial Number Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
+
+            }
+            
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EditCar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+            
+
+
+    }//GEN-LAST:event_update_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +218,11 @@ public class EditCar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField changes_textfield;
+    private javax.swing.JComboBox<String> details_selection;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField search_textfield;
+    private javax.swing.JButton update_btn;
     // End of variables declaration//GEN-END:variables
 }
