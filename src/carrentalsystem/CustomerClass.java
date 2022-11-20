@@ -4,6 +4,8 @@
  */
 package carrentalsystem;
 
+import static carrentalsystem.Customer_login.get_customerid;
+
 /**
  *
  * @author Crosswind Cheah
@@ -42,7 +44,7 @@ public class CustomerClass extends javax.swing.JFrame {
         jLabel2.setText("Please Select Below Function");
 
         SearchCarBtn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        SearchCarBtn.setText("Search Car");
+        SearchCarBtn.setText("Book a Car");
         SearchCarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchCarBtnActionPerformed(evt);
@@ -95,6 +97,9 @@ public class CustomerClass extends javax.swing.JFrame {
 
     private void SearchCarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtnActionPerformed
         // TODO add your handling code here:
+        Customer_booking booking = new Customer_booking();
+                booking.setVisible(true);
+                dispose();
     }//GEN-LAST:event_SearchCarBtnActionPerformed
 
     private void ViewBookingHistoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewBookingHistoryBtnActionPerformed
