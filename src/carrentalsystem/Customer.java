@@ -4,6 +4,12 @@
  */
 package carrentalsystem;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Crosswind Cheah
@@ -93,4 +99,6 @@ public class Customer {
     public String toString(){
         return (name + "\t" + gender + "\t" + phoneNumber + "\t" + emailAddress + "\t" + address);
     }
+    
+    
 }

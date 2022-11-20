@@ -9,6 +9,10 @@ import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -26,6 +30,25 @@ public class Customer_login extends javax.swing.JFrame {
     public Customer_login() {
         initComponents();
         this.setLocationRelativeTo(null);// center form in the screen
+    }
+    
+    public void CustomerLog(String logusername,String logname){
+        try{
+            FileOutputStream log = new FileOutputStream ("Customer_log.txt",true);
+            String logrecord;
+            
+            DateTimeFormatter time = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            LocalDateTime datetimenow = LocalDateTime.now();
+            logrecord = ("\n" + time.format(datetimenow) + "\t" + logusername + "\t" + logname );
+            byte[] log_details = logrecord.getBytes();
+            
+            log.write(log_details);
+            
+        }catch(IOException ex){
+           // JOptionPane.showMessageDialog(Customer_login,"Anerror occur!","Error Message",JOptionPane.ERROR_MESSAGE);
+        }
+        
+
     }
 
     /**
@@ -160,11 +183,14 @@ public class Customer_login extends javax.swing.JFrame {
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
         String fname = "";
+        String temp_username = "";
+        Customer CustomerLog;
         int flag = 0;
         java.util.List<String> customer_credentials = new ArrayList<>();
         java.util.List<String> textfile_credentials = new ArrayList<>();
         String username_textfield_value = txt_cususername.getText();
         String password_textfield_value = new String(txt_cuspassword.getPassword());
+       
 
         customer_credentials.add(username_textfield_value);
         customer_credentials.add(password_textfield_value);
@@ -182,6 +208,7 @@ public class Customer_login extends javax.swing.JFrame {
                 //System.out.println(textfile_credentials);
                 if((username_textfield_value.equals(new_information[1])) && (password_textfield_value.equals(new_information[2]))){
                     flag = 1;
+                    temp_username = new_information[1];
                     fname = new_information[3];
                     login_btn.setEnabled(false);
                     break;
@@ -196,6 +223,8 @@ public class Customer_login extends javax.swing.JFrame {
                 CustomerClass main = new CustomerClass();
                 main.setVisible(true);
                 get_customerid(customer_credentials.get(0));
+                
+                CustomerLog(temp_username,fname);
                 dispose();
             }else{
                 JOptionPane.showMessageDialog(this, "Login Failed! Please Try Again" , "Universal Resort Booking System", JOptionPane.WARNING_MESSAGE);
@@ -277,4 +306,6 @@ public class Customer_login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_cuspassword;
     private javax.swing.JTextField txt_cususername;
     // End of variables declaration//GEN-END:variables
+
+   
 }
