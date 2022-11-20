@@ -134,7 +134,7 @@ public class EditCar extends javax.swing.JFrame {
                 
                 //Get the seraial number of each car 
                 String serial = each_car_det[10];
-
+                //use for checking that line for Edit
                 array_car.add(each_car_details[0]);
 
                 
@@ -150,7 +150,6 @@ public class EditCar extends javax.swing.JFrame {
                     String new_car_details = (array_car.get(line).replace(old_word, update_text));
                     //Crate write car for writing into Car.txt
                     write_car.add(new_car_details);
-                    //Only use for checking
                     array_car.set(line, new_car_details);
                     
 
