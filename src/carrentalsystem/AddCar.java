@@ -27,11 +27,9 @@ public class AddCar extends javax.swing.JFrame {
     public AddCar() {
         initComponents();
     }
-    Conventional_Car convenc;
     CarEngine engine;
     Vehicle vehicle;
-    Electric_Car elec;
-
+    Powered_Type powered_type;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -431,14 +429,19 @@ public class AddCar extends javax.swing.JFrame {
             double rent_price = Double.parseDouble(rentPrice_textfield.getText());
             int car_gear = Integer.parseInt(carGear_textfield.getText()); 
             int travel_distance = Integer.parseInt(travelDistance_textfield.getText());
+            String check_engine_id = engineID_textfield.getText();
             int engine_id = Integer.parseInt(engineID_textfield.getText());
             int car_hp = Integer.parseInt(engineHP_textfield.getText());
         
             Vehicle car = new Vehicle(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
-            Powered_Type power_type = new Powered_Type(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
-            car.setRentPrice(rent_price);
-            System.out.println("Get from vehicle " + car.getRentPrice());
-            System.out.println("Get from Powered Type" + power_type.getRentPrice());
+            Electric_Car elec = new Electric_Car(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
+            Conventional_Car convenc = new Conventional_Car(brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
+
+            //get from Parent class (multilevel inheritance)
+            //System.out.println(elec.getRentPrice() + " from Vehicle class");
+            
+
+            
 
             //System.out.println(car.getBrand() +" "+ car.getmodel() +" "+ car.getCarType() +" "+ car.getNumberPlate() +" "+ car.getCarGear() +" "+ car.getNumberOfPassenger()+ " " + car.getfuel_type()+" "+ car.getTravel_distance()+" "+ car.getRentPrice()+" "+ car.getManufactureYear()+" "+ car.getManufactureNumber()+" "+ car.getEngine_id() +" "+ car.getEngine_type() +" "+ car.getCar_hp());
         
@@ -449,15 +452,13 @@ public class AddCar extends javax.swing.JFrame {
             //if select electric car only allow 1 car gear
             //Rent price will + with insurance
 
-            
-//            ?????????????????????????????
-//            if("Electric".equals(car_fuel_type)){
-//                new_price =  elec.doElectricCarInsurance(rent_price);
-//            }else{
-//                new_price = convenc.doConventionalCarInsurance(rent_price);
-//            }
+            if("Electric".equals(car_fuel_type)){
+                new_price =  elec.doElectricCarInsurance(elec.getRentPrice());
+            }
+            else{
+               new_price = convenc.doConventionalCarInsurance(rent_price);
+            }
 
-            
             
             //Check if the serial number in the text file
             File read_car_file = new File("Car.txt");
@@ -468,10 +469,11 @@ public class AddCar extends javax.swing.JFrame {
                         //read whole data from textfile
                         String car_data = scan_serial.nextLine();
                         String serial_car_split[] = car_data.split("\t");
+                        
        
                         //Get the Car Manufacture Serial Number Column
-                       if(manuSerialNumber.equals(serial_car_split[10])){
-                           JOptionPane.showMessageDialog(this, "Same Car Serial Number Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                       if(manuSerialNumber.equals(serial_car_split[10]) && check_engine_id.equals(serial_car_split[11])){
+                           JOptionPane.showMessageDialog(this, "Car Serial Number or Engine ID Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
                            action = 0;
                        }
                         

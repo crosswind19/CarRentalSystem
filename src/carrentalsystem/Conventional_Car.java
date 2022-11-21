@@ -18,8 +18,7 @@ public class Conventional_Car extends Powered_Type{
 
     
     public double doConventionalCarInsurance(double price){
-        Double rent_price = super.getRentPrice();
-        Double totalRentPrice = (rent_price + 500);
+        Double totalRentPrice = (price + 500);
         return totalRentPrice;
     }
 //    

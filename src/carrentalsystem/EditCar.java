@@ -7,8 +7,12 @@ package carrentalsystem;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,6 +49,7 @@ public class EditCar extends javax.swing.JFrame {
         update_btn = new javax.swing.JButton();
         details_selection = new javax.swing.JComboBox<>();
         changes_textfield = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +74,14 @@ public class EditCar extends javax.swing.JFrame {
 
         changes_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,7 +94,9 @@ public class EditCar extends javax.swing.JFrame {
                         .addComponent(search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(230, 230, 230)
+                            .addContainerGap()
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(112, 112, 112)
                             .addComponent(jLabel1))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(176, 176, 176)
@@ -96,8 +111,13 @@ public class EditCar extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
@@ -157,14 +177,24 @@ public class EditCar extends javax.swing.JFrame {
                 }else{
                     array_car.add(each_car_details[0]);
                     write_car.add(each_car_details[0]);
-
+                
                 }
-
-                System.out.println(write_car);
+                
+                
             }
             if(action == 1){
                 JOptionPane.showMessageDialog(this, "Car Serial Number Record Exists!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                 update_btn.setEnabled(true);
+                //Write new car details back into the car.txt (overwrite)
+                Path write_output = Paths.get("Car.txt");
+                for(int x = 0; x<write_car.size(); x++){
+                    //System.out.println(write_car.get(x));
+                    
+                    Files.write(write_output, write_car);
+                    
+                }
+                JOptionPane.showMessageDialog(this, "New Car Details Updated", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+
             }else{
                 JOptionPane.showMessageDialog(this, "Car Serial Number Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
 
@@ -174,12 +204,20 @@ public class EditCar extends javax.swing.JFrame {
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(EditCar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EditCar.class.getName()).log(Level.SEVERE, null, ex);
         }
       
             
 
 
     }//GEN-LAST:event_update_btnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AdminClass admin_class = new AdminClass();
+        admin_class.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +257,7 @@ public class EditCar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField changes_textfield;
     private javax.swing.JComboBox<String> details_selection;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField search_textfield;

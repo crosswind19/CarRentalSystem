@@ -12,7 +12,7 @@ public class Powered_Type extends Vehicle{
     //fuel or electric
     private String fuel_type;
     private int travel_distance;
-//    private double rent_price;
+    private double rent_price=0;
 
     public Powered_Type(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp) {
         super(brand, model, carType, number_plate, numberOfPassenger, rent_price, manufactureNumber, manufactureYear, car_gear, fuel_type, travel_distance, engine_id, engine_type, car_hp);
@@ -31,8 +31,12 @@ public class Powered_Type extends Vehicle{
         this.travel_distance = travel;
     }
     
-    public double getRentPrice(){
-        double rent = super.getRentPrice();
-        return rent;
+    public double getRentPrice_power(){
+        return rent_price;
     }
+    
+    public void setRentPrice_power(double rent){
+        this.rent_price = rent;
+    }
+    
 }

@@ -31,10 +31,12 @@ public class AdminClass extends javax.swing.JFrame {
         add_new_car = new javax.swing.JButton();
         edit_car = new javax.swing.JButton();
         delete_car = new javax.swing.JButton();
-        manage_cus_booking = new javax.swing.JButton();
+        edit_cus_booking = new javax.swing.JButton();
         generate_pdf = new javax.swing.JToggleButton();
         view_log = new javax.swing.JButton();
         view_car = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        quit_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,9 +64,14 @@ public class AdminClass extends javax.swing.JFrame {
 
         delete_car.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         delete_car.setText("Delete Car");
+        delete_car.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_carActionPerformed(evt);
+            }
+        });
 
-        manage_cus_booking.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        manage_cus_booking.setText("Manage Customer Booking");
+        edit_cus_booking.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        edit_cus_booking.setText("Edit Customer Booking");
 
         generate_pdf.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         generate_pdf.setText("Generate PDF");
@@ -80,6 +87,17 @@ public class AdminClass extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jButton1.setText("Delete Customer Booking");
+
+        quit_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        quit_btn.setText("Quit");
+        quit_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quit_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,7 +105,9 @@ public class AdminClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
+                        .addGap(17, 17, 17)
+                        .addComponent(quit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(136, 136, 136)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(241, 241, 241)
@@ -102,33 +122,40 @@ public class AdminClass extends javax.swing.JFrame {
                     .addComponent(view_car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(manage_cus_booking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(generate_pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(view_log, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(edit_cus_booking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(view_log, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(generate_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(73, 73, 73))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(quit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(add_new_car, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(manage_cus_booking, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edit_cus_booking, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(view_car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(generate_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(view_log)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(edit_car, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(delete_car)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(generate_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(edit_car, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(delete_car)
+                    .addComponent(view_log))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
@@ -153,6 +180,16 @@ public class AdminClass extends javax.swing.JFrame {
         edit_car.setVisible(true);
         dispose();
     }//GEN-LAST:event_edit_carActionPerformed
+
+    private void quit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quit_btnActionPerformed
+        dispose();
+    }//GEN-LAST:event_quit_btnActionPerformed
+
+    private void delete_carActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_carActionPerformed
+        DeleteCar delete_car = new DeleteCar();
+        delete_car.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_delete_carActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,10 +230,12 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton add_new_car;
     private javax.swing.JButton delete_car;
     private javax.swing.JButton edit_car;
+    private javax.swing.JButton edit_cus_booking;
     private javax.swing.JToggleButton generate_pdf;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton manage_cus_booking;
+    private javax.swing.JButton quit_btn;
     private javax.swing.JButton view_car;
     private javax.swing.JButton view_log;
     // End of variables declaration//GEN-END:variables
