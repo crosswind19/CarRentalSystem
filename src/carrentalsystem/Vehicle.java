@@ -24,8 +24,9 @@ public class Vehicle {
     int engine_id;
     String engine_type;
     int car_hp;
+    String status;
     
-    public Vehicle(int id,String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp){
+    public Vehicle(int id,String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp,String status){
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -41,8 +42,9 @@ public class Vehicle {
         this.engine_id = engine_id;
         this.engine_type = engine_type;
         this.car_hp = car_hp;
+        this.status = status;
     }
-
+        
     public int getId() {
         return id;
     }

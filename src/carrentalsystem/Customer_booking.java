@@ -16,6 +16,7 @@ import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -91,11 +92,11 @@ public class Customer_booking extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price"
+                "ID", "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true
+                true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -239,28 +240,52 @@ public class Customer_booking extends javax.swing.JFrame {
     }//GEN-LAST:event_booking_back_btnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+      
+        
+        
             File read_car_detailss = new File("Car.txt");
         try {
             BufferedReader read_cars = new BufferedReader(new FileReader(read_car_detailss));
             String each_car_lines = read_cars.readLine();
             //System.out.println(each_car_line);
             //display in table form (car details)
-                        DefaultTableModel show_car_detailss = (DefaultTableModel)car_table.getModel();
+            DefaultTableModel show_car_detailss = (DefaultTableModel)car_table.getModel();
 
                  
             
             Object[] car_info = read_cars.lines().toArray();
 
-
+            
             for(int i=0; i<car_info.length; i++){
+                
                 String car_line = car_info[i].toString();
                 System.out.println(car_line);
                 String get_all_data[] = car_line.split("\t");
 
-                
-                show_car_detailss.addRow(get_all_data);
+                if(get_all_data[16].equals("Available")){
+                    show_car_detailss.addRow(get_all_data);
+                }
             }
+            
+//            try(Scanner car_file = new Scanner(read_car_detailss)){
+//                      while(car_file.hasNextLine()){
+//                          String cars = car_file.nextLine();
+//                          String new_cars[] = cars.split("\t");
+//                          
+//                          String status = "Available";
+//                          if(new_cars[16].equals(status)){
+//                                String car_line = car_info.toString();
+//                                System.out.println(car_line);
+//                                String get_all_data[] = car_line.split("\t");
+//
+//                
+//                        show_car_detailss.addRow(get_all_data);
+//                        }
+//                
+//            }
+//            }
+            
         
         
         } catch (FileNotFoundException ex) {
@@ -315,6 +340,7 @@ public class Customer_booking extends javax.swing.JFrame {
         customer.close();
         
         String[]cararray = car_list.toArray(new String[0]);
+        String[]customerarray = customer_list.toArray(new String[0]);
         
         for(String str:cararray){
             

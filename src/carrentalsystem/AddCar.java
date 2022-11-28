@@ -435,6 +435,7 @@ public class AddCar extends javax.swing.JFrame {
         String engID = engineID_textfield.getText();
         String carHP = engineHP_textfield.getText();
         String car_cc = car_cc_textfield.getText();
+        String status = "Available";
 
         //Check all data are filled
         if(!((brand_name.isEmpty()) || (car_model.isEmpty()) || (car_type.isEmpty()) || (num_plate.isEmpty()) || (occupancy.isEmpty()) || (year.isEmpty()) || (SeNumber.isEmpty()) || (pricing.isEmpty()) || (gearing.isEmpty()) || (car_fuel_type.isEmpty()) || (tra_distance.isEmpty()) || (engID.isEmpty()) || (engine_type.isEmpty()) || (carHP.isEmpty() || (car_cc.isEmpty())))){
@@ -449,9 +450,9 @@ public class AddCar extends javax.swing.JFrame {
             int engine_id = Integer.parseInt(engineID_textfield.getText());
             int car_hp = Integer.parseInt(engineHP_textfield.getText());
         
-            Vehicle car = new Vehicle(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
-            Electric_Car elec = new Electric_Car(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
-            Conventional_Car convenc = new Conventional_Car(id, brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp);
+            Vehicle car = new Vehicle(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp,status);
+            Electric_Car elec = new Electric_Car(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp,status);
+            Conventional_Car convenc = new Conventional_Car(id, brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp,status);
 
             //get from Parent class (multilevel inheritance)
             //System.out.println(elec.getRentPrice() + " from Vehicle class");
@@ -505,7 +506,7 @@ public class AddCar extends javax.swing.JFrame {
                     //write into textfile
                     FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
                     String car_details;
-                    car_details = (car.getId() + "\t" + car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\n");
+                    car_details = (car.getId() + "\t" + car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\t" + status + "\n");
                     //convert string to bytes
                     byte[] byte_details = car_details.getBytes(); 
                     append_car_details.write(byte_details);
