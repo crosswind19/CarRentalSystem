@@ -16,8 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class Customer {
     
-    private static int nextRegNo = 1000;
-    private int number;
+    private int id;
     private String name;
     private String phoneNumber;
     private String emailAddress;
@@ -27,33 +26,17 @@ public class Customer {
     
     
     public Customer (int number){
-        this.number = number;
+        this.id=id;
     }
     
     //Insert
-    public Customer (String name,String gender,String phoneNumber,String emailAddress,String address){
+    public Customer (int id,String name,String gender,String phoneNumber,String emailAddress,String address){
+        this.id = id;
         this.name = name;
-        this.number = nextRegNo;
         this.gender = gender;
         this.address = address;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
-    }
-
-    public static int getNextRegNo() {
-        return nextRegNo;
-    }
-
-    public static void setNextRegNo(int nextRegNo) {
-        Customer.nextRegNo = nextRegNo;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
     }
 
     public String getName() {
@@ -96,8 +79,9 @@ public class Customer {
         this.gender = gender;
     }
     
+    @Override
     public String toString(){
-        return (name + "\t" + gender + "\t" + phoneNumber + "\t" + emailAddress + "\t" + address);
+        return (id + "\t" + name + "\t" + gender + "\t" + phoneNumber + "\t" + emailAddress + "\t" + address);
     }
     
     

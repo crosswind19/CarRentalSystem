@@ -5,6 +5,11 @@
 package carrentalsystem;
 
 import static carrentalsystem.Customer_login.get_customerid;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  *
@@ -35,6 +40,7 @@ public class CustomerClass extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(796, 390));
+        setResizable(false);
         setSize(new java.awt.Dimension(796, 390));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
@@ -97,8 +103,40 @@ public class CustomerClass extends javax.swing.JFrame {
 
     private void SearchCarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtnActionPerformed
         // TODO add your handling code here:
+        
+        
         Customer_booking booking = new Customer_booking();
                 booking.setVisible(true);
+                
+                File read_car_detailss = new File("Car.txt");
+        try {
+            BufferedReader read_cars = new BufferedReader(new FileReader(read_car_detailss));
+            String each_car_lines = read_cars.readLine();
+            //System.out.println(each_car_line);
+            //display in table form (car details)
+                        //DefaultTableModel show_car_details = (DefaultTableModel)car_table.getModel();
+
+                 
+            
+            Object[] car_info = read_cars.lines().toArray();
+
+
+            for(int i=0; i<car_info.length; i++){
+                String car_line = car_info[i].toString();
+                System.out.println(car_line);
+                String get_all_data[] = car_line.split("\t");
+
+                
+                //show_car_detailss.addRow(get_all_data);
+            }
+        
+        
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+       
                 dispose();
     }//GEN-LAST:event_SearchCarBtnActionPerformed
 

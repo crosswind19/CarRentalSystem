@@ -9,7 +9,7 @@ package carrentalsystem;
  * @author bende
  */
 public class Vehicle {
-    
+    private int id;
     private String brand;
     private String model;
     private String carType;
@@ -25,7 +25,8 @@ public class Vehicle {
     String engine_type;
     int car_hp;
     
-    public Vehicle(String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp){
+    public Vehicle(int id,String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp){
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.carType = carType;
@@ -41,6 +42,15 @@ public class Vehicle {
         this.engine_type = engine_type;
         this.car_hp = car_hp;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getBrand(){
         return brand;
     }
