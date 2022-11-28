@@ -5,10 +5,13 @@
 package carrentalsystem;
 
 import java.io.BufferedReader;
+import java.io.EOFException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
@@ -88,9 +91,17 @@ public class Customer_booking extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price"
+                "ID", "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(car_table);
 
         jButton1.setText("jButton1");
@@ -153,7 +164,7 @@ public class Customer_booking extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 963, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1029, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -235,7 +246,7 @@ public class Customer_booking extends javax.swing.JFrame {
             String each_car_lines = read_cars.readLine();
             //System.out.println(each_car_line);
             //display in table form (car details)
-                        DefaultTableModel show_car_detailss = (DefaultTableModel)choose_car_table.getModel();
+                        DefaultTableModel show_car_detailss = (DefaultTableModel)car_table.getModel();
 
                  
             
@@ -265,32 +276,8 @@ public class Customer_booking extends javax.swing.JFrame {
 
     private void confirm_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_booking_btnActionPerformed
 
-        confirm_booking_btn.setEnabled(false);
-        int car_gear = Integer.parseInt(carGear_textfield.getText());
-        String car_fuel_type = fuelType_combobox.getSelectedItem().toString();
-
-        if(((car_fuel_type == "Electric") && (car_gear != 1))){
-            JOptionPane.showMessageDialog(this, "An Error Occur with Car Gear & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
-            confirm_booking_btn.setEnabled(true);
-            manufactureYear_textfield.setEnabled(false);
-            serialNum_textfield.setEnabled(false);
-            engineID_textfield.setEnabled(false);
-            engineType_combo.setEnabled(false);
-            engineHP_textfield.setEnabled(false);
-
-        }else{
-            manufactureYear_textfield.setEnabled(true);
-            serialNum_textfield.setEnabled(true);
-            engineID_textfield.setEnabled(true);
-            engineType_combo.setEnabled(true);
-            engineHP_textfield.setEnabled(true);
-        }
-
-        //Check if selected the electric type car
-        if(fuelType_combobox.getSelectedItem().toString().equals("Electric")){
-            engineType_combo.setEnabled(false);
-            engineType_combo.setSelectedItem("Fully_Electric");
-        }
+       
+        
 
     }//GEN-LAST:event_confirm_booking_btnActionPerformed
 
@@ -301,27 +288,38 @@ public class Customer_booking extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+
+   
     public static void main(String args[]) throws IOException{
+        //Create Array and insert from txt file
+        List<String> car_list = new ArrayList<>();
+        List<String> customer_list = new ArrayList<>();
+        BufferedReader car = new BufferedReader(new FileReader("car.txt"));
+        BufferedReader customer = new BufferedReader(new FileReader("Customer_Information.txt"));
         
-       
-//        List<String> car_list = new ArrayList<>();
-//        BufferedReader car = new BufferedReader(new FileReader("car.txt"));
-//        
-//        String line = car.readLine();
-//        
-//        while(line!=null){
-//            car_list.add(line);
-//            line=car.readLine();
-//        }
-//        
-//        car.close();
-//        
-//        String[]cararray = car_list.toArray(new String[0]);
-//        
-//        for(String str:cararray){
-//            
-//            System.out.println(str);
-//        }
+        String cline = car.readLine();
+        String cusline = customer.readLine();
+        
+        while(cline!=null){
+            car_list.add(cline);
+            cline=car.readLine();
+        }
+        
+        while(cusline!=null){
+            customer_list.add(cusline);
+            cusline=customer.readLine();
+        }
+        
+        car.close();
+        customer.close();
+        
+        String[]cararray = car_list.toArray(new String[0]);
+        
+        for(String str:cararray){
+            
+            System.out.println(str);
+        }
 
              File read_car_detailss = new File("Car.txt");
         try {
