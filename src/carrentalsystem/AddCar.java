@@ -489,7 +489,7 @@ public class AddCar extends javax.swing.JFrame {
                         
        
                         //Get the Car Manufacture Serial Number Column
-                       if(manuSerialNumber.equals(serial_car_split[10]) && check_engine_id.equals(serial_car_split[11])){
+                       if(manuSerialNumber.equals(serial_car_split[11]) && check_engine_id.equals(serial_car_split[12])){
                            JOptionPane.showMessageDialog(this, "Car Serial Number or Engine ID Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
                            action = 0;
                        }

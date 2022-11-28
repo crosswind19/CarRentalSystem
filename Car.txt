@@ -1,3 +1,2 @@
 Car_id	Car_Brand	Car_Model	Car_Type	Number_Plate	Car_Gear	Passenger_Occupancy	Fuel_Type	Travel_Distance	Car_cc	Manuafacture_year	Serial_Number	Engine_ID	Engine_Type	Car_HP	Rent_Price	Status
-2	h	1	SportCar	2	3	4	Combustion	5	6	71	81	91	Hybrid 	101	520.0	Not-Available
-2	Mazda	6	SportCar	pj6	6	5	Combustion	7879	2000	2022	1231	12234	Petrol	167	640.0	Available
+2	Nissan	Almera	SportCar	4	4	4	Combustion	4	4	41	42	43	Hybrid 	44	944.0	Available

@@ -267,24 +267,7 @@ public class Customer_booking extends javax.swing.JFrame {
                     show_car_detailss.addRow(get_all_data);
                 }
             }
-            
-//            try(Scanner car_file = new Scanner(read_car_detailss)){
-//                      while(car_file.hasNextLine()){
-//                          String cars = car_file.nextLine();
-//                          String new_cars[] = cars.split("\t");
-//                          
-//                          String status = "Available";
-//                          if(new_cars[16].equals(status)){
-//                                String car_line = car_info.toString();
-//                                System.out.println(car_line);
-//                                String get_all_data[] = car_line.split("\t");
-//
-//                
-//                        show_car_detailss.addRow(get_all_data);
-//                        }
-//                
-//            }
-//            }
+     
             
         
         

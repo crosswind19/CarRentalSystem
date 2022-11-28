@@ -130,7 +130,7 @@ public class DeleteCar extends javax.swing.JFrame {
                 del_line = del_line + 1;
                 String[] del_car_details = each_line.split("\n");
                 String[] each_car_del = del_car_details[0].split("\t");
-                del_serial = each_car_del[10];
+                del_serial = each_car_del[11];
                 
 
                 //number start with 1 in textfile no need minus 1
@@ -157,10 +157,10 @@ public class DeleteCar extends javax.swing.JFrame {
                     //System.out.println(write_car.get(x));
                     
                     Files.write(write_output, left_car);
+                    
+                }
                     JOptionPane.showMessageDialog(this, "Car Details Removed Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 
-                }
-                    
                     
                 }else if(ans == JOptionPane.NO_OPTION){
                     JOptionPane.showMessageDialog(this, "No Changes Will Be Made!", "Information Message", JOptionPane.INFORMATION_MESSAGE);

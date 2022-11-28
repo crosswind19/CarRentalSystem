@@ -70,7 +70,7 @@ public class EditCar extends javax.swing.JFrame {
         });
 
         details_selection.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        details_selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price" }));
+        details_selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price" }));
 
         changes_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -153,7 +153,7 @@ public class EditCar extends javax.swing.JFrame {
                 String[] each_car_det = each_car_details[0].split("\t");
                 
                 //Get the seraial number of each car 
-                String serial = each_car_det[10];
+                String serial = each_car_det[11];
                 //use for checking that line for Edit
                 array_car.add(each_car_details[0]);
 

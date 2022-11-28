@@ -127,22 +127,23 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="15">
-            <StringItem index="0" value="Car_Brand"/>
-            <StringItem index="1" value="Car_Model"/>
-            <StringItem index="2" value="Car_Type"/>
-            <StringItem index="3" value="Number_Plate"/>
-            <StringItem index="4" value="Car_Gear"/>
-            <StringItem index="5" value="Passenger_Occupancy"/>
-            <StringItem index="6" value="Fuel_Type"/>
-            <StringItem index="7" value="Travel_Distance"/>
-            <StringItem index="8" value="Car_cc"/>
-            <StringItem index="9" value="Manufacture_Year"/>
-            <StringItem index="10" value="Serial_Number"/>
-            <StringItem index="11" value="Engine_ID"/>
-            <StringItem index="12" value="Engine_Type"/>
-            <StringItem index="13" value="Car_HP"/>
-            <StringItem index="14" value="Rent_Price"/>
+          <StringArray count="16">
+            <StringItem index="0" value="ID"/>
+            <StringItem index="1" value="Car_Brand"/>
+            <StringItem index="2" value="Car_Model"/>
+            <StringItem index="3" value="Car_Type"/>
+            <StringItem index="4" value="Number_Plate"/>
+            <StringItem index="5" value="Car_Gear"/>
+            <StringItem index="6" value="Passenger_Occupancy"/>
+            <StringItem index="7" value="Fuel_Type"/>
+            <StringItem index="8" value="Travel_Distance"/>
+            <StringItem index="9" value="Car_cc"/>
+            <StringItem index="10" value="Manufacture_Year"/>
+            <StringItem index="11" value="Serial_Number"/>
+            <StringItem index="12" value="Engine_ID"/>
+            <StringItem index="13" value="Engine_Type"/>
+            <StringItem index="14" value="Car_HP"/>
+            <StringItem index="15" value="Rent_Price"/>
           </StringArray>
         </Property>
       </Properties>
