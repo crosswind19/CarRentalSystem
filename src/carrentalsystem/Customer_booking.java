@@ -9,6 +9,7 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -17,6 +18,7 @@ import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -53,8 +55,6 @@ public class Customer_booking extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         booking_back_btn = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        choose_car_table = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         car_table = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -64,9 +64,14 @@ public class Customer_booking extends javax.swing.JFrame {
         cusName_textfield = new javax.swing.JTextField();
         confirm_booking_btn = new javax.swing.JButton();
         brand1 = new javax.swing.JLabel();
-        cusID_textfield1 = new javax.swing.JTextField();
+        carId_txt = new javax.swing.JTextField();
         model1 = new javax.swing.JLabel();
-        cusName_textfield1 = new javax.swing.JTextField();
+        carName_txt = new javax.swing.JTextField();
+        model2 = new javax.swing.JLabel();
+        carDuration_txt = new javax.swing.JTextField();
+        model3 = new javax.swing.JLabel();
+        price_lbl = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -80,16 +85,6 @@ public class Customer_booking extends javax.swing.JFrame {
                 booking_back_btnActionPerformed(evt);
             }
         });
-
-        choose_car_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Car_Brand", "Car Model", "Rent_Price"
-            }
-        ));
-        jScrollPane1.setViewportView(choose_car_table);
 
         car_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -148,17 +143,29 @@ public class Customer_booking extends javax.swing.JFrame {
         brand1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         brand1.setText("Vehicle ID:");
 
-        cusID_textfield1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cusID_textfield1.addActionListener(new java.awt.event.ActionListener() {
+        carId_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        carId_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cusID_textfield1ActionPerformed(evt);
+                carId_txtActionPerformed(evt);
             }
         });
 
         model1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         model1.setText("Vehicle Name:");
 
-        cusName_textfield1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        carName_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        model2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        model2.setText("Days");
+
+        carDuration_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        model3.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        model3.setText("Rent Duration");
+
+        price_lbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        jLabel3.setText("per day");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,6 +174,9 @@ public class Customer_booking extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1029, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(booking_back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(83, 83, 83)
@@ -174,33 +184,37 @@ public class Customer_booking extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1029, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(brand, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                            .addComponent(model, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(brand, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                    .addComponent(model, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cusID_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                                    .addComponent(cusName_textfield))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(brand1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(model1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(model3, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(324, 324, 324)
+                                .addComponent(confirm_booking_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cusID_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(cusName_textfield))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(brand1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(model1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cusID_textfield1)
-                            .addComponent(cusName_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(carId_txt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(carName_txt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(carDuration_txt)
+                                    .addComponent(price_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(model2, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(confirm_booking_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(375, 375, 375))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +225,7 @@ public class Customer_booking extends javax.swing.JFrame {
                         .addComponent(booking_back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1))
                     .addComponent(jButton1))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -227,16 +241,23 @@ public class Customer_booking extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(brand1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cusID_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(carId_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cusName_textfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(carName_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(model1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addComponent(confirm_booking_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carDuration_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(model2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(model3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(confirm_booking_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(price_lbl)
+                        .addComponent(jLabel3)))
+                .addGap(424, 424, 424))
         );
 
         pack();
@@ -296,15 +317,79 @@ public class Customer_booking extends javax.swing.JFrame {
     }//GEN-LAST:event_cusID_textfieldActionPerformed
 
     private void confirm_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_booking_btnActionPerformed
+        //Create booking id
+        int line = 0;
+        int action = 1;
+        int index_bookingid = 0;
+        List<String> booking_serial_list = new ArrayList<>();
+        ArrayList<String> booking_id_list = new ArrayList<>();
+        String new_booking_id="";
 
+        //Generate ID
+        File get_booking_id = new File("Booking.txt");
+        try(Scanner booking_id = new Scanner(get_booking_id)){
+            while(booking_id.hasNextLine()){
+                line = line + 1;
+                String info = booking_id.nextLine();
+                
+                String new_information[] = info.split("\t");
+                
+               // booking_id_list.add(new_information[0]);
+                System.out.println(booking_id_list);
+                
+                System.out.println(line);
+                
+                //new_booking_id = Integer.toString(line);
+                new_booking_id = String.valueOf(Integer.toString(line));
+                
+                
+//                String new_line = String.valueOf(line);
+//                
+//                if(booking_id_list.contains(new_line)){
+//                new_booking_id = (booking.getId() + 100);
+//            }
+                
+            }
+
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AddCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
        
+        String cusid = cusID_textfield.getText();
+        String cusname = cusName_textfield.getText();
+        String carid = carId_txt.getText();
+        String carname = carName_txt.getText();
+        double duration = Double.parseDouble(carDuration_txt.getText());
+        double rent = Double.parseDouble(price_lbl.getText());
+        String rents = String.valueOf(duration * rent);
+        String status = "Pending for approval";
+        
+        
+        
+        try {
+            FileOutputStream file_booking_details = new FileOutputStream("Booking.txt",true);
+            
+            String booking_details;
+            booking_details = ("\n" + new_booking_id + "\t" + cusid + "\t" + cusname + "\t" + carid + "\t" + carname + "\t" + rents + "\t" + status);
+            
+            byte[] bytes_details = booking_details.getBytes();
+            file_booking_details.write(bytes_details);
+            
+            JOptionPane.showMessageDialog(this,"Booking Successfully" + rents,"Information Message",JOptionPane.INFORMATION_MESSAGE);
+            
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         
 
     }//GEN-LAST:event_confirm_booking_btnActionPerformed
 
-    private void cusID_textfield1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusID_textfield1ActionPerformed
+    private void carId_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carId_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cusID_textfield1ActionPerformed
+    }//GEN-LAST:event_carId_txtActionPerformed
 
     private void car_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_car_tableMouseClicked
         // TODO add your handling code here:
@@ -313,9 +398,18 @@ public class Customer_booking extends javax.swing.JFrame {
         
         //temp data
         String tempcarid = model.getValueAt(selectedRow,0).toString();
+        carId_txt.setText(model.getValueAt(selectedRow,0).toString());
         
+        String cbrand = model.getValueAt(selectedRow,1).toString();
+        String cname = model.getValueAt(selectedRow,2).toString();
         
-       
+        carName_txt.setText(cbrand + " " + cname);
+        
+        String rent = model.getValueAt(selectedRow,15).toString();
+        
+        //double rents = Double.parseDouble(rent);
+        
+       price_lbl.setText(rent);
         
     }//GEN-LAST:event_car_tableMouseClicked
 
@@ -424,18 +518,21 @@ public class Customer_booking extends javax.swing.JFrame {
     private javax.swing.JButton booking_back_btn;
     private javax.swing.JLabel brand;
     private javax.swing.JLabel brand1;
+    private javax.swing.JTextField carDuration_txt;
+    private javax.swing.JTextField carId_txt;
+    private javax.swing.JTextField carName_txt;
     private javax.swing.JTable car_table;
-    private javax.swing.JTable choose_car_table;
     private javax.swing.JButton confirm_booking_btn;
     private javax.swing.JTextField cusID_textfield;
-    private javax.swing.JTextField cusID_textfield1;
     private javax.swing.JTextField cusName_textfield;
-    private javax.swing.JTextField cusName_textfield1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel model;
     private javax.swing.JLabel model1;
+    private javax.swing.JLabel model2;
+    private javax.swing.JLabel model3;
+    private javax.swing.JLabel price_lbl;
     // End of variables declaration//GEN-END:variables
 }

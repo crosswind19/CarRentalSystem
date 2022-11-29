@@ -206,7 +206,7 @@ public class Customer_login extends javax.swing.JFrame {
             while(read_information.hasNextLine()){
                 String information = read_information.nextLine();
                 String new_information[] = information.split("\t");
-                System.out.println(new_information[0]);
+               // System.out.println(new_information[0]);
                 textfile_credentials.add(new_information[0]);
                 
                 
@@ -219,7 +219,7 @@ public class Customer_login extends javax.swing.JFrame {
                 if((username_textfield_value.equals(new_information[1])) && (password_textfield_value.equals(new_information[2]))){
                     flag = 1;
                     customer_credentials.add(new_information[0]);
-                    System.out.println(customer_credentials);
+                    //System.out.println(customer_credentials);
                     temp_username = new_information[1];
                     fname = new_information[3];
                     login_btn.setEnabled(false);
@@ -236,7 +236,7 @@ public class Customer_login extends javax.swing.JFrame {
                 main.setVisible(true);
                 get_customerid(customer_credentials.get(2));
                 
-                System.out.println(textfile_credentials.get(0));
+               // System.out.println(textfile_credentials.get(0));
                 
                 String cusid = textfile_credentials.get(0);
    
