@@ -151,13 +151,18 @@ public class Admin_login extends javax.swing.JFrame {
                 if(credential_staff.get(0).equals(adminUsername) && (credential_staff.get(1).equals(adminPass))){
                     action = 1;
                     login_button.setEnabled(false);
+                    
+                    
                 }
             }
 //            System.out.println(credential_staff.get(1));
             if(action == 1){
                 JOptionPane.showMessageDialog(this, "Login Successful", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
+                
+                
                 AdminClass admin_class = new AdminClass();
                 admin_class.setVisible(true);
+
                 dispose();
                 
             }else{

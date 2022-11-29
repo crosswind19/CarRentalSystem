@@ -203,6 +203,8 @@ public class AdminClass extends javax.swing.JFrame {
         EditCar edit_car = new EditCar();
         edit_car.setVisible(true);
         dispose();
+        
+        
     }//GEN-LAST:event_edit_carActionPerformed
 
     private void quit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quit_btnActionPerformed

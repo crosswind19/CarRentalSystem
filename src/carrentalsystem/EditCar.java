@@ -139,6 +139,7 @@ public class EditCar extends javax.swing.JFrame {
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
         String search_text = search_textfield.getText();
         int action = 0, line = 0;
+        int get_changes_item=-1;
         try {          
             File car_file = new File("Car.txt");
             Scanner scan_data = new Scanner(car_file);
@@ -154,25 +155,29 @@ public class EditCar extends javax.swing.JFrame {
                 
                 //Get the seraial number of each car 
                 String serial = each_car_det[11];
+
                 //use for checking that line for Edit
                 array_car.add(each_car_details[0]);
 
                 
                 if(search_text.equals(serial)){
-                    line = line + 1;
+                    //line = line + 1;
                     action = 1; 
                     //show that changes line
                     String update_text = changes_textfield.getText();
                     //get the selection number from combobox
-                    int get_changes_item = details_selection.getSelectedIndex();  
-                    String old_word = each_car_det[get_changes_item];
+                    get_changes_item = details_selection.getSelectedIndex();  
                     
+
+                    String old_word = each_car_det[get_changes_item];
+                    //System.out.println(line);
+                    System.out.println(array_car.get(line));
                     String new_car_details = (array_car.get(line).replace(old_word, update_text));
+                    //System.out.println(new_car_details);
                     //Crate write car for writing into Car.txt
                     write_car.add(new_car_details);
                     array_car.set(line, new_car_details);
                     
-
 
                 }else{
                     array_car.add(each_car_details[0]);
@@ -180,9 +185,16 @@ public class EditCar extends javax.swing.JFrame {
                 
                 }
                 
+       
+                
                 
             }
-            if(action == 1){
+            if(get_changes_item == 0){
+                JOptionPane.showMessageDialog(this, "Not allowed to Change Car ID", "Error Message", JOptionPane.ERROR_MESSAGE);
+
+            }
+                else{
+                if(action == 1){
                 JOptionPane.showMessageDialog(this, "Car Serial Number Record Exists!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                 update_btn.setEnabled(true);
                 //Write new car details back into the car.txt (overwrite)
@@ -199,7 +211,8 @@ public class EditCar extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Car Serial Number Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
 
             }
-            
+                
+            }
             
             
         } catch (FileNotFoundException ex) {

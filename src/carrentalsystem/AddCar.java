@@ -398,24 +398,33 @@ public class AddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void addCar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCar_btnActionPerformed
-        int line = 1;
+        int line = 0;
         double new_price = 0;
         int action = 1;
+        int index_carid = 0;
         List<String> car_serial_list = new ArrayList<>();
-        
+        ArrayList<String> car_id_list = new ArrayList<>();
+
+
         //Generate ID
         File get_car_id = new File("Car.txt");
         try(Scanner car_id = new Scanner(get_car_id)){
             while(car_id.hasNextLine()){
-                String info = car_id.nextLine();
                 line = line + 1;
+                String info = car_id.nextLine();
+                
                 String new_information[] = info.split("\t");
-                break;
+                
+                car_id_list.add(new_information[0]);
+                //System.out.println(car_id_list);
+
+                
             }
-            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
         int id = line; 
         String brand_name = carBrand_textfield.getText();
@@ -483,11 +492,12 @@ public class AddCar extends javax.swing.JFrame {
                     Scanner scan_serial = new Scanner(read_car_file);
                     ArrayList<String> read_car_serial = new ArrayList<>();
                     while(scan_serial.hasNextLine()){
+                        index_carid += 1;
                         //read whole data from textfile
                         String car_data = scan_serial.nextLine();
                         String serial_car_split[] = car_data.split("\t");
                         
-       
+                                
                         //Get the Car Manufacture Serial Number Column
                        if(manuSerialNumber.equals(serial_car_split[11]) && check_engine_id.equals(serial_car_split[12])){
                            JOptionPane.showMessageDialog(this, "Car Serial Number or Engine ID Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
@@ -499,14 +509,26 @@ public class AddCar extends javax.swing.JFrame {
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            
+                
             
             if(action == 1){
+                int new_carid = line;
                 try {
+                    //check if id same as line (avoind same id)
+                    String string_line = String.valueOf(line);
+                    
+                    
+                    if(car_id_list.contains(string_line)){
+                        JOptionPane.showMessageDialog(this, "Same Car ID Listed!", "Error Message", JOptionPane.WARNING_MESSAGE);
+                        new_carid = (car.getId() + 100);
+                        
+                    }
+                    
+                    
                     //write into textfile
                     FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
                     String car_details;
-                    car_details = (car.getId() + "\t" + car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\t" + status + "\n");
+                    car_details = (new_carid + "\t" + car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\t" + status + "\n");
                     //convert string to bytes
                     byte[] byte_details = car_details.getBytes(); 
                     append_car_details.write(byte_details);
@@ -514,6 +536,23 @@ public class AddCar extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Car Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                     append_car_details.close();
                     addCar_btn.setEnabled(false);
+                    
+                    
+                    //remove all textfield value
+                    carBrand_textfield.setText("");
+                    carModel_textfield.setText("");
+                    numPlate_textfield.setText("");       
+                    numPassenger_textfield.setText("");
+                    manufactureYear_textfield.setText("");
+                    serialNum_textfield.setText("");
+                    rentPrice_textfield.setText("");
+                    carGear_textfield.setText("");
+                    travelDistance_textfield.setText("");
+                    engineID_textfield.setText("");
+                    engineHP_textfield.setText("");
+                    car_cc_textfield.setText("");
+                    
+                    
                 } catch (FileNotFoundException ex) {
                     Logger.getLogger(AddCar.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
