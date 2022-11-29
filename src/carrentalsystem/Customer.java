@@ -25,8 +25,8 @@ public class Customer {
     
     
     
-    public Customer (int number){
-        this.id=id;
+    public Customer (){
+        //this.id=id;
     }
     
     //Insert
@@ -39,6 +39,15 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
     public String getName() {
         return name;
     }

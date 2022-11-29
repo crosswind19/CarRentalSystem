@@ -50,6 +50,9 @@ public class Customer_login extends javax.swing.JFrame {
         
 
     }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -191,9 +194,10 @@ public class Customer_login extends javax.swing.JFrame {
         String username_textfield_value = txt_cususername.getText();
         String password_textfield_value = new String(txt_cuspassword.getPassword());
        
-
+        
         customer_credentials.add(username_textfield_value);
         customer_credentials.add(password_textfield_value);
+        
         //System.out.println(staff_credentials);
         
         try{
@@ -202,12 +206,20 @@ public class Customer_login extends javax.swing.JFrame {
             while(read_information.hasNextLine()){
                 String information = read_information.nextLine();
                 String new_information[] = information.split("\t");
+                System.out.println(new_information[0]);
+                textfile_credentials.add(new_information[0]);
+                
+                
                 
                 textfile_credentials.add(new_information[1]);
                 textfile_credentials.add(new_information[2]);
+                
+                
                 //System.out.println(textfile_credentials);
                 if((username_textfield_value.equals(new_information[1])) && (password_textfield_value.equals(new_information[2]))){
                     flag = 1;
+                    customer_credentials.add(new_information[0]);
+                    System.out.println(customer_credentials);
                     temp_username = new_information[1];
                     fname = new_information[3];
                     login_btn.setEnabled(false);
@@ -222,8 +234,25 @@ public class Customer_login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Login Successful! " + fname + "!" + "\nWelcome to Prestige Car Rental", "Rental Booking System", JOptionPane.INFORMATION_MESSAGE);
                 CustomerClass main = new CustomerClass();
                 main.setVisible(true);
-                get_customerid(customer_credentials.get(0));
+                get_customerid(customer_credentials.get(2));
                 
+                System.out.println(textfile_credentials.get(0));
+                
+                String cusid = textfile_credentials.get(0);
+   
+                int tempcusid = Integer.parseInt(cusid);
+                
+                Customer_booking booking = new Customer_booking();
+                
+                
+                Customer login = new Customer(); 
+                login.setId(tempcusid);
+
+               
+   
+                //System.out.println("Test : " + login.getId());
+                
+                        
                 CustomerLog(temp_username,fname);
                 dispose();
             }else{
@@ -289,9 +318,9 @@ public class Customer_login extends javax.swing.JFrame {
         
     }
     
-    static void get_customerid(String name){
+    static void get_customerid(String id){
         String cus_id;
-        cus_id=name;
+        cus_id=id;
         Customer_booking.customerid_value = cus_id;
     }
 

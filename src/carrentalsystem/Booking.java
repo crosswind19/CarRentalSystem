@@ -40,7 +40,8 @@ public class Booking implements Serializable {
         this.vehicle = vehicle;
     
     }
-
+    
+    //booking id
     public int getId() {
         return id;
     }

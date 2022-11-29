@@ -25,6 +25,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Customer_booking extends javax.swing.JFrame {
     
+    public Customer customer;
+    
+    
+    
     public static String customerid_value;
 
     /**
@@ -103,6 +107,11 @@ public class Customer_booking extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        car_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                car_tableMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(car_table);
 
         jButton1.setText("jButton1");
@@ -116,6 +125,7 @@ public class Customer_booking extends javax.swing.JFrame {
         brand.setText("Customer ID:");
 
         cusID_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cusID_textfield.setText(customerid_value);
         cusID_textfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cusID_textfieldActionPerformed(evt);
@@ -240,9 +250,12 @@ public class Customer_booking extends javax.swing.JFrame {
     }//GEN-LAST:event_booking_back_btnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            
+            //Customer booking = new Customer(2);
+           //
+        //System.out.println("Test " + customer.toString());
         
       
-        
         
             File read_car_detailss = new File("Car.txt");
         try {
@@ -293,6 +306,19 @@ public class Customer_booking extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cusID_textfield1ActionPerformed
 
+    private void car_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_car_tableMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)car_table.getModel();
+        int selectedRow = car_table.getSelectedRow();
+        
+        //temp data
+        String tempcarid = model.getValueAt(selectedRow,0).toString();
+        
+        
+       
+        
+    }//GEN-LAST:event_car_tableMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -300,6 +326,10 @@ public class Customer_booking extends javax.swing.JFrame {
 
    
     public static void main(String args[]) throws IOException{
+        
+        
+        
+        
         //Create Array and insert from txt file
         List<String> car_list = new ArrayList<>();
         List<String> customer_list = new ArrayList<>();
@@ -327,7 +357,7 @@ public class Customer_booking extends javax.swing.JFrame {
         
         for(String str:cararray){
             
-            System.out.println(str);
+          //  System.out.println(str);
         }
 
              File read_car_detailss = new File("Car.txt");
