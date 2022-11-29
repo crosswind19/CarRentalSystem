@@ -1,5 +1,4 @@
 Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 1	cusid	cusname	7	asdfjhb jkhgkjdf	1006.0	Pending for approval
-1	cusid2	cusname2	3	Mclaren P1	19500.0	Pending for approval
-
+2	cusid2	cusname2	3	Mclaren P1	19500.0	Pending for approval
 3	55	qweewq	9	ves aw	1512.0	Pending for approval
