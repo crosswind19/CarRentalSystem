@@ -184,10 +184,7 @@ public class EditCar extends javax.swing.JFrame {
                     write_car.add(each_car_details[0]);
                 
                 }
-                
-       
-                
-                
+
             }
             if(get_changes_item == 0){
                 JOptionPane.showMessageDialog(this, "Not allowed to Change Car ID", "Error Message", JOptionPane.ERROR_MESSAGE);

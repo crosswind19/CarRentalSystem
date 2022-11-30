@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -318,6 +321,7 @@ public class Customer_booking extends javax.swing.JFrame {
 
     private void confirm_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_booking_btnActionPerformed
         //Create booking id
+        String not_available = "not-Available";
         int line = 0;
         int action = 1;
         int index_bookingid = 0;
@@ -335,9 +339,9 @@ public class Customer_booking extends javax.swing.JFrame {
                 String new_information[] = info.split("\t");
                 
                // booking_id_list.add(new_information[0]);
-                System.out.println(booking_id_list);
+//                System.out.println(booking_id_list);
                 
-                System.out.println(line);
+//                System.out.println(line);
                 
                 //new_booking_id = Integer.toString(line);
                 new_booking_id = String.valueOf(Integer.toString(line));
@@ -377,11 +381,82 @@ public class Customer_booking extends javax.swing.JFrame {
             file_booking_details.write(bytes_details);
             
             JOptionPane.showMessageDialog(this,"Booking Successfully" + rents,"Information Message",JOptionPane.INFORMATION_MESSAGE);
-            
+            action = 1;
         } catch (FileNotFoundException ex) {
             java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+        //change car status to not-available
+        int flag = 0, cnt = 0;
+        try {          
+            File read_file = new File("Car.txt");
+            Scanner scan_car = new Scanner(read_file);
+            ArrayList<String> array_cars = new ArrayList<>();
+            ArrayList<String> write_cars = new ArrayList<>();
+            
+            while(scan_car.hasNextLine()){
+                String each_car = scan_car.nextLine();
+                cnt = cnt + 1;
+                
+                String[] each_car_detail = each_car.split("\n");
+                String[] each_car_dets = each_car_detail[0].split("\t");
+                
+                //Get car id and status of each car 
+                String car_id_value = each_car_dets[0];
+                String car_status = each_car_dets[16];
+
+                //use for checking that line for Edit
+                array_cars.add(each_car_detail[0]);
+
+                if(carid.equals(car_id_value) && car_status.equals("Available")){
+                    int change_item = Integer.parseInt(carid);
+                    // start from 0 need minus 1
+                    int minus_cut = cnt - 1;
+                    action = 1; 
+                    //show that changes line
+
+                    String old_line = each_car_detail[0];
+                    String[] each_element = old_line.split("\t");
+
+
+                    String new_car_details = (each_car_detail[0].replace("Available", not_available));
+
+
+                    //System.out.println(new_car_details);
+                    //Crate write car for writing into Car.txt
+                    write_cars.add(new_car_details);
+                    array_cars.set(1, new_car_details);
+                    
+
+                }else{
+                    array_cars.add(each_car_detail[0]);
+                    write_cars.add(each_car_detail[0]);
+                
+                }
+
+
+            }
+                if(action == 1){
+                //Change car status back into the car.txt (overwrite)
+                Path output = Paths.get("Car.txt");
+                for(int x = 0; x<write_cars.size(); x++){
+                    //System.out.println(write_car.get(x));
+                    
+                    Files.write(output, write_cars);
+                    
+                }
+                JOptionPane.showMessageDialog(this, "Booking Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+
+            }
+
+            
+            
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(EditCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(EditCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
 
