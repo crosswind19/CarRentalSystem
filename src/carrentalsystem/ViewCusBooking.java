@@ -139,7 +139,7 @@ public class ViewCusBooking extends javax.swing.JFrame {
                 
             }
             
-            
+            get_cus_booking.setEnabled(false);
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ViewCusBooking.class.getName()).log(Level.SEVERE, null, ex);

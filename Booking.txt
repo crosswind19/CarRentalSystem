@@ -13,7 +13,7 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 12	1	ASDddsaasd	6	tyfkjhg sefse	182824.0	Pending for approval
 13	1	ASDSDA	7	asdfjhb jkhgkjdf	503.0	Pending for approval
 14	1	grgd	1	Ferrari 458	22500.0	Pending for approval
-15	1	trhrt	108	asd asd	1510.0	Pending for approval
+15	1	testing	108	asd asd	330.0	Pending for approval
 16	1	asd	3	Mclaren P1	6500.0	Pending for approval
 17	1	asd	3	Mclaren P1	13000.0	Pending for approval
 18	1	asddsa	3	Mclaren P1	19500.0	Pending for approval
@@ -28,7 +28,6 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 27	1	dfg	8	sdfsd iugku	1246.0	Pending for approval
 28	1	fsda	8	sdfsd iugku	1246.0	Pending for approval
 29	1	asd	108	asd asd	1510.0	Pending for approval
-30	1	sdf	3	Mclaren P1	422500.0	Pending for approval
 31	1	asd	7	asdfjhb jkhgkjdf	3018.0	Pending for approval
 32	1	asddsa	108	asd asd	2265.0	Pending for approval
 33	1	fgdhfd	6	tyfkjhg sefse	1531151.0	Pending for approval
@@ -38,7 +37,6 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 37	1	sgdf	4	tyg yutf	18883.0	Pending for approval
 38	1	fd	1	Ferrari 458	22500.0	Pending for approval
 39	1	f	108	asd asd	58890.0	Pending for approval
-40	1	trrr	4	tyg yutf	5747.0	Pending for approval
 41	1	ads	8	sdfsd iugku	3738.0	Pending for approval
 42	1	dfg	8	sdfsd iugku	3115.0	Pending for approval
 43	1	asd	8	sdfsd iugku	3738.0	Pending for approval
@@ -104,5 +102,7 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 103	1	dfs	108	asd asd	33975.0	Pending for approval
 104	1	gdf	108	asd asd	33975.0	Pending for approval
 105	1	Ben	8	sdfsd iugku	28035.0	Pending for approval
-106	1	B	7	asdfjhb jkhgkjdf	2515.0	Pending for approval
+106	1	RRRR	7	asdfjhb jkhgkjdf	2515.0	Pending for approval
 107	1	Ben	7	asdfjhb jkhgkjdf	3018.0	Pending for approval
+206	1	Streo	4	tyg yutf	4926.0	Pending for approval207	1	Post	1	Ferrari 458	153000.0	Pending for approval
+207	1	Khalid	6	tyfkjhg sefse	22853.0	Pending for approval

@@ -105,6 +105,11 @@ public class AdminClass extends javax.swing.JFrame {
 
         delete_booking_btn.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         delete_booking_btn.setText("Delete Customer Booking");
+        delete_booking_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_booking_btnActionPerformed(evt);
+            }
+        });
 
         quit_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         quit_btn.setText("Quit");
@@ -257,7 +262,9 @@ public class AdminClass extends javax.swing.JFrame {
     }//GEN-LAST:event_booking_confirmationActionPerformed
 
     private void edit_cus_bookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_cus_bookingActionPerformed
-
+        EditCusBooking edit_cus = new EditCusBooking();
+        edit_cus.setVisible(true);
+        dispose();
     }//GEN-LAST:event_edit_cus_bookingActionPerformed
 
     private void view_logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_logActionPerformed
@@ -271,6 +278,12 @@ public class AdminClass extends javax.swing.JFrame {
         view_booking.setVisible(true);
         dispose();
     }//GEN-LAST:event_view_cus_bookingActionPerformed
+
+    private void delete_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_booking_btnActionPerformed
+        DeleteCusBooking delete_booking = new DeleteCusBooking();
+        delete_booking.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_delete_booking_btnActionPerformed
 
     /**
      * @param args the command line arguments

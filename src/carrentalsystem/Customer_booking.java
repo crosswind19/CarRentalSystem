@@ -327,6 +327,7 @@ public class Customer_booking extends javax.swing.JFrame {
         int index_bookingid = 0;
         List<String> booking_serial_list = new ArrayList<>();
         ArrayList<String> booking_id_list = new ArrayList<>();
+        ArrayList<String> store_all_id = new ArrayList<>();
         String new_booking_id="";
 
         //Generate ID
@@ -337,6 +338,7 @@ public class Customer_booking extends javax.swing.JFrame {
                 String info = booking_id.nextLine();
                 
                 String new_information[] = info.split("\t");
+                store_all_id.add(new_information[0]);
                 
                // booking_id_list.add(new_information[0]);
 //                System.out.println(booking_id_list);
@@ -375,7 +377,14 @@ public class Customer_booking extends javax.swing.JFrame {
             FileOutputStream file_booking_details = new FileOutputStream("Booking.txt",true);
             
             String booking_details;
-            booking_details = ("\n" + new_booking_id + "\t" + cusid + "\t" + cusname + "\t" + carid + "\t" + carname + "\t" + rents + "\t" + status);
+            
+            if(store_all_id.contains(new_booking_id)){
+                int update_id = Integer.parseInt(new_booking_id);
+                update_id += 100;
+                new_booking_id = String.valueOf(update_id);
+
+            }
+            booking_details = (new_booking_id + "\t" + cusid + "\t" + cusname + "\t" + carid + "\t" + carname + "\t" + rents + "\t" + status + "\n");
             
             byte[] bytes_details = booking_details.getBytes();
             file_booking_details.write(bytes_details);
