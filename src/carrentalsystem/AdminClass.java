@@ -258,7 +258,9 @@ public class AdminClass extends javax.swing.JFrame {
     }//GEN-LAST:event_delete_carActionPerformed
 
     private void booking_confirmationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_confirmationActionPerformed
-        // TODO add your handling code here:
+        BookingConfirmation booking = new BookingConfirmation();
+        booking.setVisible(true);
+        dispose();
     }//GEN-LAST:event_booking_confirmationActionPerformed
 
     private void edit_cus_bookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_cus_bookingActionPerformed

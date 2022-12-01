@@ -369,7 +369,7 @@ public class Customer_booking extends javax.swing.JFrame {
         double duration = Double.parseDouble(carDuration_txt.getText());
         double rent = Double.parseDouble(price_lbl.getText());
         String rents = String.valueOf(duration * rent);
-        String status = "Pending for approval";
+        String status = "Pending_for_approval";
         
         
         

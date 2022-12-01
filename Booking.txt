@@ -1,108 +1,17 @@
 Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
-1	cusid	cusname	7	asdfjhb jkhgkjdf	1006.0	Pending for approval
-2	cusid2	cusname2	3	Mclaren P1	19500.0	Pending for approval
-3	55	qweewq	9	ves aw	1512.0	Pending for approval
-4	1	ASD	108	asd asd	2265.0	Pending for approval
-5	1	DSA	3	Mclaren P1	13000.0	Pending for approval
-6	1	Test	6	tyfkjhg sefse	2810919.0	Pending for approval
-7	1	ASD	9	ves aw	756.0	Pending for approval
-8	1	ASD	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-9	1	SD	8	sdfsd iugku	1869.0	Pending for approval
-10	1	ASD	8	sdfsd iugku	1246.0	Pending for approval
-11	1	ASDdsa	8	sdfsd iugku	3115.0	Pending for approval
-12	1	ASDddsaasd	6	tyfkjhg sefse	182824.0	Pending for approval
-13	1	ASDSDA	7	asdfjhb jkhgkjdf	503.0	Pending for approval
-14	1	grgd	1	Ferrari 458	22500.0	Pending for approval
-15	1	testing	108	asd asd	330.0	Pending for approval
-16	1	asd	3	Mclaren P1	6500.0	Pending for approval
-17	1	asd	3	Mclaren P1	13000.0	Pending for approval
-18	1	asddsa	3	Mclaren P1	19500.0	Pending for approval
-19	1	asddddsa	3	Mclaren P1	650000.0	Pending for approval
-20	1	asdasfgr	108	asd asd	8305.0	Pending for approval
-21	1	gf	7	asdfjhb jkhgkjdf	2012.0	Pending for approval
-22	1	asdfdsfeafs	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-23	1	asd	2	MiniCooper Countryman	2850.0	Pending for approval
-24	1	asd	8	sdfsd iugku	1246.0	Pending for approval
-25	1	gdf	6	tyfkjhg sefse	68559.0	Pending for approval
-26	1	asd3	4	tyg yutf	4105.0	Pending for approval
-27	1	dfg	8	sdfsd iugku	1246.0	Pending for approval
-28	1	fsda	8	sdfsd iugku	1246.0	Pending for approval
-29	1	asd	108	asd asd	1510.0	Pending for approval
-31	1	asd	7	asdfjhb jkhgkjdf	3018.0	Pending for approval
-32	1	asddsa	108	asd asd	2265.0	Pending for approval
-33	1	fgdhfd	6	tyfkjhg sefse	1531151.0	Pending for approval
-34	1	asrgwe	9	ves aw	1008.0	Pending for approval
-35	1	done	2	MiniCooper Countryman	726750.0	Pending for approval
-36	1	done	2	MiniCooper Countryman	726750.0	Pending for approval
-37	1	sgdf	4	tyg yutf	18883.0	Pending for approval
-38	1	fd	1	Ferrari 458	22500.0	Pending for approval
-39	1	f	108	asd asd	58890.0	Pending for approval
-41	1	ads	8	sdfsd iugku	3738.0	Pending for approval
-42	1	dfg	8	sdfsd iugku	3115.0	Pending for approval
-43	1	asd	8	sdfsd iugku	3738.0	Pending for approval
-44	1	ewdf	3	Mclaren P1	39000.0	Pending for approval
-45	1	gfd	6	tyfkjhg sefse	1531151.0	Pending for approval
-46	1	sdf	108	asd asd	4530.0	Pending for approval
-47	1	gfh	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-48	1	gfd	4	tyg yutf	7389.0	Pending for approval
-49	1	sdgf	3	Mclaren P1	494000.0	Pending for approval
-50	1	sdf	4	tyg yutf	645306.0	Pending for approval
-51	1	sgdf	6	tyfkjhg sefse	1462592.0	Pending for approval
-52	1	dfg	7	asdfjhb jkhgkjdf	39234.0	Pending for approval
-53	1	hger	4	tyg yutf	4105.0	Pending for approval
-54	1	gre	2	MiniCooper Countryman	2850.0	Pending for approval
-55	1	hg	4	tyg yutf	5747.0	Pending for approval
-56	1	hft	3	Mclaren P1	39000.0	Pending for approval
-57	1	ghf	8	sdfsd iugku	2492.0	Pending for approval
-58	1	hgfd	3	Mclaren P1	32500.0	Pending for approval
-59	1	hy	7	asdfjhb jkhgkjdf	22635.0	Pending for approval
-60	1	hr	6	tyfkjhg sefse	68559.0	Pending for approval
-61	1	dfg	108	asd asd	2265.0	Pending for approval
-62	1	dd	2	MiniCooper Countryman	2850.0	Pending for approval
-63	1	g	4	tyg yutf	3284.0	Pending for approval
-64	1	f	3	Mclaren P1	19500.0	Pending for approval
-65	1	c	6	tyfkjhg sefse	45706.0	Pending for approval
-66	1	d	6	tyfkjhg sefse	68559.0	Pending for approval
-67	1	f	7	asdfjhb jkhgkjdf	1006.0	Pending for approval
-68	1	g	4	tyg yutf	2463.0	Pending for approval
-69	1	sdf	6	tyfkjhg sefse	68559.0	Pending for approval
-70	1	dg	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-71	1	sdf	2	MiniCooper Countryman	2850.0	Pending for approval
-72	1	gfd	6	tyfkjhg sefse	91412.0	Pending for approval
-73	1	fe	3	Mclaren P1	13000.0	Pending for approval
-74	1	dsf	8	sdfsd iugku	3115.0	Pending for approval
-75	1	wfe	4	tyg yutf	1642.0	Pending for approval
-76	1	fe	6	tyfkjhg sefse	68559.0	Pending for approval
-77	1	dsaf	7	asdfjhb jkhgkjdf	2515.0	Pending for approval
-78	1	fsd	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-79	1	fd	6	tyfkjhg sefse	45706.0	Pending for approval
-80	1	fds	7	asdfjhb jkhgkjdf	1006.0	Pending for approval
-81	1	dsf	9	ves aw	504.0	Pending for approval
-82	1	fd	6	tyfkjhg sefse	137118.0	Pending for approval
-83	1	gfd	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-84	1	gdf	6	tyfkjhg sefse	91412.0	Pending for approval
-85	1	gs	4	tyg yutf	2463.0	Pending for approval
-86	1	asf	3	Mclaren P1	13000.0	Pending for approval
-87	1	df	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-88	1	asd	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-89	1	sfd	8	sdfsd iugku	3115.0	Pending for approval
-90	1	asd	7	asdfjhb jkhgkjdf	3018.0	Pending for approval
-91	1	sgd	108	asd asd	3020.0	Pending for approval
-92	1	dgs	1	Ferrari 458	13500.0	Pending for approval
-93	1	sdf	7	asdfjhb jkhgkjdf	3018.0	Pending for approval
-94	1	paint	108	asd asd	6040.0	Pending for approval
-95	1	dfg	9	ves aw	756.0	Pending for approval
-96	1	sfd	108	asd asd	3775.0	Pending for approval
-97	1	dsf	108	asd asd	3775.0	Pending for approval
-98	1	2	108	asd asd	2265.0	Pending for approval
-99	1	dsf	7	asdfjhb jkhgkjdf	1509.0	Pending for approval
-100	1	gfd	108	asd asd	2265.0	Pending for approval
-101	1	ds	108	asd asd	33975.0	Pending for approval
-102	1	sdf	108	asd asd	33975.0	Pending for approval
-103	1	dfs	108	asd asd	33975.0	Pending for approval
-104	1	gdf	108	asd asd	33975.0	Pending for approval
-105	1	Ben	8	sdfsd iugku	28035.0	Pending for approval
-106	1	RRRR	7	asdfjhb jkhgkjdf	2515.0	Pending for approval
-107	1	Ben	7	asdfjhb jkhgkjdf	3018.0	Pending for approval
-206	1	Streo	4	tyg yutf	4926.0	Pending for approval207	1	Post	1	Ferrari 458	153000.0	Pending for approval
-207	1	Khalid	6	tyfkjhg sefse	22853.0	Pending for approval
+1	cusid	cusname	7	asdfjhb jkhgkjdf	1006.0	Pending_for_approval
+2	cusid2	cusname2	3	Mclaren P1	19500.0	Pending_for_approval
+3	55	qweewq	9	ves aw	1512.0	Pending_for_approval
+4	1	ASD	108	asd asd	2265.0	Pending_for_approval
+5	1	DSA	3	Mclaren P1	13000.0	Pending_for_approval
+6	1	Test	6	tyfkjhg sefse	2810919.0	Pending_for_approval
+7	1	ASD	9	ves aw	756.0	Pending_for_approval
+8	1	ASD	7	asdfjhb jkhgkjdf	1509.0	Approved
+9	1	SD	8	sdfsd iugku	1869.0	Pending_for_approval
+10	1	ASD	8	sdfsd iugku	1246.0	Rejected
+11	1	ASDdsa	8	sdfsd iugku	3115.0	Pending_for_approval
+12	1	ASDddsaasd	6	tyfkjhg sefse	182824.0	Pending_for_approval
+13	1	ASDSDA	7	asdfjhb jkhgkjdf	503.0	Pending_for_approval
+14	1	grgd	1	Ferrari 458	22500.0	Pending_for_approval
+15	1	testing	108	asd asd	330.0	Pending_for_approval
+16	1	booking	8	sdfsd iugku	4984.0	Pending_for_approval
