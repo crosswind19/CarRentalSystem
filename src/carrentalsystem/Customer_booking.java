@@ -322,15 +322,20 @@ public class Customer_booking extends javax.swing.JFrame {
     private void confirm_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_booking_btnActionPerformed
         //Create booking id
         String not_available = "not-Available";
+        
+        //public Booking
+        
         int line = 0;
+        int pline = 0; 
         int action = 1;
         int index_bookingid = 0;
         List<String> booking_serial_list = new ArrayList<>();
         ArrayList<String> booking_id_list = new ArrayList<>();
         ArrayList<String> store_all_id = new ArrayList<>();
         String new_booking_id="";
+        String new_payment_id="";
 
-        //Generate ID
+        //Generate booking ID
         File get_booking_id = new File("Booking.txt");
         try(Scanner booking_id = new Scanner(get_booking_id)){
             while(booking_id.hasNextLine()){
@@ -358,7 +363,26 @@ public class Customer_booking extends javax.swing.JFrame {
             }
 
         } catch (FileNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+        //Generate payment ID
+        File get_payment_id = new File("Payment.txt");
+        try(Scanner payment_id = new Scanner(get_payment_id)){
+            while(payment_id.hasNextLine()){
+                pline = pline + 1;
+                String info = payment_id.nextLine();
+                
+                String new_information[] = info.split("\t");
+                store_all_id.add(new_information[0]);
+                
+                new_payment_id = String.valueOf(Integer.toString(line));
+                
+                
+            }
+
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
        
@@ -375,8 +399,10 @@ public class Customer_booking extends javax.swing.JFrame {
         
         try {
             FileOutputStream file_booking_details = new FileOutputStream("Booking.txt",true);
+            FileOutputStream file_payment_details = new FileOutputStream("Payment.txt",true);
             
             String booking_details;
+            String payment_details;
             
             if(store_all_id.contains(new_booking_id)){
                 int update_id = Integer.parseInt(new_booking_id);
@@ -384,13 +410,37 @@ public class Customer_booking extends javax.swing.JFrame {
                 new_booking_id = String.valueOf(update_id);
 
             }
+            
+            if(store_all_id.contains(new_payment_id)){
+                int pupdate_id = Integer.parseInt(new_payment_id);
+                pupdate_id += 100;
+                new_booking_id = String.valueOf(pupdate_id);
+
+            }
+            
+            //write/create booking details
             booking_details = (new_booking_id + "\t" + cusid + "\t" + cusname + "\t" + carid + "\t" + carname + "\t" + rents + "\t" + status + "\n");
             
-            byte[] bytes_details = booking_details.getBytes();
-            file_booking_details.write(bytes_details);
             
-            JOptionPane.showMessageDialog(this,"Booking Successfully" + rents,"Information Message",JOptionPane.INFORMATION_MESSAGE);
+            
+            byte[] booking = booking_details.getBytes();
+            file_booking_details.write(booking);
+            
+            //write payment details
+            payment_details = (new_payment_id + "\t" + new_booking_id + "\t" +  cusid + "\t" + carid + "\t" + rents + "\n");
+            
+            byte[] payment = payment_details.getBytes();
+            file_payment_details.write(payment);
+            
+            //Write into booking and payment txt
+            int okbooking = JOptionPane.showConfirmDialog(null,"Booking Successfully" + rents,"Information Message",JOptionPane.DEFAULT_OPTION);
+            System.out.println("Exit");
+            
+            
+            
+            
             action = 1;
+            
         } catch (FileNotFoundException ex) {
             java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -456,8 +506,11 @@ public class Customer_booking extends javax.swing.JFrame {
                     Files.write(output, write_cars);
                     
                 }
+                //Write into car txt file
                 JOptionPane.showMessageDialog(this, "Booking Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-
+                CustomerClass customerpage = new CustomerClass();
+                customerpage.setVisible(true);
+                dispose();
             }
 
             
