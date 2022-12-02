@@ -4,6 +4,15 @@
  */
 package carrentalsystem;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 
 /**
  *
@@ -11,9 +20,21 @@ package carrentalsystem;
  */
 public class Payment {
 
+String payment_amount;  
+
+public void setPaymentAmount(String pay){
+    this.payment_amount = pay;
+}
+
+public String getPaymentAmount(){
+    return payment_amount;
+}
+
+Payment(String pay){
+    this.payment_amount = pay;
+}
+
+public void doEditPayment(){
     
-    public void viewPayment(){
-       
-    }
-    
+}
 }
