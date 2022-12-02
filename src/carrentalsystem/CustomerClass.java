@@ -37,6 +37,7 @@ public class CustomerClass extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         SearchCarBtn = new javax.swing.JButton();
         ViewBookingHistoryBtn = new javax.swing.JButton();
+        SearchCarBtn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(796, 390));
@@ -58,10 +59,18 @@ public class CustomerClass extends javax.swing.JFrame {
         });
 
         ViewBookingHistoryBtn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        ViewBookingHistoryBtn.setText("View Booking History");
+        ViewBookingHistoryBtn.setText("View Booking");
         ViewBookingHistoryBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ViewBookingHistoryBtnActionPerformed(evt);
+            }
+        });
+
+        SearchCarBtn1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        SearchCarBtn1.setText("Return Car");
+        SearchCarBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchCarBtn1ActionPerformed(evt);
             }
         });
 
@@ -79,10 +88,12 @@ public class CustomerClass extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ViewBookingHistoryBtn)
-                            .addComponent(SearchCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(256, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SearchCarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
+                        .addGap(110, 110, 110)
+                        .addComponent(SearchCarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,7 +103,9 @@ public class CustomerClass extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
-                .addComponent(SearchCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchCarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(71, Short.MAX_VALUE))
@@ -142,7 +155,12 @@ public class CustomerClass extends javax.swing.JFrame {
 
     private void ViewBookingHistoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewBookingHistoryBtnActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_ViewBookingHistoryBtnActionPerformed
+
+    private void SearchCarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchCarBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,6 +199,7 @@ public class CustomerClass extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SearchCarBtn;
+    private javax.swing.JButton SearchCarBtn1;
     private javax.swing.JButton ViewBookingHistoryBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
