@@ -8,6 +8,7 @@
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/Conventional_Car.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/MainClass.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/ViewPayment.java</file>
+            <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/DeleteCar.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/Booking_confirmation.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/Customer_booking.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/Booking.java</file>
@@ -19,12 +20,13 @@
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/Payment.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/EditPayment.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/CarEngine.java</file>
-            <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/EditCusBooking.java</file>
+            <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/BookingConfirmation.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/Customer_register.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/CarRentalSystem.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/DeleteCusBooking.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/AdminClass.java</file>
             <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/ViewCusBooking.java</file>
+            <file>file:/C:/Users/bende/OneDrive/Desktop/Car%20Rental%20System/CarRentalSystem/src/carrentalsystem/DeletePayment.java</file>
         </group>
     </open-files>
 </project-private>

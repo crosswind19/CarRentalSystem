@@ -118,6 +118,7 @@ public class ViewLog extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void view_logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_logActionPerformed
+        view_log.setEnabled(false);
         File log_file = new File("Customer_log.txt");
         try {
             BufferedReader read_log = new BufferedReader(new FileReader(log_file));

@@ -32,7 +32,7 @@ String car_id;
 String payment_amount;  
 
 
-int flag = 0, ans = -1, action = 2;
+int flag = 0, ans = -1, action;
 
 public void Payment(String payid){
     this.payment_id = payid;
@@ -94,22 +94,22 @@ public void doDeletePayment(){
             }
 
         }
-        for(int x=0; x<left_pay.size(); x++){
-            System.out.println(left_pay);
-        }
+//        for(int x=0; x<left_pay.size(); x++){
+//            System.out.println(left_pay);
+//        }
         
         
         if(del_action == 1){
             
+            this.action = 1;
+            //write the new car details (With not include delete car details)
+            Path write_output = Paths.get("Payment.txt");
+            for(int x = 0; x<left_pay.size(); x++){
+            //System.out.println(write_car.get(x));
 
-                //write the new car details (With not include delete car details)
-                Path write_output = Paths.get("Payment.txt");
-                for(int x = 0; x<left_pay.size(); x++){
-                //System.out.println(write_car.get(x));
-
-                Files.write(write_output, left_pay);
-                this.flag = 1;
-            }
+            Files.write(write_output, left_pay);
+            this.flag = 1;
+        }
 
 
         }

@@ -135,23 +135,27 @@ public class DeletePayment extends javax.swing.JFrame {
             pay.doDeletePayment();
             
         }else if(ans == JOptionPane.NO_OPTION){
-            pay.setAns(0);
+
             
         }
         
-        if(pay.getAction() == 0){
+        if(pay.getAction() != 1){
             JOptionPane.showMessageDialog(this, "Payment Details Not Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
             
-            if(pay.getAns() == 0){
+            if(pay.getAns() != 1){
                 JOptionPane.showMessageDialog(this, "No Changes Will Be Made!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
             
         }
-        }
-        
-        if(pay.getAns() == 0){
-            JOptionPane.showMessageDialog(this, "Payment Details Updated Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            if(pay.getAction() == 1){
+                delete_btn.setEnabled(false);
+                JOptionPane.showMessageDialog(this, "Payment Details Updated Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 
         }
+            
+        }
+        
+
   
         
     }//GEN-LAST:event_delete_btnActionPerformed
