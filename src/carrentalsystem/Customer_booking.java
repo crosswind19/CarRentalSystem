@@ -404,19 +404,23 @@ public class Customer_booking extends javax.swing.JFrame {
             String booking_details;
             String payment_details;
             
+            for(int number=0; number<store_all_id.size(); number++){
             if(store_all_id.contains(new_booking_id)){
                 int update_id = Integer.parseInt(new_booking_id);
                 update_id += 100;
                 new_booking_id = String.valueOf(update_id);
-
+            }
             }
             
-            if(store_all_id.contains(new_payment_id)){
-                int pupdate_id = Integer.parseInt(new_payment_id);
-                pupdate_id += 100;
-                new_booking_id = String.valueOf(pupdate_id);
+            for(int number=0; number<store_all_id.size(); number++){
+                if(store_all_id.contains(new_payment_id)){
+                    int pupdate_id = Integer.parseInt(new_payment_id);
+                    pupdate_id += 100;
+                    new_payment_id = String.valueOf(pupdate_id);
 
             }
+            }
+
             
             //write/create booking details
             booking_details = (new_booking_id + "\t" + cusid + "\t" + cusname + "\t" + carid + "\t" + carname + "\t" + rents + "\t" + status + "\n");
