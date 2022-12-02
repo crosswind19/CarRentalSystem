@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class Customer {
     
-    private int id;
+    int id;
     private String name;
     private String phoneNumber;
     private String emailAddress;

@@ -162,6 +162,7 @@ public class CustomerClass extends javax.swing.JFrame {
 
     private void SearchCarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtn1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_SearchCarBtn1ActionPerformed
 
     /**

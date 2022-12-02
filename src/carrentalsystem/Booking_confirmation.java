@@ -116,14 +116,16 @@ public class Booking_confirmation {
                         switch (int_change_index) {
                             case 0 ->                                 {
                                 //approve 0
+                                    
                                     String before_word = each_element[int_change_index+6];
+                                    
                                     //System.out.println(each_element[changes+4]);
                                     update_status = (array_booking.get(new_cnt).replace(before_word, approve_word));
                                 }
                             case 1 ->                                 {
                                 //reject 1
                                     String before_word = each_element[int_change_index+5];
-
+                                        System.out.println(before_word);
                                     update_status = (array_booking.get(new_cnt).replace(before_word, reject_word));
                                 
                                     //car status change back from not-Available to Available    
