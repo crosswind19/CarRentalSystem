@@ -54,7 +54,7 @@ public class BookingConfirmation extends javax.swing.JFrame {
         jLabel2.setText("Booking ID:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("Car ID:");
+        jLabel3.setText("Customer ID:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Status:");

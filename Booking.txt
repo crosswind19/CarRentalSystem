@@ -11,12 +11,8 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 10	1	ASD	8	sdfsd iugku	1246.0	Rejected
 11	1	ASDdsa	8	sdfsd iugku	3115.0	Rejected
 12	1	ASDddsaasd	6	tyfkjhg sefse	182824.0	Rejected
-13	1	ASDSDA	7	asdfjhb jkhgkjdf	503.0	Pending_for_approval
-14	1	grgd	1	Ferrari 458	22500.0	Pending_for_approval
 15	1	testing	108	asd asd	330.0	Pending_for_approval
-16	1	booking	8	sdfsd iugku	4984.0	Pending_for_approval
-17	1	Kah Xuan	8	sdfsd iugku	2492.0	Pending_for_approval
-18	1	Jah Xuan	3	Mclaren P1	13000.0	Pending_for_approval
+16	1	booking	8	sdfsd iugku	4984.0	Rejected
+18	1	Jah Xuan	3	Mclaren P1	13000.0	Rejected
 119	1	Lah Xuan	108	asd asd	1510.0	Pending_for_approval
 20	1	Test	8	sdfsd iugku	1246.0	Pending_for_approval
-21	1	Kah Xuanaaa	6	tyfkjhg sefse	45706.0	Pending_for_approval

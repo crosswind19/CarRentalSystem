@@ -125,7 +125,7 @@ public class DeleteCusBooking extends javax.swing.JFrame {
 
     private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
         String booking_value = booking_id_textfield.getText();
-        
+        String carID = "";        
         int flag = 0, delete_line = 0;
         try{
             ArrayList<String> non_del_car = new ArrayList<>();
@@ -137,9 +137,13 @@ public class DeleteCusBooking extends javax.swing.JFrame {
                 String[] booking_details = line.split("\n");
                 String[] booking_element = booking_details[0].split("\t");
                 
+                
                 //compare with booking id
                 if(booking_value.equals(booking_element[0])){
+                    //get the car id
+                    carID = booking_element[3];
                     flag = 1;
+
                 }else{
                     non_del_car.add(booking_details[0]);
                 }
@@ -149,14 +153,22 @@ public class DeleteCusBooking extends javax.swing.JFrame {
             if(flag == 1){
                 int opt = JOptionPane.showConfirmDialog(this, "Are You Sure To Delete this Customer Booking with this ID "+booking_value + " ?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                 if(opt == JOptionPane.YES_NO_OPTION){
+                    
+                    //change back car status to availble after delete the customer booking
+                    Booking_confirmation booking = new Booking_confirmation(carID);
+                    
+                    booking.changeCarStatus();
+                    
                     delete_btn.setEnabled(false);
                     Path to_file = Paths.get("Booking.txt");
                     for(int k=0; k<non_del_car.size(); k++){
+                        
+                        
                         Files.write(to_file, non_del_car);
                     }    
                         JOptionPane.showMessageDialog(this, "Booking ID Removed Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-
-                    
+                
+                        
                 }else if(opt == JOptionPane.NO_OPTION){
                     JOptionPane.showMessageDialog(this, "No Changes Will Be Made!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                     
@@ -185,6 +197,7 @@ public class DeleteCusBooking extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

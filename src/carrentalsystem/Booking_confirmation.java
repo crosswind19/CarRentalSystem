@@ -44,6 +44,10 @@ public class Booking_confirmation {
         this.booking_status = status;
     }
     
+    Booking_confirmation(String carID){
+        this.id_car = carID;
+    }
+    
     public void setBookID(String book){
         this.booking_id = book;
     }
@@ -74,7 +78,7 @@ public class Booking_confirmation {
     public void setCaptureFlag(int num){
         this.capture_flag = num;
     }
-    
+ 
     public void doBookingConfirmation() throws IOException{
         try {
             File read_confirmation = new File("Booking.txt");
@@ -163,7 +167,7 @@ public class Booking_confirmation {
     }
     
     public void changeCarStatus(){
-        
+     
         int action = 0, counter = 0;
         try {          
             File read_car_file = new File("Car.txt");
