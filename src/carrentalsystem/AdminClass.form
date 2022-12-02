@@ -51,7 +51,7 @@
                           <Component id="delete_booking_btn" max="32767" attributes="0"/>
                           <Component id="generate_pdf" alignment="0" max="32767" attributes="0"/>
                           <Component id="view_cus_booking" max="32767" attributes="0"/>
-                          <Component id="jButton3" max="32767" attributes="0"/>
+                          <Component id="viewpay_btn" max="32767" attributes="0"/>
                           <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                           <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -89,7 +89,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="delete_car" max="32767" attributes="0"/>
-                  <Component id="jButton3" max="32767" attributes="0"/>
+                  <Component id="viewpay_btn" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
@@ -271,13 +271,16 @@
         <Property name="text" type="java.lang.String" value="Delete Customer Payment"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="viewpay_btn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="View Customer Payment"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewpay_btnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

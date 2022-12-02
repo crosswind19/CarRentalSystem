@@ -129,7 +129,7 @@ public class ViewCar extends javax.swing.JFrame {
 
             for(int i=0; i<car_info.length; i++){
                 String car_line = car_info[i].toString();
-                System.out.println(car_line);
+                //System.out.println(car_line);
                 String get_all_data[] = car_line.split("\t");
 
                 
