@@ -60,6 +60,11 @@ public class DeleteCusBooking extends javax.swing.JFrame {
         jLabel3.setText("Booking ID:");
 
         booking_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        booking_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                booking_id_textfieldKeyTyped(evt);
+            }
+        });
 
         delete_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         delete_btn.setText("Delete");
@@ -192,6 +197,14 @@ public class DeleteCusBooking extends javax.swing.JFrame {
         admin.setVisible(true);
         dispose();
     }//GEN-LAST:event_back_btnActionPerformed
+
+    private void booking_id_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_booking_id_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_booking_id_textfieldKeyTyped
 
     /**
      * @param args the command line arguments

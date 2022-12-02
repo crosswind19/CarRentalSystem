@@ -407,6 +407,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="carBrand_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="carModel_textfield">
       <Properties>
@@ -414,6 +417,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="carModel_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="numPlate_textfield">
       <Properties>
@@ -421,6 +427,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="numPlate_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="carGear_textfield">
       <Properties>
@@ -428,6 +437,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="carGear_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="numPassenger_textfield">
       <Properties>
@@ -435,6 +447,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="numPassenger_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="travelDistance_textfield">
       <Properties>
@@ -442,6 +457,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="travelDistance_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="rentPrice_textfield">
       <Properties>
@@ -449,6 +467,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rentPrice_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="manufactureYear_textfield">
       <Properties>
@@ -457,6 +478,9 @@
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="manufactureYear_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="serialNum_textfield">
       <Properties>
@@ -465,6 +489,9 @@
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="serialNum_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="engineID_textfield">
       <Properties>
@@ -473,6 +500,9 @@
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="engineID_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="engineHP_textfield">
       <Properties>
@@ -481,6 +511,9 @@
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="engineHP_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="carType_combobox">
       <Properties>
@@ -569,6 +602,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="car_cc_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="km">
       <Properties>

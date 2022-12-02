@@ -2,9 +2,9 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 1	cusid	cusname	7	asdfjhb jkhgkjdf	1006.0	Pending_for_approval
 2	cusid2	cusname2	3	Mclaren P1	19500.0	Pending_for_approval
 3	55	qweewq	9	ves aw	1512.0	Pending_for_approval
-4	1	ASD	108	asd asd	2265.0	Rejected
+4	1	asd	5	sdf	2334.0	Pending_for_approval
 5	1	DSA	3	Mclaren P1	13000.0	Rejected
-6	1	Test	6	tyfkjhg sefse	2810919.0	Pending_for_approval
+6	1	testing	6	tyfkjhg sefse	2810919.0	Pending_for_approval
 7	1	ASD	9	ves aw	756.0	Pending_for_approval
 8	1	ASD	7	asdfjhb jkhgkjdf	1509.0	Approved
 9	1	SD	8	sdfsd iugku	1869.0	Pending_for_approval
@@ -12,7 +12,7 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 11	1	ASDdsa	8	sdfsd iugku	3115.0	Rejected
 12	1	ASDddsaasd	6	tyfkjhg sefse	182824.0	Rejected
 15	1	testing	108	asd asd	330.0	Pending_for_approval
-16	1	booking	8	sdfsd iugku	4984.0	Rejected
+16	1	booking	8	sdfsd iugku	0.0	Rejected
 18	1	Jah Xuan	3	Mclaren P1	13000.0	Rejected
 119	1	Lah Xuan	108	asd asd	1510.0	Pending_for_approval
 20	1	Test	8	sdfsd iugku	1246.0	Pending_for_approval

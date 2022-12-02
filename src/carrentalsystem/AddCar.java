@@ -5,6 +5,7 @@
 package carrentalsystem;
 
 import Class.Vehicle;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -153,30 +154,85 @@ public class AddCar extends javax.swing.JFrame {
         });
 
         carBrand_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        carBrand_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carBrand_textfieldKeyTyped(evt);
+            }
+        });
 
         carModel_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        carModel_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carModel_textfieldKeyTyped(evt);
+            }
+        });
 
         numPlate_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        numPlate_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numPlate_textfieldKeyTyped(evt);
+            }
+        });
 
         carGear_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        carGear_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carGear_textfieldKeyTyped(evt);
+            }
+        });
 
         numPassenger_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        numPassenger_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                numPassenger_textfieldKeyTyped(evt);
+            }
+        });
 
         travelDistance_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        travelDistance_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                travelDistance_textfieldKeyTyped(evt);
+            }
+        });
 
         rentPrice_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rentPrice_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                rentPrice_textfieldKeyTyped(evt);
+            }
+        });
 
         manufactureYear_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         manufactureYear_textfield.setEnabled(false);
+        manufactureYear_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                manufactureYear_textfieldKeyTyped(evt);
+            }
+        });
 
         serialNum_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         serialNum_textfield.setEnabled(false);
+        serialNum_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                serialNum_textfieldKeyTyped(evt);
+            }
+        });
 
         engineID_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         engineID_textfield.setEnabled(false);
+        engineID_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                engineID_textfieldKeyTyped(evt);
+            }
+        });
 
         engineHP_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         engineHP_textfield.setEnabled(false);
+        engineHP_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                engineHP_textfieldKeyTyped(evt);
+            }
+        });
 
         carType_combobox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         carType_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SportCar", "SUV", "Sedan", "HatchBack", "MPV" }));
@@ -216,6 +272,11 @@ public class AddCar extends javax.swing.JFrame {
         CC.setText("Car CC:");
 
         car_cc_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        car_cc_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                car_cc_textfieldKeyTyped(evt);
+            }
+        });
 
         km.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         km.setText("KM");
@@ -378,7 +439,6 @@ public class AddCar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(car_cc_textfield)
                         .addGap(3, 3, 3)))
-                .addGap(18, 18, 18)
                 .addComponent(confirm_vehicle, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -597,28 +657,53 @@ public class AddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_fuelType_comboboxKeyPressed
 
     private void confirm_vehicleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_vehicleActionPerformed
-
+        
         confirm_vehicle.setEnabled(false);
         int car_gear = Integer.parseInt(carGear_textfield.getText());
         String car_fuel_type = fuelType_combobox.getSelectedItem().toString();
+                String car_cc = car_cc_textfield.getText();
         
+        int passenger_num = Integer.parseInt(numPassenger_textfield.getText());
+        int flag = 0;
+        if((car_gear>=0 & car_gear <= 12) && (passenger_num>=0 & passenger_num<= 7)){
+            flag = 1;
+        //check car gear with the selected fuel type
+        //check with the car gear less than 12
+        // check passenger less than 7 people
         if(((car_fuel_type == "Electric") && (car_gear != 1))){
             JOptionPane.showMessageDialog(this, "An Error Occur with Car Gear & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
-            confirm_vehicle.setEnabled(true);
-            manufactureYear_textfield.setEnabled(false);
-            serialNum_textfield.setEnabled(false);
-            engineID_textfield.setEnabled(false);
-            engineType_combo.setEnabled(false);
-            engineHP_textfield.setEnabled(false);
+            if(flag != 1){               
+                confirm_vehicle.setEnabled(true);
+                manufactureYear_textfield.setEnabled(false);
+                serialNum_textfield.setEnabled(false);
+                engineID_textfield.setEnabled(false);
+                engineType_combo.setEnabled(false);
+                engineHP_textfield.setEnabled(false);
+            }
         
         }else{
+            //left panel not editable
+            carBrand_textfield.setEnabled(false);
+            carModel_textfield.setEnabled(false);
+            carType_combobox.setEnabled(false);
+            numPlate_textfield.setEnabled(false); 
+            carGear_textfield.setEnabled(false);
+            numPassenger_textfield.setEnabled(false);
+            fuelType_combobox.setEnabled(false);
+            travelDistance_textfield.setEnabled(false);
+            car_cc_textfield.setEditable(false);
+        
+            //able to editable right panel
             manufactureYear_textfield.setEnabled(true);
             serialNum_textfield.setEnabled(true);
             engineID_textfield.setEnabled(true);
             engineType_combo.setEnabled(true);
             engineHP_textfield.setEnabled(true);
         }
-        
+        }else{
+            JOptionPane.showMessageDialog(this, "An Error Occur with Car Gear or Passenger Number, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
+            confirm_vehicle.setEnabled(true);
+        }
         //Check if selected the electric type car
         if(fuelType_combobox.getSelectedItem().toString().equals("Electric")){
             engineType_combo.setEnabled(false);
@@ -627,6 +712,100 @@ public class AddCar extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_confirm_vehicleActionPerformed
+
+    private void carBrand_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carBrand_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check input is it contains special characters       
+      if(!(Character.isAlphabetic(key)) && (!(key == KeyEvent.VK_COMMA))){
+          evt.consume();
+      } 
+    }//GEN-LAST:event_carBrand_textfieldKeyTyped
+
+    private void carModel_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carModel_textfieldKeyTyped
+        char key_entered = evt.getKeyChar();
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_carModel_textfieldKeyTyped
+
+    private void numPlate_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numPlate_textfieldKeyTyped
+        char key_entered = evt.getKeyChar();
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_numPlate_textfieldKeyTyped
+
+    private void carGear_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carGear_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_carGear_textfieldKeyTyped
+
+    private void numPassenger_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numPassenger_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_numPassenger_textfieldKeyTyped
+
+    private void travelDistance_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_travelDistance_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_travelDistance_textfieldKeyTyped
+
+    private void car_cc_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_car_cc_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_car_cc_textfieldKeyTyped
+
+    private void rentPrice_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rentPrice_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_rentPrice_textfieldKeyTyped
+
+    private void manufactureYear_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_manufactureYear_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_manufactureYear_textfieldKeyTyped
+
+    private void serialNum_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serialNum_textfieldKeyTyped
+        char key_entered = evt.getKeyChar();
+        // only allow number and alphabetic character
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_serialNum_textfieldKeyTyped
+
+    private void engineID_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_engineID_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_engineID_textfieldKeyTyped
+
+    private void engineHP_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_engineHP_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_engineHP_textfieldKeyTyped
 
     /**
      * @param args the command line arguments

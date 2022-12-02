@@ -61,6 +61,11 @@ public class DeletePayment extends javax.swing.JFrame {
         jLabel2.setText("Payment ID:");
 
         paymentid_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentid_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                paymentid_textfieldKeyTyped(evt);
+            }
+        });
 
         delete_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         delete_btn.setText("Delete");
@@ -159,6 +164,14 @@ public class DeletePayment extends javax.swing.JFrame {
   
         
     }//GEN-LAST:event_delete_btnActionPerformed
+
+    private void paymentid_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_paymentid_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_paymentid_textfieldKeyTyped
 
     /**
      * @param args the command line arguments

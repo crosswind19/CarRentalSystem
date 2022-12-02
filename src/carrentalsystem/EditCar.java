@@ -60,6 +60,11 @@ public class EditCar extends javax.swing.JFrame {
         jLabel2.setText("Car Serial Number: ");
 
         search_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        search_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                search_textfieldKeyTyped(evt);
+            }
+        });
 
         update_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         update_btn.setText("Update");
@@ -73,6 +78,11 @@ public class EditCar extends javax.swing.JFrame {
         details_selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Car_Brand", "Car_Model", "Car_Type", "Number_Plate", "Car_Gear", "Passenger_Occupancy", "Fuel_Type", "Travel_Distance", "Car_cc", "Manufacture_Year", "Serial_Number", "Engine_ID", "Engine_Type", "Car_HP", "Rent_Price" }));
 
         changes_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        changes_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                changes_textfieldKeyTyped(evt);
+            }
+        });
 
         back.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         back.setText("Back");
@@ -228,6 +238,22 @@ public class EditCar extends javax.swing.JFrame {
         admin_class.setVisible(true);
         dispose();
     }//GEN-LAST:event_backActionPerformed
+
+    private void search_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_search_textfieldKeyTyped
+        char key_entered = evt.getKeyChar();
+        // only allow number and alphabetic character
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_search_textfieldKeyTyped
+
+    private void changes_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_changes_textfieldKeyTyped
+        char key_entered = evt.getKeyChar();
+        
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_changes_textfieldKeyTyped
 
     /**
      * @param args the command line arguments

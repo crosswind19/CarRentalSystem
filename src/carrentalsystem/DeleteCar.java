@@ -56,6 +56,11 @@ public class DeleteCar extends javax.swing.JFrame {
         jLabel1.setText("Car Serial Number:");
 
         delete_car_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        delete_car_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                delete_car_textfieldKeyTyped(evt);
+            }
+        });
 
         delete_btn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         delete_btn.setText("Delete");
@@ -183,6 +188,14 @@ public class DeleteCar extends javax.swing.JFrame {
         bck_admin_class.setVisible(true);
         dispose();
     }//GEN-LAST:event_back_btnActionPerformed
+
+    private void delete_car_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_delete_car_textfieldKeyTyped
+        char key_entered = evt.getKeyChar();
+        // only allow number and alphabetic character
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_delete_car_textfieldKeyTyped
 
     /**
      * @param args the command line arguments

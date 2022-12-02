@@ -127,6 +127,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="payment_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="booking_textfield">
       <Properties>
@@ -134,6 +137,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="booking_textfieldKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="updatePay_btn">
       <Properties>
@@ -171,6 +177,9 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="new_value_textfieldKeyTyped"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

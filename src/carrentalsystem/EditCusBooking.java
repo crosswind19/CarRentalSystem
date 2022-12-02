@@ -57,11 +57,26 @@ public class EditCusBooking extends javax.swing.JFrame {
         booking_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer_name", "Rent_Price" }));
 
         edit_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        edit_textfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_textfieldActionPerformed(evt);
+            }
+        });
+        edit_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                edit_textfieldKeyTyped(evt);
+            }
+        });
 
         booking_header.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         booking_header.setText("Booking ID:");
 
         booking_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        booking_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                booking_id_textfieldKeyTyped(evt);
+            }
+        });
 
         update_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         update_btn.setText("Update");
@@ -83,6 +98,11 @@ public class EditCusBooking extends javax.swing.JFrame {
         cus_header.setText("Customer ID:");
 
         cus_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cus_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cus_id_textfieldKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,6 +174,9 @@ public class EditCusBooking extends javax.swing.JFrame {
         int flag = 0, cnt = 0;
         int changes = -1;
         
+        Double changes_ele;
+        String rent;
+        String CusName;
         
         try {
             File read_cus = new File("Booking.txt");
@@ -172,6 +195,11 @@ public class EditCusBooking extends javax.swing.JFrame {
                     //get the both id
                     String booking_id = each_element[0];
                     String cusID = each_element[1];
+                    //will be used when non numeric value enter for rent price
+                    rent = each_element[5];
+                    //will be used when numeric value found
+                    CusName = each_element[2];
+                    
                     //System.out.println(booking_id + " "  +cusID);
                     array_book.add(each_booking[0]);
                     
@@ -185,16 +213,34 @@ public class EditCusBooking extends javax.swing.JFrame {
                         //System.out.println(changes);
                         switch (changes) {
                             case 0 ->                                 {
+                                    //customer name changes
+                                    if(changes_item.matches("[a-zA-Z]+")){
+                                        
+                                    
                                     String before_word = each_element[changes+2];
-                                    //System.out.println(each_element[changes+4]);
+
                                     change_line = (array_book.get(new_cnt).replace(before_word, changes_item));
+                                    }else{
+                                        JOptionPane.showMessageDialog(this, "Error Format Found, No Changes Made!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                                        
+                                        String before_word = each_element[changes+2];
+                                        change_line = (array_book.get(new_cnt).replace(before_word, CusName));
+                                    }
                                 }
                             case 1 ->                                 {
+                                    //rent price changes (check first)
+                                    try{
+                                        changes_ele = Double.parseDouble(changes_item);
+                                    } catch(NumberFormatException e){
+                                        JOptionPane.showMessageDialog(this, "Error Format Found, No Changes Made!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                                        
+                                        changes_ele = Double.parseDouble(rent);
+                                    }
                                     String before_word = each_element[changes+4];
-                                    Double changes_ele = Double.parseDouble(changes_item);
+                                    
                                     String string_changes_ele = String.valueOf(changes_ele);
                                     change_line = (array_book.get(new_cnt).replace(before_word, string_changes_ele));
-                                }
+                            }
                             default -> {
                             }
                         }
@@ -208,7 +254,7 @@ public class EditCusBooking extends javax.swing.JFrame {
                         write_book.add(each_booking[0]);
                     }
                 }
-            
+                
             
                 if(flag == 1){
                     JOptionPane.showMessageDialog(this, "Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
@@ -237,6 +283,30 @@ public class EditCusBooking extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_update_btnActionPerformed
+
+    private void booking_id_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_booking_id_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_booking_id_textfieldKeyTyped
+
+    private void cus_id_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cus_id_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_cus_id_textfieldKeyTyped
+
+    private void edit_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edit_textfieldKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edit_textfieldKeyTyped
+
+    private void edit_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_textfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edit_textfieldActionPerformed
 
     /**
      * @param args the command line arguments

@@ -60,8 +60,18 @@ public class BookingConfirmation extends javax.swing.JFrame {
         jLabel4.setText("Status:");
 
         book_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        book_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                book_id_textfieldKeyTyped(evt);
+            }
+        });
 
         car_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        car_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                car_id_textfieldKeyTyped(evt);
+            }
+        });
 
         status_combobox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         status_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Approve", "Reject" }));
@@ -175,6 +185,22 @@ public class BookingConfirmation extends javax.swing.JFrame {
         confirm_btn.setEnabled(false);
         
     }//GEN-LAST:event_confirm_btnActionPerformed
+
+    private void book_id_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_book_id_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_book_id_textfieldKeyTyped
+
+    private void car_id_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_car_id_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_car_id_textfieldKeyTyped
 
     /**
      * @param args the command line arguments

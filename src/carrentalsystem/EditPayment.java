@@ -60,8 +60,18 @@ public class EditPayment extends javax.swing.JFrame {
         jLabel3.setText("Booking_ID:");
 
         payment_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        payment_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                payment_textfieldKeyTyped(evt);
+            }
+        });
 
         booking_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        booking_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                booking_textfieldKeyTyped(evt);
+            }
+        });
 
         updatePay_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         updatePay_btn.setText("Update");
@@ -83,6 +93,11 @@ public class EditPayment extends javax.swing.JFrame {
         new_value_label.setText("New Payment Amount:");
 
         new_value_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        new_value_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                new_value_textfieldKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,6 +259,30 @@ public class EditPayment extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_updatePay_btnActionPerformed
+
+    private void payment_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_payment_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_payment_textfieldKeyTyped
+
+    private void booking_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_booking_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_booking_textfieldKeyTyped
+
+    private void new_value_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_new_value_textfieldKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_new_value_textfieldKeyTyped
 
     /**
      * @param args the command line arguments
