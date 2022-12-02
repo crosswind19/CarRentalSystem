@@ -5,6 +5,6 @@ Car_id	Car_Brand	Car_Model	Car_Type	Number_Plate	Car_Gear	Passenger_Occupancy	Fu
 4	tyg	yutf	SportCar	ytf1	5	5	Combustion	5	5	2	333	123	Hybrid 	321	821.0	not-Available
 6	tyfkjhg	sefse	SportCar	dwqs12	2	1	Combustion	142	412	412	12423424	142	Hybrid 	124	22853.0	Available
 7	asdfjhb	jkhgkjdf	SportCar	khjg6i	7	67	Combustion	56	65	234	2345432	234	Hybrid 	2	503.0	not-Available
-8	sdfsd	iugku	SportCar	jhg2	6	2	Combustion	2345234	23423	214	123434636	123	Hybrid 	234	623.0	Available
+8	sdfsd	iugku	SportCar	jhg2	6	2	Combustion	2345234	23423	214	123434636	123	Hybrid 	234	623.0	not-Available
 108	asd	asd	SportCar	asd123	12	2	Combustion	213	2	23	214511	123	Hybrid 	32	755.0	not-Available
-9	ves	aw	SportCar	sadht212	1	2	Electric	423	12	435	1255	123	Fully_Electric	12	252.0	Available
+9	ves	aw	SportCar	sadht212	1	2	Electric	423	12	435	1255	123	Fully_Electric	12	252.0	not-Available

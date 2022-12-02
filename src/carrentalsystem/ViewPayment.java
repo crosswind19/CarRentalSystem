@@ -148,6 +148,8 @@ public class ViewPayment extends javax.swing.JFrame {
 
 
         }
+        
+        get_pay.setEnabled(false);
 
 
     } catch (FileNotFoundException ex) {

@@ -39,7 +39,7 @@ public class AdminClass extends javax.swing.JFrame {
         quit_btn = new javax.swing.JButton();
         booking_confirmation = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        edit_paymemt = new javax.swing.JButton();
         view_cus_booking = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         viewpay_btn = new javax.swing.JButton();
@@ -130,8 +130,13 @@ public class AdminClass extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jButton1.setText("Approve Car Return");
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jButton2.setText("Edit Customer Payment");
+        edit_paymemt.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        edit_paymemt.setText("Edit Customer Payment");
+        edit_paymemt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_paymemtActionPerformed(evt);
+            }
+        });
 
         view_cus_booking.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         view_cus_booking.setText("View Customer Booking");
@@ -182,7 +187,7 @@ public class AdminClass extends javax.swing.JFrame {
                             .addComponent(generate_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(view_cus_booking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(viewpay_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(edit_paymemt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
@@ -212,7 +217,7 @@ public class AdminClass extends javax.swing.JFrame {
                     .addComponent(delete_car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewpay_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(edit_paymemt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -297,6 +302,12 @@ public class AdminClass extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_viewpay_btnActionPerformed
 
+    private void edit_paymemtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_paymemtActionPerformed
+        EditPayment payment = new EditPayment();
+        payment.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_edit_paymemtActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,9 +350,9 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton delete_car;
     private javax.swing.JButton edit_car;
     private javax.swing.JButton edit_cus_booking;
+    private javax.swing.JButton edit_paymemt;
     private javax.swing.JToggleButton generate_pdf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

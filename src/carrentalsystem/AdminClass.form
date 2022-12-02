@@ -52,7 +52,7 @@
                           <Component id="generate_pdf" alignment="0" max="32767" attributes="0"/>
                           <Component id="view_cus_booking" max="32767" attributes="0"/>
                           <Component id="viewpay_btn" max="32767" attributes="0"/>
-                          <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="edit_paymemt" alignment="0" max="32767" attributes="0"/>
                           <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -92,7 +92,7 @@
                   <Component id="viewpay_btn" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="edit_paymemt" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -244,13 +244,16 @@
         <Property name="text" type="java.lang.String" value="Approve Car Return"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="edit_paymemt">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Edit Customer Payment"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edit_paymemtActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="view_cus_booking">
       <Properties>
