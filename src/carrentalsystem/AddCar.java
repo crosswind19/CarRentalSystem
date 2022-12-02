@@ -4,6 +4,7 @@
  */
 package carrentalsystem;
 
+import Class.Vehicle;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

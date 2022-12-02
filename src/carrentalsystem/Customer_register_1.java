@@ -4,6 +4,7 @@
  */
 package carrentalsystem;
 
+import Class.Customer;
 import java.awt.List;
 import java.io.File;
 import java.io.FileNotFoundException;

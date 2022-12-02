@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package carrentalsystem;
+package Class;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,6 +22,7 @@ public class Customer {
     private String emailAddress;
     private String address;
     private String gender;
+    
     
     
     

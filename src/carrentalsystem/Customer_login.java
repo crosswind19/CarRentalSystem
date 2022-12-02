@@ -4,6 +4,7 @@
  */
 package carrentalsystem;
 
+import Class.Customer;
 import java.awt.List;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;

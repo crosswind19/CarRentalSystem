@@ -4,6 +4,8 @@
  */
 package carrentalsystem;
 
+import Class.Vehicle;
+
 /**
  *
  * @author bende

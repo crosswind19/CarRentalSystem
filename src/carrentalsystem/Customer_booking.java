@@ -4,6 +4,7 @@
  */
 package carrentalsystem;
 
+import Class.Customer;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -98,7 +99,7 @@ public class Customer_booking extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, true, true, true, true, true, true, false, true, true, true, true, true, true, true, true, true
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

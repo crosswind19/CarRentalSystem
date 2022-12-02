@@ -171,23 +171,23 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="17" rowCount="0">
-                <Column editable="true" title="ID" type="java.lang.Object"/>
-                <Column editable="true" title="Car_Brand" type="java.lang.Object"/>
-                <Column editable="true" title="Car_Model" type="java.lang.Object"/>
-                <Column editable="true" title="Car_Type" type="java.lang.Object"/>
-                <Column editable="true" title="Number_Plate" type="java.lang.Object"/>
-                <Column editable="true" title="Car_Gear" type="java.lang.Object"/>
-                <Column editable="true" title="Passenger_Occupancy" type="java.lang.Object"/>
+                <Column editable="false" title="ID" type="java.lang.Object"/>
+                <Column editable="false" title="Car_Brand" type="java.lang.Object"/>
+                <Column editable="false" title="Car_Model" type="java.lang.Object"/>
+                <Column editable="false" title="Car_Type" type="java.lang.Object"/>
+                <Column editable="false" title="Number_Plate" type="java.lang.Object"/>
+                <Column editable="false" title="Car_Gear" type="java.lang.Object"/>
+                <Column editable="false" title="Passenger_Occupancy" type="java.lang.Object"/>
                 <Column editable="false" title="Fuel_Type" type="java.lang.Object"/>
-                <Column editable="true" title="Travel_Distance" type="java.lang.Object"/>
-                <Column editable="true" title="Car_cc" type="java.lang.Object"/>
-                <Column editable="true" title="Manufacture_Year" type="java.lang.Object"/>
-                <Column editable="true" title="Serial_Number" type="java.lang.Object"/>
-                <Column editable="true" title="Engine_ID" type="java.lang.Object"/>
-                <Column editable="true" title="Engine_Type" type="java.lang.Object"/>
-                <Column editable="true" title="Car_HP" type="java.lang.Object"/>
-                <Column editable="true" title="Rent_Price" type="java.lang.Object"/>
-                <Column editable="true" title="Status" type="java.lang.Object"/>
+                <Column editable="false" title="Travel_Distance" type="java.lang.Object"/>
+                <Column editable="false" title="Car_cc" type="java.lang.Object"/>
+                <Column editable="false" title="Manufacture_Year" type="java.lang.Object"/>
+                <Column editable="false" title="Serial_Number" type="java.lang.Object"/>
+                <Column editable="false" title="Engine_ID" type="java.lang.Object"/>
+                <Column editable="false" title="Engine_Type" type="java.lang.Object"/>
+                <Column editable="false" title="Car_HP" type="java.lang.Object"/>
+                <Column editable="false" title="Rent_Price" type="java.lang.Object"/>
+                <Column editable="false" title="Status" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

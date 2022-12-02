@@ -121,41 +121,43 @@ public class CustomerClass extends javax.swing.JFrame {
         Customer_booking booking = new Customer_booking();
                 booking.setVisible(true);
                 
-                File read_car_detailss = new File("Car.txt");
-        try {
-            BufferedReader read_cars = new BufferedReader(new FileReader(read_car_detailss));
-            String each_car_lines = read_cars.readLine();
-            //System.out.println(each_car_line);
-            //display in table form (car details)
-                        //DefaultTableModel show_car_details = (DefaultTableModel)car_table.getModel();
-
-                 
-            
-            Object[] car_info = read_cars.lines().toArray();
-
-
-            for(int i=0; i<car_info.length; i++){
-                String car_line = car_info[i].toString();
-                System.out.println(car_line);
-                String get_all_data[] = car_line.split("\t");
-
-                
-                //show_car_detailss.addRow(get_all_data);
-            }
-        
-        
-        } catch (FileNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+//                File read_car_detailss = new File("Car.txt");
+//        try {
+//            BufferedReader read_cars = new BufferedReader(new FileReader(read_car_detailss));
+//            String each_car_lines = read_cars.readLine();
+//            //System.out.println(each_car_line);
+//            //display in table form (car details)
+//                        //DefaultTableModel show_car_details = (DefaultTableModel)car_table.getModel();
+//
+//                 
+//            
+//            Object[] car_info = read_cars.lines().toArray();
+//
+//
+//            for(int i=0; i<car_info.length; i++){
+//                String car_line = car_info[i].toString();
+//                System.out.println(car_line);
+//                String get_all_data[] = car_line.split("\t");
+//
+//                
+//                //show_car_detailss.addRow(get_all_data);
+//            }
+//        
+//        
+//        } catch (FileNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
        
                 dispose();
     }//GEN-LAST:event_SearchCarBtnActionPerformed
 
     private void ViewBookingHistoryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewBookingHistoryBtnActionPerformed
         // TODO add your handling code here:
-        
+        Customer_ViewBooking viewbooking = new Customer_ViewBooking();
+        viewbooking.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ViewBookingHistoryBtnActionPerformed
 
     private void SearchCarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtn1ActionPerformed
