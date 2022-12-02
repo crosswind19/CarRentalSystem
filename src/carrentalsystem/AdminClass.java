@@ -41,7 +41,7 @@ public class AdminClass extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         edit_paymemt = new javax.swing.JButton();
         view_cus_booking = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        delete_payment = new javax.swing.JButton();
         viewpay_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,8 +146,13 @@ public class AdminClass extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jButton4.setText("Delete Customer Payment");
+        delete_payment.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        delete_payment.setText("Delete Customer Payment");
+        delete_payment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_paymentActionPerformed(evt);
+            }
+        });
 
         viewpay_btn.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         viewpay_btn.setText("View Customer Payment");
@@ -188,7 +193,7 @@ public class AdminClass extends javax.swing.JFrame {
                             .addComponent(view_cus_booking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(viewpay_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(edit_paymemt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(delete_payment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -220,7 +225,7 @@ public class AdminClass extends javax.swing.JFrame {
                 .addComponent(edit_paymemt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
+                    .addComponent(delete_payment)
                     .addComponent(booking_confirmation, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,6 +313,12 @@ public class AdminClass extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_edit_paymemtActionPerformed
 
+    private void delete_paymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_paymentActionPerformed
+        DeletePayment delete_pay = new DeletePayment();
+        delete_pay.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_delete_paymentActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -348,12 +359,12 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton booking_confirmation;
     private javax.swing.JButton delete_booking_btn;
     private javax.swing.JButton delete_car;
+    private javax.swing.JButton delete_payment;
     private javax.swing.JButton edit_car;
     private javax.swing.JButton edit_cus_booking;
     private javax.swing.JButton edit_paymemt;
     private javax.swing.JToggleButton generate_pdf;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton quit_btn;
