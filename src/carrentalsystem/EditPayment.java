@@ -187,10 +187,14 @@ public class EditPayment extends javax.swing.JFrame {
 
                     //get the new payment value
                     String new_value = new_value_textfield.getText();
+                    Double double_value = Double.valueOf(new_value);
                    
+                    //convert back to string for double_value;
+                    
+                    String new_value1 = String.valueOf(double_value);
                     //System.out.println(array_pay);
 
-                    String new_pay_details = (array_pay.get(new_num).replace(old_word, new_value));
+                    String new_pay_details = (array_pay.get(new_num).replace(old_word, new_value1));
                     System.out.println(new_pay_details);
                     
                     //Crate write car for writing into Car.txt
