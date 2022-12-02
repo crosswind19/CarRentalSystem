@@ -517,12 +517,14 @@ public class AddCar extends javax.swing.JFrame {
                     //check if id same as line (avoind same id)
                     String string_line = String.valueOf(line);
                     
-                    
-                    if(car_id_list.contains(string_line)){
-                        JOptionPane.showMessageDialog(this, "Same Car ID Listed!", "Error Message", JOptionPane.WARNING_MESSAGE);
-                        new_carid = (car.getId() + 100);
-                        
+                    for(int x=0; x<car_id_list.size(); x++){
+                        if(car_id_list.contains(string_line)){
+                            JOptionPane.showMessageDialog(this, "Same Car ID Listed!", "Error Message", JOptionPane.WARNING_MESSAGE);
+                            new_carid = (car.getId() + 100);
+
+                        }                        
                     }
+
                     
                     
                     //write into textfile
