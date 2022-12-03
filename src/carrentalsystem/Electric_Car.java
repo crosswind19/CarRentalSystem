@@ -21,10 +21,10 @@ public class Electric_Car extends Powered_Type{
 
     }
     
-    public double getRentPrice_elec(){
-        return car_rent;
-    }
-    
+//    public double getRentPrice_elec(){
+//        return car_rent;
+//    }
+//    
     
     @Override
     public double doCarInsurance(double rent){
