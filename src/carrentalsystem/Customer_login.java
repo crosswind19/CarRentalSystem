@@ -350,6 +350,7 @@ public class Customer_login extends javax.swing.JFrame {
         cus_id=id;
         Customer_booking.customerid_value = cus_id;
         Customer_ViewBooking.customerid_value = cus_id;
+        Customer_Payment.customerid_value = cus_id;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -36,11 +36,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="ViewBookingHistoryBtn" max="32767" attributes="0"/>
                           <Component id="SearchCarBtn" pref="213" max="32767" attributes="0"/>
+                          <Component id="ViewBookingHistoryBtn" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                      <Component id="SearchCarBtn1" min="-2" pref="213" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="ReturnCarBtn" min="-2" pref="213" max="-2" attributes="0"/>
+                          <Component id="ViewPaymentBtn" min="-2" pref="213" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="153" max="32767" attributes="0"/>
@@ -67,11 +70,14 @@
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="SearchCarBtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="SearchCarBtn1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="ReturnCarBtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="ViewBookingHistoryBtn" min="-2" pref="43" max="-2" attributes="0"/>
-              <EmptySpace pref="71" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ViewBookingHistoryBtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="ViewPaymentBtn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="69" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,7 +121,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewBookingHistoryBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="SearchCarBtn1">
+    <Component class="javax.swing.JButton" name="ReturnCarBtn">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="3"/>
@@ -123,7 +129,7 @@
         <Property name="text" type="java.lang.String" value="Return Car"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchCarBtn1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ReturnCarBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -133,6 +139,17 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="ViewPaymentBtn">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="View Payment"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewPaymentBtnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

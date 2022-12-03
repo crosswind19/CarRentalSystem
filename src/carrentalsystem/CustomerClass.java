@@ -39,8 +39,9 @@ public class CustomerClass extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         SearchCarBtn = new javax.swing.JButton();
         ViewBookingHistoryBtn = new javax.swing.JButton();
-        SearchCarBtn1 = new javax.swing.JButton();
+        ReturnCarBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        ViewPaymentBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -68,15 +69,23 @@ public class CustomerClass extends javax.swing.JFrame {
             }
         });
 
-        SearchCarBtn1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        SearchCarBtn1.setText("Return Car");
-        SearchCarBtn1.addActionListener(new java.awt.event.ActionListener() {
+        ReturnCarBtn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        ReturnCarBtn.setText("Return Car");
+        ReturnCarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchCarBtn1ActionPerformed(evt);
+                ReturnCarBtnActionPerformed(evt);
             }
         });
 
         jLabel3.setText("jLabel3");
+
+        ViewPaymentBtn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        ViewPaymentBtn.setText("View Payment");
+        ViewPaymentBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewPaymentBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,10 +99,12 @@ public class CustomerClass extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SearchCarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
+                            .addComponent(SearchCarBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(110, 110, 110)
-                        .addComponent(SearchCarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ReturnCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ViewPaymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(153, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(262, 262, 262)
@@ -114,10 +125,12 @@ public class CustomerClass extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchCarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                    .addComponent(ReturnCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ViewPaymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,12 +182,19 @@ public class CustomerClass extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_ViewBookingHistoryBtnActionPerformed
 
-    private void SearchCarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtn1ActionPerformed
+    private void ReturnCarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnCarBtnActionPerformed
         // TODO add your handling code here:
         Customer_ReturnCar returncar = new Customer_ReturnCar();
         returncar.setVisible(true);
         dispose();
-    }//GEN-LAST:event_SearchCarBtn1ActionPerformed
+    }//GEN-LAST:event_ReturnCarBtnActionPerformed
+
+    private void ViewPaymentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPaymentBtnActionPerformed
+        // TODO add your handling code here:
+        Customer_Payment viewPayment = new Customer_Payment();
+        viewPayment.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ViewPaymentBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,9 +235,10 @@ public class CustomerClass extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ReturnCarBtn;
     private javax.swing.JButton SearchCarBtn;
-    private javax.swing.JButton SearchCarBtn1;
     private javax.swing.JButton ViewBookingHistoryBtn;
+    private javax.swing.JButton ViewPaymentBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
