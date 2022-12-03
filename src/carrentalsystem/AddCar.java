@@ -540,10 +540,10 @@ public class AddCar extends javax.swing.JFrame {
             //Rent price will + with insurance
 
             if("Electric".equals(car_fuel_type)){
-                new_price =  elec.doElectricCarInsurance(elec.getRentPrice());
+                new_price =  elec.doCarInsurance(elec.getRentPrice());
             }
             else{
-               new_price = convenc.doConventionalCarInsurance(rent_price);
+               new_price = convenc.doCarInsurance(rent_price);
             }
 
             

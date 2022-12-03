@@ -22,22 +22,40 @@ public class Customer {
     private String emailAddress;
     private String address;
     private String gender;
+    private String username;
+    private String password;
     
     
     
     
     public Customer (){
-        //this.id=id;
+      
     }
     
     //Insert
-    public Customer (int id,String name,String gender,String phoneNumber,String emailAddress,String address){
+    public Customer (int id,String name,String gender,String phoneNumber,String emailAddress,String address,String username,String password){
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.address = address;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
+    }
+    
+    public String getUsername(){
+        return username;
+    }
+    
+    public void setUsername(String username){
+        this.username = username;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public int getId() {

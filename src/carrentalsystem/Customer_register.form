@@ -24,25 +24,25 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lbl_Password" alignment="1" max="32767" attributes="0"/>
-                              <Component id="lbl_Username" alignment="1" min="-2" pref="154" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel4" min="-2" pref="154" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="backBtn" min="-2" pref="92" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="lbl_Username" min="-2" pref="154" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="backBtn" min="-2" pref="92" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="lbl_Password" min="-2" pref="154" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jButton1" min="-2" pref="144" max="-2" attributes="0"/>
@@ -56,7 +56,6 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="txt_Username" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="customer_username_reg1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txt_Password" min="-2" pref="176" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -96,7 +95,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <EmptySpace pref="44" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -120,24 +119,22 @@
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel4" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="customer_username_reg1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txt_Name" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbl_Name" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="lbl_Username" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="txt_Username" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="cbox_gender" alignment="0" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbl_Username" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="txt_Username" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbl_Gender" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="lbl_Password" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="txt_Password" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txt_Password" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_Password" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="txt_Email" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbl_Email" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
@@ -242,14 +239,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Emoji" size="24" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="ID: "/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lbl_Name">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -269,19 +258,7 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_NameActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="customer_username_reg1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="0"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[64, 30]"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customer_username_reg1ActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_NameKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Gender">
@@ -327,6 +304,9 @@
           <Dimension value="[64, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_PhoneNoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Address">
       <Properties>

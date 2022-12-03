@@ -26,7 +26,8 @@ public class Electric_Car extends Powered_Type{
     }
     
     
-    public double doElectricCarInsurance(double rent){
+    @Override
+    public double doCarInsurance(double rent){
         Double totalRentPrice = (rent + 250);
         return totalRentPrice;
     }

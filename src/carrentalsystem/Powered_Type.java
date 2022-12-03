@@ -41,4 +41,9 @@ public class Powered_Type extends Vehicle{
         this.rent_price = rent;
     }
     
+    public double doCarInsurance(double price){
+        Double totalRentPrice = (price + 500);
+        return totalRentPrice;
+    }
+    
 }

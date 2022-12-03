@@ -200,6 +200,12 @@ public class Customer_login extends javax.swing.JFrame {
         customer_credentials.add(password_textfield_value);
         
         //System.out.println(staff_credentials);
+        Customer login = new Customer();
+        
+        login.setUsername(customer_credentials.get(0));
+        login.setPassword(customer_credentials.get(1));
+        
+        System.out.println(login.getUsername());
         
         try{
             File customer_information = new File("Customer_Information.txt");
@@ -216,13 +222,15 @@ public class Customer_login extends javax.swing.JFrame {
                 textfile_credentials.add(new_information[2]);
                 
                 
+                
+                
                 //System.out.println(textfile_credentials);
-                if((username_textfield_value.equals(new_information[1])) && (password_textfield_value.equals(new_information[2]))){
+                if((login.getUsername().equals(new_information[1])) && (login.getPassword().equals(new_information[2]))){
                     flag = 1;
                     customer_credentials.add(new_information[0]);
                     //System.out.println(customer_credentials);
                     temp_username = new_information[1];
-                    fname = new_information[3];
+                    login.setName(new_information[3]);
                     login_btn.setEnabled(false);
                     break;
                 }else{
@@ -232,7 +240,7 @@ public class Customer_login extends javax.swing.JFrame {
             }
             
             if(flag == 1){
-                JOptionPane.showMessageDialog(this, "Login Successful! " + fname + "!" + "\nWelcome to Prestige Car Rental", "Rental Booking System", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Login Successful! " + login.getName() + "!" + "\nWelcome to Prestige Car Rental", "Rental Booking System", JOptionPane.INFORMATION_MESSAGE);
                 CustomerClass main = new CustomerClass();
                 main.setVisible(true);
                 get_customerid(customer_credentials.get(2));
@@ -246,7 +254,7 @@ public class Customer_login extends javax.swing.JFrame {
                 Customer_booking booking = new Customer_booking();
                 
                 
-                Customer login = new Customer(); 
+                
                 login.setId(tempcusid);
 
                

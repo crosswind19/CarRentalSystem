@@ -17,7 +17,9 @@ public class Conventional_Car extends Powered_Type{
     }
 
     
-    public double doConventionalCarInsurance(double price){
+    
+    @Override
+    public double doCarInsurance(double price){
         Double totalRentPrice = (price + 500);
         return totalRentPrice;
     }
