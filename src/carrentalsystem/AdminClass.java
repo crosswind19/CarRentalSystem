@@ -38,7 +38,7 @@ public class AdminClass extends javax.swing.JFrame {
         delete_booking_btn = new javax.swing.JButton();
         quit_btn = new javax.swing.JButton();
         booking_confirmation = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        approve_car_return = new javax.swing.JButton();
         edit_paymemt = new javax.swing.JButton();
         view_cus_booking = new javax.swing.JButton();
         delete_payment = new javax.swing.JButton();
@@ -127,8 +127,13 @@ public class AdminClass extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jButton1.setText("Approve Car Return");
+        approve_car_return.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        approve_car_return.setText("Approve Car Return");
+        approve_car_return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approve_car_returnActionPerformed(evt);
+            }
+        });
 
         edit_paymemt.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         edit_paymemt.setText("Edit Customer Payment");
@@ -184,7 +189,7 @@ public class AdminClass extends javax.swing.JFrame {
                             .addComponent(view_car, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(booking_confirmation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(view_log, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(approve_car_return, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(edit_cus_booking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -230,7 +235,7 @@ public class AdminClass extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(approve_car_return)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(view_log))
                     .addComponent(generate_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -319,6 +324,12 @@ public class AdminClass extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_delete_paymentActionPerformed
 
+    private void approve_car_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approve_car_returnActionPerformed
+        ApproveReturning approve_car = new ApproveReturning();
+        approve_car.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_approve_car_returnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -356,6 +367,7 @@ public class AdminClass extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_new_car;
+    private javax.swing.JButton approve_car_return;
     private javax.swing.JButton booking_confirmation;
     private javax.swing.JButton delete_booking_btn;
     private javax.swing.JButton delete_car;
@@ -364,7 +376,6 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton edit_cus_booking;
     private javax.swing.JButton edit_paymemt;
     private javax.swing.JToggleButton generate_pdf;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton quit_btn;

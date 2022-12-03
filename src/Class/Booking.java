@@ -88,8 +88,12 @@ public class Booking implements Serializable {
         this.vehicle = vehicle;
     }
     
+    public void setCarID(String carID){
+        this.id_car = carID;
+    }
+    
     //Get Car id
-    Booking(String carID){
+    public Booking(String carID){
         this.id_car = carID;
     }
     

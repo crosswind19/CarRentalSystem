@@ -4,6 +4,7 @@
  */
 package carrentalsystem;
 
+import Class.Payment;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class Booking_confirmation {
     String update_status = "";
     
     String id_car;
+    String booking_ids;
     
     BookingConfirmation booking;
     
@@ -95,7 +97,7 @@ public class Booking_confirmation {
                     String[] each_element = each_booking[0].split("\t");
                     
                     //get the both id
-                    String booking_ids = each_element[0];
+                    booking_ids = each_element[0];
                     String cusID = each_element[1];
                     
                     //get car id
@@ -130,6 +132,9 @@ public class Booking_confirmation {
                                 
                                     //car status change back from not-Available to Available    
                                     this.changeCarStatus();
+                                    
+                                    //remove the payment details
+                                    this.deletePaymentData();
                                     
                                 }
                             default -> {
@@ -242,6 +247,17 @@ public class Booking_confirmation {
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(EditCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
+    }
+    
+    public void deletePaymentData(){
+        // get the booking id
+        Payment pay = new Payment();
+        pay.setPaymentID(booking_ids);
+        
+        pay.setAns(1);
+        pay.doDeletePayment();
+        
         
     }
 

@@ -138,7 +138,7 @@ public class ViewCar extends javax.swing.JFrame {
                 
             }
         
-        
+        get_all_car_details.setEnabled(false);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(ViewCar.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
