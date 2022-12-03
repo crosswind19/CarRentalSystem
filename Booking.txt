@@ -6,7 +6,7 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 5	1	DSA	3	Mclaren P1	13000.0	Rejected
 6	1	testing	6	tyfkjhg sefse	2810919.0	Pending_for_approval
 7	1	ASD	9	ves aw	756.0	Pending_for_approval
-8	1	ASD	7	asdfjhb jkhgkjdf	1509.0	Approved
+8	1	ASD	7	asdfjhb jkhgkjdf	1509.0	Returning
 9	1	SD	8	sdfsd iugku	1869.0	Rejected
 10	1	ASD	8	sdfsd iugku	1246.0	Rejected
 11	1	ASDdsa	8	sdfsd iugku	3115.0	Rejected

@@ -16,7 +16,9 @@ import java.io.IOException;
  * @author Crosswind Cheah
  */
 public class CustomerClass extends javax.swing.JFrame {
-
+    
+    String cusername;
+    
     /**
      * Creates new form CustomerClass
      */
@@ -38,9 +40,9 @@ public class CustomerClass extends javax.swing.JFrame {
         SearchCarBtn = new javax.swing.JButton();
         ViewBookingHistoryBtn = new javax.swing.JButton();
         SearchCarBtn1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(796, 390));
         setResizable(false);
         setSize(new java.awt.Dimension(796, 390));
 
@@ -74,6 +76,8 @@ public class CustomerClass extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,9 +88,6 @@ public class CustomerClass extends javax.swing.JFrame {
                         .addGap(241, 241, 241)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ViewBookingHistoryBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -94,12 +95,20 @@ public class CustomerClass extends javax.swing.JFrame {
                         .addGap(110, 110, 110)
                         .addComponent(SearchCarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
@@ -162,7 +171,9 @@ public class CustomerClass extends javax.swing.JFrame {
 
     private void SearchCarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchCarBtn1ActionPerformed
         // TODO add your handling code here:
-        
+        Customer_ReturnCar returncar = new Customer_ReturnCar();
+        returncar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_SearchCarBtn1ActionPerformed
 
     /**
@@ -193,6 +204,9 @@ public class CustomerClass extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+        //System.out.println(cusername);
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CustomerClass().setVisible(true);
@@ -206,5 +220,6 @@ public class CustomerClass extends javax.swing.JFrame {
     private javax.swing.JButton ViewBookingHistoryBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

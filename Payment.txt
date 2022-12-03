@@ -1,3 +1,4 @@
 Payment_ID	Booking_ID	Customer_ID	Car_ID	Payment_Amount
 21	21	1	6	45706.0
 19	19	1	8	1246.0
+120	120	2	6	68559.0

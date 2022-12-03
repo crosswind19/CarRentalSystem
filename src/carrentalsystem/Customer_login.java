@@ -24,7 +24,11 @@ import javax.swing.JOptionPane;
 
 
 public class Customer_login extends javax.swing.JFrame {
-
+    
+//    public static String customer_details(String id){
+//        return id;
+//    }
+    Customer login = new Customer(); 
     /**
      * Creates new form Customer_login
      */
@@ -200,10 +204,12 @@ public class Customer_login extends javax.swing.JFrame {
         customer_credentials.add(password_textfield_value);
         
         //System.out.println(staff_credentials);
-        Customer login = new Customer();
+       
         
         login.setUsername(customer_credentials.get(0));
         login.setPassword(customer_credentials.get(1));
+        
+        
         
         System.out.println(login.getUsername());
         
@@ -242,6 +248,7 @@ public class Customer_login extends javax.swing.JFrame {
             if(flag == 1){
                 JOptionPane.showMessageDialog(this, "Login Successful! " + login.getName() + "!" + "\nWelcome to Prestige Car Rental", "Rental Booking System", JOptionPane.INFORMATION_MESSAGE);
                 CustomerClass main = new CustomerClass();
+                main.cusername = txt_cususername.getText();
                 main.setVisible(true);
                 get_customerid(customer_credentials.get(2));
                 
@@ -250,6 +257,11 @@ public class Customer_login extends javax.swing.JFrame {
                 String cusid = textfile_credentials.get(0);
    
                 int tempcusid = Integer.parseInt(cusid);
+                
+                Customer_ViewBooking name = new Customer_ViewBooking();
+                String passuser = username_textfield_value;
+                //System.out.println(passuser);
+             
                 
                 Customer_booking booking = new Customer_booking();
                 
@@ -263,6 +275,9 @@ public class Customer_login extends javax.swing.JFrame {
                 
                         
                 CustomerLog(temp_username,fname);
+                
+                
+                
                 dispose();
             }else{
                 JOptionPane.showMessageDialog(this, "Login Failed! Please Try Again" , "Universal Resort Booking System", JOptionPane.WARNING_MESSAGE);
@@ -316,6 +331,9 @@ public class Customer_login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+         
+         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Customer_login().setVisible(true);
@@ -331,6 +349,7 @@ public class Customer_login extends javax.swing.JFrame {
         String cus_id;
         cus_id=id;
         Customer_booking.customerid_value = cus_id;
+        Customer_ViewBooking.customerid_value = cus_id;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

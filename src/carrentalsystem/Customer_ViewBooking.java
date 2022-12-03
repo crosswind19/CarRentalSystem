@@ -1,5 +1,12 @@
 package carrentalsystem;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.table.DefaultTableModel;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,12 +17,14 @@ package carrentalsystem;
  * @author Crosswind Cheah
  */
 public class Customer_ViewBooking extends javax.swing.JFrame {
-
+    public static String customerid_value;
     /**
      * Creates new form Customer_ViewBooking
      */
     public Customer_ViewBooking() {
         initComponents();
+        jButton1.doClick();
+        
     }
 
     /**
@@ -28,19 +37,17 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        viewBooking_table = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         booking_back_btn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        viewBooking_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Customer_ID", "Customer_Name", "Car_ID", "Car_Name", "Rent_Price", "Booking_Status"
@@ -54,7 +61,7 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(viewBooking_table);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("View Booking");
@@ -73,6 +80,8 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,7 +93,9 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(142, 142, 142))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -96,7 +107,9 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +132,40 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //File get_booking_details = new File();
+        File get_booking_details = new File("Booking.txt");
+        try {
+            BufferedReader booking_details = new BufferedReader(new FileReader(get_booking_details));
+            String each_car_lines = booking_details.readLine();
+            //System.out.println(each_car_line);
+            //display in table form (car details)
+            DefaultTableModel show_booking_details = (DefaultTableModel)viewBooking_table.getModel();
+
+                 
+            
+            Object[] booking_info = booking_details.lines().toArray();
+
+            
+            for(int i=0; i<booking_info.length; i++){
+                
+                String car_line = booking_info[i].toString();
+                //System.out.println(car_line);
+                String get_all_data[] = car_line.split("\t");
+
+                if(get_all_data[1].equals(customerid_value)){
+                    show_booking_details.addRow(get_all_data);
+                }
+            }
+     
+            
+        
+        
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+        jButton1.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -161,7 +207,8 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
     private javax.swing.JButton booking_back_btn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable viewBooking_table;
     // End of variables declaration//GEN-END:variables
 }

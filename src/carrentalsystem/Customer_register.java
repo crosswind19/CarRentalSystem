@@ -32,6 +32,7 @@ public class Customer_register extends javax.swing.JFrame {
     private String username;
     private String password;
     private Customer customer;
+    String customer_username;
     int ln;
 
     File f = new File("logins.txt");
@@ -290,7 +291,7 @@ public class Customer_register extends javax.swing.JFrame {
                 line = line + 1;
                 String new_information[] = info.split("\t");
                 //System.out.println(new_information[1]);
-                if((customer_credentials.get(0).equals(new_information[1])) && (customer_credentials.get(1).equals(new_information[2]))){
+                if((customer_credentials.get(0).equals(new_information[1]))){
                     action = 0;
                     break;
                 }
