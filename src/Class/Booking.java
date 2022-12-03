@@ -63,6 +63,10 @@ public class Booking implements Serializable {
     
     }
     
+    public Booking(){
+        
+    }
+    
     //booking id
     public int getId() {
         return id;
@@ -319,8 +323,21 @@ public class Booking implements Serializable {
         
     }
 
-    
-    
-    
+    public int calTotalCustomer(){
+        int count=0;
+        try {          
+            File read_car_file = new File("Customer_Information.txt");
+            Scanner scan_car = new Scanner(read_car_file);       
+            while(scan_car.hasNextLine()){
+                String each_car = scan_car.nextLine();
+                count = count + 1;
+            }
+        }catch(Exception e){
+            
+        } 
+        return count;
+        
+    }
+
     
 }

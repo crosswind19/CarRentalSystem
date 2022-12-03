@@ -122,4 +122,31 @@ public void doDeletePayment(){
     }
     
 }
+
+public double TotalRevenue(){
+    int cal_line=0, revenue=0;
+    try {          
+        File pay_file = new File("Payment.txt");
+        Scanner scan_pay = new Scanner(pay_file);
+
+        while(scan_pay.hasNextLine()){
+            String each_line = scan_pay.nextLine();
+            cal_line = cal_line + 1;
+            String[] del_pay_details = each_line.split("\n");
+            String[] each_pay_del = del_pay_details[0].split("\t");
+            
+            //get the payment data
+            String payment = each_pay_del[4];
+            try{
+                Double new_payment = Double.parseDouble(payment);
+                revenue += new_payment;
+            }catch(NumberFormatException e){
+                
+            }
+}
+} catch (FileNotFoundException ex) {
+        Logger.getLogger(DeleteCar.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return revenue;
+}
 }

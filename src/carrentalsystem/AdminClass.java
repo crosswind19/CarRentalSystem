@@ -4,6 +4,9 @@
  */
 package carrentalsystem;
 
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author bende
@@ -86,6 +89,11 @@ public class AdminClass extends javax.swing.JFrame {
 
         generate_pdf.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         generate_pdf.setText("Generate PDF");
+        generate_pdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generate_pdfActionPerformed(evt);
+            }
+        });
 
         view_log.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         view_log.setText("View Customer Log");
@@ -329,6 +337,20 @@ public class AdminClass extends javax.swing.JFrame {
         approve_car.setVisible(true);
         dispose();
     }//GEN-LAST:event_approve_car_returnActionPerformed
+
+    private void generate_pdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_pdfActionPerformed
+        Company_PDF company = new Company_PDF();
+        company.GeneratePDF();
+        company.setAction(1);
+        
+        if(company.getAction() == 1){
+            JOptionPane.showMessageDialog(this, "Company Reports Genetated Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+            generate_pdf.setEnabled(false);
+        }else{
+            JOptionPane.showMessageDialog(this, "Error Found for Generating Report!", "Error Message", JOptionPane.ERROR_MESSAGE);
+            
+        }
+    }//GEN-LAST:event_generate_pdfActionPerformed
 
     /**
      * @param args the command line arguments

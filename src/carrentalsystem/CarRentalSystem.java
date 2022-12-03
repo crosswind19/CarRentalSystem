@@ -4,6 +4,8 @@
  */
 package carrentalsystem;
 
+import Class.Booking;
+import Class.Payment;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -30,6 +32,19 @@ public class CarRentalSystem {
 
         MainClass main_frame = new MainClass();
         main_frame.setVisible(true);  
+        
+//        //payment
+//        Payment pay = new Payment();
+//        System.out.println(pay.TotalRevenue());    
+//        
+//        //total customer
+//        Booking booking = new Booking();
+//        System.out.println(booking.calTotalCustomer());
+//        
+//        //powered_type
+//        Powered_Type power_typed = new Powered_Type();
+//        System.out.println(power_typed.doCalculateConvenctionalCar() + "Convenc" + power_typed.doCalculateElectricCar() + "Elec" + power_typed.doCalculateTotalCar() + "total" + power_typed.doCalculateNotAvailableCar() + "not available" + power_typed.doCalculateAvailableCar() + "available");
+//        
 
     }
     
