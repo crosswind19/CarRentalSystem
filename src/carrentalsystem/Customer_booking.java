@@ -371,23 +371,23 @@ public class Customer_booking extends javax.swing.JFrame {
         
         //Ady in booking
         //Generate payment ID
-//        File get_payment_id = new File("Payment.txt");
-//        try(Scanner payment_id = new Scanner(get_payment_id)){
-//            while(payment_id.hasNextLine()){
-//                pline = pline + 1;
-//                String info = payment_id.nextLine();
-//                
-//                String new_information[] = info.split("\t");
-//                store_all_id.add(new_information[0]);
-//                
-//                new_payment_id = String.valueOf(Integer.toString(line));
-//                
-//                
-//            }
-//
-//        } catch (FileNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
+        File get_payment_id = new File("Payment.txt");
+        try(Scanner payment_id = new Scanner(get_payment_id)){
+            while(payment_id.hasNextLine()){
+                pline = pline + 1;
+                String info = payment_id.nextLine();
+                
+                String new_information[] = info.split("\t");
+                store_all_id.add(new_information[0]);
+                
+                new_payment_id = String.valueOf(Integer.toString(line));
+                
+                
+            }
+
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         
        
         String cusid = cusID_textfield.getText();
@@ -403,7 +403,7 @@ public class Customer_booking extends javax.swing.JFrame {
         
         try {
             FileOutputStream file_booking_details = new FileOutputStream("Booking.txt",true);
-            //FileOutputStream file_payment_details = new FileOutputStream("Payment.txt",true);
+            FileOutputStream file_payment_details = new FileOutputStream("Payment.txt",true);
             
             String booking_details;
             String payment_details;
@@ -435,10 +435,10 @@ public class Customer_booking extends javax.swing.JFrame {
             file_booking_details.write(booking);
             
             //write payment details
-//            payment_details = (new_payment_id + "\t" + new_booking_id + "\t" +  cusid + "\t" + carid + "\t" + rents + "\n");
-//            
-//            byte[] payment = payment_details.getBytes();
-//            file_payment_details.write(payment);
+            payment_details = (new_payment_id + "\t" + new_booking_id + "\t" +  cusid + "\t" + carid + "\t" + rents + "\n");
+            
+            byte[] payment = payment_details.getBytes();
+            file_payment_details.write(payment);
 
                
             
