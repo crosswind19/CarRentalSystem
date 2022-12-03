@@ -253,7 +253,7 @@ public class Booking_confirmation {
     public void deletePaymentData(){
         // get the booking id
         Payment pay = new Payment();
-        pay.setPaymentID(booking_ids);
+        pay.setPaymentID(booking_id);
         
         pay.setAns(1);
         pay.doDeletePayment();
