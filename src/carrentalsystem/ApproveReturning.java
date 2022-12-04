@@ -299,8 +299,8 @@ public class ApproveReturning extends javax.swing.JFrame {
                     
                 }
                 //changing car status to Available
-                int book_id = Integer.parseInt(id_booking);
-                Change_Booking_Status booking = new Change_Booking_Status(book_id, car_id, car_status);
+                //int book_id = Integer.parseInt(id_booking);
+                Change_Booking_Status booking = new Change_Booking_Status(id_booking, car_id, car_status);
                 booking.setCarID(car_id);
 
                 booking.changeCarStatus();

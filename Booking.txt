@@ -14,7 +14,7 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 15	1	testing	108	asd asd	330.0	Pending_for_approval
 16	1	booking	8	sdfsd iugku	0.0	Rejected
 18	1	Jah Xuan	3	Mclaren P1	13000.0	Rejected
-119	1	Lah Xuan	108	asd asd	1510.0	Returning
+119	1	Lah Xuan	108	asd asd	1510.0	Returned
 20	1	Test	8	sdfsd iugku	1246.0	Returned
 118	1	test1	1	Ferrari 458	18000.0	Pending_for_approval
-19	1	KX name	8	sdfsd iugku	1246.0	Pending_for_approval
+19	1	KX name	8	sdfsd iugku	1246.0	Approved

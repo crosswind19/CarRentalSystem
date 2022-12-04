@@ -67,6 +67,11 @@ abstract class changeStatus{
         return booking_status;
     }
     
+      public void setCarID(String carID){
+        this.id_car = carID;
+    }
+    
+    
     public int getCaptureFlag(){
         return capture_flag;
     }
@@ -289,13 +294,14 @@ public class Change_Booking_Status extends changeStatus{
                     
                     //get car id
                     id_car = each_element[3];
-                    String booking_id = Integer.toString(id);
+                   //String booking_id = Integer.toString(booking_id);
                     
                     
                     //System.out.println(booking_id + " "  +cusID);
                     array_booking.add(each_booking[0]);
                     
-                    if((car_id.equals(cusID) && (booking_id.equals(booking_ids)))){
+                    //Initially is car_id
+                    if((cus_id.equals(cusID) && (booking_id.equals(booking_ids)))){
      
                         flag = 1;
                         int new_cnt = cnt - 1;
