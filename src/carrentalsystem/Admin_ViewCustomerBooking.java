@@ -202,6 +202,14 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
             cus_booking_history.getColumnModel().getColumn(2).setMinWidth(0);
             cus_booking_history.getColumnModel().getColumn(2).setMaxWidth(0);
             
+            if(action == 1){
+                JOptionPane.showMessageDialog(this, "The Customer ID is: " + cus_id, "Information Message", JOptionPane.INFORMATION_MESSAGE);
+
+            }else{
+                JOptionPane.showMessageDialog(this, "The Customer Name Not Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
+                
+            }
+            
             
         //Allow the admin to print out receipt
         PrinterJob print_cus_booking_history = PrinterJob.getPrinterJob();
@@ -213,14 +221,14 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
             public int print(Graphics graphics,PageFormat format,int page_number){
                 
                 
-                Graphics2D each_page = (Graphics2D)graphics;
+                Graphics2D cus_page = (Graphics2D)graphics;
                 //create a 2D scale in the PDF(after print)
                 //X and Y axis
-                each_page.scale(0.5, 0.5);
-                each_page.translate(format.getImageableX(), format.getImageableY());
+                cus_page.scale(0.7, 0.7);
+                cus_page.translate(format.getImageableX(), format.getImageableY());
                 
                 
-                print_receipt_page.print(each_page);
+                print_receipt_page.print(cus_page);
                 return Printable.PAGE_EXISTS;
             }
         });
@@ -235,14 +243,7 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
             
         }
         //printing receipt end here
-            
-            if(action == 1){
-                JOptionPane.showMessageDialog(this, "The Customer ID is: " + cus_id, "Information Message", JOptionPane.INFORMATION_MESSAGE);
-
-            }else{
-                JOptionPane.showMessageDialog(this, "The Customer Name Not Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
-                
-            }
+        
 
         } catch (FileNotFoundException ex) {
             java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
