@@ -17,11 +17,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author bende
  */
-public class Booking_confirmation {
+public class Booking_status {
     
     String booking_id;
     String cus_id;
@@ -40,13 +41,13 @@ public class Booking_confirmation {
     int cnt=0, flag=0, capture_flag = 0;
     
     //parse in booking id, customer id, and combobos number
-    Booking_confirmation(String bookingID, String cusID, String status){
+    Booking_status(String bookingID, String cusID, String status){
         this.booking_id = bookingID;
         this.cus_id = cusID;
         this.booking_status = status;
     }
     
-    Booking_confirmation(String carID){
+    Booking_status(String carID){
         this.id_car = carID;
     }
     

@@ -160,7 +160,7 @@ public class DeleteCusBooking extends javax.swing.JFrame {
                 if(opt == JOptionPane.YES_NO_OPTION){
                     
                     //change back car status to availble after delete the customer booking
-                    Booking_confirmation booking = new Booking_confirmation(carID);
+                    Booking_status booking = new Booking_status(carID);
                     
                     booking.changeCarStatus();
                     
