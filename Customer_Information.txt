@@ -4,4 +4,4 @@
 4	6	6	6	Male	6	6	6
 5	7	7	7	Male	7	7	7
 6	kahxuan	kkxx	Kah Xuan	Male	crosswind1902@gmail.com	0123456789	1, Jalan teknologi
-7	22	fdfs	dasdas	Male	22	22	22
+7	22	fdfs	dasdas	Male	22	22	228	xuanxuan	22	CKX	Female	57000	0123456789	1, Jalan Teknologi		57000	Bukit Jalil	Kuala Lumpur

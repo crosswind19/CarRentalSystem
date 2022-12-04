@@ -76,7 +76,6 @@ public class Customer_login extends javax.swing.JFrame {
         login_btn = new javax.swing.JButton();
         lbl_Register = new javax.swing.JLabel();
         txt_cuspassword = new javax.swing.JPasswordField();
-        txt_Pass = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,7 +107,9 @@ public class Customer_login extends javax.swing.JFrame {
             }
         });
 
-        lbl_Register.setText("Don't have an account? Click to Register");
+        lbl_Register.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_Register.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Register.setText("Don't have an account? Click here to Register");
         lbl_Register.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbl_Register.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         lbl_Register.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,15 +144,11 @@ public class Customer_login extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_cususername, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txt_cuspassword, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(txt_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(16, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lbl_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
+                                    .addComponent(txt_cuspassword, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(lbl_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,17 +165,14 @@ public class Customer_login extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(txt_cuspassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txt_cuspassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(28, 28, 28)
                 .addComponent(lbl_Register)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -251,6 +245,7 @@ public class Customer_login extends javax.swing.JFrame {
                 main.cusername = txt_cususername.getText();
                 main.setVisible(true);
                 get_customerid(customer_credentials.get(2));
+                get_customername(login.getName());
                 
                // System.out.println(textfile_credentials.get(0));
                 
@@ -352,6 +347,12 @@ public class Customer_login extends javax.swing.JFrame {
         Customer_ViewBooking.customerid_value = cus_id;
         Customer_Payment.customerid_value = cus_id;
     }
+    
+    static void get_customername(String name){
+        String cus_name;
+        cus_name = name;
+        Customer_booking.customername_value = cus_name;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -360,7 +361,6 @@ public class Customer_login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lbl_Register;
     private javax.swing.JButton login_btn;
-    private javax.swing.JTextField txt_Pass;
     private javax.swing.JPasswordField txt_cuspassword;
     private javax.swing.JTextField txt_cususername;
     // End of variables declaration//GEN-END:variables

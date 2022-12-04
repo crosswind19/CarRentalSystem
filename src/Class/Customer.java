@@ -10,20 +10,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Crosswind Cheah
- */
+
 public class Customer {
     
     int id;
     private String name;
     private String phoneNumber;
     private String emailAddress;
-    private String address;
     private String gender;
     private String username;
     private String password;
+    //Aggregiation
+    public Address address;
     
     
     
@@ -33,13 +31,16 @@ public class Customer {
     }
     
     //Insert
-    public Customer (int id,String name,String gender,String phoneNumber,String emailAddress,String address,String username,String password){
+    public Customer (int id,String username, String password,String name,String gender,String emailAddress,String phoneNumber,Address address){
         this.id = id;
+        this.username = username;
+        this.password = password;
         this.name = name;
         this.gender = gender;
-        this.address = address;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
+        //Aggregation
+        this.address = address;
     }
     
     public String getUsername(){
@@ -74,6 +75,8 @@ public class Customer {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -90,14 +93,15 @@ public class Customer {
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
-
-    public String getAddress() {
-        return address;
+    
+    public String register(){
+        String address_details = (address.Street + "\t" + address.Postal + "\t" + address.City + "\t" + address.State + "\n");
+        String person_details = (id + "\t" + username + "\t" + password + "\t" +name + "\t" +gender + "\t" +emailAddress + "\t" +phoneNumber + "\t" + address_details);
+        
+        return person_details;
+        
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getGender() {
         return gender;
