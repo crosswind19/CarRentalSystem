@@ -80,7 +80,7 @@ abstract class changeStatus{
         this.capture_flag = num;
     }
     
-    public void changeCarStatus(){
+    public void  changeCarStatus(){
      
         int action = 0, counter = 0;
         try {          
@@ -181,7 +181,10 @@ public class Change_Booking_Status extends changeStatus{
      
     }
     
+    
     public void doBookingConfirmation() throws IOException{
+        
+        
         try {
             File read_confirmation = new File("Booking.txt");
 
