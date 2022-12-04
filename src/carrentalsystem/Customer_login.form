@@ -47,22 +47,17 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txt_cususername" min="-2" pref="243" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txt_cuspassword" min="-2" pref="243" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="txt_Pass" min="-2" pref="86" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="txt_cuspassword" alignment="0" min="-2" pref="243" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
+                      <Component id="lbl_Register" min="-2" pref="328" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="lbl_Register" min="-2" pref="245" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+              <EmptySpace pref="130" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,19 +80,15 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="txt_cuspassword" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txt_Pass" min="-2" pref="41" max="-2" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton1" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="login_btn" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="lbl_Register" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -161,7 +152,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbl_Register">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Don&apos;t have an account? Click to Register"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Don&apos;t have an account? Click here to Register"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Hand Cursor"/>
         </Property>
@@ -175,8 +170,6 @@
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txt_Pass">
     </Component>
   </SubComponents>
 </Form>
