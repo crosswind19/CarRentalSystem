@@ -80,7 +80,8 @@ public class Booking_confirmation {
     public void setCaptureFlag(int num){
         this.capture_flag = num;
     }
- 
+    
+    //Admin approve or reject customer booking
     public void doBookingConfirmation() throws IOException{
         try {
             File read_confirmation = new File("Booking.txt");
@@ -173,6 +174,7 @@ public class Booking_confirmation {
         }
     }
     
+    //Admin change car status to not available 
     public void changeCarStatus(){
      
         int action = 0, counter = 0;
