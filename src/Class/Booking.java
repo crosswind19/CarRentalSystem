@@ -40,10 +40,13 @@ public class Booking implements Serializable {
     String booking_status;
     String update_status = "";
     String car_status_available = "Available";
+    private String Rent_price;
     private Customer customer;
     private Vehicle vehicle;
     private long borrowTime;
     private long returnTime;
+    
+    public Payment payment;
     
     String id_car;
     
@@ -64,7 +67,7 @@ public class Booking implements Serializable {
     }
     
     public Booking(){
-        
+        this.payment = new Payment();
     }
     
     //booking id
@@ -108,6 +111,21 @@ public class Booking implements Serializable {
     public void setCaptureFlag(int num){
         this.capture_flag = num;
     }
+    
+    //
+    public String displayBookRent(){
+        return Rent_price;
+    }
+    
+    public void setBookRent(String rent){
+        this.Rent_price = rent;
+    }
+    
+    public String getBookRent(){
+        return Rent_price;
+    }
+    
+    
     
 //    public void doPayment(String booking_id,String customer_id,String car_id,String rent_price){
 //        int pline = 0;

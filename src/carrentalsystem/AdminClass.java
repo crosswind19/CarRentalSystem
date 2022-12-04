@@ -368,9 +368,6 @@ public class AdminClass extends javax.swing.JFrame {
         view_booking.setVisible(true);
         dispose();
 
-
-        //BookingHistory_PDF cus_booking_history = new BookingHistory_PDF();
-        
         
     }//GEN-LAST:event_cus_pdfActionPerformed
 

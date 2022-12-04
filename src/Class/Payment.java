@@ -30,12 +30,18 @@ String booking_id;
 String customer_id;
 String car_id;
 String payment_amount;  
+private String Rent_price;
 
 
 int flag = 0, ans = -1, action;
 
 public void Payment(String payid){
     this.payment_id = payid;
+
+}
+
+public void setPayment(String payrent){
+    this.payment_amount = payrent;
 
 }
 
@@ -62,6 +68,19 @@ public void setAction(int act){
 
 public int getAction(){
     return action;
+}
+
+//booking (composition)
+public String displayRent(){
+    return Rent_price;
+}
+
+public void setRent(String rent){
+    this.Rent_price = rent;
+}
+
+public String getRent(){
+    return Rent_price;
 }
 
 

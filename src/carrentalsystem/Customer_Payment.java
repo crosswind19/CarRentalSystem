@@ -4,6 +4,8 @@
  */
 package carrentalsystem;
 
+import Class.Booking;
+import Class.Payment;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,8 +27,12 @@ public class Customer_Payment extends javax.swing.JFrame {
         initComponents();
         jButton1.doClick();
         jButton1.setVisible(false);
+        
     }
-
+    
+    Payment pay = new Payment();
+    Booking book = new Booking();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -142,7 +148,9 @@ public class Customer_Payment extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        double totalprice = 0;
+        double totalprice = 0; 
+        int temp_price=0;
+        String total_value;
         File read_payment_detailss = new File("Payment.txt");
         try {
             BufferedReader read_payment = new BufferedReader(new FileReader(read_payment_detailss));
@@ -166,17 +174,28 @@ public class Customer_Payment extends javax.swing.JFrame {
                     
                     show_car_detailss.addRow(get_all_data);
                     
-                    double price = Double.parseDouble(get_all_data[4]);
-                    totalprice += price;
+                    //double price = Double.parseDouble(get_all_data[4]);
+
+                    
+                    total_value = (get_all_data[4]);
+                    totalprice= Double.parseDouble(total_value);
+                    temp_price+= totalprice;
+                    //System.out.println(temp_price);
+                    //double price = Double.parseDouble(total_value);
+                    //totalprice += price;
                     
                     
                 }
             }
-            String tprice = Double.toString(totalprice);
-            totalPrice_txt.setText("RM " + tprice);
             
-     
-            
+                    String price = String.valueOf(temp_price);
+                    //Payment pays = new Payment(price);
+                    
+                    book.payment.setRent(price);
+                    
+                    total_value = (book.payment.getRent());
+
+                    totalPrice_txt.setText("RM " + total_value);            
         
         
         } catch (FileNotFoundException ex) {
