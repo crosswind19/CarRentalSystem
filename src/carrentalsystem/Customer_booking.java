@@ -38,14 +38,15 @@ public class Customer_booking extends javax.swing.JFrame {
     
     
     public static String customerid_value;
+    public static String customername_value;
 
     /**
      * Creates new form Customer_booking
      */
     public Customer_booking() {
         initComponents();
-         jButton1.doClick();
-         jButton1.setVisible(false);
+         Auto_Click.doClick();
+         Auto_Click.setVisible(false);
        
         
     };
@@ -63,7 +64,7 @@ public class Customer_booking extends javax.swing.JFrame {
         booking_back_btn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         car_table = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        Auto_Click = new javax.swing.JButton();
         brand = new javax.swing.JLabel();
         cusID_textfield = new javax.swing.JTextField();
         model = new javax.swing.JLabel();
@@ -115,16 +116,17 @@ public class Customer_booking extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(car_table);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Auto_Click.setText("jButton1");
+        Auto_Click.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Auto_ClickActionPerformed(evt);
             }
         });
 
         brand.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         brand.setText("Customer ID:");
 
+        cusID_textfield.setEditable(false);
         cusID_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cusID_textfield.setText(customerid_value);
         cusID_textfield.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +138,9 @@ public class Customer_booking extends javax.swing.JFrame {
         model.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         model.setText("Customer Name:");
 
+        cusName_textfield.setEditable(false);
         cusName_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cusName_textfield.setText(customername_value);
 
         confirm_booking_btn.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         confirm_booking_btn.setText("Confirm Booking");
@@ -149,6 +153,7 @@ public class Customer_booking extends javax.swing.JFrame {
         brand1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         brand1.setText("Vehicle ID:");
 
+        carId_txt.setEditable(false);
         carId_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         carId_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +164,7 @@ public class Customer_booking extends javax.swing.JFrame {
         model1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         model1.setText("Vehicle Name:");
 
+        carName_txt.setEditable(false);
         carName_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         model2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
@@ -186,7 +192,7 @@ public class Customer_booking extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(booking_back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(83, 83, 83)
-                        .addComponent(jButton1)
+                        .addComponent(Auto_Click)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
@@ -230,7 +236,7 @@ public class Customer_booking extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(booking_back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1))
-                    .addComponent(jButton1))
+                    .addComponent(Auto_Click))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -276,7 +282,7 @@ public class Customer_booking extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_booking_back_btnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Auto_ClickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Auto_ClickActionPerformed
             
             //Customer booking = new Customer(2);
            //
@@ -316,7 +322,7 @@ public class Customer_booking extends javax.swing.JFrame {
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Auto_ClickActionPerformed
 
     private void cusID_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusID_textfieldActionPerformed
         // TODO add your handling code here:
@@ -337,7 +343,13 @@ public class Customer_booking extends javax.swing.JFrame {
         ArrayList<String> store_all_id = new ArrayList<>();
         String new_booking_id="";
         String new_payment_id="";
-
+        
+        
+         if(carDuration_txt.getText().length()<=0){
+             JOptionPane.showMessageDialog(null, "Please enter rent duration", "Error Message" , JOptionPane.ERROR_MESSAGE);
+             
+         }
+         
         //Generate booking ID
         File get_booking_id = new File("Booking.txt");
         try(Scanner booking_id = new Scanner(get_booking_id)){
@@ -425,7 +437,7 @@ public class Customer_booking extends javax.swing.JFrame {
             }
             }
 
-            
+           
             //write/create booking details
             booking_details = (new_booking_id + "\t" + cusid + "\t" + cusname + "\t" + carid + "\t" + carname + "\t" + rents + "\t" + status + "\n");
             
@@ -447,6 +459,7 @@ public class Customer_booking extends javax.swing.JFrame {
             System.out.println("Exit");
             
             
+                
             
             
             action = 1;
@@ -662,6 +675,7 @@ public class Customer_booking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Auto_Click;
     private javax.swing.JButton booking_back_btn;
     private javax.swing.JLabel brand;
     private javax.swing.JLabel brand1;
@@ -672,7 +686,6 @@ public class Customer_booking extends javax.swing.JFrame {
     private javax.swing.JButton confirm_booking_btn;
     private javax.swing.JTextField cusID_textfield;
     private javax.swing.JTextField cusName_textfield;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;

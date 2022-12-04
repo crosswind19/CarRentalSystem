@@ -245,6 +245,7 @@ public class Customer_login extends javax.swing.JFrame {
                 main.cusername = txt_cususername.getText();
                 main.setVisible(true);
                 get_customerid(customer_credentials.get(2));
+                get_customername(login.getName());
                 
                // System.out.println(textfile_credentials.get(0));
                 
@@ -345,6 +346,12 @@ public class Customer_login extends javax.swing.JFrame {
         Customer_booking.customerid_value = cus_id;
         Customer_ViewBooking.customerid_value = cus_id;
         Customer_Payment.customerid_value = cus_id;
+    }
+    
+    static void get_customername(String name){
+        String cus_name;
+        cus_name = name;
+        Customer_booking.customername_value = cus_name;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -75,6 +75,8 @@ public class Customer {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -98,8 +100,6 @@ public class Customer {
         
         return person_details;
         
-        //("\n" + line + "\t" + new_customer_username + "\t" + new_customer_password + "\t" + 
-        //new_customer_name + "\t" + new_gender + "\t" + new_email + "\t" + new_phoneno + "\t" + new_Address);
     }
 
 
