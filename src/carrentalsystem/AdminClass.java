@@ -46,6 +46,7 @@ public class AdminClass extends javax.swing.JFrame {
         view_cus_booking = new javax.swing.JButton();
         delete_payment = new javax.swing.JButton();
         viewpay_btn = new javax.swing.JButton();
+        cus_pdf = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,7 +89,7 @@ public class AdminClass extends javax.swing.JFrame {
         });
 
         generate_pdf.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        generate_pdf.setText("Generate PDF");
+        generate_pdf.setText("Generate Company PDF");
         generate_pdf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generate_pdfActionPerformed(evt);
@@ -175,6 +176,14 @@ public class AdminClass extends javax.swing.JFrame {
             }
         });
 
+        cus_pdf.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        cus_pdf.setText("Generate Customer PDF");
+        cus_pdf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cus_pdfActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -206,7 +215,8 @@ public class AdminClass extends javax.swing.JFrame {
                             .addComponent(view_cus_booking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(viewpay_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(edit_paymemt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(delete_payment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(delete_payment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cus_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -241,13 +251,14 @@ public class AdminClass extends javax.swing.JFrame {
                     .addComponent(delete_payment)
                     .addComponent(booking_confirmation, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(approve_car_return)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(view_log))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(approve_car_return)
                     .addComponent(generate_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(51, 51, 51))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(view_log, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cus_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -352,6 +363,17 @@ public class AdminClass extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_generate_pdfActionPerformed
 
+    private void cus_pdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cus_pdfActionPerformed
+        Admin_ViewCustomerBooking view_booking = new Admin_ViewCustomerBooking();
+        view_booking.setVisible(true);
+        dispose();
+
+
+        //BookingHistory_PDF cus_booking_history = new BookingHistory_PDF();
+        
+        
+    }//GEN-LAST:event_cus_pdfActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -391,6 +413,7 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton add_new_car;
     private javax.swing.JButton approve_car_return;
     private javax.swing.JButton booking_confirmation;
+    private javax.swing.JButton cus_pdf;
     private javax.swing.JButton delete_booking_btn;
     private javax.swing.JButton delete_car;
     private javax.swing.JButton delete_payment;

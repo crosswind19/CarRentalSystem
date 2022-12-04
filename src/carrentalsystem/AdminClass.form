@@ -54,6 +54,7 @@
                           <Component id="viewpay_btn" max="32767" attributes="0"/>
                           <Component id="edit_paymemt" alignment="0" max="32767" attributes="0"/>
                           <Component id="delete_payment" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cus_pdf" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -99,15 +100,16 @@
                   <Component id="booking_confirmation" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="approve_car_return" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="view_log" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="generate_pdf" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="approve_car_return" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="generate_pdf" alignment="3" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="view_log" max="32767" attributes="0"/>
+                  <Component id="cus_pdf" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -178,7 +180,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Generate PDF"/>
+        <Property name="text" type="java.lang.String" value="Generate Company PDF"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generate_pdfActionPerformed"/>
@@ -292,6 +294,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewpay_btnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="cus_pdf">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Generate Customer PDF"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cus_pdfActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
