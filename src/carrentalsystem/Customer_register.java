@@ -392,7 +392,7 @@ public class Customer_register extends javax.swing.JFrame {
 
     private void txt_NameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_NameKeyTyped
         // TODO add your handling code here:
-        char key = evt.getKeyChar();
+        char key = evt.getKeyChar();        
         //check input is it contains special characters       
       if(!(Character.isAlphabetic(key)) && (!(key == KeyEvent.VK_COMMA))){
           evt.consume();
