@@ -4,6 +4,7 @@
  */
 package carrentalsystem;
 
+import Class.Admin;
 import java.awt.List;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,6 +27,8 @@ public class Admin_login extends javax.swing.JFrame {
         initComponents();
     }
 
+    Admin admin = new Admin();
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -132,7 +135,12 @@ public class Admin_login extends javax.swing.JFrame {
     private void login_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_buttonActionPerformed
         String adminUsername = admin_username.getText();
         String adminPass = admin_pass.getText();
+        String admin_position = "";
         int action = 0;
+        
+        //inheritance (admin with verifyuser)
+        admin.setVerifyUsername(adminUsername);
+        admin.setVerifyPassword(adminPass);
         
         
         //read from textfile
@@ -146,18 +154,22 @@ public class Admin_login extends javax.swing.JFrame {
                 String new_info[] = info.split("\t");
                 credential_staff.add(new_info[0]);
                 credential_staff.add(new_info[1]);
+                String get_position = new_info[2];
+                admin.setAdminPosition(get_position);
+                System.out.println(admin.getAdminPosition());
                 
                 //Check with username and password with textfile
-                if(credential_staff.get(0).equals(adminUsername) && (credential_staff.get(1).equals(adminPass))){
+                if(credential_staff.get(0).equals(admin.getVerifyUsername()) && (credential_staff.get(1).equals(admin.getVerifyPassword()))){
+                    
                     action = 1;
                     login_button.setEnabled(false);
                     
-                    
+
                 }
             }
 //            System.out.println(credential_staff.get(1));
             if(action == 1){
-                JOptionPane.showMessageDialog(this, "Login Successful", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Login Successful" + " Weclome: " + admin.getVerifyUsername() + " Position: " + admin.getAdminPosition() + ". ", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
                 
                 
                 AdminClass admin_class = new AdminClass();
