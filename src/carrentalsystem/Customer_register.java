@@ -374,19 +374,21 @@ public class Customer_register extends javax.swing.JFrame {
                 String new_state = txt_AddressState.getText();
                 
                 Address add = new Address(new_Address,new_Postal,new_City,new_state);
-                Customer register = new Customer(line,new_customer_username,new_customer_password,new_customer_name,new_gender,new_email,new_phoneno,add);               
+                Customer register = new Customer(new_customer_username,new_customer_password,line,new_customer_name,new_gender,new_email,new_phoneno,add); 
+                //Customer new_register = new Customer(new_customer_username,new_customer_password);
                 
-                if((register.getUsername().length()>0) && (register.getPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
+                if((register.getVerifyUsername().length()>0) && (register.getVerifyPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
                     
                     try{
                         FileOutputStream fw = new FileOutputStream("Customer_Information.txt", true);
                         //details = ("\n" + line + "\t" + new_customer_username + "\t" + new_customer_password + "\t" + new_customer_name + "\t" + new_gender + "\t" + new_email + "\t" + new_phoneno + "\t" + new_Address);
                         //convert string to bytes
+                        System.out.println(register.register());
                         byte[] byte_details = register.register().getBytes();
                         
                         //Append into textfile
-                        System.out.println(byte_details);
-//fw.write(byte_details);
+                        //System.out.println(byte_details);
+                         fw.write(byte_details);
                         register_button.setEnabled(false);
                         JOptionPane.showMessageDialog(this, "Staff Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                         //fw.close();

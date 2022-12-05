@@ -10,14 +10,19 @@ package Class;
  */
 public class VerifyUser {
     
-    private String username;
-    private String password;
+    String username;
+    String password;
     
     //constructor
-//    public void VerifyUser(String username, String password){
-//        this.username = username;
-//        this.password = password;
-//    }
+    
+    public VerifyUser(){
+        
+    }
+    
+    public VerifyUser(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
     
     public void setVerifyUsername(String username){
         this.username = username;
