@@ -6,6 +6,7 @@ package carrentalsystem;
 
 import Class.Address;
 import Class.Customer;
+import Class.VerifyUser;
 import java.awt.List;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -365,7 +366,7 @@ public class Customer_register extends javax.swing.JFrame {
                 new_phoneno = txt_PhoneNo.getText();
                 
                 new_gender = cbox_gender.getSelectedItem().toString();
-                
+                             
                 //Aggreation
                 String new_Address = txt_Address.getText(); 
                 String new_Postal = txt_AddressPostal.getText();
@@ -373,7 +374,7 @@ public class Customer_register extends javax.swing.JFrame {
                 String new_state = txt_AddressState.getText();
                 
                 Address add = new Address(new_Address,new_Postal,new_City,new_state);
-                Customer register = new Customer(line,new_customer_username,new_customer_password,new_customer_name,new_gender,new_email,new_phoneno,add);
+                Customer register = new Customer(line,new_customer_username,new_customer_password,new_customer_name,new_gender,new_email,new_phoneno,add);               
                 
                 if((register.getUsername().length()>0) && (register.getPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
                     

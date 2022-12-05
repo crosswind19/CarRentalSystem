@@ -14,24 +14,24 @@ public class VerifyUser {
     private String password;
     
     //constructor
-    public void VerifyUser(String username, String password){
+//    public void VerifyUser(String username, String password){
+//        this.username = username;
+//        this.password = password;
+//    }
+    
+    public void setVerifyUsername(String username){
         this.username = username;
-        this.password = password;
     }
     
-    public void setUsername(String username){
-        this.username = username;
-    }
-    
-    public String getUsername(){
+    public String getVerifyUsername(){
         return username;
     }
     
-    public void setPassword(String pass){
+    public void setVerifyPassword(String pass){
         this.password = pass;
     }
     
-    public String getPassword(){
+    public String getVerifyPassword(){
         return password;
     }
         

@@ -199,11 +199,14 @@ public class Customer_login extends javax.swing.JFrame {
         
         //System.out.println(staff_credentials);
        
+       
+        //login.setUsername(customer_credentials.get(0));
+        //login.setPassword(customer_credentials.get(1));
         
-        login.setUsername(customer_credentials.get(0));
-        login.setPassword(customer_credentials.get(1));
-        
-        
+        //inheritance (verifyuser to customer)
+        login.setVerifyUsername(customer_credentials.get(0));
+        login.setVerifyPassword(customer_credentials.get(1));
+       
         
         System.out.println(login.getUsername());
         
@@ -225,7 +228,7 @@ public class Customer_login extends javax.swing.JFrame {
                 
                 
                 //System.out.println(textfile_credentials);
-                if((login.getUsername().equals(new_information[1])) && (login.getPassword().equals(new_information[2]))){
+                if((login.getVerifyUsername().equals(new_information[1])) && (login.getVerifyPassword().equals(new_information[2]))){
                     flag = 1;
                     customer_credentials.add(new_information[0]);
                     //System.out.println(customer_credentials);
