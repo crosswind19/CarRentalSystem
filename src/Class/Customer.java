@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 
-public class Customer {
+public class Customer extends VerifyUser{
     
     int id;
     private String name;
@@ -33,8 +33,7 @@ public class Customer {
     //Insert
     public Customer (int id,String username, String password,String name,String gender,String emailAddress,String phoneNumber,Address address){
         this.id = id;
-        this.username = username;
-        this.password = password;
+        //super(username,password);
         this.name = name;
         this.gender = gender;
         this.emailAddress = emailAddress;
