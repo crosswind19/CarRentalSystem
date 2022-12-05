@@ -1,8 +1,4 @@
-1	22	2	2	Male
-2	3	3	2	Male	2	2	2
-3	4	4	4	Female	4	44	
-4	6	6	6	Male	6	6	6
-5	7	7	7	Male	7	7	7
-6	kahxuan	kkxx	Kah Xuan	Male	crosswind1902@gmail.com	0123456789	1, Jalan teknologi
-7	22	fdfs	dasdas	Male	22	22	228	xuanxuan	22	CKX	Female	57000	0123456789	1, Jalan Teknologi		57000	Bukit Jalil	Kuala Lumpur
+Cus_ID	Username	Password	Name	Gender	Email	Phone_No	Address	Postal	City	State
 8	crosswind	222	KahXuan	Male	57000	1234567890	1, jalan teknologi	57000	kl	selangor
+9	222	22	KahXuan	Male	crosswind1902@gmail.com	01234567890	2, Jalan Teknologi	58000	Bukit Jalil	Kuala Lumpur
+5	TUsername	TPassword	newXuan	Male	c@gmail.com	12345	lol	12345	Skudai	Johor

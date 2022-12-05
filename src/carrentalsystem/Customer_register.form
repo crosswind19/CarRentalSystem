@@ -68,7 +68,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txt_AddressCity" max="32767" attributes="0"/>
                           <Component id="txt_AddressState" max="32767" attributes="0"/>
-                          <Component id="txt_Email1" max="32767" attributes="0"/>
+                          <Component id="txt_Email" max="32767" attributes="0"/>
                           <Component id="cbox_gender" alignment="0" pref="234" max="32767" attributes="0"/>
                           <Component id="txt_Name" alignment="0" max="32767" attributes="0"/>
                           <Component id="txt_AddressPostal" alignment="0" max="32767" attributes="0"/>
@@ -131,7 +131,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbl_Email" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="txt_Email1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_Email" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -166,7 +166,7 @@
                   <Component id="jButton1" alignment="3" max="32767" attributes="0"/>
                   <Component id="register_button" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -393,7 +393,7 @@
         <Property name="text" type="java.lang.String" value="State:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_Email1">
+    <Component class="javax.swing.JTextField" name="txt_Email">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -403,7 +403,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_Email1KeyTyped"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_EmailKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_AddressCity">

@@ -73,7 +73,7 @@ public class Customer_register extends javax.swing.JFrame {
         lbl_Address1 = new javax.swing.JLabel();
         lbl_Address2 = new javax.swing.JLabel();
         lbl_AddressState = new javax.swing.JLabel();
-        txt_Email1 = new javax.swing.JTextField();
+        txt_Email = new javax.swing.JTextField();
         txt_AddressCity = new javax.swing.JTextField();
         txt_AddressState = new javax.swing.JTextField();
 
@@ -182,11 +182,11 @@ public class Customer_register extends javax.swing.JFrame {
         lbl_AddressState.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         lbl_AddressState.setText("State:");
 
-        txt_Email1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txt_Email1.setMinimumSize(new java.awt.Dimension(64, 30));
-        txt_Email1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txt_Email.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txt_Email.setMinimumSize(new java.awt.Dimension(64, 30));
+        txt_Email.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txt_Email1KeyTyped(evt);
+                txt_EmailKeyTyped(evt);
             }
         });
 
@@ -244,7 +244,7 @@ public class Customer_register extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt_AddressCity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txt_AddressState, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_Email1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbox_gender, 0, 234, Short.MAX_VALUE)
                             .addComponent(txt_Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txt_AddressPostal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -291,7 +291,7 @@ public class Customer_register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_Email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_Phoneno, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,7 +318,7 @@ public class Customer_register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(register_button, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43))
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -362,7 +362,7 @@ public class Customer_register extends javax.swing.JFrame {
                 new_customer_username = txt_Username.getText();
                 new_customer_password = txt_Password.getText();
                 new_customer_name = txt_Name.getText();
-                new_email = txt_AddressPostal.getText();
+                new_email = txt_Email.getText();
                 new_phoneno = txt_PhoneNo.getText();
                 
                 new_gender = cbox_gender.getSelectedItem().toString();
@@ -465,13 +465,13 @@ public class Customer_register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_AddressStateActionPerformed
 
-    private void txt_Email1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_Email1KeyTyped
+    private void txt_EmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_EmailKeyTyped
         // TODO add your handling code here:
         char key = evt.getKeyChar();
         //if(key.matches("^(.+)@(.+)$")){
             
         //}
-    }//GEN-LAST:event_txt_Email1KeyTyped
+    }//GEN-LAST:event_txt_EmailKeyTyped
 
     /**
      * @param args the command line arguments
@@ -530,7 +530,7 @@ public class Customer_register extends javax.swing.JFrame {
     private javax.swing.JTextField txt_AddressCity;
     private javax.swing.JTextField txt_AddressPostal;
     private javax.swing.JTextField txt_AddressState;
-    private javax.swing.JTextField txt_Email1;
+    private javax.swing.JTextField txt_Email;
     private javax.swing.JTextField txt_Name;
     private javax.swing.JTextField txt_Password;
     private javax.swing.JTextField txt_PhoneNo;

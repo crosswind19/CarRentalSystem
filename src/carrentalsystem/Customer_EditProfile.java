@@ -6,6 +6,10 @@ package carrentalsystem;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -88,7 +92,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
             }
         });
 
-        test_txt.setText("6");
+        test_txt.setText("5");
         test_txt.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,7 +121,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(225, 225, 225)
                         .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(test_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -200,26 +204,29 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                 
                 
                 //Get customer name
-                String Cusname = each_element[3];
+                String CusName = each_element[3];
                 
                 //Get customer email
+                String CusEmail = each_element[5];
                 
                 //Get customer phone
+                String CusPhoneno = each_element[6];
                 
                 //Gt street
+                String CusStreet = each_element[7];
                 
                 //Get poscode
+                String CusPoscode = each_element[8];
                 
                 //Get city
+                String CusCity = each_element[9];
                 
                 //Get state
+                String CusState = each_element[10];
                 
                 
-                
-                
-                //element4 is gender
+               
                 //System.out.println(each_element[4]);
-                System.out.println(each_element[5]);
                 
                 array_book.add(each_booking[0]);
                 
@@ -243,7 +250,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+3];
-                               change_line = (array_book.get(new_cnt).replace(before_word,Cusname));
+                               change_line = (array_book.get(new_cnt).replace(before_word,CusName));
                            }
                        }
                        //Email
@@ -252,11 +259,14 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                            if(change_item.matches("^(.+)@(.+)$")){
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
+                               System.out.println(before_word);
+                               
+                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid email","Error Message",JOptionPane.ERROR_MESSAGE);
                                
-                               String before_word = each_element[changes+3];
-                               change_line = (array_book.get(new_cnt).replace(before_word,Cusname));
+                               String before_word = each_element[changes+4];
+                               change_line = (array_book.get(new_cnt).replace(before_word,CusEmail));
                            }
                        }
                        //Phone Number
@@ -265,8 +275,13 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                            if(change_item.matches("\\d+")){
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
+                               
+                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid phone","Error Message",JOptionPane.ERROR_MESSAGE);
+                               
+                               String before_word = each_element[changes+4];
+                               change_line = (array_book.get(new_cnt).replace(before_word,CusPhoneno));
                            }
                            
                        }
@@ -275,32 +290,85 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                        case 3 ->{
                            String before_word = each_element[changes+4];
                            System.out.println(before_word);
+                           
+                           change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                        }
                        //Address Poscode
                        case 4 -> {
-                           String before_word = each_element[changes+4];
-                           System.out.println(before_word);
+                           if(change_item.matches("\\d+")){
+                               String before_word = each_element[changes+4];
+                               System.out.println(before_word);
+                               
+                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                           }else{
+                               JOptionPane.showMessageDialog(this,"This is not a valid phone","Error Message",JOptionPane.ERROR_MESSAGE);
+                               
+                               String before_word = each_element[changes+4];
+                               change_line = (array_book.get(new_cnt).replace(before_word,CusPoscode));
+                           }
                        }
                        //Address City
                        case 5 -> {
-                           String before_word = each_element[changes+4];
-                           System.out.println(before_word);
+                           if(change_item.matches("[a-zA-Z]+")){
+                               String before_word = each_element[changes+4];
+                               System.out.println(before_word);
+                               
+                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                           }else{
+                               JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
+                               
+                               String before_word = each_element[changes+4];
+                               change_line = (array_book.get(new_cnt).replace(before_word,CusCity));
+                           }
                        }
                        //Address State
                        case 6 -> {
-                           String before_word = each_element[changes+4];
-                           System.out.println(before_word);
+                           if(change_item.matches("[a-zA-Z]+")){
+                               String before_word = each_element[changes+4];
+                               //System.out.println(before_word);
+                               
+                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                           }else{
+                               JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
+                               
+                               String before_word = each_element[changes+4];
+                               change_line = (array_book.get(new_cnt).replace(before_word,CusState));
+                           }
+                       }
+                       default -> {
+                           
                        }
                    }
                    
+                   write_book.add(change_line);
+                   
+                }
+                else{
+                    
+                    write_book.add(each_booking[0]);
                 }
                 
                 
                 
             }
+            
+            if(flag == 1){
+                JOptionPane.showMessageDialog(this, "Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+
+                    update_btn.setEnabled(false);
+                    //write into booking textfile
+                    Path write_to_file = Paths.get("Customer_Information.txt");
+                    for(int y=0; y<write_book.size(); y++){
+                        Files.write(write_to_file, write_book);
+                    }
+            }else{
+                JOptionPane.showMessageDialog(this, "Booking Record Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
+            }
        
        
        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Customer_EditProfile.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
             Logger.getLogger(Customer_EditProfile.class.getName()).log(Level.SEVERE, null, ex);
         }
 
