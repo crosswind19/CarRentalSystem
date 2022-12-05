@@ -202,7 +202,24 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                 //Get customer name
                 String Cusname = each_element[3];
                 
+                //Get customer email
                 
+                //Get customer phone
+                
+                //Gt street
+                
+                //Get poscode
+                
+                //Get city
+                
+                //Get state
+                
+                
+                
+                
+                //element4 is gender
+                //System.out.println(each_element[4]);
+                System.out.println(each_element[5]);
                 
                 array_book.add(each_booking[0]);
                 
@@ -237,6 +254,9 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                System.out.println(before_word);
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid email","Error Message",JOptionPane.ERROR_MESSAGE);
+                               
+                               String before_word = each_element[changes+3];
+                               change_line = (array_book.get(new_cnt).replace(before_word,Cusname));
                            }
                        }
                        //Phone Number
