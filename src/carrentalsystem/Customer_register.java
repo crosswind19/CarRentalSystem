@@ -384,7 +384,8 @@ public class Customer_register extends javax.swing.JFrame {
                         byte[] byte_details = register.register().getBytes();
                         
                         //Append into textfile
-                        fw.write(byte_details);
+                        System.out.println(byte_details);
+//fw.write(byte_details);
                         register_button.setEnabled(false);
                         JOptionPane.showMessageDialog(this, "Staff Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                         //fw.close();

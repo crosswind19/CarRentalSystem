@@ -14,6 +14,10 @@ public class VerifyUser {
     private String password;
     
     //constructor
+    public void VerifyUser(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
     
     public void setUsername(String username){
         this.username = username;
