@@ -379,25 +379,39 @@ public class Customer_register extends javax.swing.JFrame {
                 
                 if((register.getVerifyUsername().length()>0) && (register.getVerifyPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
                     
-                    try{
-                        FileOutputStream fw = new FileOutputStream("Customer_Information.txt", true);
-                        //details = ("\n" + line + "\t" + new_customer_username + "\t" + new_customer_password + "\t" + new_customer_name + "\t" + new_gender + "\t" + new_email + "\t" + new_phoneno + "\t" + new_Address);
-                        //convert string to bytes
-                        System.out.println(register.register());
-                        byte[] byte_details = register.register().getBytes();
+                    if(!(new_Postal.length() == 5)){
+                        JOptionPane.showMessageDialog(this, "Error Found in Postal Code (Required: 5 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
+
+                    }else{
+                        if(!(new_phoneno.length() == 10)){
+                         JOptionPane.showMessageDialog(this, "Error Found in Phone Number (Required: 10 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
+                           
+                        }else{
+                            
                         
-                        //Append into textfile
-                        //System.out.println(byte_details);
-                         fw.write(byte_details);
-                        register_button.setEnabled(false);
-                        JOptionPane.showMessageDialog(this, "Staff Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-                        //fw.close();
-                        
-                    } catch (IOException ex) {
-                        JOptionPane.showMessageDialog(this, "An Error Occur! Append File Error Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                    
+                            try{
+                                FileOutputStream fw = new FileOutputStream("Customer_Information.txt", true);
+                                //details = ("\n" + line + "\t" + new_customer_username + "\t" + new_customer_password + "\t" + new_customer_name + "\t" + new_gender + "\t" + new_email + "\t" + new_phoneno + "\t" + new_Address);
+                                //convert string to bytes
+                                System.out.println(register.register());
+                                byte[] byte_details = register.register().getBytes();
+
+                                //Append into textfile
+                                //System.out.println(byte_details);
+                                fw.write(byte_details);
+                                register_button.setEnabled(false);
+                                JOptionPane.showMessageDialog(this, "Staff Details Entered Successfully!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                                //fw.close();
+
+                            } catch (IOException ex) {
+                                JOptionPane.showMessageDialog(this, "An Error Occur! Append File Error Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                            }
+                        }
                     }
                 }else{
                     JOptionPane.showMessageDialog(this, "Error Occur! Please Enter a Valid Input!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
                 }
                 
             }
