@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  * @author bende
  */
 public class ApproveReturning extends javax.swing.JFrame {
-
+    int int_jop = 0;
     /**
      * Creates new form ApproveReturning
      */
@@ -300,13 +300,18 @@ public class ApproveReturning extends javax.swing.JFrame {
                 }
                 //changing car status to Available
                 //int book_id = Integer.parseInt(id_booking);
-                Change_Booking_Status booking = new Change_Booking_Status(id_booking, car_id, car_status);
+                Return_Change_Status booking = new Return_Change_Status(id_booking, car_id, car_status);
                 booking.setCarID(car_id);
 
                 booking.changeCarStatus();
                 
-                JOptionPane.showMessageDialog(this, "New Booking Details Updated", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Return Approved", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 
+                if(int_jop == 1){
+                   JOptionPane.showMessageDialog(this, "Car Return Succesfully", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+ 
+                }
+                
             }else{
                 JOptionPane.showMessageDialog(this, "Booking and Customer ID Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
 
@@ -314,7 +319,7 @@ public class ApproveReturning extends javax.swing.JFrame {
                 
             
             
-            
+            approve_btn.setEnabled(false);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(EditCar.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

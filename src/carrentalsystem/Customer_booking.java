@@ -330,7 +330,7 @@ public class Customer_booking extends javax.swing.JFrame {
 
     private void confirm_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_booking_btnActionPerformed
         //Create booking id
-        //String not_available = "not-Available";
+        String not_available = "not-Available";
         
         //public Booking
         

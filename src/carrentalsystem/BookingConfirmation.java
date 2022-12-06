@@ -164,14 +164,9 @@ public class BookingConfirmation extends javax.swing.JFrame {
         
         String status_book = String.valueOf(status_booking);
         
-        Change_Booking_Status booking = new Change_Booking_Status(id_booking, id_cus, status_book);
+        Approval_Booking_Status booking = new Approval_Booking_Status(id_booking, id_cus, status_book);
         
-        try {
-            booking.doBookingConfirmation();
-        } catch (IOException ex) {
-            Logger.getLogger(BookingConfirmation.class.getName()).log(Level.SEVERE, null, ex);
-        }
-//        System.out.println(capture_flag_booking + "capture_flag_booking");
+        booking.change_booking_status();//        System.out.println(capture_flag_booking + "capture_flag_booking");
 //        System.out.println(capture_flag_car + "capture_flag_car");
         
         if((booking.getCaptureFlag()) == 1){

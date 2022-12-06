@@ -173,7 +173,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
        String change_item = changes_txt.getText();
        String change_line = " ";
        String change_line2 = " ";
-       int flag = 0 , cnt = 0, act=0;
+       int flag = 0 , cnt = 0;
        int changes = -1;
        
        Double changes_ele;
@@ -308,14 +308,13 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                
                                    change_line = (array_book.get(new_cnt).replace(before_word,change_item));
-                                   change_line2 = (array_book.get(new_cnt).replace(CusPhoneno,CusPhoneno));
-                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                                   
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid poscode","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusPoscode));
-                               change_line2 = (array_book.get(new_cnt).replace(CusPhoneno,CusPhoneno));
+                               
                                flag = 0;
                            }
                        }

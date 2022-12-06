@@ -96,6 +96,8 @@ abstract class changeStatus{
         
         
     }
+    
+    public abstract void change_booking_status();
 }
 
 
@@ -103,7 +105,7 @@ abstract class changeStatus{
  *
  * @author Crosswind Cheah
  */
-public class Change_Booking_Status extends changeStatus{
+public class Approval_Booking_Status extends changeStatus{
     
     @Override
     public void  changeCarStatus(){
@@ -170,7 +172,8 @@ public class Change_Booking_Status extends changeStatus{
                     
                     Files.write(output, write_cars);
                 }
-
+                ApproveReturning appreturn = new ApproveReturning();
+                 appreturn.int_jop = 1;
             }
 
            this.capture_flag = 1; 
@@ -183,13 +186,14 @@ public class Change_Booking_Status extends changeStatus{
         
     }
     
-    public Change_Booking_Status(String bookingID, String cusID, String status) {
+    public Approval_Booking_Status(String bookingID, String cusID, String status) {
         super(bookingID, cusID, status);
      
     }
     
     
-    public void doBookingConfirmation() throws IOException{
+    @Override
+    public void change_booking_status(){
         
         
         try {
@@ -280,88 +284,12 @@ public class Change_Booking_Status extends changeStatus{
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Approval_Booking_Status.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public void returncar() throws IOException{
-        try {
-            File read_confirmation = new File("Booking.txt");
 
-                Scanner scan_cus = new Scanner(read_confirmation);
-                ArrayList<String> array_booking = new ArrayList<>();
-                ArrayList<String> write_booking = new ArrayList<>();
-                
-                while(scan_cus.hasNextLine()){
-                    String get_line = scan_cus.nextLine();
-                    cnt += 1;
-                    
-                    String[] each_booking = get_line.split("\n");
-                    String[] each_element = each_booking[0].split("\t");
-                    
-                    //get the both id
-                    String booking_ids = each_element[0]; //Booking_id
-                    String cusID = each_element[3]; //Car_id
-                    
-                    //get car id
-                    id_car = each_element[3];
-                   //String booking_id = Integer.toString(booking_id);
-                    
-                    
-                    //System.out.println(booking_id + " "  +cusID);
-                    array_booking.add(each_booking[0]);
-                    
-                    //Initially is car_id
-                    if((cus_id.equals(cusID) && (booking_id.equals(booking_ids)))){
-     
-                        flag = 1;
-                        int new_cnt = cnt - 1;
-                        //System.out.println(new_cnt);
-                       String changes_index = booking_status;
-                       int int_change_index = Integer.parseInt(changes_index);
-                        //System.out.println(changes);
-                        
-                           
-                                    String before_word = each_element[int_change_index+6];
-                                    //System.out.println(each_element[changes+4]);
-                                    update_status = (array_booking.get(new_cnt).replace(before_word, "Returning"));
-                                    
-                                    //Close and return to main page
-                                    
-                            
-                            
-                        
-                       
-                        write_booking.add(update_status);
-                        
-                    }
-                    else{
-
-                        write_booking.add(each_booking[0]);
-                    }
-                }
-            
-                for(int x=0; x<write_booking.size(); x++){
-                    System.out.println(write_booking.get(x));
-                }
-                
-                
-                
-                if(flag == 1){
-                    //write into booking textfile
-                    Path write_to_file = Paths.get("Booking.txt");
-                for (String write_booking1 : write_booking) {
-                    Files.write(write_to_file, write_booking);
-                }
-                    
-                }else{
-
-                }
-            
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
     
 }
 //
