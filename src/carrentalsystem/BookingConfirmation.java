@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author bende
  */
 public class BookingConfirmation extends javax.swing.JFrame {
+    int int_jop = 0;
 
     /**
      * Creates new form BookingConfirmation
