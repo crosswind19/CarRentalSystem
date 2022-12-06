@@ -46,7 +46,6 @@ public class Customer_EditProfile extends javax.swing.JFrame {
         details_selection = new javax.swing.JComboBox<>();
         changes_txt = new javax.swing.JTextField();
         update_btn = new javax.swing.JButton();
-        test_txt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -92,9 +91,6 @@ public class Customer_EditProfile extends javax.swing.JFrame {
             }
         });
 
-        test_txt.setText("9");
-        test_txt.setToolTipText("");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,10 +118,6 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                         .addGap(225, 225, 225)
                         .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(179, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(test_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,9 +130,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Customer_label, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(customerid_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addComponent(test_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(details_selection, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(changes_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -168,8 +158,8 @@ public class Customer_EditProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_changes_txtKeyTyped
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
-       //String cus_id = customerid_txt.getText();
-       String cus_id = test_txt.getText();
+       String cus_id = customerid_txt.getText();
+       //String cus_id = test_txt.getText();
        String change_item = changes_txt.getText();
        String change_line = " ";
        String change_line2 = " ";
@@ -437,7 +427,6 @@ public class Customer_EditProfile extends javax.swing.JFrame {
     private javax.swing.JTextField customerid_txt;
     private javax.swing.JComboBox<String> details_selection;
     private javax.swing.JLabel header;
-    private javax.swing.JTextField test_txt;
     private javax.swing.JButton update_btn;
     // End of variables declaration//GEN-END:variables
 }
