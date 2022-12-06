@@ -1,4 +1,5 @@
 Cus_ID	Username	Password	Name	Gender	Email	Phone_No	Address	Postal	City	State
 8	crosswind	222	KahXuan	Male	57000	1234567890	1, jalan teknologi	57000	kl	selangor
-9	222	22	KahXuan	Male	crosswind1902@gmail.com	01234567890	2, Jalan Teknologi	58000	Bukit Jalil	Kuala Lumpur
-5	TUsername	TPassword	newXuan	Male	c@gmail.com	12345	lol	12345	Skudai	Johor
+9	222	22	KahXuan	Male	crosswind1902@gmail.com	0987654321	2, Jalan Teknologi	00000	Bukit Jalil	Kuala Lumpur
+5	TUsername	TPassword	newXuan	Male	c@gmail.com	1234567890	lol	88888	Penang	Johor
+6	TUsername	TPassword	newXuan	Male	c@gmail.com	1234567890	lol	88888	Skudai	Johor

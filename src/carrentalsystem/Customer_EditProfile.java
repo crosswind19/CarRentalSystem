@@ -92,7 +92,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
             }
         });
 
-        test_txt.setText("5");
+        test_txt.setText("9");
         test_txt.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -172,7 +172,8 @@ public class Customer_EditProfile extends javax.swing.JFrame {
        String cus_id = test_txt.getText();
        String change_item = changes_txt.getText();
        String change_line = " ";
-       int flag = 0 , cnt = 0;
+       String change_line2 = " ";
+       int flag = 0 , cnt = 0, act=0;
        int changes = -1;
        
        Double changes_ele;
@@ -246,11 +247,13 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                //System.out.println(before_word);
                                
                                change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               
                            }else{
                                JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+3];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusName));
+                               flag = 0;
                            }
                        }
                        //Email
@@ -267,12 +270,13 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusEmail));
+                               flag = 0;
                            }
                        }
                        //Phone Number
                        case 2 ->{
                            //phone format
-                           if(change_item.matches("\\d+")){
+                           if(change_item.matches("^\\d{10}$")){
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
                                
@@ -282,6 +286,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusPhoneno));
+                               flag = 0;
                            }
                            
                        }
@@ -292,19 +297,26 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                            System.out.println(before_word);
                            
                            change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                          
                        }
                        //Address Poscode
                        case 4 -> {
-                           if(change_item.matches("\\d+")){
+                           cnt=1;
+                           if(change_item.matches("^\\d{5}$")){
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
                                
-                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               
+                                   change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                                   change_line2 = (array_book.get(new_cnt).replace(CusPhoneno,CusPhoneno));
+                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
-                               JOptionPane.showMessageDialog(this,"This is not a valid phone","Error Message",JOptionPane.ERROR_MESSAGE);
+                               JOptionPane.showMessageDialog(this,"This is not a valid poscode","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusPoscode));
+                               change_line2 = (array_book.get(new_cnt).replace(CusPhoneno,CusPhoneno));
+                               flag = 0;
                            }
                        }
                        //Address City
@@ -319,12 +331,14 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusCity));
+                               flag = 0;
                            }
                        }
                        //Address State
                        case 6 -> {
                            if(change_item.matches("[a-zA-Z]+")){
                                String before_word = each_element[changes+4];
+                               
                                //System.out.println(before_word);
                                
                                change_line = (array_book.get(new_cnt).replace(before_word,change_item));
@@ -333,15 +347,22 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusState));
+                               flag = 0;
                            }
                        }
                        default -> {
                            
                        }
                    }
+//                   if(cnt==0){
+//                      
+//                   }else if(cnt == 1){
+//                       write_book.add(change_line2); 
+//                   }else{
+//                       
+//                   }
                    
-                   write_book.add(change_line);
-                   
+                   write_book.add(change_line); 
                 }
                 else{
                     

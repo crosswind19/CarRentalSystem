@@ -83,97 +83,97 @@ public class Booking_status {
     }
     
     //Admin approve or reject customer booking
-    public void doBookingConfirmation() throws IOException{
-        try {
-            File read_confirmation = new File("Booking.txt");
-
-                Scanner scan_cus = new Scanner(read_confirmation);
-                ArrayList<String> array_booking = new ArrayList<>();
-                ArrayList<String> write_booking = new ArrayList<>();
-                
-                while(scan_cus.hasNextLine()){
-                    String get_line = scan_cus.nextLine();
-                    cnt += 1;
-                    
-                    String[] each_booking = get_line.split("\n");
-                    String[] each_element = each_booking[0].split("\t");
-                    
-                    //get the both id
-                    booking_ids = each_element[0];
-                    String cusID = each_element[1];
-                    
-                    //get car id
-                    id_car = each_element[3];
-                    
-                    
-                    //System.out.println(booking_id + " "  +cusID);
-                    array_booking.add(each_booking[0]);
-                    
-                    if((cus_id.equals(cusID) && (booking_id.equals(booking_ids)))){
-     
-                        flag = 1;
-                        int new_cnt = cnt - 1;
-                        //System.out.println(new_cnt);
-                       String changes_index = booking_status;
-                       int int_change_index = Integer.parseInt(changes_index);
-                        //System.out.println(changes);
-                        switch (int_change_index) {
-                            case 0 ->                                 {
-                                //approve 0
-                                    
-                                    String before_word = each_element[int_change_index+6];
-                                    
-                                    //System.out.println(each_element[changes+4]);
-                                    update_status = (array_booking.get(new_cnt).replace(before_word, approve_word));
-                                }
-                            case 1 ->                                 {
-                                //reject 1
-                                    String before_word = each_element[int_change_index+5];
-                                        System.out.println(before_word);
-                                    update_status = (array_booking.get(new_cnt).replace(before_word, reject_word));
-                                
-                                    //car status change back from not-Available to Available    
-                                    this.changeCarStatus();
-                                    
-                                    //remove the payment details
-                                    this.deletePaymentData();
-                                    
-                                }
-                            default -> {
-                            }
-                        }
-                       
-                        write_booking.add(update_status);
-                        
-                    }
-                    else{
-
-                        write_booking.add(each_booking[0]);
-                    }
-                }
-            
-                for(int x=0; x<write_booking.size(); x++){
-                    System.out.println(write_booking.get(x));
-                }
-                
-                
-                
-                if(flag == 1){
-                    //write into booking textfile
-                    Path write_to_file = Paths.get("Booking.txt");
-                for (String write_booking1 : write_booking) {
-                    Files.write(write_to_file, write_booking);
-                }
-                    
-                }else{
-
-                }
-            
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    public void doBookingConfirmation() throws IOException{
+//        try {
+//            File read_confirmation = new File("Booking.txt");
+//
+//                Scanner scan_cus = new Scanner(read_confirmation);
+//                ArrayList<String> array_booking = new ArrayList<>();
+//                ArrayList<String> write_booking = new ArrayList<>();
+//                
+//                while(scan_cus.hasNextLine()){
+//                    String get_line = scan_cus.nextLine();
+//                    cnt += 1;
+//                    
+//                    String[] each_booking = get_line.split("\n");
+//                    String[] each_element = each_booking[0].split("\t");
+//                    
+//                    //get the both id
+//                    booking_ids = each_element[0];
+//                    String cusID = each_element[1];
+//                    
+//                    //get car id
+//                    id_car = each_element[3];
+//                    
+//                    
+//                    //System.out.println(booking_id + " "  +cusID);
+//                    array_booking.add(each_booking[0]);
+//                    
+//                    if((cus_id.equals(cusID) && (booking_id.equals(booking_ids)))){
+//     
+//                        flag = 1;
+//                        int new_cnt = cnt - 1;
+//                        //System.out.println(new_cnt);
+//                       String changes_index = booking_status;
+//                       int int_change_index = Integer.parseInt(changes_index);
+//                        //System.out.println(changes);
+//                        switch (int_change_index) {
+//                            case 0 ->                                 {
+//                                //approve 0
+//                                    
+//                                    String before_word = each_element[int_change_index+6];
+//                                    
+//                                    //System.out.println(each_element[changes+4]);
+//                                    update_status = (array_booking.get(new_cnt).replace(before_word, approve_word));
+//                                }
+//                            case 1 ->                                 {
+//                                //reject 1
+//                                    String before_word = each_element[int_change_index+5];
+//                                        System.out.println(before_word);
+//                                    update_status = (array_booking.get(new_cnt).replace(before_word, reject_word));
+//                                
+//                                    //car status change back from not-Available to Available    
+//                                    this.changeCarStatus();
+//                                    
+//                                    //remove the payment details
+//                                    this.deletePaymentData();
+//                                    
+//                                }
+//                            default -> {
+//                            }
+//                        }
+//                       
+//                        write_booking.add(update_status);
+//                        
+//                    }
+//                    else{
+//
+//                        write_booking.add(each_booking[0]);
+//                    }
+//                }
+//            
+//                for(int x=0; x<write_booking.size(); x++){
+//                    System.out.println(write_booking.get(x));
+//                }
+//                
+//                
+//                
+//                if(flag == 1){
+//                    //write into booking textfile
+//                    Path write_to_file = Paths.get("Booking.txt");
+//                for (String write_booking1 : write_booking) {
+//                    Files.write(write_to_file, write_booking);
+//                }
+//                    
+//                }else{
+//
+//                }
+//            
+//            
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
     
     //Admin change car status to not available 
     public void changeCarStatus(){
