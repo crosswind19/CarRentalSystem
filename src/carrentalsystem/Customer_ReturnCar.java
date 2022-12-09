@@ -151,7 +151,7 @@ public class Customer_ReturnCar extends javax.swing.JFrame {
         
         try {
             return_car.returncar();
-            JOptionPane.showMessageDialog(this, "Booking Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Returned Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                 CustomerClass customerpage = new CustomerClass();
                 customerpage.setVisible(true);
                 dispose();
