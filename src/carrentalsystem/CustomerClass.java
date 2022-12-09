@@ -40,7 +40,6 @@ public class CustomerClass extends javax.swing.JFrame {
         SearchCarBtn = new javax.swing.JButton();
         ViewBookingHistoryBtn = new javax.swing.JButton();
         ReturnCarBtn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         ViewPaymentBtn = new javax.swing.JButton();
         EditProfileBtn = new javax.swing.JButton();
         LogoutBtn = new javax.swing.JButton();
@@ -78,8 +77,6 @@ public class CustomerClass extends javax.swing.JFrame {
                 ReturnCarBtnActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("jLabel3");
 
         ViewPaymentBtn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         ViewPaymentBtn.setText("View Payment");
@@ -133,17 +130,13 @@ public class CustomerClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(262, 262, 262)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
+                .addGap(96, 264, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3))
+                .addComponent(jLabel1)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
@@ -285,6 +278,5 @@ public class CustomerClass extends javax.swing.JFrame {
     private javax.swing.JButton ViewPaymentBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

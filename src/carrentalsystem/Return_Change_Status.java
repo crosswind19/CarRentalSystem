@@ -27,6 +27,10 @@ public class Return_Change_Status extends changeStatus {
         super(bookingID, cusID, status);
     }
     
+    public Return_Change_Status(String carID){
+        super(carID);
+    }
+    
     
     
     @Override
@@ -114,7 +118,7 @@ public class Return_Change_Status extends changeStatus {
     
     
     
-       @Override
+    @Override
     public void changeCarStatus(){
      
         int action = 0, counter = 0, jop=0;

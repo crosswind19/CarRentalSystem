@@ -32,8 +32,7 @@ import javax.swing.JOptionPane;
  * @author Crosswind Cheah
  */
 
-//Serializable means turn object into bytes and save in the memory
-public class Booking implements Serializable {
+public class Booking{
 
     private int id; //Booking id
     String car_id;
@@ -125,65 +124,6 @@ public class Booking implements Serializable {
         return Rent_price;
     }
     
-    
-    
-//    public void doPayment(String booking_id,String customer_id,String car_id,String rent_price){
-//        int pline = 0;
-//        ArrayList<String> store_all_id = new ArrayList<>();
-//        String new_payment_id="";
-//        //Generate ID
-//        File get_payment_id = new File("Payment.txt");
-//        try(Scanner payment_id = new Scanner(get_payment_id)){
-//            while(payment_id.hasNextLine()){
-//                pline = pline + 1;
-//                String info = payment_id.nextLine();
-//                
-//                String new_information[] = info.split("\t");
-//                store_all_id.add(new_information[0]);
-//                
-//                new_payment_id = String.valueOf(Integer.toString(pline));
-//                
-//                
-//            }
-//
-//        } catch (FileNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        
-//        
-//        
-//        
-//        try{
-//            FileOutputStream file_payment_details = new FileOutputStream("Payment.txt",true);
-//            
-//            String payment_details;
-//            
-//            //Check id isit duplicate
-//            for(int number=0; number<store_all_id.size(); number++){
-//                if(store_all_id.contains(new_payment_id)){
-//                    int pupdate_id = Integer.parseInt(new_payment_id);
-//                    pupdate_id += 100;
-//                    new_payment_id = String.valueOf(pupdate_id);
-//
-//            }
-//            }
-//            
-//            //write payment details  booking_id customer_id customer_name car_id car_name rent_price booking_status
-//            //String booking_id,customer_id,car_id_payment_amount;
-//            
-//            payment_details = (new_payment_id + "\t" + customer_id + "\t" +  car_id + "\t" + rent_price + "\n");
-//            
-//            byte[] payment = payment_details.getBytes();
-//            file_payment_details.write(payment);
-//            
-//            
-//            
-//        }catch (FileNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IOException ex) {
-//            java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//    }
     
      public void returncar() throws IOException{
         try {

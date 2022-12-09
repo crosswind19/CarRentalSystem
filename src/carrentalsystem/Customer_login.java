@@ -184,6 +184,7 @@ public class Customer_login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
+        String tempid;
         String fname = "";
         String temp_username = "";
         Customer CustomerLog;
@@ -232,7 +233,8 @@ public class Customer_login extends javax.swing.JFrame {
                     flag = 1;
                     customer_credentials.add(new_information[0]);
                     //System.out.println(customer_credentials);
-                    temp_username = new_information[1];
+                    tempid = new_information[0];
+                    login.setId(Integer.parseInt(new_information[1]));
                     login.setName(new_information[3]);
                     login_btn.setEnabled(false);
                     break;
@@ -250,11 +252,11 @@ public class Customer_login extends javax.swing.JFrame {
                 get_customerid(customer_credentials.get(2));
                 get_customername(login.getName());
                 
-               // System.out.println(textfile_credentials.get(0));
+                System.out.println(login.getId());
                 
-                String cusid = textfile_credentials.get(0);
+                //String cusid = login.getId();
    
-                int tempcusid = Integer.parseInt(cusid);
+                //int tempcusid = Integer.parseInt();
                 
                 Customer_ViewBooking name = new Customer_ViewBooking();
                 String passuser = username_textfield_value;
@@ -265,7 +267,7 @@ public class Customer_login extends javax.swing.JFrame {
                 
                 
                 
-                login.setId(tempcusid);
+                //ogin.setId(tempcusid);
 
                
    

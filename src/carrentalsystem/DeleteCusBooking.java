@@ -160,12 +160,12 @@ public class DeleteCusBooking extends javax.swing.JFrame {
                 if(opt == JOptionPane.YES_NO_OPTION){
                     
                     //change back car status to availble after delete the customer booking
-                    Booking_status booking = new Booking_status(carID);
+                    Return_Change_Status booking = new Return_Change_Status(carID);
                     
                     booking.changeCarStatus();
                     
                     delete_btn.setEnabled(false);
-                    Path to_file = Paths.get("Booking.txt");
+                    Path to_file = Paths.get("Bookzing.txt");
                     for(int k=0; k<non_del_car.size(); k++){
                         
                         

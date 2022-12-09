@@ -11,42 +11,25 @@ import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 
-public class Customer extends VerifyUser{
+public class Customer extends Login{
     
     int id;
     private String name;
     private String phoneNumber;
     private String emailAddress;
     private String gender;
-    private String username;
-    private String password;
+
     //Aggregiation
     public Address address;
     
-    
-   
-  
-    
-    //Insert
-    
-//    public void Customer(String username, String password){
-//        //super(username,password);
-//    }
+
     public Customer(){
 
     }
     
     public Customer (String username,String password,int id,String name,String gender,String emailAddress,String phoneNumber,Address address){
-//       this.username = username;
-//       this.password = password;
         super(username,password);
         this.id = id;
-
-        
-        
-        //getUsername() = username;
-//        this.username = username;
-//        this.password = password;
         this.name = name;
         this.gender = gender;
         this.emailAddress = emailAddress;
@@ -55,23 +38,6 @@ public class Customer extends VerifyUser{
         this.address = address;
     }
     
-
-//    public String getUsername(){
-//        return username;
-//
-//    }
-//    
-//    public void setUsername(String username){
-//        this.username = username;
-//    }
-//    
-//    public String getPassword(){
-//        return password;
-//    }
-//    
-//    public void setPassword(String password){
-//        this.password = password;
-//    }
 
     public int getId() {
         return id;
@@ -108,13 +74,6 @@ public class Customer extends VerifyUser{
         this.emailAddress = emailAddress;
     }
     
-    public String register(){
-        String address_details = (address.Street + "\t" + address.Postal + "\t" + address.City + "\t" + address.State + "\n");
-        String person_details = (id + "\t" + super.getVerifyUsername() + "\t" + super.getVerifyPassword() + "\t" +name + "\t" +gender + "\t" +emailAddress + "\t" +phoneNumber + "\t" + address_details);
-        
-        return person_details;
-        
-    }
 
 
     public String getGender() {
@@ -123,6 +82,14 @@ public class Customer extends VerifyUser{
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+    
+    public String register(){
+        String address_details = (address.Street + "\t" + address.Postal + "\t" + address.City + "\t" + address.State + "\n");
+        String person_details = (id + "\t" + super.getVerifyUsername() + "\t" + super.getVerifyPassword() + "\t" +name + "\t" +gender + "\t" +emailAddress + "\t" +phoneNumber + "\t" + address_details);
+        
+        return person_details;
+        
     }
     
     @Override

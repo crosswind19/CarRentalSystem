@@ -8,18 +8,18 @@ package Class;
  *
  * @author bende
  */
-public class VerifyUser {
+public class Login {
     
     String username;
     String password;
     
     //constructor
     
-    public VerifyUser(){
+    public Login(){
         
     }
     
-    public VerifyUser(String username, String password){
+    public Login(String username, String password){
         this.username = username;
         this.password = password;
     }

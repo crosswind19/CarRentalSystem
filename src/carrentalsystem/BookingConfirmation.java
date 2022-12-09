@@ -25,7 +25,7 @@ public class BookingConfirmation extends javax.swing.JFrame {
     
     //will be used for confirm button clicked
     int capture_flag_booking = 0, capture_flag_car = 0;
-    Booking_status booking;
+    //Booking_status booking;
 
     /**
      * This method is called from within the constructor to initialize the form.

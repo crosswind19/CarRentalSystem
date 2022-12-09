@@ -8,7 +8,7 @@ package Class;
  *
  * @author bende
  */
-public class Admin extends VerifyUser{
+public class Admin extends Login{
     
     private String admin_username;
     private String admin_password;
