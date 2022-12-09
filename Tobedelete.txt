@@ -1,0 +1,1 @@
+Cus_ID	Username	Password	Name	Gender	Email	Phone_No	Address	Poscode	City	State

@@ -10,9 +10,11 @@ package Class;
  */
 public class Admin extends Login{
     
-    private String admin_username;
-    private String admin_password;
     private String admin_position;
+    
+    public Admin(){
+        
+    }
     
     public String getAdminPosition(){
         return admin_position;
@@ -20,6 +22,11 @@ public class Admin extends Login{
     
     public void setAdminPosition(String position){
         this.admin_position = position;
+    }
+    
+   
+    public void Admin_ViewCustomerBooking(){
+        
     }
     
     

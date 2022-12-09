@@ -4,6 +4,9 @@
  */
 package carrentalsystem;
 
+import java.io.File;
+import java.util.Scanner;
+
 /**
  *
  * @author bende
@@ -17,7 +20,7 @@ public class Conventional_Car extends Powered_Type{
     }
 
     
-    
+     
     @Override
     public double doCarInsurance(double price){
         Double totalRentPrice = (price + 500);

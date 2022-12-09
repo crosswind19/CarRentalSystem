@@ -32,17 +32,14 @@ public class Vehicle {
     private int manufactureYear;
     private int car_gear;
     private String fuel_type;
-    int travel_distance;
-    int engine_id;
-    String engine_type;
-    int car_hp;
-    String status;
+    private int travel_distance;
+    private int engine_id;
+    private String engine_type;
+    private int car_hp;
+    private String status;
     
     int flag = 0, ans = -1, action;
     
-   public void Vehicle(){
-       
-   }
    
    public Vehicle(){
        
@@ -177,60 +174,4 @@ public class Vehicle {
         this.action = act;
     }
     
-    public void returnCar(){
-        int return_function = 0, return_line = 0;
-        try {          
-        File booking_file = new File("Booking.txt");
-        Scanner scan_pay = new Scanner(booking_file);
-        ArrayList<String> return_car = new ArrayList<>();
-
-        while(scan_pay.hasNextLine()){
-            String each_line = scan_pay.nextLine();
-            return_line = return_line + 1;
-            String[] del_pay_details = each_line.split("\n");
-            String[] each_pay_del = del_pay_details[0].split("\t");
-            String vehicleID = each_pay_del[0];
-            //int carID = Integer.parseInt(vehicleID);
-            String carid = Integer.toString(this.id);
-            //number start with 1 in textfile no need minus 1
-            if(carid.equals(vehicleID)){
-
-                return_function = 1; 
-                //if found in this statement, car details will not added into left_car
-
-            }else{
-                // if the serial number not found, will be added into the left_car
-                this.action = 0;
-                this.flag = 0;
-                return_car.add(del_pay_details[0]);
-            }
-
-        }
-//        for(int x=0; x<left_pay.size(); x++){
-//            System.out.println(left_pay);
-//        }
-        
-        
-        if(return_function == 1){
-            
-            this.action = 1;
-            //write the new car details (With not include delete car details)
-            Path write_output = Paths.get("Booking.txt");
-            for(int x = 0; x<return_car.size(); x++){
-            //System.out.println(write_car.get(x));
-
-            Files.write(write_output, return_car);
-            this.flag = 1;
-        }
-
-
-        }
-
-
-    } catch (FileNotFoundException ex) {
-        Logger.getLogger(DeleteCar.class.getName()).log(Level.SEVERE, null, ex);
-    }catch (IOException ex) {
-        Logger.getLogger(DeleteCar.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    }
 }

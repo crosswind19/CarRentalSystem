@@ -234,7 +234,7 @@ public class Customer_login extends javax.swing.JFrame {
                     customer_credentials.add(new_information[0]);
                     //System.out.println(customer_credentials);
                     tempid = new_information[0];
-                    login.setId(Integer.parseInt(new_information[1]));
+                    login.setId(Integer.parseInt(new_information[0]));
                     login.setName(new_information[3]);
                     login_btn.setEnabled(false);
                     break;

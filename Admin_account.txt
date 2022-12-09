@@ -1,1 +1,2 @@
 admin01	12345	Manager
+Staff123	Staff000	Admin

@@ -457,7 +457,7 @@ public class Customer_booking extends javax.swing.JFrame {
                
             
             //Write into booking and payment txt
-            int okbooking = JOptionPane.showConfirmDialog(null,"Booking Successfully" + rents,"Information Message",JOptionPane.DEFAULT_OPTION);
+            int okbooking = JOptionPane.showConfirmDialog(null,"Booking Successfully, Rent: " + rents,"Information Message",JOptionPane.DEFAULT_OPTION);
             System.out.println("Exit");
             
             

@@ -25,11 +25,11 @@ import javax.swing.JOptionPane;
  */
 public class Payment {
 
-String payment_id;
-String booking_id;
-String customer_id;
-String car_id;
-String payment_amount;  
+private String payment_id;
+private String booking_id;
+private String customer_id;
+private String car_id;
+private String payment_amount;  
 private String Rent_price;
 
 

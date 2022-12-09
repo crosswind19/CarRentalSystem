@@ -29,7 +29,7 @@ public class AddCar extends javax.swing.JFrame {
     public AddCar() {
         initComponents();
     }
-    CarEngine engine;
+    //CarEngine engine;
     Vehicle vehicle;
     Powered_Type powered_type;
     

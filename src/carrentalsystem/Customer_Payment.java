@@ -81,10 +81,12 @@ public class Customer_Payment extends javax.swing.JFrame {
         Total_Payment_Llb.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Total_Payment_Llb.setText("Total Payment : ");
 
+        totalPrice_txt.setEditable(false);
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("Payment History");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Auto-Click");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -104,7 +106,7 @@ public class Customer_Payment extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(32, 32, 32)
                         .addComponent(jButton1)
-                        .addGap(0, 52, Short.MAX_VALUE))
+                        .addGap(0, 42, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)

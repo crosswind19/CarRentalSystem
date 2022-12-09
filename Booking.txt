@@ -1,23 +1,4 @@
 Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
-1	cusid	cusname	7	asdfjhb jkhgkjdf	1006.0	Pending_for_approval
-2	cusid2	cusname2	3	Mclaren P1	19500.0	Pending_for_approval
-3	55	qweewq	9	ves aw	1512.0	Approved
-4	1	asd	5	sdf	2334.0	Approved
-5	1	DSA	3	Mclaren P1	13000.0	Rejected
-6	1	testing	6	tyfkjhg sefse	2810919.0	Pending_for_approval
-7	1	ASD	9	ves aw	756.0	Pending_for_approval
-8	1	ASD	7	asdfjhb jkhgkjdf	1509.0	Returned
-9	1	SD	8	sdfsd iugku	1869.0	Rejected
-10	1	ASD	8	sdfsd iugku	1246.0	Rejected
-11	1	ASDdsa	8	sdfsd iugku	3115.0	Rejected
-12	1	ASDddsaasd	6	tyfkjhg sefse	182824.0	Rejected
-15	1	testing	108	asd asd	330.0	Pending_for_approval
-16	1	booking	8	sdfsd iugku	0.0	Rejected
-18	1	Jah Xuan	3	Mclaren P1	13000.0	Rejected
-119	1	Lah Xuan	108	asd asd	1510.0	Returned
-20	1	Test	8	sdfsd iugku	1246.0	Returned
-118	1	test1	1	Ferrari 458	18000.0	Pending_for_approval
-19	1	KX name	8	sdfsd iugku	1246.0	Approved
-220	2	kahxuan	8	sdfsd iugku	1246.0	Pending_for_approval
-121	1	2	3	Mclaren P1	6500.0	Pending_for_approval
-22	9	KahXuan	108	asd asd	1510.0	Returned
+1	3	Alvin	2	MiniCooper Countryman	3800.0	Approved
+2	1	James	3	Mclaren P1	45500.0	Rejected
+3	2	Aruthur	7	Toyota 86	15117.0	Pending_for_approval

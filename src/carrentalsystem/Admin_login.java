@@ -150,16 +150,19 @@ public class Admin_login extends javax.swing.JFrame {
             File staff_info = new File("Admin_account.txt");
             Scanner read_staff = new Scanner(staff_info);
             while(read_staff.hasNextLine()){
+
                 String info = read_staff.nextLine();
-                String new_info[] = info.split("\t");
-                credential_staff.add(new_info[0]);
-                credential_staff.add(new_info[1]);
+                String[] line_info = info.split("\n");
+                String[] new_info = line_info[0].split("\t");
+                
+                //credential_staff.add(new_info[0]);
+                //credential_staff.add(new_info[1]);
                 String get_position = new_info[2];
                 admin.setAdminPosition(get_position);
                 System.out.println(admin.getAdminPosition());
                 
                 //Check with username and password with textfile
-                if(credential_staff.get(0).equals(admin.getVerifyUsername()) && (credential_staff.get(1).equals(admin.getVerifyPassword()))){
+                if(new_info[0].equals(admin.getVerifyUsername()) && (new_info[1].equals(admin.getVerifyPassword()))){
                     
                     action = 1;
                     login_button.setEnabled(false);
