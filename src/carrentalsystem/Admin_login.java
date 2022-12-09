@@ -159,6 +159,7 @@ public class Admin_login extends javax.swing.JFrame {
                 //credential_staff.add(new_info[1]);
                 String get_position = new_info[2];
                 admin.setAdminPosition(get_position);
+     
                 System.out.println(admin.getAdminPosition());
                 
                 //Check with username and password with textfile
@@ -173,6 +174,7 @@ public class Admin_login extends javax.swing.JFrame {
 //            System.out.println(credential_staff.get(1));
             if(action == 1){
                 JOptionPane.showMessageDialog(this, "Login Successful" + " Weclome: " + admin.getVerifyUsername() + " Position: " + admin.getAdminPosition() + ". ", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
+
                 
                 
                 AdminClass admin_class = new AdminClass();

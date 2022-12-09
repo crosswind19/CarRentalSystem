@@ -40,10 +40,11 @@
                           <Component id="add_new_car" max="32767" attributes="0"/>
                           <Component id="edit_car" max="32767" attributes="0"/>
                           <Component id="delete_car" alignment="0" max="32767" attributes="0"/>
-                          <Component id="view_car" min="-2" pref="278" max="-2" attributes="0"/>
                           <Component id="booking_confirmation" max="32767" attributes="0"/>
                           <Component id="view_log" alignment="0" max="32767" attributes="0"/>
                           <Component id="approve_car_return" alignment="0" max="32767" attributes="0"/>
+                          <Component id="manage_admin" max="32767" attributes="0"/>
+                          <Component id="view_car" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -58,7 +59,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="86" max="32767" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,7 +94,10 @@
                   <Component id="viewpay_btn" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="edit_paymemt" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="edit_paymemt" max="32767" attributes="0"/>
+                  <Component id="manage_admin" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="delete_payment" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -305,6 +309,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cus_pdfActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="manage_admin">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="24" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Manage Admin Account"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manage_adminActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
