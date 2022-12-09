@@ -24,17 +24,16 @@ import javax.swing.JOptionPane;
  */
 public class Booking_status {
     
-    String booking_id;
-    String cus_id;
-    String booking_status;
-    String[] array = null;
-    String approve_word = "Approved";
-    String reject_word = "Rejected";
-    String car_status_available = "Available";
-    String update_status = "";
+    private String booking_id;
+    private String cus_id;
+    private String booking_status;
+    private String approve_word = "Approved";
+    private String reject_word = "Rejected";
+    private String car_status_available = "Available";
+    private String update_status = "";
     
-    String id_car;
-    String booking_ids;
+    private String id_car;
+    private String booking_ids;
     
     BookingConfirmation booking;
     
