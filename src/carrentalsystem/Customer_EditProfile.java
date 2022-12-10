@@ -74,7 +74,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
         });
 
         details_selection.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        details_selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "Email", "Phone Number", "Address Street", "Address Poscode ", "Address City", "Address State", " " }));
+        details_selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Name", "Email", "Phone Number", "Address Street", "Address Poscode ", "Address City", "Address State" }));
 
         changes_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         changes_txt.addKeyListener(new java.awt.event.KeyAdapter() {
