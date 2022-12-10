@@ -332,7 +332,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
-                               JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
+                               JOptionPane.showMessageDialog(this,"Error Format Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusState));
@@ -372,7 +372,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                         Files.write(write_to_file, write_book);
                     }
             }else{
-                JOptionPane.showMessageDialog(this, "Booking Record Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
             }
        
        
