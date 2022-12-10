@@ -140,12 +140,18 @@ public class Customer_ReturnCar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void returncar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returncar_btnActionPerformed
+        
+        
+        if( bookingid_textfield.getText().length()<=0 || carid_textfield.getText().length()<=0){
+            JOptionPane.showMessageDialog(this, "Please fill in the empty field", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+        }else if(bookingid_textfield.getText().matches("[a-zA-Z]+") || carid_textfield.getText().matches("[a-zA-Z]+")){
+            JOptionPane.showMessageDialog(this, "Please enter a valid number", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+        }else{
         String bookingid_value = bookingid_textfield.getText();
         int int_book_id = Integer.parseInt(bookingid_value);
         String carid_value = carid_textfield.getText();
         int number = Integer.parseInt(carid_value);
         String status = "0";
-        
         Booking return_car = new Booking(int_book_id,carid_value,status); 
         
         
@@ -159,20 +165,9 @@ public class Customer_ReturnCar extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(BookingConfirmation.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        System.out.println(capture_flag_booking + "capture_flag_booking");
-//        System.out.println(capture_flag_car + "capture_flag_car");
-        
-//        if((return_car.getCaptureFlag()) == 1){
-//            JOptionPane.showMessageDialog(this, "Car and Booking Textfile Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-//
-//        }else{
-//            
-//            JOptionPane.showMessageDialog(this, "Car Textfile Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-//
-//        }
         returncar_btn.setEnabled(false);
         
-
+        }
     }//GEN-LAST:event_returncar_btnActionPerformed
 
     private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed

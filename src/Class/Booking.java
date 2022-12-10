@@ -171,13 +171,14 @@ public class Booking{
                             
                             
                         
-                       
+                        System.out.println("Status updated");
                         write_booking.add(update_status);
                         
                     }
                     else{
-
+                        System.out.println("Record not found");
                         write_booking.add(each_booking[0]);
+                        
                     }
                 }
             
