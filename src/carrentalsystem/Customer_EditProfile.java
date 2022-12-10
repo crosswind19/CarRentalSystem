@@ -228,15 +228,18 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                    int new_cnt = cnt - 1;
                    
                    changes = details_selection.getSelectedIndex();
-                   
+                   ArrayList<String> edit_ele = new ArrayList<>();
+                   ArrayList<String> write_ele = new ArrayList<>();
                    switch(changes){
                        //Name
                        case 0 -> {
                            if(change_item.matches("[a-zA-Z]+")){
                                String before_word = each_element[changes+3];
                                //System.out.println(before_word);
-                               
-                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               change_line = (each_element[0] +"\t"+ each_element[1] + "\t" + each_element[2] + "\t" + change_item +"\t" + each_element[4] +"\t" + each_element[5] +"\t" + each_element[6] +"\t" + each_element[7] +"\t" + each_element[8] +"\t" + each_element[9] +"\t" + each_element[10]);
+
+
+                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                                
                            }else{
                                JOptionPane.showMessageDialog(this,"Error Format Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
@@ -253,8 +256,9 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
                                System.out.println(before_word);
-                               
-                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               change_line = (each_element[0] +"\t"+ each_element[1] + "\t" + each_element[2] + "\t" + each_element[3] +"\t" + each_element[4] +"\t" + change_item +"\t" + each_element[6] +"\t" + each_element[7] +"\t" + each_element[8] +"\t" + each_element[9] +"\t" + each_element[10]);
+
+                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid email","Error Message",JOptionPane.ERROR_MESSAGE);
                                
@@ -270,7 +274,8 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
                                
-                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               change_line = (each_element[0] +"\t"+ each_element[1] + "\t" + each_element[2] + "\t" + each_element[3] +"\t" + each_element[4] +"\t" + each_element[5] +"\t" + change_item +"\t" + each_element[7] +"\t" + each_element[8] +"\t" + each_element[9] +"\t" + each_element[10]);
+                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid phone","Error Message",JOptionPane.ERROR_MESSAGE);
                                
@@ -296,8 +301,9 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
                                
+                               change_line = (each_element[0] +"\t"+ each_element[1] + "\t" + each_element[2] + "\t" + each_element[3] +"\t" + each_element[4] +"\t" + each_element[5] +"\t" + each_element[6] +"\t" + change_item +"\t" + each_element[8] +"\t" + each_element[9] +"\t" + each_element[10]);
                                
-                                   change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                                   //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                                    
                            }else{
                                JOptionPane.showMessageDialog(this,"This is not a valid poscode","Error Message",JOptionPane.ERROR_MESSAGE);
@@ -313,8 +319,9 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                            if(change_item.matches("[a-zA-Z]+")){
                                String before_word = each_element[changes+4];
                                System.out.println(before_word);
+                               change_line = (each_element[0] +"\t"+ each_element[1] + "\t" + each_element[2] + "\t" + each_element[3] +"\t" + each_element[4] +"\t" + each_element[5] +"\t" + each_element[6] +"\t" + each_element[7] +"\t" + each_element[8] +"\t" + change_item +"\t" + each_element[10]);
                                
-                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
                                JOptionPane.showMessageDialog(this,"Error Format Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
@@ -329,8 +336,9 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                String before_word = each_element[changes+4];
                                
                                //System.out.println(before_word);
+                               change_line = (each_element[0] +"\t"+ each_element[1] + "\t" + each_element[2] + "\t" + each_element[3] +"\t" + each_element[4] +"\t" + each_element[5] +"\t" + each_element[6] +"\t" + each_element[7] +"\t" + each_element[8] +"\t" + each_element[9] +"\t" + change_item);
                                
-                               change_line = (array_book.get(new_cnt).replace(before_word,change_item));
+                               //change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
                                JOptionPane.showMessageDialog(this,"Error Format Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
