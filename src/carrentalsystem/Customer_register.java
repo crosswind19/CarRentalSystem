@@ -379,7 +379,10 @@ public class Customer_register extends javax.swing.JFrame {
                 //Customer new_register = new Customer(new_customer_username,new_customer_password);
                 
                 if((register.getVerifyUsername().length()>0) && (register.getVerifyPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
-                    
+                  
+                  if(!register.getVerifyUsername().equals(register.getVerifyPassword())){
+                   if(!register.getVerifyUsername().equals(register.getName()) && !register.getVerifyUsername().equals(register.address.getStreet())){ 
+                       if(!register.address.getStreet().equals(register.address.getCity()) && !register.address.getStreet().equals(register.address.getState())){
                     if(!(new_Postal.length() == 5)){
                         JOptionPane.showMessageDialog(this, "Error Found in Postal Code (Required: 5 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
 
@@ -410,6 +413,18 @@ public class Customer_register extends javax.swing.JFrame {
                             }
                         }
                     }
+                       }else{
+                           JOptionPane.showMessageDialog(this, "Error Occur! Address, State and City cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
+                       }
+                   }else{
+                       JOptionPane.showMessageDialog(this, "Error Occur! Username and Name cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
+                   }
+                  }else{
+                      JOptionPane.showMessageDialog(this, "Error Occur! Username and Password cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
+                       }
                 }else{
                     JOptionPane.showMessageDialog(this, "Error Occur! Please Enter a Valid Input!", "Error Message", JOptionPane.ERROR_MESSAGE);
                 
