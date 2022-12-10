@@ -239,7 +239,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                                
                            }else{
-                               JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
+                               JOptionPane.showMessageDialog(this,"Error Format Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+3];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusName));
@@ -316,7 +316,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                                
                                change_line = (array_book.get(new_cnt).replace(before_word,change_item));
                            }else{
-                               JOptionPane.showMessageDialog(this,"Error FOrmat Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
+                               JOptionPane.showMessageDialog(this,"Error Format Found, No Changes Made!","Error Message",JOptionPane.ERROR_MESSAGE);
                                
                                String before_word = each_element[changes+4];
                                change_line = (array_book.get(new_cnt).replace(before_word,CusCity));
