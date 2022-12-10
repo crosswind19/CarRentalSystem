@@ -335,6 +335,12 @@ public class Customer_booking extends javax.swing.JFrame {
     private void confirm_booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_booking_btnActionPerformed
         //Create booking id
         String not_available = "not-Available";
+        String cusid = cusID_textfield.getText();
+        String cusname = cusName_textfield.getText();
+        String carid = carId_txt.getText();
+        String carname = carName_txt.getText();
+        
+        
         
         //public Booking
         
@@ -348,15 +354,25 @@ public class Customer_booking extends javax.swing.JFrame {
         String new_booking_id="";
         String new_payment_id="";
         
-         if(carId_txt.getText().length() <= 0){
+        if(carId_txt.getText().length() <= 0){
              JOptionPane.showMessageDialog(null, "Please Select Above Table Rows for Renting a Car", "Error Message" , JOptionPane.ERROR_MESSAGE);
              
-         }
+        }else if(carDuration_txt.getText().length()<=0){
+            JOptionPane.showMessageDialog(this, "Please insert rent duration", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+        }else if(carDuration_txt.getText().matches("[a-zA-Z]+")){
+                  JOptionPane.showMessageDialog(this, "Please enter a valid number", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+        }else if(Integer.parseInt(carDuration_txt.getText()) > 30){
+            System.out.println("THis is a text");
+               JOptionPane.showMessageDialog(this, "You cannot book more than 30 days", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+      
+        }else{
+  
+         
         
-         if(carDuration_txt.getText().length()<=0){
-             JOptionPane.showMessageDialog(null, "Please enter rent duration", "Error Message" , JOptionPane.ERROR_MESSAGE);
-             
-         }
+        double duration = Double.parseDouble(carDuration_txt.getText());
+        double rent = Double.parseDouble(price_lbl.getText());
+        String rents = String.valueOf(duration * rent);
+        String status = "Pending_for_approval";
          
         //Generate booking ID
         File get_booking_id = new File("Booking.txt");
@@ -408,18 +424,6 @@ public class Customer_booking extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             java.util.logging.Logger.getLogger(Customer_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
-       
-        String cusid = cusID_textfield.getText();
-        String cusname = cusName_textfield.getText();
-        String carid = carId_txt.getText();
-        String carname = carName_txt.getText();
-        double duration = Double.parseDouble(carDuration_txt.getText());
-        double rent = Double.parseDouble(price_lbl.getText());
-        String rents = String.valueOf(duration * rent);
-        String status = "Pending_for_approval";
-        
-        
         
         
         //starts here
@@ -545,8 +549,7 @@ public class Customer_booking extends javax.swing.JFrame {
                 customerpage.setVisible(true);
                 dispose();
             }
-
-            
+    
             
         } catch (FileNotFoundException ex) {
             java.util.logging.Logger.getLogger(EditCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -554,7 +557,10 @@ public class Customer_booking extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(EditCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
-
+//else
+        }
+            
+        
     }//GEN-LAST:event_confirm_booking_btnActionPerformed
 
     private void carId_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carId_txtActionPerformed
@@ -586,6 +592,7 @@ public class Customer_booking extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     
 
    

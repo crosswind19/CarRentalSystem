@@ -82,6 +82,11 @@ public class Customer_Payment extends javax.swing.JFrame {
         Total_Payment_Llb.setText("Total Payment : ");
 
         totalPrice_txt.setEditable(false);
+        totalPrice_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalPrice_txtActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("Payment History");
@@ -206,6 +211,10 @@ public class Customer_Payment extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ViewCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void totalPrice_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPrice_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalPrice_txtActionPerformed
 
     /**
      * @param args the command line arguments
