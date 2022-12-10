@@ -348,6 +348,10 @@ public class Customer_booking extends javax.swing.JFrame {
         String new_booking_id="";
         String new_payment_id="";
         
+         if(carId_txt.getText().length() <= 0){
+             JOptionPane.showMessageDialog(null, "Please Select Above Table Rows for Renting a Car", "Error Message" , JOptionPane.ERROR_MESSAGE);
+             
+         }
         
          if(carDuration_txt.getText().length()<=0){
              JOptionPane.showMessageDialog(null, "Please enter rent duration", "Error Message" , JOptionPane.ERROR_MESSAGE);
