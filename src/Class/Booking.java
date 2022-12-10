@@ -153,7 +153,7 @@ public class Booking{
                     array_booking.add(each_booking[0]);
                     
                     if((car_id.equals(cusID) && (booking_id.equals(booking_ids)))){
-     
+                        
                         flag = 1;
                         int new_cnt = cnt - 1;
                         //System.out.println(new_cnt);
