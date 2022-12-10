@@ -230,6 +230,8 @@ public class Customer_login extends javax.swing.JFrame {
                 
                 //System.out.println(textfile_credentials);
                 if((login.getVerifyUsername().equals(new_information[1])) && (login.getVerifyPassword().equals(new_information[2]))){
+                    temp_username = new_information[1];
+                    fname = new_information[3];
                     flag = 1;
                     customer_credentials.add(new_information[0]);
                     //System.out.println(customer_credentials);

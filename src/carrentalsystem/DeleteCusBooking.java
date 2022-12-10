@@ -165,7 +165,7 @@ public class DeleteCusBooking extends javax.swing.JFrame {
                     booking.changeCarStatus();
                     
                     delete_btn.setEnabled(false);
-                    Path to_file = Paths.get("Bookzing.txt");
+                    Path to_file = Paths.get("Booking.txt");
                     for(int k=0; k<non_del_car.size(); k++){
                         
                         
@@ -178,6 +178,9 @@ public class DeleteCusBooking extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "No Changes Will Be Made!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
                     
                 }
+            }else{
+                JOptionPane.showMessageDialog(this, "No Booking ID Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
             }
             
             

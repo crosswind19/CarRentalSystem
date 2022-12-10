@@ -574,6 +574,7 @@ public class AddCar extends javax.swing.JFrame {
                 
             
             if(action == 1){
+                int id_dul=0;
                 int new_carid = line;
                 try {
                     //check if id same as line (avoind same id)
@@ -581,12 +582,14 @@ public class AddCar extends javax.swing.JFrame {
                     
                     for(int x=0; x<car_id_list.size(); x++){
                         if(car_id_list.contains(string_line)){
-                            JOptionPane.showMessageDialog(this, "Same Car ID Listed!", "Error Message", JOptionPane.WARNING_MESSAGE);
+                            id_dul = 1;
                             new_carid = (car.getId() + 100);
 
                         }                        
                     }
-
+                    if(id_dul == 1){
+                    JOptionPane.showMessageDialog(this, "Same Car ID Listed!", "Error Message", JOptionPane.WARNING_MESSAGE);
+                    }
                     
                     
                     //write into textfile
@@ -615,6 +618,10 @@ public class AddCar extends javax.swing.JFrame {
                     engineID_textfield.setText("");
                     engineHP_textfield.setText("");
                     car_cc_textfield.setText("");
+                    
+                    AdminClass admin = new AdminClass();
+                    admin.setVisible(true);
+                    dispose();
                     
                     
                 } catch (FileNotFoundException ex) {
@@ -673,8 +680,9 @@ public class AddCar extends javax.swing.JFrame {
         // check passenger less than 7 people
         if(((car_fuel_type == "Electric") && (car_gear != 1))){
             JOptionPane.showMessageDialog(this, "An Error Occur with Car Gear & Engine Type, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
+            confirm_vehicle.setEnabled(true);
+
             if(flag != 1){               
-                confirm_vehicle.setEnabled(true);
                 manufactureYear_textfield.setEnabled(false);
                 serialNum_textfield.setEnabled(false);
                 engineID_textfield.setEnabled(false);

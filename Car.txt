@@ -2,10 +2,12 @@ Car_id	Car_Brand	Car_Model	Car_Type	Number_Plate	Car_Gear	Passenger_Occupancy	Fu
 1	Ferrari	458	SportCar	FER213	6	2	Combustion	500	4588	2019	FER2019	4567	Petrol	600	4500.0	Available
 2	MiniCooper	Countryman	HatchBack	MIN123	5	5	Combustion	2000	2000	2015	MINI201501	64641	Petrol	200	950.0	not-Available
 3	Mclaren	P1	SportCar	MCL123	7	2	Combustion	600	3000	2017	MCL201701	634461	Petrol	600	6500.0	Available
-4	BYD	HGR	SportCar	BBY1	5	5	Combustion	5	5547	2019	BYD201901	12334	Hybrid 	321	8234.0	not-Available
+4	BYD	HGR	SportCar	BBY1	5	5	Combustion	5	5547	2019	BYD201901	12334	Hybrid 	321	8234.0	Available
 6	Nissan	GTR	SportCar	NIS12	2	2	Combustion	142	4124	2022	NIS202201	142456	Hybrid 	124	22853.0	Available
 7	Toyota	86	SportCar	YOT623	7	5	Combustion	56	6536	2021	TOY202101	234564	Hybrid 	214	5039.0	not-Available
 8	Bently	GT	SportCar	BEN2	6	2	Combustion	334	2342	2016	BENT201601	12373	Hybrid 	234	6233.0	Available
-108	Proton	X50	SUV	PRO123	12	2	Combustion	213	2	2005	PROT200501	324234	Hybrid 	322	7555.0	Available
+108	Proton	X50	SUV	PRO123	12	2	Combustion	213	2	2005	PROT200501	324234	Hybrid 	322	7555.0	not-Available
 9	Myvi	Perodua	SportCar	MY212	4	4	Combustion	423	1278	2007	MYV200712	12243	Petrol	345	2533.0	Available
-10	Tesla	ModelY	SUV	TES682	1	5	Electric	3341	0	2018	TES201898	32421	Fully_Electric	500	2663.0	Available
+11	Porsche	911	SportCar	POR2382E	6	2	Combustion	3241	5130	2022	POR2022001	23421	Petrol	530	4731.0	Available
+12	Lamborghini	SV	SportCar	LAM2382	7	2	Combustion	2345	5432	2016	LAM2016002	2376	Petrol	650	3921.0	Available
+112	BMW	530i	Sedan	FEU2318	6	5	Combustion	4123	3221	2022	BMW202201	54232	Hybrid 	632	2845.0	Available

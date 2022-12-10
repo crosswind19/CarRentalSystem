@@ -271,6 +271,7 @@ public class Approval_Booking_Status extends changeStatus{
                 
                 
                 if(flag == 1){
+                    this.setCaptureFlag(1);
                     //write into booking textfile
                     Path write_to_file = Paths.get("Booking.txt");
                 for (String write_booking1 : write_booking) {

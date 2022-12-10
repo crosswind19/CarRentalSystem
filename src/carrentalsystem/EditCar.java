@@ -181,19 +181,20 @@ public class EditCar extends javax.swing.JFrame {
 
                     String old_word = each_car_det[get_changes_item];
                     //System.out.println(line);
-                    System.out.println(array_car.get(line));
-                    String new_car_details = (array_car.get(line).replace(old_word, update_text));
+                    //System.out.println(old_word);
+                    
+                    String new_car_details = (array_car.get(line - 1).replace(old_word, update_text));
                     //System.out.println(new_car_details);
                     //Crate write car for writing into Car.txt
                     write_car.add(new_car_details);
-                    array_car.set(line, new_car_details);
-                    
+                    array_car.set(line - 1, new_car_details);
 
                 }else{
-                    array_car.add(each_car_details[0]);
+                    //array_car.add(each_car_details[0]);
                     write_car.add(each_car_details[0]);
-                
+                    
                 }
+                System.out.println(write_car);
 
             }
             if(get_changes_item == 0){
@@ -203,7 +204,7 @@ public class EditCar extends javax.swing.JFrame {
                 else{
                 if(action == 1){
                 JOptionPane.showMessageDialog(this, "Car Serial Number Record Exists!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-                update_btn.setEnabled(true);
+                update_btn.setEnabled(false);
                 //Write new car details back into the car.txt (overwrite)
                 Path write_output = Paths.get("Car.txt");
                 for(int x = 0; x<write_car.size(); x++){
