@@ -1,5 +1,5 @@
 Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
-1	3	Alvin	2	MiniCooper Countryman	3800.0	Approved
+1	3	Alvin	2	MiniCooper Countryman	3800.0	Returning
 2	1	James	3	Mclaren P1	45500.0	Rejected
-3	2	Aruthur	7	Toyota 86	15117.0	Pending_for_approval
+3	2	Aruthur	7	Toyota 86	15117.0	Returning
 4	5	Ruth	4	BYD HGR	41170.0	Returning
