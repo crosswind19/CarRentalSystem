@@ -16,7 +16,10 @@ import javax.swing.JOptionPane;
  * @author Crosswind Cheah
  */
 public class Customer_ReturnCar extends javax.swing.JFrame {
-
+    public int JOP = 0;
+    
+    public static int jopvalue;
+    
     /**
      * Creates new form Customer_ReturnCar
      */
@@ -157,10 +160,17 @@ public class Customer_ReturnCar extends javax.swing.JFrame {
         
         try {
             return_car.returncar();
-            JOptionPane.showMessageDialog(this, "Returned Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-                CustomerClass customerpage = new CustomerClass();
+            if (jopvalue == 1) {
+                JOptionPane.showMessageDialog(this, "Returned Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+             System.out.println(JOP);
+               CustomerClass customerpage = new CustomerClass();
                 customerpage.setVisible(true);
                 dispose();
+            }else{
+                JOptionPane.showMessageDialog(this, "Record not found", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+             
+            }
+            
             
         } catch (IOException ex) {
             Logger.getLogger(BookingConfirmation.class.getName()).log(Level.SEVERE, null, ex);

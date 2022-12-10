@@ -5,6 +5,7 @@
 package Class;
 
 import carrentalsystem.CustomerClass;
+import carrentalsystem.Customer_ReturnCar;
 import carrentalsystem.Customer_booking;
 import carrentalsystem.EditCar;
 import carrentalsystem.EditCusBooking;
@@ -173,12 +174,15 @@ public class Booking{
                         
                         System.out.println("Status updated");
                         write_booking.add(update_status);
+                        Customer_ReturnCar returnc = new Customer_ReturnCar();
+                        //returnc.JOP = 1;
+                        get_JOPid(1);
                         
                     }
                     else{
                         System.out.println("Record not found");
                         write_booking.add(each_booking[0]);
-                        
+                        //get_JOPid(0);
                     }
                 }
             
@@ -296,6 +300,11 @@ public class Booking{
         } 
         return count;
         
+    }
+    
+    static void get_JOPid(int i){
+        int id = i;
+        Customer_ReturnCar.jopvalue = id;
     }
 
     
