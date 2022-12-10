@@ -171,11 +171,11 @@ public class BookingConfirmation extends javax.swing.JFrame {
 //        System.out.println(capture_flag_car + "capture_flag_car");
         
         if((booking.getCaptureFlag()) == 1){
-            JOptionPane.showMessageDialog(this, "Car and Booking Textfile Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Car and Booking Status Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 
         }else{
             
-            JOptionPane.showMessageDialog(this, "Car Textfile Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No Record Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
 
         }
         confirm_btn.setEnabled(false);

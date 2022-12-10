@@ -4,10 +4,14 @@
  */
 package carrentalsystem;
 
+import Class.Booking;
 import Class.Payment;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -125,27 +129,143 @@ public class DeletePayment extends javax.swing.JFrame {
     }//GEN-LAST:event_back_btnActionPerformed
 
     private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+        
         String payid_value = paymentid_textfield.getText();
         String num = payid_value;
-       
+        String book_id="";
+        int id=0, cnt=0;
+        String cus_id;
+        String get_booking_id="";
+        String get_car_id = "";
 
         Payment pay = new Payment();
-        pay.setPaymentID(num);
+        Booking book = new Booking();
+
+        try{
+            File pay_file = new File("Payment.txt");
+            Scanner scan_payment = new Scanner(pay_file);
+            ArrayList<String> array_pay = new ArrayList<>();
+            ArrayList<String> write_pay = new ArrayList<>();
+            
+            while(scan_payment.hasNextLine()){
+                String each_line = scan_payment.nextLine();
+                String[] each_pay_details = each_line.split("\n");
+                String[] each_pay_det = each_pay_details[0].split("\t");
+                
+                if(payid_value.equals(each_pay_det[0])){
+                    get_booking_id = each_pay_det[1];
+                    get_car_id = each_pay_det[3];
+                }
+
+            }
+        }catch(Exception e){
+            
+        }
+
         
+        
+        pay.setPaymentID(num);
+        book.setId(id);
+        book.setCarID(get_car_id);
         
         int ans = JOptionPane.showConfirmDialog(this, "Are You Sure To Delete this Payment Details with this ID?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if(ans == JOptionPane.YES_OPTION){
+            pay.setAction(1);
             pay.setAns(1);
+            //delete in payment
             pay.doDeletePayment();
+            //change car status back to available
+            book.changeCarStatus();
             
-        }else if(ans == JOptionPane.NO_OPTION){
+        //change deleted status in booking
+        String change_line = "";
+        int flag = 0, counter = 0;
+        int changes = -1;
+        String rent;
+        String CusName;
+        
+        try {
+            File read_cus = new File("Booking.txt");
+
+                Scanner scan_cus = new Scanner(read_cus);
+                ArrayList<String> array_book = new ArrayList<>();
+                ArrayList<String> write_book = new ArrayList<>();
+                
+                while(scan_cus.hasNextLine()){
+                    String get_line = scan_cus.nextLine();
+                    counter += 1;
+                    
+                    String[] each_booking = get_line.split("\n");
+                    String[] each_element = each_booking[0].split("\t");
+                    
+                    //get the both id
+                    String booking_id = each_element[0];
+                    String cusID = each_element[1];
+                    //will be used when non numeric value enter for rent price
+                    rent = each_element[5];
+                    //will be used when numeric value found
+                    CusName = each_element[2];
+                    
+                    //System.out.println(booking_id + " "  +cusID);
+                    array_book.add(each_booking[0]);
+                    
+                    if((get_booking_id.equals(each_element[0]))){
+                        JOptionPane.showMessageDialog(this, "Booking ID Record Exists!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+     
+                        flag = 1;
+                        int new_cnt = counter - 1;
+
+
+                        String before_word = each_element[6];
+
+                        String new_pay_details = (array_book.get(new_cnt).replace(before_word, "Deleted"));
+                       
+                        write_book.add(new_pay_details);
+                        
+                    }
+                    else{
+
+                        //array_book.add(each_booking[0]);
+                        write_book.add(each_booking[0]);
+                    }
+                }
+                
+                
+                System.out.println(write_book);
+                if(flag == 1){
+                    JOptionPane.showMessageDialog(this, "Updating Completed!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+
+                    //write into booking textfile
+                    Path write_to_file = Paths.get("Booking.txt");
+                    for(int y=0; y<write_book.size(); y++){
+                        Files.write(write_to_file, write_book);
+                    }
+                    
+                }else{
+                    JOptionPane.showMessageDialog(this, "Booking Record Not Found", "Error Message", JOptionPane.ERROR_MESSAGE);
+
+                }
+            
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        
+        //delete word change end here   
+        delete_btn.setEnabled(false);
+        }
+        
+        else if(ans == JOptionPane.NO_OPTION){
 
             
         }
         
         if(pay.getAction() != 1){
-            JOptionPane.showMessageDialog(this, "Payment Details Not Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
             
             if(pay.getAns() != 1){
                 JOptionPane.showMessageDialog(this, "No Changes Will Be Made!", "Information Message", JOptionPane.INFORMATION_MESSAGE);

@@ -123,8 +123,8 @@ public class ViewLog extends javax.swing.JFrame {
         try {
             BufferedReader read_log = new BufferedReader(new FileReader(log_file));
             String each_log_line = read_log.readLine();
-            //System.out.println(each_car_line);
-            //display in table form (car details)
+            //System.out.println(each_log_line);
+            //display in table form (log data)
             DefaultTableModel show_log = (DefaultTableModel)cus_log.getModel();
             Object[] log_info = read_log.lines().toArray();
 
