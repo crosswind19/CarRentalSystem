@@ -8,3 +8,4 @@ Car_id	Car_Brand	Car_Model	Car_Type	Number_Plate	Car_Gear	Passenger_Occupancy	Fu
 8	Bently	GT	SportCar	BEN2	6	2	Combustion	334	2342	2016	BENT201601	12373	Hybrid 	234	6233.0	Available
 108	Proton	X50	SUV	PRO123	12	2	Combustion	213	2	2005	PROT200501	324234	Hybrid 	322	7555.0	Available
 9	Myvi	Perodua	SportCar	MY212	4	4	Combustion	423	1278	2007	MYV200712	12243	Petrol	345	2533.0	Available
+10	Tesla	ModelY	SUV	TES682	1	5	Electric	3341	0	2018	TES201898	32421	Fully_Electric	500	2663.0	Available

@@ -136,6 +136,8 @@ public class Admin_login extends javax.swing.JFrame {
         String adminUsername = admin_username.getText();
         String adminPass = admin_pass.getText();
         String admin_position = "";
+        String new_username = "";
+        String new_position = "";
         int action = 0;
         
         //inheritance (admin with verifyuser)
@@ -164,7 +166,8 @@ public class Admin_login extends javax.swing.JFrame {
                 
                 //Check with username and password with textfile
                 if(new_info[0].equals(admin.getVerifyUsername()) && (new_info[1].equals(admin.getVerifyPassword()))){
-                    
+                    new_username = new_info[0];
+                    new_position = get_position;
                     action = 1;
                     login_button.setEnabled(false);
                     
@@ -173,7 +176,7 @@ public class Admin_login extends javax.swing.JFrame {
             }
 //            System.out.println(credential_staff.get(1));
             if(action == 1){
-                JOptionPane.showMessageDialog(this, "Login Successful" + " Weclome: " + admin.getVerifyUsername() + " Position: " + admin.getAdminPosition() + ". ", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Login Successful" + " Weclome: " + new_username + " Position: " + new_position + ". ", "Car Rental System", JOptionPane.INFORMATION_MESSAGE);
 
                 
                 

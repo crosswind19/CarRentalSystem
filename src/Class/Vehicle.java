@@ -33,6 +33,7 @@ public class Vehicle {
     private int car_gear;
     private String fuel_type;
     private int travel_distance;
+    private int car_cc;
     private int engine_id;
     private String engine_type;
     private int car_hp;
@@ -45,7 +46,7 @@ public class Vehicle {
        
    }
     
-    public Vehicle(int id,String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance, int engine_id, String engine_type, int car_hp,String status){
+    public Vehicle(int id,String brand, String model, String carType, String number_plate, int numberOfPassenger, double rent_price, String manufactureNumber, int manufactureYear, int car_gear, String fuel_type, int travel_distance,int cc, int engine_id, String engine_type, int car_hp,String status){
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -58,6 +59,7 @@ public class Vehicle {
         this.car_gear = car_gear;
         this.fuel_type = fuel_type;
         this.travel_distance = travel_distance;
+        this.car_cc = cc;
         this.engine_id = engine_id;
         this.engine_type = engine_type;
         this.car_hp = car_hp;
@@ -147,6 +149,12 @@ public class Vehicle {
     }
     public void setTravel_distance(int km){
         this.travel_distance = km;
+    }
+    public int getCarCC(){
+        return car_cc;
+    }
+    public void setCar_cc(int cc){
+        this.car_cc = cc;
     }
     
     public int getEngine_id(){

@@ -519,10 +519,11 @@ public class AddCar extends javax.swing.JFrame {
             String check_engine_id = engineID_textfield.getText();
             int engine_id = Integer.parseInt(engineID_textfield.getText());
             int car_hp = Integer.parseInt(engineHP_textfield.getText());
+            int car_CC = Integer.parseInt(car_cc_textfield.getText());
         
-            Vehicle car = new Vehicle(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp,status);
-            Electric_Car elec = new Electric_Car(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp,status);
-            Conventional_Car convenc = new Conventional_Car(id, brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance, engine_id, engine_type, car_hp,status);
+            Vehicle car = new Vehicle(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance,car_CC, engine_id, engine_type, car_hp,status);
+            Electric_Car elec = new Electric_Car(id,brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance,car_CC, engine_id, engine_type, car_hp,status);
+            Conventional_Car convenc = new Conventional_Car(id, brand_name, car_model, car_type, num_plate, num_occupancy, rent_price, manuSerialNumber, manu_year, car_gear, car_fuel_type, travel_distance,car_CC, engine_id, engine_type, car_hp,status);
 
             //get from Parent class (multilevel inheritance)
             //System.out.println(elec.getRentPrice() + " from Vehicle class");
@@ -591,7 +592,7 @@ public class AddCar extends javax.swing.JFrame {
                     //write into textfile
                     FileOutputStream append_car_details = new FileOutputStream("Car.txt", true);
                     String car_details;
-                    car_details = (new_carid + "\t" + car.getBrand() + "\t" + car_model + "\t" + car_type + "\t" + num_plate + "\t" + car_gear + "\t" + occupancy + "\t" + car_fuel_type + "\t" + tra_distance + "\t" +car_cc + "\t" +  manu_year + "\t" + manuSerialNumber + "\t" + engine_id + "\t" + engine_type + "\t" + car_hp + "\t" + new_price + "\t" + status + "\n");
+                    car_details = (new_carid + "\t" + car.getBrand() + "\t" + car.getmodel() + "\t" + car.getCarType() + "\t" + car.getNumberPlate() + "\t" + car.getCarGear() + "\t" + car.getNumberOfPassenger() + "\t" + car.getfuel_type() + "\t" + car.getTravel_distance() + "\t" +car.getCarCC() + "\t" +  car.getManufactureYear() + "\t" + car.getManufactureNumber() + "\t" + car.getEngine_id() + "\t" + car.getEngine_type() + "\t" + car.getCar_hp() + "\t" + new_price + "\t" + status + "\n");
                     //convert string to bytes
                     byte[] byte_details = car_details.getBytes(); 
                     append_car_details.write(byte_details);
