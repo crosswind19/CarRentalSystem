@@ -4,4 +4,3 @@
 4	Zach	zac123	Zach	Female	zach@heri.com	0126386749	Disneyland	90836	Hk	Perlis
 5	Rutth	rutthh123	Rut	Male	turh@company.com	0129847573	Technology Park 10	51550	River Curise	Melaka
 6	kahxuan	kahxuan	kahxuan	Female	kahxuan	0123456789	dsadsadsad	11600	georgetown	kuala lumpur
-7	username	password	pass	Male	crosswind1902@gmail.com	1234567890	pass	11600	City	State
