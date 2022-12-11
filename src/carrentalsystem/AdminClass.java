@@ -48,6 +48,7 @@ public class AdminClass extends javax.swing.JFrame {
         viewpay_btn = new javax.swing.JButton();
         cus_pdf = new javax.swing.JButton();
         manage_admin = new javax.swing.JButton();
+        view_cus_info = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -193,6 +194,14 @@ public class AdminClass extends javax.swing.JFrame {
             }
         });
 
+        view_cus_info.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        view_cus_info.setText("View Customer Info");
+        view_cus_info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                view_cus_infoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -200,6 +209,7 @@ public class AdminClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(view_cus_info, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(215, 215, 215)
                         .addComponent(jLabel2))
@@ -270,7 +280,9 @@ public class AdminClass extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(view_log, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cus_pdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(view_cus_info)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -389,6 +401,12 @@ public class AdminClass extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_manage_adminActionPerformed
 
+    private void view_cus_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_cus_infoActionPerformed
+        ViewCusInfo view_cus = new ViewCusInfo();
+        view_cus.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_view_cus_infoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -442,6 +460,7 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton quit_btn;
     private javax.swing.JButton view_car;
     private javax.swing.JButton view_cus_booking;
+    private javax.swing.JButton view_cus_info;
     private javax.swing.JButton view_log;
     private javax.swing.JButton viewpay_btn;
     // End of variables declaration//GEN-END:variables
