@@ -28,7 +28,7 @@ public class Customer_login extends javax.swing.JFrame {
 //    public static String customer_details(String id){
 //        return id;
 //    }
-   Customer login = new Customer(); 
+   
     /**
      * Creates new form Customer_login
      */
@@ -205,11 +205,14 @@ public class Customer_login extends javax.swing.JFrame {
         //login.setPassword(customer_credentials.get(1));
         
         //inheritance (verifyuser to customer)
+        
+        Customer login = new Customer(); 
+        
         login.setVerifyUsername(customer_credentials.get(0));
         login.setVerifyPassword(customer_credentials.get(1));
        
         
-        System.out.println(login.getVerifyUsername());
+        //System.out.println(login.getVerifyUsername());
         
         try{
             File customer_information = new File("Customer_Information.txt");

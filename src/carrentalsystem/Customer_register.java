@@ -352,13 +352,27 @@ public class Customer_register extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Username & Password Exist, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
                 
             }else{
+                
+                 String details;        
+                
+                 
+                //Aggreation
+                String new_Address = txt_Address.getText(); 
+                String new_Postal = txt_AddressPostal.getText();
+                String new_City = txt_AddressCity.getText();
+                String new_state = txt_AddressState.getText();
+                
+                Address add = new Address(new_Address,new_Postal,new_City,new_state);
+                
+                
+                
                 String new_customer_username;
                 String new_customer_password;
                 String new_customer_name;
                 String new_gender;
                 String new_email;
                 String new_phoneno;
-                String details;
+                
                 
                 new_customer_username = txt_Username.getText();
                 new_customer_password = txt_Password.getText();
@@ -367,16 +381,13 @@ public class Customer_register extends javax.swing.JFrame {
                 new_phoneno = txt_PhoneNo.getText();
                 
                 new_gender = cbox_gender.getSelectedItem().toString();
-                             
-                //Aggreation
-                String new_Address = txt_Address.getText(); 
-                String new_Postal = txt_AddressPostal.getText();
-                String new_City = txt_AddressCity.getText();
-                String new_state = txt_AddressState.getText();
+                Customer register = new Customer(new_customer_username,new_customer_password,line,new_customer_name,new_gender,new_email,new_phoneno,add);
                 
-                Address add = new Address(new_Address,new_Postal,new_City,new_state);
-                Customer register = new Customer(new_customer_username,new_customer_password,line,new_customer_name,new_gender,new_email,new_phoneno,add); 
-                //Customer new_register = new Customer(new_customer_username,new_customer_password);
+               
+                
+
+
+//Customer new_register = new Customer(new_customer_username,new_customer_password);
                 
                 if((register.getVerifyUsername().length()>0) && (register.getVerifyPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
                   

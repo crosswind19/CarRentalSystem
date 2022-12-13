@@ -30,8 +30,7 @@ public class Customer_Payment extends javax.swing.JFrame {
         
     }
     
-    Payment pay = new Payment();
-    Booking book = new Booking();
+   
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -197,6 +196,15 @@ public class Customer_Payment extends javax.swing.JFrame {
             
                     String price = String.valueOf(temp_price);
                     //Payment pays = new Payment(price);
+                    
+                    
+                    //Payment pay = new Payment();
+                    
+                    
+                    
+                    
+                    Booking book = new Booking();
+                    
                     
                     book.payment.setRent(price);
                     

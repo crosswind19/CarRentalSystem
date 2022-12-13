@@ -75,7 +75,6 @@ abstract class changeStatus{
         this.id_car = carID;
     }
     
-    
     public int getCaptureFlag(){
         return capture_flag;
     }
@@ -83,8 +82,6 @@ abstract class changeStatus{
     public void setCaptureFlag(int num){
         this.capture_flag = num;
     }
-    
-    public abstract void changeCarStatus();
     
     public void deletePaymentData(){
         // get the booking id
@@ -96,6 +93,8 @@ abstract class changeStatus{
         
         
     }
+    
+    public abstract void changeCarStatus();
     
     public abstract void change_booking_status();
 }
@@ -188,9 +187,7 @@ public class Approval_Booking_Status extends changeStatus{
     
     public Approval_Booking_Status(String bookingID, String cusID, String status) {
         super(bookingID, cusID, status);
-     
     }
-    
     
     @Override
     public void change_booking_status(){

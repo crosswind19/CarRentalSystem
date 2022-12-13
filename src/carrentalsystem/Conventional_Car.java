@@ -26,8 +26,5 @@ public class Conventional_Car extends Powered_Type{
         Double totalRentPrice = (price + 500);
         return totalRentPrice;
     }
-//    
-//    public String toString(){
-//        return super.getBrand();
-//    }
+
 }

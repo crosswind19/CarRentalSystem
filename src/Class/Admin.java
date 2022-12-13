@@ -16,6 +16,10 @@ public class Admin extends Login{
         
     }
     
+    public Admin(String username,String password){
+        super(username,password);
+    }
+    
     public String getAdminPosition(){
         return admin_position;
     }

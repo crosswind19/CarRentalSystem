@@ -33,17 +33,9 @@ public class Powered_Type extends Vehicle{
     public void setPowerType(String power){
         this.fuel_type = power;
     }
-    
-//    public double getRentPrice_power(){
-//        return rent_price;
-//    }
-//    
-//    public void setRentPrice_power(double rent){
-//        this.rent_price = rent;
-//    }
-    
+
     public double doCarInsurance(double price){
-        Double totalRentPrice = (price + 500);
+        Double totalRentPrice = (price + 100);
         return totalRentPrice;
     }
     

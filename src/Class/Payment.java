@@ -40,6 +40,14 @@ public void Payment(String payid){
 
 }
 
+public void setRent(String rent){
+    this.Rent_price = rent;
+}
+
+public String getRent(){
+    return Rent_price;
+}
+
 public void setPayment(String payrent){
     this.payment_amount = payrent;
 
@@ -75,13 +83,7 @@ public String displayRent(){
     return Rent_price;
 }
 
-public void setRent(String rent){
-    this.Rent_price = rent;
-}
 
-public String getRent(){
-    return Rent_price;
-}
 
 
 public void doDeletePayment(){

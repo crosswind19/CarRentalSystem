@@ -31,8 +31,6 @@ public class Return_Change_Status extends changeStatus {
         super(carID);
     }
     
-    
-    
     @Override
     public void change_booking_status(){
         try {
@@ -200,12 +198,5 @@ public class Return_Change_Status extends changeStatus {
         }
         
     }
-
-    
-
-    
-    
-    
-   
     
 }

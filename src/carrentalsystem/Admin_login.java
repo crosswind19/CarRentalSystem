@@ -27,7 +27,7 @@ public class Admin_login extends javax.swing.JFrame {
         initComponents();
     }
 
-    Admin admin = new Admin();
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -141,6 +141,9 @@ public class Admin_login extends javax.swing.JFrame {
         int action = 0;
         
         //inheritance (admin with verifyuser)
+        
+        
+        Admin admin = new Admin();
         admin.setVerifyUsername(adminUsername);
         admin.setVerifyPassword(adminPass);
         

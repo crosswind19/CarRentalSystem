@@ -10,8 +10,10 @@ package Class;
  */
 public class Login {
     
-    String username;
-    String password;
+    
+    //Encapsulation private access
+    private String username; 
+    private String password;
     
     //constructor
     
