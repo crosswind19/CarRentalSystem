@@ -171,6 +171,13 @@ public class EditPayment extends javax.swing.JFrame {
         String PaymentID = payment_textfield.getText();
         String BookingID = booking_textfield.getText();
         
+        String changes = new_value_textfield.getText();
+        
+        if(changes.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No Data Entered", "Error Message", JOptionPane.ERROR_MESSAGE);
+            
+        }else{
+        
         int action = 0, line = 0;
         try {          
             File pay_file = new File("Payment.txt");
@@ -255,7 +262,7 @@ public class EditPayment extends javax.swing.JFrame {
         }
         
 
-        
+        }    
         
         
     }//GEN-LAST:event_updatePay_btnActionPerformed

@@ -148,8 +148,16 @@ public class EditCar extends javax.swing.JFrame {
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
         String search_text = search_textfield.getText();
+        String cha_text = changes_textfield.getText();
+        System.out.println(search_text);
         int action = 0, line = 0;
         int get_changes_item=-1;
+        
+        if(cha_text.isEmpty()){
+            action = 0;
+            JOptionPane.showMessageDialog(this, "No Data Entered", "Error Message", JOptionPane.ERROR_MESSAGE);
+
+        }else{
         try {          
             File car_file = new File("Car.txt");
             Scanner scan_data = new Scanner(car_file);
@@ -229,7 +237,7 @@ public class EditCar extends javax.swing.JFrame {
             Logger.getLogger(EditCar.class.getName()).log(Level.SEVERE, null, ex);
         }
       
-            
+        }     
 
 
     }//GEN-LAST:event_update_btnActionPerformed

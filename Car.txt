@@ -1,5 +1,5 @@
 Car_id	Car_Brand	Car_Model	Car_Type	Number_Plate	Car_Gear	Passenger_Occupancy	Fuel_Type	Travel_Distance	Car_cc	Manuafacture_year	Serial_Number	Engine_ID	Engine_Type	Car_HP	Rent_Price	Status
-1	Ferrari	458	SportCar	FER213	6	2	Combustion	500	4588	2019	FER2019	4567	Petrol	600	4500.0	Available
+1	Ferrari	458	SportCar	FER213	6	2	Combustion	700	4588	2019	FER2019	4567	Petrol	600	4700.0	Available
 2	MiniCooper	Countryman	HatchBack	MIN123	5	5	Combustion	2000	2000	2015	MINI201501	64641	Petrol	200	950.0	not-Available
 3	Mclaren	P1	SportCar	MCL123	7	2	Combustion	600	3000	2017	MCL201701	634461	Petrol	600	6500.0	Available
 4	BYD	HGR	SportCar	BBY1	5	5	Combustion	5	5547	2019	BYD201901	12334	Hybrid 	321	8234.0	Available

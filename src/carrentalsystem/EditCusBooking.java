@@ -170,6 +170,10 @@ public class EditCusBooking extends javax.swing.JFrame {
         String changes_item = edit_textfield.getText();
         String cus_id = cus_id_textfield.getText();
         String book_id = booking_id_textfield.getText();
+        if(changes_item.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No Data Entered", "Error Message", JOptionPane.ERROR_MESSAGE);
+            
+        }else{
         String change_line = "";
         int flag = 0, cnt = 0;
         int changes = -1;
@@ -278,7 +282,7 @@ public class EditCusBooking extends javax.swing.JFrame {
             Logger.getLogger(EditCusBooking.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        }      
         
         
         
