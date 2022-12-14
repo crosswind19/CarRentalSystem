@@ -506,6 +506,17 @@ public class AddCar extends javax.swing.JFrame {
         String carHP = engineHP_textfield.getText();
         String car_cc = car_cc_textfield.getText();
         String status = "Available";
+        
+        //check year between 2000 to 2050
+        int time_year = Integer.parseInt(year);
+        if((time_year<2000)){
+                JOptionPane.showMessageDialog(this, "Incorrect Year, Please Enter Year Larger 2000!", "Error Message", JOptionPane.WARNING_MESSAGE);
+        }
+        else if((time_year>=2050)){
+                JOptionPane.showMessageDialog(this, "Incorrect Year, Please Enter Year Less Than 2050!", "Error Message", JOptionPane.WARNING_MESSAGE);
+            
+        }
+        else{
 
         //Check all data are filled
         if(!((brand_name.isEmpty()) || (car_model.isEmpty()) || (car_type.isEmpty()) || (num_plate.isEmpty()) || (occupancy.isEmpty()) || (year.isEmpty()) || (SeNumber.isEmpty()) || (pricing.isEmpty()) || (gearing.isEmpty()) || (car_fuel_type.isEmpty()) || (tra_distance.isEmpty()) || (engID.isEmpty()) || (engine_type.isEmpty()) || (carHP.isEmpty() || (car_cc.isEmpty())))){
@@ -644,6 +655,7 @@ public class AddCar extends javax.swing.JFrame {
                 }
             }else{
                 JOptionPane.showMessageDialog(this, "Please Fill Out all the Required Field", "Error Message", JOptionPane.ERROR_MESSAGE);
+        }
         }
     
     }//GEN-LAST:event_addCar_btnActionPerformed
