@@ -6,3 +6,6 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 5	4	Zach	108	Proton X50	22665.0	Approved
 6	5	Rut	8	Bently GT	31165.0	Rejected
 7	3	Alvin	8	Bently GT	31165.0	Deleted
+8	6	kahxuan	112	BMW 530i	5690.0	Returning
+9	6	kahxuan	12	Lamborghini SV	7842.0	Returning
+10	6	kahxuan	112	BMW 530i	5690.0	Pending_for_approval

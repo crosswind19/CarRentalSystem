@@ -19,6 +19,7 @@ public class Customer_ReturnCar extends javax.swing.JFrame {
     public int JOP = 0;
     
     public static int jopvalue;
+    public static String customerid_value;
     
     /**
      * Creates new form Customer_ReturnCar
@@ -149,33 +150,40 @@ public class Customer_ReturnCar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please fill in the empty field", "Information Message", JOptionPane.INFORMATION_MESSAGE);
         }else if(bookingid_textfield.getText().matches("[a-zA-Z]+") || carid_textfield.getText().matches("[a-zA-Z]+")){
             JOptionPane.showMessageDialog(this, "Please enter a valid number", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+        
+            
         }else{
         String bookingid_value = bookingid_textfield.getText();
         int int_book_id = Integer.parseInt(bookingid_value);
         String carid_value = carid_textfield.getText();
         int number = Integer.parseInt(carid_value);
         String status = "0";
-        Booking return_car = new Booking(int_book_id,carid_value,status); 
+        Booking return_car = new Booking(int_book_id,carid_value,customerid_value,status); 
         
         
         try {
             return_car.returncar();
-            if (jopvalue == 1) {
-                JOptionPane.showMessageDialog(this, "Returned Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-             System.out.println(JOP);
-               CustomerClass customerpage = new CustomerClass();
-                customerpage.setVisible(true);
-                dispose();
-            }else{
-                JOptionPane.showMessageDialog(this, "Record not found", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-             
+            switch (jopvalue) {
+                case 1 -> {
+                    JOptionPane.showMessageDialog(this, "Returned Successfully, Have a Nice Day", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println(JOP);
+                    jopvalue = 0;
+                    CustomerClass customerpage = new CustomerClass();
+                    customerpage.setVisible(true);
+                    dispose();
+                }
+                case 2 -> //car status not approved
+                    
+                    JOptionPane.showMessageDialog(this, "Car is not available to return", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                case 0 -> JOptionPane.showMessageDialog(this, "Record not found", "Information Message", JOptionPane.INFORMATION_MESSAGE);
+                default -> JOptionPane.showMessageDialog(this, "Record unavailable", "Information Message", JOptionPane.INFORMATION_MESSAGE);
             }
             
             
         } catch (IOException ex) {
             Logger.getLogger(BookingConfirmation.class.getName()).log(Level.SEVERE, null, ex);
         }
-        returncar_btn.setEnabled(false);
+        //returncar_btn.setEnabled(false);
         
         }
     }//GEN-LAST:event_returncar_btnActionPerformed

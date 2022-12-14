@@ -42,6 +42,7 @@ public class Booking{
     String car_status_available = "Available";
     private String Rent_price;
     private Customer customer;
+    private String customerid;
     private Vehicle vehicle;
     private long borrowTime;
     private long returnTime;
@@ -52,9 +53,10 @@ public class Booking{
     
     int cnt=0, flag=0, capture_flag = 0;
     
-    public Booking(int id,String carID,String status){
+    public Booking(int id,String carID,String cusid,String status){
         this.id = id;
         this.car_id = carID;
+        this.customerid = cusid;
         this.booking_status = status;
     }
     
@@ -144,6 +146,11 @@ public class Booking{
                     //get the both id
                     String booking_ids = each_element[0]; //Booking_id
                     String cusID = each_element[3]; //Car_id
+                    String customer_id = each_element[1];
+                    String status = each_element[6];
+                    
+                    //convert cus id to string
+                   
                     
                     //get car id
                     id_car = each_element[3];
@@ -152,9 +159,9 @@ public class Booking{
                     
                     //System.out.println(booking_id + " "  +cusID);
                     array_booking.add(each_booking[0]);
-                    
-                    if((car_id.equals(cusID) && (booking_id.equals(booking_ids)))){
-                        
+                    System.out.println("customer id" + booking_id);
+                    if((car_id.equals(cusID) && (booking_id.equals(booking_ids)) && (customerid.equals(customer_id)))){
+                        if(status.equals("Approved")){
                         flag = 1;
                         int new_cnt = cnt - 1;
                         //System.out.println(new_cnt);
@@ -176,13 +183,15 @@ public class Booking{
                         write_booking.add(update_status);
                         Customer_ReturnCar returnc = new Customer_ReturnCar();
                         //returnc.JOP = 1;
-                        get_JOPid(1);
                         
+                        }else{ 
+                        flag = 2;
+                        }
                     }
                     else{
                         System.out.println("Record not found");
                         write_booking.add(each_booking[0]);
-                        //get_JOPid(0);
+                       
                     }
                 }
             
@@ -198,9 +207,11 @@ public class Booking{
                 for (String write_booking1 : write_booking) {
                     Files.write(write_to_file, write_booking);
                 }
-                    
+                    get_JOPid(1);
+                }else if(flag == 2){
+                    get_JOPid(2);
                 }else{
-
+                    get_JOPid(0);
                 }
             
             

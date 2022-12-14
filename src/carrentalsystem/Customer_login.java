@@ -357,6 +357,7 @@ public class Customer_login extends javax.swing.JFrame {
         Customer_ViewBooking.customerid_value = cus_id;
         Customer_Payment.customerid_value = cus_id;
         Customer_EditProfile.customerid_value = cus_id;
+        Customer_ReturnCar.customerid_value = cus_id;
     }
     
     static void get_customername(String name){
