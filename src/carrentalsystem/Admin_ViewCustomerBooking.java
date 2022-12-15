@@ -204,45 +204,45 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
             
             if(action == 1){
                 JOptionPane.showMessageDialog(this, "The Customer ID is: " + cus_id, "Information Message", JOptionPane.INFORMATION_MESSAGE);
-
+                //Allow the admin to print out receipt
+                 PrinterJob print_cus_booking_history = PrinterJob.getPrinterJob();
+        
+                 print_cus_booking_history.setPrintable(new Printable(){
+                 //graphics-the content of the page
+                 //format - size and orientation (X & Y)
+                 //page_number - number of the page to print
+                  public int print(Graphics graphics,PageFormat format,int page_number){
+                
+                
+                 Graphics2D cus_page = (Graphics2D)graphics;
+                 //create a 2D scale in the PDF(after print)
+                  //X and Y axis
+                  cus_page.scale(0.7, 0.7);
+                  cus_page.translate(format.getImageableX(), format.getImageableY());
+                
+                
+                  print_receipt_page.print(cus_page);
+                  return Printable.PAGE_EXISTS;
+                     }
+                  });
+                     boolean allow_print = print_cus_booking_history.printDialog();
+                    //if click print
+                if(allow_print){
+                try {
+                print_cus_booking_history.print();
+                } catch (PrinterException ex) {
+                JOptionPane.showMessageDialog(this, "Error Occur for Print, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                }
+            
+        }
+        //printing receipt end here
             }else{
                 JOptionPane.showMessageDialog(this, "The Customer Name Not Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
                 
             }
             
             
-        //Allow the admin to print out receipt
-        PrinterJob print_cus_booking_history = PrinterJob.getPrinterJob();
         
-        print_cus_booking_history.setPrintable(new Printable(){
-            //graphics-the content of the page
-            //format - size and orientation (X & Y)
-            //page_number - number of the page to print
-            public int print(Graphics graphics,PageFormat format,int page_number){
-                
-                
-                Graphics2D cus_page = (Graphics2D)graphics;
-                //create a 2D scale in the PDF(after print)
-                //X and Y axis
-                cus_page.scale(0.7, 0.7);
-                cus_page.translate(format.getImageableX(), format.getImageableY());
-                
-                
-                print_receipt_page.print(cus_page);
-                return Printable.PAGE_EXISTS;
-            }
-        });
-        boolean allow_print = print_cus_booking_history.printDialog();
-        //if click print
-        if(allow_print){
-            try {
-                print_cus_booking_history.print();
-            } catch (PrinterException ex) {
-                JOptionPane.showMessageDialog(this, "Error Occur for Print, Please Try Again!", "Error Message", JOptionPane.ERROR_MESSAGE);
-            }
-            
-        }
-        //printing receipt end here
         
 
         } catch (FileNotFoundException ex) {
