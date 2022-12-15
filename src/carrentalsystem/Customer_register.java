@@ -165,7 +165,7 @@ public class Customer_register extends javax.swing.JFrame {
         lbl_Address.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         lbl_Address.setText("Address: ");
 
-        cbox_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "~Please Select~", "Male", "Female" }));
+        cbox_gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
         cbox_gender.setToolTipText("");
         cbox_gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -403,20 +403,30 @@ public class Customer_register extends javax.swing.JFrame {
 
 
 //Customer new_register = new Customer(new_customer_username,new_customer_password);
-                
+                //Check Empty Field
                 if((register.getVerifyUsername().length()>0) && (register.getVerifyPassword().length()>0) && (register.getName().length()>0) && (register.getGender().length()>0) && (register.getEmailAddress().length()>0) && (register.getPhoneNumber().length()>0) ){
-                  
-                  if(!register.getVerifyUsername().equals(register.getVerifyPassword())){
-                   if(!register.getVerifyUsername().equals(register.getName()) && !register.getVerifyUsername().equals(register.address.getStreet())){ 
-                       if(!register.address.getStreet().equals(register.address.getCity()) && !register.address.getStreet().equals(register.address.getState())){
-                    if(!(new_Postal.length() == 5)){
-                        JOptionPane.showMessageDialog(this, "Error Found in Postal Code (Required: 5 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
+                  //Username and Password cannot be the same
+                  if(!register.getVerifyUsername().equals(register.getVerifyPassword()) && !register.getName().equals(register.getVerifyPassword())){
+                      //Username and name cannot be the same
+                   if(!register.getVerifyUsername().equals(register.getName())){
+                       //Name cannot be the same as address
+                     if(!register.getName().equals(register.address.getStreet()) && !register.getName().equals(register.address.getCity()) && !register.getName().equals(register.address.getState())){
+                         //Username cannot be the same as address
+                       if(!register.getVerifyUsername().equals(register.address.getStreet()) && !register.getVerifyUsername().equals(register.address.getCity()) && !register.getVerifyUsername().equals(register.address.getState())){
+                           //Address Street, city and state cannot be the same
+                         if(!register.address.getStreet().equals(register.address.getCity()) && !register.address.getStreet().equals(register.address.getState()) && !register.address.getCity().equals(register.address.getState()) ){
+                            //Email Validation
+                           if(register.getEmailAddress().matches("^(.+)@(.+)$")){
+                            //Postal code must be 5 digit only
+                         if(!(new_Postal.length() == 5)){
+                            JOptionPane.showMessageDialog(this, "Error Found in Postal Code (Required: 5 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
 
-                    }else{
-                        if(!(new_phoneno.length() == 10)){
-                         JOptionPane.showMessageDialog(this, "Error Found in Phone Number (Required: 10 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
+                            }else{
+                                //Phone number must 10 digit
+                                if(!(new_phoneno.length() == 10)){
+                                JOptionPane.showMessageDialog(this, "Error Found in Phone Number (Required: 10 Numbers)", "Error Message", JOptionPane.ERROR_MESSAGE);
                            
-                        }else{
+                                 }else{
                             
                         
                     
@@ -424,7 +434,7 @@ public class Customer_register extends javax.swing.JFrame {
                                 FileOutputStream fw = new FileOutputStream("Customer_Information.txt", true);
                                 //details = ("\n" + line + "\t" + new_customer_username + "\t" + new_customer_password + "\t" + new_customer_name + "\t" + new_gender + "\t" + new_email + "\t" + new_phoneno + "\t" + new_Address);
                                 //convert string to bytes
-                                System.out.println(register.register());
+                                //System.out.println(register.register());
                                 byte[] byte_details = register.register().getBytes();
 
                                 //Append into textfile
@@ -432,7 +442,7 @@ public class Customer_register extends javax.swing.JFrame {
                                 fw.write(byte_details);
                                 register_button.setEnabled(false);
                                 JOptionPane.showMessageDialog(this, "Registered Successfull, Welcome to Prestige Car Rental!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
-                                //fw.close();
+                                fw.close();
 
                             } catch (IOException ex) {
                                 JOptionPane.showMessageDialog(this, "An Error Occur! Append File Error Found!", "Error Message", JOptionPane.ERROR_MESSAGE);
@@ -440,15 +450,29 @@ public class Customer_register extends javax.swing.JFrame {
                         }
                     }
                        }else{
+                               JOptionPane.showMessageDialog(this, "Error Occur! Please enter a valid email!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                
+                           }
+                           
+                       }else{
                            JOptionPane.showMessageDialog(this, "Error Occur! Address, State and City cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
                 
+                       }
+                   }else{
+                         JOptionPane.showMessageDialog(this, "Error Occur! Username and Address cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                 
+                    }
+                         
+                     }else{
+                          JOptionPane.showMessageDialog(this, "Error Occur! Name and Address cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                 
                        }
                    }else{
                        JOptionPane.showMessageDialog(this, "Error Occur! Username and Name cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
                 
                    }
                   }else{
-                      JOptionPane.showMessageDialog(this, "Error Occur! Username and Password cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                      JOptionPane.showMessageDialog(this, "Error Occur! Username, name and Password cannot be the same!", "Error Message", JOptionPane.ERROR_MESSAGE);
                 
                        }
                 }else{
