@@ -49,6 +49,7 @@ public class EditCusBooking extends javax.swing.JFrame {
         cus_id_textfield = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         header.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         header.setText("Edit Customer Booking");

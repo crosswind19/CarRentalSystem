@@ -48,6 +48,7 @@ public class DeleteCar extends javax.swing.JFrame {
         back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         delete_car_label.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         delete_car_label.setText("Admin Delete Car");

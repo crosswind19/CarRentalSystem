@@ -52,6 +52,7 @@ public class EditCar extends javax.swing.JFrame {
         back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         header.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         header.setText("Admin Edit Car");
