@@ -9,5 +9,5 @@ Booking_id	Customer_id	Customer_name	Car_id	Car_name	Rent_Price	Booking_Status
 9	6	kahxuan	12	Lamborghini SV	7842.0	Returning
 10	6	kahxuan	112	BMW 530i	5690.0	Pending_for_approval
 11	1	Jamess	9	Myvi Perodua	5600.0	Deleted
-111	1	James	9	Myvi Perodua	15299.0	Deleted
+111	1	James	9	Myvi Perodua	12345.0	Deleted
 12	3	Alvin	6	Nissan GTR	91412.0	Pending_for_approval

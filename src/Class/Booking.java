@@ -44,8 +44,6 @@ public class Booking{
     private Customer customer;
     private String customerid;
     private Vehicle vehicle;
-    private long borrowTime;
-    private long returnTime;
     
     public Payment payment;
     
