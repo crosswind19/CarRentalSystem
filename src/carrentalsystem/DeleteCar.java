@@ -172,7 +172,6 @@ public class DeleteCar extends javax.swing.JFrame {
                     //write the new car details (With not include delete car details)
                     Path write_output = Paths.get("Car.txt");
                     for(int x = 0; x<left_car.size(); x++){
-                    //System.out.println(write_car.get(x));
                     
                     Files.write(write_output, left_car);
                     
