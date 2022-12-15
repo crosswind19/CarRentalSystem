@@ -148,8 +148,13 @@ public class DeleteCar extends javax.swing.JFrame {
 
                 //number start with 1 in textfile no need minus 1
                 if(delete_serial.equals(del_serial)){
+                    if(each_car_del[16].equals("Available")){
+                        del_action = 1;
+                    }else{
+                        //car is still renting out
+                        del_action = 2;
+                    }
 
-                    del_action = 1; 
                     //if found in this statement, car details will not added into left_car
 
                 }else{
@@ -167,7 +172,6 @@ public class DeleteCar extends javax.swing.JFrame {
                     //write the new car details (With not include delete car details)
                     Path write_output = Paths.get("Car.txt");
                     for(int x = 0; x<left_car.size(); x++){
-                    //System.out.println(write_car.get(x));
                     
                     Files.write(write_output, left_car);
                     
@@ -179,8 +183,13 @@ public class DeleteCar extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "No Changes Will Be Made!", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 
                 }
-            }else{
+            }else if(del_action == 0){
                     JOptionPane.showMessageDialog(this, "No Car Serial Number Found!", "Information Message", JOptionPane.WARNING_MESSAGE);
+                
+            }else if(del_action == 2){
+                    JOptionPane.showMessageDialog(this, "Car Serial Number Found, But Still Renting Out!", "Information Message", JOptionPane.WARNING_MESSAGE);
+                
+            }else{
                 
             }
             
