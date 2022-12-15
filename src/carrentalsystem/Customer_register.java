@@ -437,7 +437,7 @@ public class Customer_register extends javax.swing.JFrame {
                 
                        }
                 }else{
-                    JOptionPane.showMessageDialog(this, "Error Occur! Please Enter a Valid Input!", "Error Message", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Error Occur! Please Fill up All The Field with Valid Input!", "Error Message", JOptionPane.ERROR_MESSAGE);
                 
                 }
                 
