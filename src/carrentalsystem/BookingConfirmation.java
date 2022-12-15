@@ -36,29 +36,30 @@ public class BookingConfirmation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        booking_header_lbl = new javax.swing.JLabel();
+        bookingid_lbl = new javax.swing.JLabel();
+        cus_id_lbl = new javax.swing.JLabel();
+        status_lbl = new javax.swing.JLabel();
         book_id_textfield = new javax.swing.JTextField();
         car_id_textfield = new javax.swing.JTextField();
         status_combobox = new javax.swing.JComboBox<>();
         confirm_btn = new javax.swing.JButton();
         back_btn = new javax.swing.JButton();
+        error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin Booking Confirmation");
+        booking_header_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        booking_header_lbl.setText("Admin Booking Confirmation");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("Booking ID:");
+        bookingid_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        bookingid_lbl.setText("Booking ID:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("Customer ID:");
+        cus_id_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        cus_id_lbl.setText("Customer ID:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setText("Status:");
+        status_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        status_lbl.setText("Status:");
 
         book_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         book_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -93,6 +94,8 @@ public class BookingConfirmation extends javax.swing.JFrame {
             }
         });
 
+        error.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,15 +107,15 @@ public class BookingConfirmation extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(booking_header_lbl, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(56, 56, 56)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(bookingid_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cus_id_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(status_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(book_id_textfield)
@@ -123,6 +126,10 @@ public class BookingConfirmation extends javax.swing.JFrame {
                                 .addComponent(confirm_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(109, 109, 109))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,22 +137,24 @@ public class BookingConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
-                .addComponent(jLabel1)
+                .addComponent(booking_header_lbl)
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(book_id_textfield)
-                    .addComponent(jLabel2))
+                    .addComponent(bookingid_lbl))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(car_id_textfield)
-                    .addComponent(jLabel3))
+                    .addComponent(cus_id_lbl))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(status_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(status_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(confirm_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,6 +196,9 @@ public class BookingConfirmation extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error.setText("Invalid Input " + key);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_book_id_textfieldKeyTyped
 
@@ -195,6 +207,9 @@ public class BookingConfirmation extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error.setText("Invalid Input " + key);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_car_id_textfieldKeyTyped
 
@@ -236,12 +251,13 @@ public class BookingConfirmation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_btn;
     private javax.swing.JTextField book_id_textfield;
+    private javax.swing.JLabel booking_header_lbl;
+    private javax.swing.JLabel bookingid_lbl;
     private javax.swing.JTextField car_id_textfield;
     private javax.swing.JButton confirm_btn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel cus_id_lbl;
+    private javax.swing.JLabel error;
     private javax.swing.JComboBox<String> status_combobox;
+    private javax.swing.JLabel status_lbl;
     // End of variables declaration//GEN-END:variables
 }

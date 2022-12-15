@@ -43,22 +43,23 @@ public class EditCar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        edit_car_lbl = new javax.swing.JLabel();
+        car_serial_lbl = new javax.swing.JLabel();
         search_textfield = new javax.swing.JTextField();
         update_btn = new javax.swing.JButton();
         details_selection = new javax.swing.JComboBox<>();
         changes_textfield = new javax.swing.JTextField();
         back = new javax.swing.JButton();
+        error_mess = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        header.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        header.setText("Admin Edit Car");
+        edit_car_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        edit_car_lbl.setText("Admin Edit Car");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel2.setText("Car Serial Number: ");
+        car_serial_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        car_serial_lbl.setText("Car Serial Number: ");
 
         search_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         search_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -93,22 +94,20 @@ public class EditCar extends javax.swing.JFrame {
             }
         });
 
+        error_mess.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(112, 112, 112)
-                            .addComponent(header))
+                            .addComponent(edit_car_lbl))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(176, 176, 176)
                             .addComponent(details_selection, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -116,7 +115,13 @@ public class EditCar extends javax.swing.JFrame {
                             .addComponent(changes_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(281, 281, 281)
-                            .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(car_serial_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(error_mess, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -125,17 +130,19 @@ public class EditCar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(header))
+                        .addComponent(edit_car_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(car_serial_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(search_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(65, 65, 65)
+                .addGap(18, 18, 18)
+                .addComponent(error_mess, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(details_selection, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(changes_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -253,7 +260,10 @@ public class EditCar extends javax.swing.JFrame {
         char key_entered = evt.getKeyChar();
         // only allow number and alphabetic character
         if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
-            evt.consume();  
+            evt.consume();
+            error_mess.setText("Invalid Input " + key_entered);
+        }else{
+            error_mess.setText("");
         }
     }//GEN-LAST:event_search_textfieldKeyTyped
 
@@ -302,10 +312,11 @@ public class EditCar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
+    private javax.swing.JLabel car_serial_lbl;
     private javax.swing.JTextField changes_textfield;
     private javax.swing.JComboBox<String> details_selection;
-    private javax.swing.JLabel header;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel edit_car_lbl;
+    private javax.swing.JLabel error_mess;
     private javax.swing.JTextField search_textfield;
     private javax.swing.JButton update_btn;
     // End of variables declaration//GEN-END:variables

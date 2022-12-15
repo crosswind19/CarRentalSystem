@@ -43,9 +43,9 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
     private void initComponents() {
 
         print_receipt_page = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        header_lbl = new javax.swing.JLabel();
         back_btn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        cus_name_lbl = new javax.swing.JLabel();
         cus_name = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         cus_booking_history = new javax.swing.JTable();
@@ -53,8 +53,8 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin View Customer Booking");
+        header_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        header_lbl.setText("Admin View Customer Booking");
 
         back_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         back_btn.setText("Back");
@@ -64,8 +64,8 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("Customer Name:");
+        cus_name_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        cus_name_lbl.setText("Customer Name:");
 
         cus_name.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -107,13 +107,13 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addComponent(jLabel1)
+                .addComponent(header_lbl)
                 .addContainerGap(151, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, print_receipt_pageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(print_receipt_pageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, print_receipt_pageLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(cus_name_lbl)
                         .addGap(69, 69, 69)
                         .addComponent(cus_name, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(171, 171, 171))
@@ -127,11 +127,11 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
                 .addGroup(print_receipt_pageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(print_receipt_pageLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                        .addComponent(header_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(print_receipt_pageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cus_name, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cus_name_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34))
                     .addGroup(print_receipt_pageLayout.createSequentialGroup()
                         .addContainerGap()
@@ -291,9 +291,9 @@ public class Admin_ViewCustomerBooking extends javax.swing.JFrame {
     private javax.swing.JButton back_btn;
     private javax.swing.JTable cus_booking_history;
     private javax.swing.JTextField cus_name;
+    private javax.swing.JLabel cus_name_lbl;
     private javax.swing.JButton display_id;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel header_lbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel print_receipt_page;
     // End of variables declaration//GEN-END:variables

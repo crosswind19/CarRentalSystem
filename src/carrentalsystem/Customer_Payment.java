@@ -46,7 +46,7 @@ public class Customer_Payment extends javax.swing.JFrame {
         payment_details_table = new javax.swing.JTable();
         Total_Payment_Llb = new javax.swing.JLabel();
         totalPrice_txt = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        payment_history_lbl = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,8 +88,8 @@ public class Customer_Payment extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Payment History");
+        payment_history_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        payment_history_lbl.setText("Payment History");
 
         jButton1.setText("Auto-Click");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +108,7 @@ public class Customer_Payment extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
-                        .addComponent(jLabel1)
+                        .addComponent(payment_history_lbl)
                         .addGap(32, 32, 32)
                         .addComponent(jButton1)
                         .addGap(0, 42, Short.MAX_VALUE))
@@ -128,7 +128,7 @@ public class Customer_Payment extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(payment_history_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton1)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -264,9 +264,9 @@ public class Customer_Payment extends javax.swing.JFrame {
     private javax.swing.JLabel Total_Payment_Llb;
     private javax.swing.JButton backBtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable payment_details_table;
+    private javax.swing.JLabel payment_history_lbl;
     private javax.swing.JTextField totalPrice_txt;
     // End of variables declaration//GEN-END:variables
 }

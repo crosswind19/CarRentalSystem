@@ -36,7 +36,7 @@ public class ViewCusBooking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        ViewCusBooking_lbl = new javax.swing.JLabel();
         get_cus_booking = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         cus_booking_table = new javax.swing.JTable();
@@ -45,8 +45,8 @@ public class ViewCusBooking extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("View Customer Booking");
+        ViewCusBooking_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        ViewCusBooking_lbl.setText("View Customer Booking");
 
         get_cus_booking.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         get_cus_booking.setText("Get All Customer Booking");
@@ -92,7 +92,7 @@ public class ViewCusBooking extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69)
-                        .addComponent(jLabel1))
+                        .addComponent(ViewCusBooking_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(204, 204, 204)
                         .addComponent(get_cus_booking))
@@ -107,7 +107,7 @@ public class ViewCusBooking extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1))
+                        .addComponent(ViewCusBooking_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -192,10 +192,10 @@ public class ViewCusBooking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ViewCusBooking_lbl;
     private javax.swing.JButton back_btn;
     private javax.swing.JTable cus_booking_table;
     private javax.swing.JButton get_cus_booking;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

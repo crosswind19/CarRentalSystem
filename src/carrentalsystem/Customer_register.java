@@ -50,7 +50,7 @@ public class Customer_register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        register_header_lbl = new javax.swing.JLabel();
         lbl_Username = new javax.swing.JLabel();
         txt_Username = new javax.swing.JTextField();
         lbl_Password = new javax.swing.JLabel();
@@ -81,8 +81,8 @@ public class Customer_register extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 660));
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Customer Register Page");
+        register_header_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        register_header_lbl.setText("Customer Register Page");
 
         lbl_Username.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         lbl_Username.setText("Username: ");
@@ -145,6 +145,11 @@ public class Customer_register extends javax.swing.JFrame {
 
         txt_AddressPostal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_AddressPostal.setMinimumSize(new java.awt.Dimension(64, 30));
+        txt_AddressPostal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_AddressPostalKeyTyped(evt);
+            }
+        });
 
         lbl_Phoneno.setFont(new java.awt.Font("Segoe UI Emoji", 1, 24)); // NOI18N
         lbl_Phoneno.setText("Phone No: ");
@@ -198,12 +203,22 @@ public class Customer_register extends javax.swing.JFrame {
                 txt_AddressCityActionPerformed(evt);
             }
         });
+        txt_AddressCity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_AddressCityKeyTyped(evt);
+            }
+        });
 
         txt_AddressState.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txt_AddressState.setMinimumSize(new java.awt.Dimension(64, 30));
         txt_AddressState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_AddressStateActionPerformed(evt);
+            }
+        });
+        txt_AddressState.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_AddressStateKeyTyped(evt);
             }
         });
 
@@ -252,7 +267,7 @@ public class Customer_register extends javax.swing.JFrame {
                             .addComponent(txt_PhoneNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
-                        .addComponent(jLabel1)))
+                        .addComponent(register_header_lbl)))
                 .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +287,7 @@ public class Customer_register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(register_header_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -514,6 +529,28 @@ public class Customer_register extends javax.swing.JFrame {
         //}
     }//GEN-LAST:event_txt_EmailKeyTyped
 
+    private void txt_AddressStateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_AddressStateKeyTyped
+        char key_entered = evt.getKeyChar();
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_txt_AddressStateKeyTyped
+
+    private void txt_AddressCityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_AddressCityKeyTyped
+        char key_entered = evt.getKeyChar();
+        if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
+            evt.consume();  
+        }
+    }//GEN-LAST:event_txt_AddressCityKeyTyped
+
+    private void txt_AddressPostalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_AddressPostalKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_AddressPostalKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -554,7 +591,6 @@ public class Customer_register extends javax.swing.JFrame {
     private javax.swing.JButton backBtn;
     private javax.swing.JComboBox<String> cbox_gender;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_Address;
     private javax.swing.JLabel lbl_Address1;
@@ -567,6 +603,7 @@ public class Customer_register extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_Phoneno;
     private javax.swing.JLabel lbl_Username;
     private javax.swing.JButton register_button;
+    private javax.swing.JLabel register_header_lbl;
     private javax.swing.JTextArea txt_Address;
     private javax.swing.JTextField txt_AddressCity;
     private javax.swing.JTextField txt_AddressPostal;

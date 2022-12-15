@@ -35,7 +35,7 @@ public class ViewPayment extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        view_pay_lbl = new javax.swing.JLabel();
         get_pay = new javax.swing.JButton();
         bck_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,8 +44,8 @@ public class ViewPayment extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin View Customer Payment");
+        view_pay_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        view_pay_lbl.setText("Admin View Customer Payment");
 
         get_pay.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         get_pay.setText("Get Payment Data");
@@ -89,7 +89,7 @@ public class ViewPayment extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE)
                 .addComponent(bck_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(view_pay_lbl, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addComponent(get_pay, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,7 +106,7 @@ public class ViewPayment extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel1))
+                        .addComponent(view_pay_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(bck_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -199,8 +199,8 @@ public class ViewPayment extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bck_btn;
     private javax.swing.JButton get_pay;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable payment_table;
+    private javax.swing.JLabel view_pay_lbl;
     // End of variables declaration//GEN-END:variables
 }

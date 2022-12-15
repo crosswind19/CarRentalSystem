@@ -43,31 +43,32 @@ public class ManageAdminAcc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        manage_admin_lbl = new javax.swing.JLabel();
+        username_lbl = new javax.swing.JLabel();
+        password_lbl = new javax.swing.JLabel();
+        position_lbl = new javax.swing.JLabel();
         back_btn = new javax.swing.JButton();
         username_admin = new javax.swing.JTextField();
         password_admin = new javax.swing.JTextField();
         position_admin = new javax.swing.JTextField();
         add_admin = new javax.swing.JButton();
         edit_btn = new javax.swing.JButton();
+        error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Manage Admin Panel");
+        manage_admin_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        manage_admin_lbl.setText("Manage Admin Panel");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("Username:");
+        username_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        username_lbl.setText("Username:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("Password:");
+        password_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        password_lbl.setText("Password:");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setText("Position:");
+        position_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        position_lbl.setText("Position:");
 
         back_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         back_btn.setText("Back");
@@ -114,6 +115,8 @@ public class ManageAdminAcc extends javax.swing.JFrame {
             }
         });
 
+        error.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,12 +129,12 @@ public class ManageAdminAcc extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(87, 87, 87)
-                                .addComponent(jLabel1))
+                                .addComponent(manage_admin_lbl))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(username_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(password_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(position_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(53, 53, 53)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(username_admin, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
@@ -143,31 +146,37 @@ public class ManageAdminAcc extends javax.swing.JFrame {
                         .addGap(87, 87, 87)
                         .addComponent(edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(157, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(269, 269, 269))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(manage_admin_lbl)
                     .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(username_lbl)
                     .addComponent(username_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(password_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(password_admin))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(position_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(position_admin))
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(edit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(add_admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,6 +193,9 @@ public class ManageAdminAcc extends javax.swing.JFrame {
         // only allow number and alphabetic character
         if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
             evt.consume();  
+            error.setText("Invalid Input " + key_entered);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_username_adminKeyTyped
 
@@ -192,6 +204,9 @@ public class ManageAdminAcc extends javax.swing.JFrame {
         // only allow number and alphabetic character
         if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
             evt.consume();  
+            error.setText("Invalid Input " + key_entered);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_password_adminKeyTyped
 
@@ -200,7 +215,10 @@ public class ManageAdminAcc extends javax.swing.JFrame {
         //check input is it contains special characters       
       if(!(Character.isAlphabetic(key)) && (!(key == KeyEvent.VK_COMMA))){
           evt.consume();
-      } 
+            error.setText("Invalid Input " + key);
+        }else{
+            error.setText("");
+        }
     }//GEN-LAST:event_position_adminKeyTyped
 
     private void add_adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_adminActionPerformed
@@ -411,12 +429,13 @@ public class ManageAdminAcc extends javax.swing.JFrame {
     private javax.swing.JButton add_admin;
     private javax.swing.JButton back_btn;
     private javax.swing.JButton edit_btn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel error;
+    private javax.swing.JLabel manage_admin_lbl;
     private javax.swing.JTextField password_admin;
+    private javax.swing.JLabel password_lbl;
     private javax.swing.JTextField position_admin;
+    private javax.swing.JLabel position_lbl;
     private javax.swing.JTextField username_admin;
+    private javax.swing.JLabel username_lbl;
     // End of variables declaration//GEN-END:variables
 }

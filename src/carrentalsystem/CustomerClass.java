@@ -35,8 +35,8 @@ public class CustomerClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        cus_panel_lbl = new javax.swing.JLabel();
+        select_function_lbl = new javax.swing.JLabel();
         SearchCarBtn = new javax.swing.JButton();
         ViewBookingHistoryBtn = new javax.swing.JButton();
         ReturnCarBtn = new javax.swing.JButton();
@@ -48,11 +48,11 @@ public class CustomerClass extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(796, 390));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Customer Panel");
+        cus_panel_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        cus_panel_lbl.setText("Customer Panel");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel2.setText("Please Select Below Function");
+        select_function_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        select_function_lbl.setText("Please Select Below Function");
 
         SearchCarBtn.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         SearchCarBtn.setText("Book a Car");
@@ -110,7 +110,7 @@ public class CustomerClass extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(241, 241, 241)
-                        .addComponent(jLabel2))
+                        .addComponent(select_function_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -125,20 +125,19 @@ public class CustomerClass extends javax.swing.JFrame {
                                 .addGap(110, 110, 110)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(ReturnCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ViewPaymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(ViewPaymentBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(cus_panel_lbl)))
                 .addContainerGap(153, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(262, 262, 262)
-                .addComponent(jLabel1)
-                .addGap(96, 264, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addComponent(cus_panel_lbl)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(select_function_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SearchCarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,7 +275,7 @@ public class CustomerClass extends javax.swing.JFrame {
     private javax.swing.JButton SearchCarBtn;
     private javax.swing.JButton ViewBookingHistoryBtn;
     private javax.swing.JButton ViewPaymentBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel cus_panel_lbl;
+    private javax.swing.JLabel select_function_lbl;
     // End of variables declaration//GEN-END:variables
 }

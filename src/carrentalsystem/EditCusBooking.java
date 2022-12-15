@@ -38,24 +38,25 @@ public class EditCusBooking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header = new javax.swing.JLabel();
+        edit_cus_booking_lbl = new javax.swing.JLabel();
         booking_combobox = new javax.swing.JComboBox<>();
         edit_textfield = new javax.swing.JTextField();
-        booking_header = new javax.swing.JLabel();
+        booking_lbl = new javax.swing.JLabel();
         booking_id_textfield = new javax.swing.JTextField();
         update_btn = new javax.swing.JButton();
         bck_btn = new javax.swing.JButton();
-        cus_header = new javax.swing.JLabel();
+        cus_lbl = new javax.swing.JLabel();
         cus_id_textfield = new javax.swing.JTextField();
+        error_message = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        header.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        header.setText("Edit Customer Booking");
+        edit_cus_booking_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        edit_cus_booking_lbl.setText("Edit Customer Booking");
 
         booking_combobox.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        booking_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer_name", "Rent_Price" }));
+        booking_combobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rent_Price" }));
 
         edit_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         edit_textfield.addActionListener(new java.awt.event.ActionListener() {
@@ -69,8 +70,8 @@ public class EditCusBooking extends javax.swing.JFrame {
             }
         });
 
-        booking_header.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        booking_header.setText("Booking ID:");
+        booking_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        booking_lbl.setText("Booking ID:");
 
         booking_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         booking_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -95,8 +96,8 @@ public class EditCusBooking extends javax.swing.JFrame {
             }
         });
 
-        cus_header.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        cus_header.setText("Customer ID:");
+        cus_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        cus_lbl.setText("Customer ID:");
 
         cus_id_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cus_id_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -104,6 +105,8 @@ public class EditCusBooking extends javax.swing.JFrame {
                 cus_id_textfieldKeyTyped(evt);
             }
         });
+
+        error_message.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,9 +119,9 @@ public class EditCusBooking extends javax.swing.JFrame {
                         .addComponent(bck_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(booking_header, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(header)
-                            .addComponent(cus_header)))
+                            .addComponent(booking_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edit_cus_booking_lbl)
+                            .addComponent(cus_lbl)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addComponent(booking_combobox, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,7 +133,9 @@ public class EditCusBooking extends javax.swing.JFrame {
                 .addContainerGap(142, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(update_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                    .addComponent(error_message, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(279, 279, 279))
         );
         layout.setVerticalGroup(
@@ -139,20 +144,22 @@ public class EditCusBooking extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bck_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(edit_cus_booking_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(booking_header, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(booking_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(booking_id_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cus_id_textfield)
-                    .addComponent(cus_header, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                    .addComponent(cus_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(booking_combobox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edit_textfield, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86)
+                .addGap(31, 31, 31)
+                .addComponent(error_message, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
@@ -217,22 +224,8 @@ public class EditCusBooking extends javax.swing.JFrame {
                        changes = booking_combobox.getSelectedIndex();
                         //System.out.println(changes);
                         switch (changes) {
-                            case 0 ->                                 {
-                                    //customer name changes
-                                    if(changes_item.matches("[a-zA-Z]+")){
-                                        
-                                    
-                                    String before_word = each_element[changes+2];
 
-                                    change_line = (array_book.get(new_cnt).replace(before_word, changes_item));
-                                    }else{
-                                        JOptionPane.showMessageDialog(this, "Error Format Found, No Changes Made!", "Error Message", JOptionPane.ERROR_MESSAGE);
-                                        
-                                        String before_word = each_element[changes+2];
-                                        change_line = (array_book.get(new_cnt).replace(before_word, CusName));
-                                    }
-                                }
-                            case 1 ->                                 {
+                            case 0 ->                                 {
                                     //rent price changes (check first)
                                     try{
                                         changes_ele = Double.parseDouble(changes_item);
@@ -241,7 +234,7 @@ public class EditCusBooking extends javax.swing.JFrame {
                                         
                                         changes_ele = Double.parseDouble(rent);
                                     }
-                                    String before_word = each_element[changes+4];
+                                    String before_word = each_element[changes+5];
                                     
                                     String string_changes_ele = String.valueOf(changes_ele);
                                     change_line = (array_book.get(new_cnt).replace(before_word, string_changes_ele));
@@ -294,6 +287,9 @@ public class EditCusBooking extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error_message.setText("Invalid Input " + key);
+        }else{
+            error_message.setText("");
         }
     }//GEN-LAST:event_booking_id_textfieldKeyTyped
 
@@ -302,11 +298,21 @@ public class EditCusBooking extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error_message.setText("Invalid Input " + key);
+        }else{
+            error_message.setText("");
         }
     }//GEN-LAST:event_cus_id_textfieldKeyTyped
 
     private void edit_textfieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_edit_textfieldKeyTyped
-        // TODO add your handling code here:
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+            error_message.setText("Invalid Input " + key);
+        }else{
+            error_message.setText("");
+        }
     }//GEN-LAST:event_edit_textfieldKeyTyped
 
     private void edit_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_textfieldActionPerformed
@@ -351,12 +357,13 @@ public class EditCusBooking extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bck_btn;
     private javax.swing.JComboBox<String> booking_combobox;
-    private javax.swing.JLabel booking_header;
     private javax.swing.JTextField booking_id_textfield;
-    private javax.swing.JLabel cus_header;
+    private javax.swing.JLabel booking_lbl;
     private javax.swing.JTextField cus_id_textfield;
+    private javax.swing.JLabel cus_lbl;
+    private javax.swing.JLabel edit_cus_booking_lbl;
     private javax.swing.JTextField edit_textfield;
-    private javax.swing.JLabel header;
+    private javax.swing.JLabel error_message;
     private javax.swing.JButton update_btn;
     // End of variables declaration//GEN-END:variables
 }

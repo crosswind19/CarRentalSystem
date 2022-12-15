@@ -26,19 +26,19 @@ public class MainClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        main_header_lbl = new javax.swing.JLabel();
+        select_role_lbl = new javax.swing.JLabel();
         customer_button = new javax.swing.JButton();
         admin_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Welcome to Prestige Car Rental System");
+        main_header_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        main_header_lbl.setText("Welcome to Prestige Car Rental System");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel2.setText("Please Select Your Role Below");
+        select_role_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        select_role_lbl.setText("Please Select Your Role Below");
 
         customer_button.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         customer_button.setText("Customer");
@@ -63,11 +63,11 @@ public class MainClass extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(select_role_lbl)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(main_header_lbl)
                 .addGap(50, 50, 50))
             .addGroup(layout.createSequentialGroup()
                 .addGap(208, 208, 208)
@@ -80,9 +80,9 @@ public class MainClass extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(jLabel1)
+                .addComponent(main_header_lbl)
                 .addGap(35, 35, 35)
-                .addComponent(jLabel2)
+                .addComponent(select_role_lbl)
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(customer_button, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,7 +147,7 @@ public class MainClass extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton admin_button;
     private javax.swing.JButton customer_button;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel main_header_lbl;
+    private javax.swing.JLabel select_role_lbl;
     // End of variables declaration//GEN-END:variables
 }

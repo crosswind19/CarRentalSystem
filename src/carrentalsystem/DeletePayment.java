@@ -42,17 +42,18 @@ public class DeletePayment extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        delete_pay_lbl = new javax.swing.JLabel();
         back_btn = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        pay_id_lbl = new javax.swing.JLabel();
         paymentid_textfield = new javax.swing.JTextField();
         delete_btn = new javax.swing.JButton();
+        error_mess = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin Delete Payment");
+        delete_pay_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        delete_pay_lbl.setText("Admin Delete Payment");
 
         back_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         back_btn.setText("Back");
@@ -62,8 +63,8 @@ public class DeletePayment extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel2.setText("Payment ID:");
+        pay_id_lbl.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        pay_id_lbl.setText("Payment ID:");
 
         paymentid_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         paymentid_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -80,6 +81,8 @@ public class DeletePayment extends javax.swing.JFrame {
             }
         });
 
+        error_mess.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,15 +93,18 @@ public class DeletePayment extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(delete_pay_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(133, 133, 133)
-                        .addComponent(jLabel2)
+                        .addComponent(pay_id_lbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(paymentid_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(236, 236, 236)
-                        .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addComponent(error_mess, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,15 +113,17 @@ public class DeletePayment extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jLabel1))
+                        .addComponent(delete_pay_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pay_id_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(paymentid_textfield))
-                .addGap(63, 63, 63)
+                .addGap(18, 18, 18)
+                .addComponent(error_mess, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(74, Short.MAX_VALUE))
         );
@@ -291,6 +299,9 @@ public class DeletePayment extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error_mess.setText("Invalid Input " + key);
+        }else{
+            error_mess.setText("");
         }
     }//GEN-LAST:event_paymentid_textfieldKeyTyped
 
@@ -332,8 +343,9 @@ public class DeletePayment extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_btn;
     private javax.swing.JButton delete_btn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel delete_pay_lbl;
+    private javax.swing.JLabel error_mess;
+    private javax.swing.JLabel pay_id_lbl;
     private javax.swing.JTextField paymentid_textfield;
     // End of variables declaration//GEN-END:variables
 }

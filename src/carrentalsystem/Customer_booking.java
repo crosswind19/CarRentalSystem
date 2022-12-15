@@ -60,7 +60,7 @@ public class Customer_booking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        header_lbl = new javax.swing.JLabel();
         booking_back_btn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         car_table = new javax.swing.JTable();
@@ -74,17 +74,17 @@ public class Customer_booking extends javax.swing.JFrame {
         carId_txt = new javax.swing.JTextField();
         model1 = new javax.swing.JLabel();
         carName_txt = new javax.swing.JTextField();
-        model2 = new javax.swing.JLabel();
+        day_lbl = new javax.swing.JLabel();
         carDuration_txt = new javax.swing.JTextField();
-        model3 = new javax.swing.JLabel();
+        rent_lbl = new javax.swing.JLabel();
         price_lbl = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Customer Booking");
+        header_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        header_lbl.setText("Customer Booking");
 
         booking_back_btn.setText("Back");
         booking_back_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -167,13 +167,18 @@ public class Customer_booking extends javax.swing.JFrame {
         carName_txt.setEditable(false);
         carName_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        model2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        model2.setText("Days");
+        day_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        day_lbl.setText("Days");
 
         carDuration_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        carDuration_txt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                carDuration_txtKeyTyped(evt);
+            }
+        });
 
-        model3.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        model3.setText("Rent Duration");
+        rent_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        rent_lbl.setText("Rent Duration");
 
         price_lbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
@@ -196,7 +201,7 @@ public class Customer_booking extends javax.swing.JFrame {
                                 .addGap(83, 83, 83)
                                 .addComponent(Auto_Click)
                                 .addGap(101, 101, 101)
-                                .addComponent(jLabel1))
+                                .addComponent(header_lbl))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -212,7 +217,7 @@ public class Customer_booking extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(brand1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(model1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(model3, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(rent_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(carId_txt, javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,7 +228,7 @@ public class Customer_booking extends javax.swing.JFrame {
                                             .addComponent(price_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(model2, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                                            .addComponent(day_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
                                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -239,7 +244,7 @@ public class Customer_booking extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(booking_back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1))
+                        .addComponent(header_lbl))
                     .addComponent(Auto_Click))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,8 +270,8 @@ public class Customer_booking extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(carDuration_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(model2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(model3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(day_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rent_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(price_lbl)
@@ -589,6 +594,14 @@ public class Customer_booking extends javax.swing.JFrame {
         
     }//GEN-LAST:event_car_tableMouseClicked
 
+    private void carDuration_txtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_carDuration_txtKeyTyped
+        char key = evt.getKeyChar();
+        //check only allow number input
+        if(!(Character.isDigit(key))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_carDuration_txtKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -703,13 +716,13 @@ public class Customer_booking extends javax.swing.JFrame {
     private javax.swing.JButton confirm_booking_btn;
     private javax.swing.JTextField cusID_textfield;
     private javax.swing.JTextField cusName_textfield;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel day_lbl;
+    private javax.swing.JLabel header_lbl;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel model;
     private javax.swing.JLabel model1;
-    private javax.swing.JLabel model2;
-    private javax.swing.JLabel model3;
     private javax.swing.JLabel price_lbl;
+    private javax.swing.JLabel rent_lbl;
     // End of variables declaration//GEN-END:variables
 }

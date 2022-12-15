@@ -38,27 +38,28 @@ public class EditPayment extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        edit_pay_lbl = new javax.swing.JLabel();
+        payID_lbl = new javax.swing.JLabel();
+        bookID_lbl = new javax.swing.JLabel();
         payment_textfield = new javax.swing.JTextField();
         booking_textfield = new javax.swing.JTextField();
         updatePay_btn = new javax.swing.JButton();
         back_btn = new javax.swing.JButton();
-        new_value_label = new javax.swing.JLabel();
+        new_amount_lbl = new javax.swing.JLabel();
         new_value_textfield = new javax.swing.JTextField();
+        error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin Edit Payment Page");
+        edit_pay_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        edit_pay_lbl.setText("Admin Edit Payment Page");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel2.setText("Payment ID:");
+        payID_lbl.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        payID_lbl.setText("Payment ID:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel3.setText("Booking_ID:");
+        bookID_lbl.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        bookID_lbl.setText("Booking_ID:");
 
         payment_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         payment_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -90,8 +91,8 @@ public class EditPayment extends javax.swing.JFrame {
             }
         });
 
-        new_value_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        new_value_label.setText("New Payment Amount:");
+        new_amount_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        new_amount_lbl.setText("New Payment Amount:");
 
         new_value_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         new_value_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -99,6 +100,8 @@ public class EditPayment extends javax.swing.JFrame {
                 new_value_textfieldKeyTyped(evt);
             }
         });
+
+        error.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,29 +111,33 @@ public class EditPayment extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(edit_pay_lbl)
                 .addGap(149, 149, 149))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(77, 77, 77)
-                        .addComponent(new_value_label, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(269, 269, 269)
-                        .addComponent(updatePay_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(new_amount_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(payID_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bookID_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(payment_textfield)
                             .addComponent(booking_textfield, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
-                        .addComponent(new_value_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(new_value_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(273, 273, 273)
+                        .addComponent(updatePay_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(252, 252, 252))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,25 +145,27 @@ public class EditPayment extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(jLabel1))
+                        .addComponent(edit_pay_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(payment_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(payID_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bookID_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(booking_textfield))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(new_value_label, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(new_amount_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(new_value_textfield))
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(updatePay_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -273,6 +282,9 @@ public class EditPayment extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error.setText("Invalid Input " + key);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_payment_textfieldKeyTyped
 
@@ -281,6 +293,9 @@ public class EditPayment extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error.setText("Invalid Input " + key);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_booking_textfieldKeyTyped
 
@@ -289,6 +304,9 @@ public class EditPayment extends javax.swing.JFrame {
         //check only allow number input
         if(!(Character.isDigit(key))){
             evt.consume();
+            error.setText("Invalid Input " + key);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_new_value_textfieldKeyTyped
 
@@ -329,12 +347,13 @@ public class EditPayment extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_btn;
+    private javax.swing.JLabel bookID_lbl;
     private javax.swing.JTextField booking_textfield;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel new_value_label;
+    private javax.swing.JLabel edit_pay_lbl;
+    private javax.swing.JLabel error;
+    private javax.swing.JLabel new_amount_lbl;
     private javax.swing.JTextField new_value_textfield;
+    private javax.swing.JLabel payID_lbl;
     private javax.swing.JTextField payment_textfield;
     private javax.swing.JButton updatePay_btn;
     // End of variables declaration//GEN-END:variables

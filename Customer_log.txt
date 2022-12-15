@@ -16,3 +16,7 @@ Date&Time	Username Customer_name
 2022/12/15 12:28:58	James	James
 2022/12/15 12:52:57	James	James
 2022/12/15 12:54:24	James	James
+2022/12/15 15:35:18	Alvin	Alvin
+2022/12/15 15:36:56	Alvin	Alvin
+2022/12/15 15:37:42	Alvin	Alvin
+2022/12/15 15:45:13	Alvin	Alvin

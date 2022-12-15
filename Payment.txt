@@ -4,3 +4,4 @@ Payment_ID	Booking_ID	Customer_ID	Car_ID	Payment_Amount
 8	8	6	112	5690.0
 9	9	6	12	7842.0
 10	10	6	112	5690.0
+12	12	3	6	91412.0

@@ -46,21 +46,21 @@ public class ApproveReturning extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        approve_header_lbl = new javax.swing.JLabel();
         auto_click = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         payment_table = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
+        booking_lbl = new javax.swing.JLabel();
         bookingID = new javax.swing.JTextField();
         approve_btn = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        cusid_lbl = new javax.swing.JLabel();
         cusID = new javax.swing.JTextField();
         back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin Approve Returning Car");
+        approve_header_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        approve_header_lbl.setText("Admin Approve Returning Car");
 
         auto_click.setText("jButton1");
         auto_click.addActionListener(new java.awt.event.ActionListener() {
@@ -92,8 +92,8 @@ public class ApproveReturning extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(payment_table);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("Booking ID:");
+        booking_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        booking_lbl.setText("Booking ID:");
 
         bookingID.setEditable(false);
         bookingID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -106,8 +106,8 @@ public class ApproveReturning extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("Customer ID:");
+        cusid_lbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        cusid_lbl.setText("Customer ID:");
 
         cusID.setEditable(false);
         cusID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -130,7 +130,7 @@ public class ApproveReturning extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(approve_header_lbl)
                         .addGap(65, 65, 65)
                         .addComponent(auto_click)
                         .addGap(21, 21, 21))
@@ -139,8 +139,8 @@ public class ApproveReturning extends javax.swing.JFrame {
                         .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cusid_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(booking_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(bookingID)
@@ -155,7 +155,7 @@ public class ApproveReturning extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jLabel1))
+                        .addComponent(approve_header_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,10 +168,10 @@ public class ApproveReturning extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bookingID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                            .addComponent(booking_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cusid_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cusID)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(4, 4, 4)
@@ -372,13 +372,13 @@ public class ApproveReturning extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton approve_btn;
+    private javax.swing.JLabel approve_header_lbl;
     private javax.swing.JButton auto_click;
     private javax.swing.JButton back;
     private javax.swing.JTextField bookingID;
+    private javax.swing.JLabel booking_lbl;
     private javax.swing.JTextField cusID;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel cusid_lbl;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable payment_table;
     // End of variables declaration//GEN-END:variables

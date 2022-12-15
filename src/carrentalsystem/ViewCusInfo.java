@@ -36,7 +36,7 @@ public class ViewCusInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        view_cus_info_lbl = new javax.swing.JLabel();
         back_btn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         cus_info_table = new javax.swing.JTable();
@@ -45,8 +45,8 @@ public class ViewCusInfo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("View Customer Information");
+        view_cus_info_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        view_cus_info_lbl.setText("View Customer Information");
 
         back_btn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         back_btn.setText("Back");
@@ -94,7 +94,7 @@ public class ViewCusInfo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
-                        .addComponent(jLabel1)
+                        .addComponent(view_cus_info_lbl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addComponent(auto_click)
                         .addGap(49, 49, 49))))
@@ -105,7 +105,7 @@ public class ViewCusInfo extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
+                    .addComponent(view_cus_info_lbl)
                     .addComponent(auto_click))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,7 +183,7 @@ public class ViewCusInfo extends javax.swing.JFrame {
     private javax.swing.JButton auto_click;
     private javax.swing.JButton back_btn;
     private javax.swing.JTable cus_info_table;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel view_cus_info_lbl;
     // End of variables declaration//GEN-END:variables
 }

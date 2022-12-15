@@ -38,7 +38,7 @@
                               <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                               <Component id="Auto_Click" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="header_lbl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -59,7 +59,7 @@
                                           <Component id="model1" alignment="0" min="-2" pref="231" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="model3" min="-2" pref="231" max="-2" attributes="0"/>
+                                  <Component id="rent_lbl" min="-2" pref="231" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -72,7 +72,7 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="model2" pref="73" max="32767" attributes="0"/>
+                                          <Component id="day_lbl" pref="73" max="32767" attributes="0"/>
                                           <Component id="jLabel3" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -98,7 +98,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="booking_back_btn" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="header_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="Auto_Click" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -133,8 +133,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="carDuration_txt" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="model2" alignment="3" max="32767" attributes="0"/>
-                  <Component id="model3" alignment="3" max="32767" attributes="0"/>
+                  <Component id="day_lbl" alignment="3" max="32767" attributes="0"/>
+                  <Component id="rent_lbl" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -149,7 +149,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="header_lbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="3"/>
@@ -389,7 +389,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="model2">
+    <Component class="javax.swing.JLabel" name="day_lbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="2"/>
@@ -404,11 +404,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carDuration_txtActionPerformed"/>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="carDuration_txtKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="model3">
+    <Component class="javax.swing.JLabel" name="rent_lbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="2"/>

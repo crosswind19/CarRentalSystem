@@ -38,7 +38,7 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         viewBooking_table = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        view_booking_lbl = new javax.swing.JLabel();
         booking_back_btn = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -63,8 +63,8 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(viewBooking_table);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("View Booking");
+        view_booking_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        view_booking_lbl.setText("View Booking");
 
         booking_back_btn.setText("Back");
         booking_back_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +90,7 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
                 .addGap(75, 75, 75)
                 .addComponent(jButton1)
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addComponent(view_booking_lbl)
                 .addGap(142, 324, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -103,7 +103,7 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(view_booking_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,8 +200,8 @@ public class Customer_ViewBooking extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton booking_back_btn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable viewBooking_table;
+    private javax.swing.JLabel view_booking_lbl;
     // End of variables declaration//GEN-END:variables
 }

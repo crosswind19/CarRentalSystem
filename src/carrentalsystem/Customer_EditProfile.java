@@ -39,7 +39,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        header = new javax.swing.JLabel();
+        edit_profile_lbl = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         Customer_label = new javax.swing.JLabel();
         customerid_txt = new javax.swing.JTextField();
@@ -50,8 +50,8 @@ public class Customer_EditProfile extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        header.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        header.setText("Customer Edit Profile");
+        edit_profile_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        edit_profile_lbl.setText("Customer Edit Profile");
 
         backBtn.setText("Back");
         backBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -101,7 +101,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(68, 68, 68)
-                        .addComponent(header))
+                        .addComponent(edit_profile_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -125,7 +125,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(header))
+                    .addComponent(edit_profile_lbl))
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Customer_label, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
@@ -433,7 +433,7 @@ public class Customer_EditProfile extends javax.swing.JFrame {
     private javax.swing.JTextField changes_txt;
     private javax.swing.JTextField customerid_txt;
     private javax.swing.JComboBox<String> details_selection;
-    private javax.swing.JLabel header;
+    private javax.swing.JLabel edit_profile_lbl;
     private javax.swing.JButton update_btn;
     // End of variables declaration//GEN-END:variables
 }

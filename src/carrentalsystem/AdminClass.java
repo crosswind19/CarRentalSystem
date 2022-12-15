@@ -29,8 +29,8 @@ public class AdminClass extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        admin_panel_lbl = new javax.swing.JLabel();
+        select_function_lbl = new javax.swing.JLabel();
         add_new_car = new javax.swing.JButton();
         edit_car = new javax.swing.JButton();
         delete_car = new javax.swing.JButton();
@@ -52,11 +52,11 @@ public class AdminClass extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel1.setText("Admin Panel");
+        admin_panel_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        admin_panel_lbl.setText("Admin Panel");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel2.setText("Please Select Below Function");
+        select_function_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        select_function_lbl.setText("Please Select Below Function");
 
         add_new_car.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         add_new_car.setText("Add new Car");
@@ -212,11 +212,11 @@ public class AdminClass extends javax.swing.JFrame {
                     .addComponent(view_cus_info, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(215, 215, 215)
-                        .addComponent(jLabel2))
+                        .addComponent(select_function_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(quit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(108, 108, 108)
-                        .addComponent(jLabel1))
+                        .addComponent(admin_panel_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(add_new_car, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -244,10 +244,10 @@ public class AdminClass extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(admin_panel_lbl)
                     .addComponent(quit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(select_function_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(add_new_car, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -444,6 +444,7 @@ public class AdminClass extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_new_car;
+    private javax.swing.JLabel admin_panel_lbl;
     private javax.swing.JButton approve_car_return;
     private javax.swing.JButton booking_confirmation;
     private javax.swing.JButton cus_pdf;
@@ -454,10 +455,9 @@ public class AdminClass extends javax.swing.JFrame {
     private javax.swing.JButton edit_cus_booking;
     private javax.swing.JButton edit_paymemt;
     private javax.swing.JToggleButton generate_pdf;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manage_admin;
     private javax.swing.JButton quit_btn;
+    private javax.swing.JLabel select_function_lbl;
     private javax.swing.JButton view_car;
     private javax.swing.JButton view_cus_booking;
     private javax.swing.JButton view_cus_info;

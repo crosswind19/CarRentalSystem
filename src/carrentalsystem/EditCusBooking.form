@@ -31,9 +31,9 @@
                       <Component id="bck_btn" min="-2" pref="107" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="booking_header" min="-2" pref="134" max="-2" attributes="0"/>
-                          <Component id="header" min="-2" max="-2" attributes="0"/>
-                          <Component id="cus_header" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="booking_lbl" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="edit_cus_booking_lbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="cus_lbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -51,7 +51,10 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="update_btn" min="-2" pref="165" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="update_btn" pref="165" max="32767" attributes="0"/>
+                  <Component id="error_message" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -62,24 +65,26 @@
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="bck_btn" max="32767" attributes="0"/>
-                  <Component id="header" max="32767" attributes="0"/>
+                  <Component id="edit_cus_booking_lbl" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="booking_header" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="booking_lbl" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="booking_id_textfield" min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="cus_id_textfield" max="32767" attributes="0"/>
-                  <Component id="cus_header" pref="36" max="32767" attributes="0"/>
+                  <Component id="cus_lbl" pref="36" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="39" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="booking_combobox" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="edit_textfield" alignment="1" min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="error_message" min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="update_btn" min="-2" pref="54" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
@@ -87,7 +92,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="header">
+    <Component class="javax.swing.JLabel" name="edit_cus_booking_lbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="3"/>
@@ -101,9 +106,8 @@
           <Font name="Segoe UI" size="18" style="2"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="Customer_name"/>
-            <StringItem index="1" value="Rent_Price"/>
+          <StringArray count="1">
+            <StringItem index="0" value="Rent_Price"/>
           </StringArray>
         </Property>
       </Properties>
@@ -122,7 +126,7 @@
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="edit_textfieldKeyTyped"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="booking_header">
+    <Component class="javax.swing.JLabel" name="booking_lbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="2"/>
@@ -162,7 +166,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bck_btnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="cus_header">
+    <Component class="javax.swing.JLabel" name="cus_lbl">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="2"/>
@@ -179,6 +183,13 @@
       <Events>
         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="cus_id_textfieldKeyTyped"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="error_message">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

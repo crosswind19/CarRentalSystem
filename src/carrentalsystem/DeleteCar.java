@@ -41,20 +41,21 @@ public class DeleteCar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        delete_car_label = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        delete_car_lbl = new javax.swing.JLabel();
+        car_serial_lbl = new javax.swing.JLabel();
         delete_car_textfield = new javax.swing.JTextField();
         delete_btn = new javax.swing.JButton();
         back_btn = new javax.swing.JButton();
+        error = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        delete_car_label.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        delete_car_label.setText("Admin Delete Car");
+        delete_car_lbl.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        delete_car_lbl.setText("Admin Delete Car");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        jLabel1.setText("Car Serial Number:");
+        car_serial_lbl.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        car_serial_lbl.setText("Car Serial Number:");
 
         delete_car_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         delete_car_textfield.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -79,6 +80,8 @@ public class DeleteCar extends javax.swing.JFrame {
             }
         });
 
+        error.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,12 +92,14 @@ public class DeleteCar extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(99, 99, 99)
-                        .addComponent(delete_car_label))
+                        .addComponent(delete_car_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(jLabel1)
+                        .addComponent(car_serial_lbl)
                         .addGap(18, 18, 18)
-                        .addComponent(delete_car_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(delete_car_textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(138, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -107,15 +112,17 @@ public class DeleteCar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(delete_car_label))
+                        .addComponent(delete_car_lbl))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(car_serial_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(delete_car_textfield))
-                .addGap(88, 88, 88)
+                .addGap(18, 18, 18)
+                .addComponent(error, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
                 .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
         );
@@ -198,6 +205,9 @@ public class DeleteCar extends javax.swing.JFrame {
         // only allow number and alphabetic character
         if(!(Character.isAlphabetic(key_entered)) && (!(Character.isDigit(key_entered)))){
             evt.consume();  
+            error.setText("Invalid Input " + key_entered);
+        }else{
+            error.setText("");
         }
     }//GEN-LAST:event_delete_car_textfieldKeyTyped
 
@@ -239,9 +249,10 @@ public class DeleteCar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_btn;
+    private javax.swing.JLabel car_serial_lbl;
     private javax.swing.JButton delete_btn;
-    private javax.swing.JLabel delete_car_label;
+    private javax.swing.JLabel delete_car_lbl;
     private javax.swing.JTextField delete_car_textfield;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel error;
     // End of variables declaration//GEN-END:variables
 }
