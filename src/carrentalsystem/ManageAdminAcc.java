@@ -208,6 +208,11 @@ public class ManageAdminAcc extends javax.swing.JFrame {
         String admin_username = username_admin.getText();
         String admin_password = password_admin.getText();
         String admin_position = position_admin.getText();
+        
+        if(admin_username.isEmpty() || admin_password.isEmpty() || admin_position.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No Data Entered", "Error Message", JOptionPane.ERROR_MESSAGE);
+            
+        }else{
 
         int action=0;
         String combine_details = (admin_username + "\t" + admin_password + "\t "+ admin_position + "\n");
@@ -257,6 +262,7 @@ public class ManageAdminAcc extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Error Found While Writing", "Information Message", JOptionPane.INFORMATION_MESSAGE);
 
             }
+        }
     }//GEN-LAST:event_add_adminActionPerformed
 
     private void edit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_btnActionPerformed
@@ -264,6 +270,11 @@ public class ManageAdminAcc extends javax.swing.JFrame {
         String edit_username = username_admin.getText();
         String edit_password = password_admin.getText();
         String edit_position = position_admin.getText();    
+        
+        if(edit_username.isEmpty() || edit_password.isEmpty() || edit_position.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No Data Entered", "Error Message", JOptionPane.ERROR_MESSAGE);
+            
+        }else{
         int new_num=0;
         
         int action = 0, line = 0;
@@ -341,7 +352,7 @@ public class ManageAdminAcc extends javax.swing.JFrame {
         }
         
 
-        
+        }   
         
                 
     }//GEN-LAST:event_edit_btnActionPerformed
